@@ -26,16 +26,10 @@ const teamMembers = [
     bio: "With over 30 years of dental experience, Cathy keeps the office running smoothly behind the scenes. She is a marathon runner and proud grandmother of four. Her decades of expertise and attention to detail ensure every patient has a seamless experience from check-in to checkout.",
   },
   {
-    name: "Juliet Pequeno, RDA",
-    role: "Lead Dental Assistant",
-    image: "/images/juliet.jpg",
-    bio: "Juliet is the youngest of six and brings a family-first mentality to everything she does. As our lead dental assistant, she ensures every procedure runs smoothly and every patient feels at ease. Outside of work, you'll find her tackling DIY projects and trying new recipes.",
-  },
-  {
     name: "Denielle Thiel",
-    role: "Office Manager",
+    role: "Insurance Coordinator",
     image: "/images/denielle.jpg",
-    bio: "Denielle manages the day-to-day operations of the practice with efficiency and a warm smile. A mom of two and lover of the outdoors, she spends her free time exploring trails and making sure her family (and the office) are always taken care of.",
+    bio: "Denielle handles all things insurance so you don't have to. She breaks down benefits, files claims, and makes sure you get the most out of your coverage. A mom of two and lover of the outdoors, she spends her free time exploring trails with her family.",
   },
   {
     name: "Lee Kounas",

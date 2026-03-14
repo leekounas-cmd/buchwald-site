@@ -132,7 +132,7 @@ export default function TeethWhiteningPage() {
               className="flex justify-center"
             >
               <Image
-                src="/images/tooth-icon.png"
+                src="/images/tooth-icon.svg"
                 alt="Tooth illustration"
                 width={300}
                 height={300}

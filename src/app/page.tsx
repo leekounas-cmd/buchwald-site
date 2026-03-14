@@ -60,8 +60,7 @@ const stats = [
 const team = [
   { name: "Dr. Buchwald", role: "Dentist", image: "/images/dr-buchwald.jpg" },
   { name: "Melisa", role: "Hygienist", image: "/images/melisa.jpg" },
-  { name: "Juliet", role: "Lead Assistant", image: "/images/juliet.jpg" },
-  { name: "Denielle", role: "Office Manager", image: "/images/denielle.jpg" },
+  { name: "Denielle", role: "Insurance Coordinator", image: "/images/denielle.jpg" },
   { name: "Lee", role: "Marketing", image: "/images/lee.jpg" },
 ];
 
@@ -230,9 +229,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Office Photos */}
+      {/* Office Photo */}
       <section className="py-20 bg-light-bg">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -243,25 +242,19 @@ export default function HomePage() {
               Our Office
             </h2>
           </motion.div>
-          <div className="grid gap-6 sm:grid-cols-3">
-            {[1, 2, 3].map((n) => (
-              <motion.div
-                key={n}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: n * 0.1 }}
-              >
-                <Image
-                  src={`/images/office-${n}.jpg`}
-                  alt={`Buchwald office photo ${n}`}
-                  width={500}
-                  height={350}
-                  className="rounded-2xl w-full h-64 object-cover shadow-lg"
-                />
-              </motion.div>
-            ))}
-          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+          >
+            <Image
+              src="/images/office-1.jpg"
+              alt="Buchwald Family Dentistry office"
+              width={900}
+              height={500}
+              className="rounded-2xl w-full h-80 sm:h-96 object-cover shadow-lg"
+            />
+          </motion.div>
         </div>
       </section>
 
