@@ -7,33 +7,18 @@ import { CTABanner } from "@/components/CTABanner";
 const BOOKING_URL =
   "https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE";
 
-const benefits = [
-  {
-    title: "Minimally Invasive",
-    description: "No drills, no buzz. Laser therapy targets only the affected tissue, preserving more of your healthy structure.",
-  },
-  {
-    title: "Less Discomfort",
-    description: "Most patients experience significantly less pain. Many procedures require little to no anesthesia.",
-  },
-  {
-    title: "Enhanced Precision",
-    description: "The laser targets damaged tissue without harming healthy gums — pinpoint accuracy for cleaner treatment.",
-  },
-  {
-    title: "Faster Recovery",
-    description: "Less swelling and bleeding means you heal quicker and get back to your day sooner.",
-  },
-  {
-    title: "Proven Technology",
-    description: "Delivered by our experienced hygiene team using clinically proven laser technology.",
-  },
+const services = [
+  { title: "Fillings", description: "Tooth-colored composite fillings that blend naturally with your smile. No metal, no mercury." },
+  { title: "Crowns", description: "Custom-made caps that restore strength and appearance to damaged or weakened teeth." },
+  { title: "Bridges", description: "Fixed replacements for missing teeth that look and function like your natural smile." },
+  { title: "Root Canals", description: "Save an infected tooth with modern endodontic treatment — more comfortable than you think." },
+  { title: "Extractions", description: "Safe, gentle removal of teeth that are beyond repair, including wisdom teeth." },
+  { title: "Gum Treatment", description: "Periodontal care to treat and prevent gum disease before it leads to bigger issues." },
 ];
 
-export default function LaserTherapyPage() {
+export default function GeneralPage() {
   return (
     <>
-      {/* Hero */}
       <section className="bg-dark pt-16 pb-20 sm:pt-20 sm:pb-28">
         <div className="mx-auto max-w-3xl px-4 text-center">
           <motion.div
@@ -42,13 +27,13 @@ export default function LaserTherapyPage() {
             transition={{ duration: 0.6 }}
           >
             <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-3">
-              Advanced Treatment
+              Everyday Dental Health
             </p>
             <h1 className="font-heading text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight">
-              Advanced Laser Therapy
+              General Dentistry
             </h1>
             <p className="text-white/50 text-base sm:text-lg max-w-xl mx-auto mb-8">
-              Faster recovery, less discomfort, and stronger oral health — all without traditional drills and needles.
+              From fillings to root canals, we handle the dental care you need to stay healthy and comfortable.
             </p>
             <a
               href={BOOKING_URL}
@@ -56,13 +41,12 @@ export default function LaserTherapyPage() {
               rel="noopener noreferrer"
               className="inline-block rounded-xl bg-primary px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-primary-dark"
             >
-              Book Free Consult
+              Request Appointment
             </a>
           </motion.div>
         </div>
       </section>
 
-      {/* Benefits */}
       <section className="py-20 sm:py-24 bg-white">
         <div className="mx-auto max-w-4xl px-4">
           <motion.div
@@ -72,29 +56,22 @@ export default function LaserTherapyPage() {
             className="text-center mb-12"
           >
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-dark">
-              Why Patients Prefer Laser Treatment
+              What We Offer
             </h2>
           </motion.div>
 
-          <div className="space-y-3">
-            {benefits.map((b, i) => (
+          <div className="grid gap-3 sm:grid-cols-2">
+            {services.map((s, i) => (
               <motion.div
-                key={b.title}
+                key={s.title}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="rounded-xl bg-light border border-gray-light p-6 flex gap-4 items-start"
+                className="rounded-xl bg-light border border-gray-light p-6"
               >
-                <div className="h-8 w-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-dark mb-1">{b.title}</h3>
-                  <p className="text-gray text-sm leading-relaxed">{b.description}</p>
-                </div>
+                <h3 className="font-semibold text-dark mb-1.5">{s.title}</h3>
+                <p className="text-gray text-sm leading-relaxed">{s.description}</p>
               </motion.div>
             ))}
           </div>

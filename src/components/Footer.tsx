@@ -3,6 +3,7 @@ import Image from "next/image";
 
 const quickLinks = [
   { href: "/", label: "Home" },
+  { href: "/services", label: "All Services" },
   { href: "/invisalign", label: "Invisalign" },
   { href: "/teeth-whitening", label: "Teeth Whitening" },
   { href: "/innerview", label: "InnerView" },
@@ -10,32 +11,40 @@ const quickLinks = [
   { href: "/meet-us", label: "Meet Us" },
 ];
 
+const serviceLinks = [
+  { href: "/services/cleaning", label: "Cleaning & Exam" },
+  { href: "/services/general", label: "General Dentistry" },
+  { href: "/services/cosmetic", label: "Cosmetic Dentistry" },
+  { href: "/services/restorative", label: "Restorative Dentistry" },
+];
+
 export function Footer() {
   return (
-    <footer className="bg-dark-deep text-white">
+    <footer className="bg-dark-deep text-white pb-20 lg:pb-0">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid gap-12 md:grid-cols-3">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Logo + Tagline */}
           <div>
             <Image
               src="/images/logo-white.png"
               alt="Buchwald Family Dentistry"
-              width={200}
-              height={52}
-              className="h-12 w-auto mb-4"
+              width={160}
+              height={40}
+              className="h-10 w-auto mb-4"
             />
-            <p className="text-white/60 text-sm leading-relaxed">
-              Modern care. Comfortable visits. Your family dentist in Richardson, TX.
+            <p className="text-white/50 text-sm leading-relaxed mb-6">
+              Modern care. Comfortable visits.<br />
+              Your family dentist in Richardson, TX.
             </p>
-            <div className="flex gap-4 mt-6">
+            <div className="flex gap-3">
               <a
                 href="https://www.instagram.com/buchwaldfamilydentist"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/50 hover:text-teal transition-colors"
+                className="h-9 w-9 rounded-lg bg-white/5 flex items-center justify-center text-white/40 hover:bg-white/10 hover:text-white transition-all"
                 aria-label="Instagram"
               >
-                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
                 </svg>
               </a>
@@ -43,10 +52,10 @@ export function Footer() {
                 href="https://facebook.com/MaxBuchwaldFamilyDentist"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/50 hover:text-teal transition-colors"
+                className="h-9 w-9 rounded-lg bg-white/5 flex items-center justify-center text-white/40 hover:bg-white/10 hover:text-white transition-all"
                 aria-label="Facebook"
               >
-                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                 </svg>
               </a>
@@ -55,13 +64,34 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-heading text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-white/30 mb-4">
+              Pages
+            </h3>
+            <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-white/60 text-sm hover:text-teal transition-colors"
+                    className="text-white/50 text-sm hover:text-white transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-white/30 mb-4">
+              Services
+            </h3>
+            <ul className="space-y-2.5">
+              {serviceLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-white/50 text-sm hover:text-white transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -72,25 +102,26 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-heading text-lg font-semibold mb-4">Contact</h3>
-            <div className="space-y-3 text-sm text-white/60">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-white/30 mb-4">
+              Contact
+            </h3>
+            <div className="space-y-3 text-sm text-white/50">
               <p>300 N Coit Rd #245<br />Richardson, TX 75080</p>
               <p>
-                <a href="tel:972-644-3280" className="text-teal hover:text-teal-dark transition-colors font-medium">
-                  972-644-3280
+                <a href="tel:972-644-3280" className="text-white font-medium hover:text-primary transition-colors">
+                  (972) 644-3280
                 </a>
               </p>
-              <p>Monday &ndash; Thursday<br />7:00am &ndash; 3:00pm</p>
+              <p>Mon &ndash; Thu: 7am &ndash; 3pm<br />Fri &ndash; Sun: Closed</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Copyright */}
-      <div className="border-t border-white/10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
-          <p className="text-center text-xs text-white/40">
-            &copy; {new Date().getFullYear()} Buchwald Family Dentistry & Orthodontics. All rights reserved.
+      <div className="border-t border-white/5">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-5">
+          <p className="text-center text-xs text-white/25">
+            &copy; {new Date().getFullYear()} Buchwald Family Dentistry &amp; Orthodontics. All rights reserved.
           </p>
         </div>
       </div>

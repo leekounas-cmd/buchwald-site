@@ -7,38 +7,35 @@ const BOOKING_URL =
 
 export function CTABanner() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-r from-primary to-[#0d3b6e] py-20">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(0,191,165,0.15),transparent_70%)]" />
-      <div className="relative mx-auto max-w-4xl px-4 text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8"
-        >
-          Ready to Love Your Smile?
-        </motion.h2>
+    <section className="bg-dark py-20 sm:py-24">
+      <div className="mx-auto max-w-3xl px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full bg-teal px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-teal-dark hover:shadow-xl"
-          >
-            Request Appointment
-          </a>
-          <a
-            href="tel:972-644-3280"
-            className="rounded-full border-2 border-white px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white hover:text-primary"
-          >
-            Call 972-644-3280
-          </a>
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+            Ready to Love Your Smile?
+          </h2>
+          <p className="text-white/50 text-lg mb-10 max-w-xl mx-auto">
+            New patients welcome. Request an appointment online or give us a call.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl bg-primary px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/20"
+            >
+              Request Appointment
+            </a>
+            <a
+              href="tel:972-644-3280"
+              className="rounded-xl bg-white/5 border border-white/10 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
+            >
+              Call (972) 644-3280
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

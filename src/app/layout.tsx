@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
+import { AnnouncementBar } from "@/components/AnnouncementBar";
+import { StickyBottomBar } from "@/components/StickyBottomBar";
 import { Footer } from "@/components/Footer";
 
 const playfair = Playfair_Display({
@@ -36,12 +38,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${playfair.variable} ${dmSans.variable} antialiased`}
-      >
+      <body className={`${playfair.variable} ${dmSans.variable} antialiased`}>
+        <AnnouncementBar />
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <StickyBottomBar />
       </body>
     </html>
   );

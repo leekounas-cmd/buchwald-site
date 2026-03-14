@@ -11,14 +11,12 @@ const BOOKING_URL =
 const options = [
   {
     title: "In-Office Whitening",
-    description:
-      "Walk in, relax, and walk out with a dramatically brighter smile in just one visit. Our professional-grade treatment delivers instant results under expert supervision.",
+    description: "Walk in, relax, and walk out with a dramatically brighter smile in just one visit. Professional-grade treatment under expert supervision.",
     features: ["One-visit results", "Professional-grade formula", "Supervised by our team"],
   },
   {
     title: "Custom Take-Home Trays",
-    description:
-      "Prefer to whiten on your own schedule? We create custom-fitted trays and provide professional whitening gel so you can brighten your smile from the comfort of home.",
+    description: "Prefer to whiten on your own schedule? Custom-fitted trays and professional whitening gel so you can brighten at home.",
     features: ["Custom-fitted trays", "Professional-grade gel", "Whiten at your pace"],
   },
 ];
@@ -27,27 +25,27 @@ export default function TeethWhiteningPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-gradient-to-br from-dark via-dark to-primary/30 pt-32 pb-20 sm:pt-40 sm:pb-28">
-        <div className="mx-auto max-w-4xl px-4 text-center">
+      <section className="bg-dark pt-16 pb-20 sm:pt-20 sm:pb-28">
+        <div className="mx-auto max-w-3xl px-4 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
           >
-            <p className="text-teal text-sm font-semibold tracking-wider uppercase mb-4">
+            <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-3">
               Cosmetic Dentistry
             </p>
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="font-heading text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight">
               Professional Teeth Whitening
             </h1>
-            <p className="text-white/70 text-lg max-w-2xl mx-auto mb-10">
+            <p className="text-white/50 text-base sm:text-lg max-w-xl mx-auto mb-8">
               Brighten your smile with safe, effective whitening treatments customized to your needs.
             </p>
             <a
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block rounded-full bg-teal px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-teal-dark hover:shadow-xl"
+              className="inline-block rounded-xl bg-primary px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-primary-dark"
             >
               Book Whitening Consult
             </a>
@@ -56,15 +54,15 @@ export default function TeethWhiteningPage() {
       </section>
 
       {/* Options */}
-      <section className="py-20 sm:py-28 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="py-20 sm:py-24 bg-white">
+        <div className="mx-auto max-w-4xl px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-14"
+            className="text-center mb-12"
           >
-            <p className="text-teal text-sm font-semibold tracking-wider uppercase mb-3">
+            <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-3">
               Your Options
             </p>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-dark">
@@ -72,27 +70,25 @@ export default function TeethWhiteningPage() {
             </h2>
           </motion.div>
 
-          <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
+          <div className="grid gap-3 md:grid-cols-2">
             {options.map((opt, i) => (
               <motion.div
                 key={opt.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                whileHover={{ y: -4 }}
-                className="rounded-2xl bg-light-bg p-8 sm:p-10 transition-shadow hover:shadow-xl"
+                transition={{ delay: i * 0.08 }}
+                className="rounded-xl bg-light border border-gray-light p-7"
               >
-                <h3 className="font-heading text-2xl font-semibold text-dark mb-3">
+                <h3 className="font-heading text-xl font-semibold text-dark mb-2">
                   {opt.title}
                 </h3>
-                <p className="text-gray text-sm leading-relaxed mb-6">
-                  {opt.description}
-                </p>
+                <p className="text-gray text-sm leading-relaxed mb-5">{opt.description}</p>
                 <ul className="space-y-2">
                   {opt.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-sm text-dark">
-                      <span className="text-teal">✓</span> {f}
+                    <li key={f} className="flex items-center gap-2.5 text-sm text-dark">
+                      <span className="h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                      {f}
                     </li>
                   ))}
                 </ul>
@@ -103,30 +99,29 @@ export default function TeethWhiteningPage() {
       </section>
 
       {/* Results */}
-      <section className="py-20 bg-light-bg">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 md:grid-cols-2 items-center">
+      <section className="py-20 bg-light">
+        <div className="mx-auto max-w-4xl px-4">
+          <div className="grid gap-10 md:grid-cols-2 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: -15 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="text-center md:text-left"
             >
-              <p className="text-teal text-sm font-semibold tracking-wider uppercase mb-3">
+              <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-3">
                 Expected Results
               </p>
-              <p className="font-heading text-7xl sm:text-8xl font-bold text-primary mb-2">
+              <p className="font-heading text-6xl sm:text-7xl font-bold text-dark mb-1">
                 5–7
               </p>
-              <p className="font-heading text-2xl font-semibold text-dark mb-4">
+              <p className="font-heading text-xl font-semibold text-dark mb-3">
                 Shade Improvement
               </p>
-              <p className="text-gray leading-relaxed">
+              <p className="text-gray text-sm leading-relaxed">
                 Our professional whitening treatments can lighten your teeth by 5 to 7 shades, giving you a noticeably brighter and more confident smile.
               </p>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
+              initial={{ opacity: 0, x: 15 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="flex justify-center"
@@ -134,9 +129,9 @@ export default function TeethWhiteningPage() {
               <Image
                 src="/images/tooth-icon.svg"
                 alt="Tooth illustration"
-                width={300}
-                height={300}
-                className="w-48 sm:w-64 h-auto"
+                width={200}
+                height={240}
+                className="w-40 sm:w-48 h-auto"
               />
             </motion.div>
           </div>
