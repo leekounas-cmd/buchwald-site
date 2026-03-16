@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://buchwaldfamilydentist.com/sitemap.xml

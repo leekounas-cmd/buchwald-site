@@ -2,8 +2,7 @@
 
 import { motion } from "motion/react";
 
-const BOOKING_URL =
-  "https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE";
+const BOOKING_URL = "/book";
 
 export function CTABanner() {
   return (
@@ -23,8 +22,6 @@ export function CTABanner() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
               href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
               className="rounded-lg bg-white px-8 py-4 text-sm font-bold text-primary transition-all hover:bg-gray-50 hover:shadow-lg"
             >
               Request Appointment

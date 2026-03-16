@@ -1,7 +1,6 @@
 "use client";
 
-const BOOKING_URL =
-  "https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE";
+const BOOKING_URL = "/book";
 
 export function StickyBottomBar() {
   return (
@@ -14,8 +13,6 @@ export function StickyBottomBar() {
       </a>
       <a
         href={BOOKING_URL}
-        target="_blank"
-        rel="noopener noreferrer"
         className="flex-1 rounded-lg bg-primary py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-primary-dark"
       >
         Book Appointment

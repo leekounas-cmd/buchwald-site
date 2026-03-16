@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Teeth Whitening | Buchwald Family Dentistry | Richardson, TX",
   description:
-    "Professional teeth whitening in Richardson, TX. In-office and custom take-home options for a brighter smile at Buchwald Family Dentistry.",
+    "Professional teeth whitening at Buchwald Family Dentistry in Richardson, TX. In-office and custom take-home options. Serving Richardson, Plano, Allen & Garland.",
   openGraph: {
     title: "Teeth Whitening | Buchwald Family Dentistry",
     description:

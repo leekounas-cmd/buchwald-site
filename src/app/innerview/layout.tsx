@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "InnerView Imaging | Buchwald Family Dentistry | Richardson, TX",
   description:
-    "See your smile in full detail with InnerView intraoral imaging at Buchwald Family Dentistry in Richardson, TX.",
+    "FDA-cleared AI diagnostic technology that detects cracks, failing restorations, and implant issues invisible to X-rays. Serving Richardson, Plano, and Allen.",
   openGraph: {
     title: "InnerView Imaging | Buchwald Family Dentistry",
     description:

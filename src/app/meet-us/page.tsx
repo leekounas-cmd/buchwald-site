@@ -58,7 +58,7 @@ function TeamCard({ member, index }: { member: (typeof teamMembers)[0]; index: n
       className="bg-white rounded-xl overflow-hidden"
     >
       <div className="aspect-[4/5] relative overflow-hidden bg-gray-100">
-        <Image src={member.image} alt={member.name} fill className="object-cover" />
+        <Image src={member.image} alt={`${member.name}, ${member.role} at Buchwald Family Dentistry`} fill className="object-cover" />
       </div>
       <div className="p-5">
         <h3 className="text-lg font-bold text-gray-900">{member.name}</h3>
@@ -83,22 +83,22 @@ function TeamCard({ member, index }: { member: (typeof teamMembers)[0]; index: n
 export default function MeetUsPage() {
   return (
     <>
-      <section className="py-16 sm:py-24 bg-white">
+      <section className="py-10 sm:py-20 bg-white">
         <div className="mx-auto max-w-6xl px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-              <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Our Team</p>
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-[1.1] mb-5">
-                Real People.<br />Real Care.
-              </h1>
-              <p className="text-gray-500 text-lg leading-relaxed">
-                We&apos;re not just a dental office — we&apos;re a team that genuinely cares about your comfort, your health, and your smile. Get to know the people behind it.
-              </p>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.1 }}>
-              <Image src="/images/team-group.jpg" alt="Buchwald team" width={600} height={400} className="rounded-2xl w-full object-cover aspect-[4/3]" priority />
-            </motion.div>
-          </div>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center">
+            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Our Team</p>
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-[1.1] mb-8">
+              Real People.<br />Real Care.
+            </h1>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.1 }} className="mb-10">
+            <Image src="/images/team-group.jpg" alt="Buchwald Family Dentistry team in Richardson, TX" width={1200} height={600} className="rounded-2xl w-full object-cover aspect-video" priority />
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="text-center max-w-3xl mx-auto">
+            <p className="text-gray-500 text-lg leading-relaxed">
+              We&apos;re not just a dental office — we&apos;re a team that genuinely cares about your comfort, your health, and your smile. Get to know the people behind it.
+            </p>
+          </motion.div>
         </div>
       </section>
 

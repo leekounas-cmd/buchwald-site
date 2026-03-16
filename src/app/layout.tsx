@@ -13,15 +13,17 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Buchwald Family Dentistry & Orthodontics | Richardson, TX",
+  metadataBase: new URL("https://buchwaldfamilydentist.com"),
+  title: "Buchwald Family Dentistry & Orthodontics | Dentist in Richardson, TX",
   description:
-    "Modern family and cosmetic dentistry in Richardson, TX. Dr. Max Buchwald Jr. and team offer cleanings, Invisalign, whitening, laser therapy, and more.",
+    "Top-rated family and cosmetic dentist in Richardson, TX serving Plano, Allen, Garland, and Coppell. Dr. Max Buchwald Jr. and team offer cleanings, Invisalign, implants, whitening, laser therapy, and more. 4.9 stars on Google.",
   openGraph: {
-    title: "Buchwald Family Dentistry & Orthodontics",
+    title: "Buchwald Family Dentistry & Orthodontics | Richardson, TX",
     description:
-      "Your local family and cosmetic dentist in Richardson, TX. Modern care, comfortable visits.",
+      "Your top-rated family and cosmetic dentist in Richardson, TX. Modern care, comfortable visits. Serving Richardson, Plano, Allen, and Garland.",
     type: "website",
     locale: "en_US",
+    images: [{ url: "/images/office-1.jpg", width: 1200, height: 630, alt: "Buchwald Family Dentistry office in Richardson, TX" }],
   },
 };
 
