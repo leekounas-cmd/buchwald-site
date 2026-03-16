@@ -56,7 +56,7 @@ export default function NewPatientPage() {
       <section className="py-10 sm:py-20 bg-white">
         <div className="mx-auto max-w-6xl px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center">
-            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">AI-Powered Diagnostics</p>
+            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Welcome to Buchwald Family Dentistry</p>
             <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-[1.1] mb-8">Your First Visit</h1>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="text-center max-w-3xl mx-auto">
