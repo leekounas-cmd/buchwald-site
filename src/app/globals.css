@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-primary: #1a5ea8;
-  --color-primary-dark: #144a85;
-  --color-primary-light: #e8f0fb;
+  --color-primary: #0BBAD5;
+  --color-primary-dark: #0999B0;
+  --color-primary-light: #e6f7fa;
   --color-teal: #00bfa5;
   --color-bg: #f9fafb;
   --color-dark: #111827;
@@ -32,6 +32,6 @@ body {
 }
 
 ::selection {
-  background: #1a5ea8;
+  background: #0BBAD5;
   color: white;
 }
