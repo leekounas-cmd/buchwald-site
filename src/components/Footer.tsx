@@ -4,10 +4,6 @@ import Image from "next/image";
 const quickLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "All Services" },
-  { href: "/invisalign", label: "Invisalign" },
-  { href: "/teeth-whitening", label: "Teeth Whitening" },
-  { href: "/innerview", label: "InnerView" },
-  { href: "/laser-therapy", label: "Laser Therapy" },
   { href: "/meet-us", label: "Meet Us" },
 ];
 
@@ -15,33 +11,36 @@ const serviceLinks = [
   { href: "/services/cleaning", label: "Cleaning & Exam" },
   { href: "/services/general", label: "General Dentistry" },
   { href: "/services/cosmetic", label: "Cosmetic Dentistry" },
-  { href: "/services/restorative", label: "Restorative Dentistry" },
+  { href: "/services/restorative", label: "Restorative" },
+  { href: "/invisalign", label: "Invisalign" },
+  { href: "/teeth-whitening", label: "Teeth Whitening" },
+  { href: "/innerview", label: "InnerView" },
+  { href: "/laser-therapy", label: "Laser Therapy" },
 ];
 
 export function Footer() {
   return (
-    <footer className="bg-dark-deep text-white pb-20 lg:pb-0">
+    <footer className="bg-gray-900 text-white pb-24 lg:pb-0">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Logo + Tagline */}
           <div>
             <Image
               src="/images/logo-white.png"
               alt="Buchwald Family Dentistry"
               width={160}
               height={40}
-              className="h-10 w-auto mb-4"
+              className="h-9 w-auto mb-5"
             />
-            <p className="text-white/50 text-sm leading-relaxed mb-6">
+            <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Modern care. Comfortable visits.<br />
-              Your family dentist in Richardson, TX.
+              Richardson, TX.
             </p>
-            <div className="flex gap-3">
+            <div className="flex gap-2">
               <a
                 href="https://www.instagram.com/buchwaldfamilydentist"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-9 w-9 rounded-lg bg-white/5 flex items-center justify-center text-white/40 hover:bg-white/10 hover:text-white transition-all"
+                className="h-9 w-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all"
                 aria-label="Instagram"
               >
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
@@ -52,7 +51,7 @@ export function Footer() {
                 href="https://facebook.com/MaxBuchwaldFamilyDentist"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-9 w-9 rounded-lg bg-white/5 flex items-center justify-center text-white/40 hover:bg-white/10 hover:text-white transition-all"
+                className="h-9 w-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all"
                 aria-label="Facebook"
               >
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
@@ -62,18 +61,14 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-white/30 mb-4">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-4">
               Pages
             </h3>
             <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-white/50 text-sm hover:text-white transition-colors"
-                  >
+                  <Link href={link.href} className="text-gray-400 text-sm hover:text-white transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -81,18 +76,14 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-white/30 mb-4">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-4">
               Services
             </h3>
             <ul className="space-y-2.5">
               {serviceLinks.map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-white/50 text-sm hover:text-white transition-colors"
-                  >
+                  <Link href={link.href} className="text-gray-400 text-sm hover:text-white transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -100,19 +91,16 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-white/30 mb-4">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-4">
               Contact
             </h3>
-            <div className="space-y-3 text-sm text-white/50">
+            <div className="space-y-3 text-sm text-gray-400">
               <p>300 N Coit Rd #245<br />Richardson, TX 75080</p>
-              <p>
-                <a href="tel:972-644-3280" className="text-white font-medium hover:text-primary transition-colors">
-                  (972) 644-3280
-                </a>
-              </p>
-              <p>Mon &ndash; Thu: 7am &ndash; 3pm<br />Fri &ndash; Sun: Closed</p>
+              <a href="tel:972-644-3280" className="block text-white font-semibold hover:text-primary transition-colors">
+                (972) 644-3280
+              </a>
+              <p>Mon – Thu: 7am – 3pm<br />Fri – Sun: Closed</p>
             </div>
           </div>
         </div>
@@ -120,7 +108,7 @@ export function Footer() {
 
       <div className="border-t border-white/5">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-5">
-          <p className="text-center text-xs text-white/25">
+          <p className="text-center text-xs text-gray-500">
             &copy; {new Date().getFullYear()} Buchwald Family Dentistry &amp; Orthodontics. All rights reserved.
           </p>
         </div>

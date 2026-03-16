@@ -1,19 +1,13 @@
 import type { Metadata } from "next";
-import { Playfair_Display, DM_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { StickyBottomBar } from "@/components/StickyBottomBar";
 import { Footer } from "@/components/Footer";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta",
   subsets: ["latin"],
   display: "swap",
 });
@@ -38,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} ${dmSans.variable} antialiased`}>
+      <body className={`${plusJakarta.variable} antialiased`}>
         <AnnouncementBar />
         <Navbar />
         <main>{children}</main>

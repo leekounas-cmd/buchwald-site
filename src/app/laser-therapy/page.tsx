@@ -8,96 +8,63 @@ const BOOKING_URL =
   "https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE";
 
 const benefits = [
-  {
-    title: "Minimally Invasive",
-    description: "No drills, no buzz. Laser therapy targets only the affected tissue, preserving more of your healthy structure.",
-  },
-  {
-    title: "Less Discomfort",
-    description: "Most patients experience significantly less pain. Many procedures require little to no anesthesia.",
-  },
-  {
-    title: "Enhanced Precision",
-    description: "The laser targets damaged tissue without harming healthy gums — pinpoint accuracy for cleaner treatment.",
-  },
-  {
-    title: "Faster Recovery",
-    description: "Less swelling and bleeding means you heal quicker and get back to your day sooner.",
-  },
-  {
-    title: "Proven Technology",
-    description: "Delivered by our experienced hygiene team using clinically proven laser technology.",
-  },
+  "Minimally invasive — no drills, no buzz",
+  "Less discomfort — many procedures need little to no anesthesia",
+  "Enhanced precision — targets damaged tissue without harming healthy gums",
+  "Faster recovery — less swelling and bleeding",
+  "Delivered by our experienced hygiene team using proven technology",
 ];
 
 export default function LaserTherapyPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-dark pt-16 pb-20 sm:pt-20 sm:pb-28">
-        <div className="mx-auto max-w-3xl px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-3">
-              Advanced Treatment
-            </p>
-            <h1 className="font-heading text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight">
-              Advanced Laser Therapy
-            </h1>
-            <p className="text-white/50 text-base sm:text-lg max-w-xl mx-auto mb-8">
-              Faster recovery, less discomfort, and stronger oral health — all without traditional drills and needles.
-            </p>
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block rounded-xl bg-primary px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-primary-dark"
-            >
-              Book Free Consult
-            </a>
-          </motion.div>
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="max-w-2xl">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+              <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Advanced Treatment</p>
+              <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-[1.1] mb-5">
+                Advanced Laser Therapy
+              </h1>
+              <p className="text-gray-500 text-lg leading-relaxed mb-8">
+                Faster recovery, less discomfort, and stronger oral health — all without traditional drills and needles.
+              </p>
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-primary px-7 py-3.5 text-sm font-bold text-white hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/25 transition-all">
+                Book Free Consult
+              </a>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Benefits */}
-      <section className="py-20 sm:py-24 bg-white">
-        <div className="mx-auto max-w-4xl px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-dark">
-              Why Patients Prefer Laser Treatment
-            </h2>
+      <section className="py-20 sm:py-24 bg-gray-50">
+        <div className="mx-auto max-w-3xl px-4">
+          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Why Patients Prefer Laser</h2>
           </motion.div>
-
           <div className="space-y-3">
             {benefits.map((b, i) => (
-              <motion.div
-                key={b.title}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className="rounded-xl bg-light border border-gray-light p-6 flex gap-4 items-start"
-              >
-                <div className="h-8 w-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-dark mb-1">{b.title}</h3>
-                  <p className="text-gray text-sm leading-relaxed">{b.description}</p>
-                </div>
+              <motion.div key={b} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.04 }} className="flex items-start gap-3 bg-white rounded-xl p-5">
+                <span className="h-2 w-2 rounded-full bg-primary flex-shrink-0 mt-1.5" />
+                <p className="text-gray-700 text-[15px] font-medium">{b}</p>
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Mid CTA */}
+      <section className="py-16 bg-white">
+        <div className="mx-auto max-w-3xl px-4 text-center">
+          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-3">
+              Curious if laser therapy is right for you?
+            </h2>
+            <p className="text-gray-500 mb-6">Book a free consult and we&apos;ll walk you through it.</p>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-block rounded-lg bg-primary px-7 py-3.5 text-sm font-bold text-white hover:bg-primary-dark transition-all">
+              Request Appointment
+            </a>
+          </motion.div>
         </div>
       </section>
 

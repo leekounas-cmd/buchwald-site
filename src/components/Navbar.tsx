@@ -24,7 +24,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -35,17 +35,17 @@ export function Navbar() {
 
   return (
     <nav
-      className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled || menuOpen
-          ? "bg-dark/95 backdrop-blur-md shadow-lg"
-          : "bg-dark"
+      className={`sticky top-0 z-50 transition-all duration-200 ${
+        scrolled
+          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-200"
+          : "bg-white border-b border-gray-100"
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex-shrink-0">
             <Image
-              src="/images/logo-white.png"
+              src="/images/logo-color.png"
               alt="Buchwald Family Dentistry"
               width={160}
               height={40}
@@ -55,15 +55,15 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-0.5">
+          <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={`px-3 py-2 rounded-lg text-[13px] font-medium transition-colors ${
                   pathname === link.href
-                    ? "text-white bg-white/10"
-                    : "text-white/70 hover:text-white hover:bg-white/5"
+                    ? "text-primary bg-primary-light"
+                    : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
                 }`}
               >
                 {link.label}
@@ -73,7 +73,7 @@ export function Navbar() {
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-3 rounded-lg bg-primary px-5 py-2.5 text-[13px] font-semibold text-white transition-all hover:bg-primary-dark"
+              className="ml-3 rounded-lg bg-primary px-5 py-2.5 text-[13px] font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-md hover:shadow-primary/20"
             >
               Book Now
             </a>
@@ -82,7 +82,7 @@ export function Navbar() {
           {/* Mobile Hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="lg:hidden text-white p-2"
+            className="lg:hidden text-gray-700 p-2"
             aria-label="Toggle menu"
           >
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -98,8 +98,8 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden overflow-hidden transition-all duration-300 ${
-          menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+        className={`lg:hidden overflow-hidden transition-all duration-200 bg-white ${
+          menuOpen ? "max-h-[500px] border-t border-gray-100" : "max-h-0"
         }`}
       >
         <div className="px-4 pb-6 pt-2 space-y-0.5">
@@ -109,8 +109,8 @@ export function Navbar() {
               href={link.href}
               className={`block rounded-lg px-4 py-3 text-sm font-medium transition-colors ${
                 pathname === link.href
-                  ? "bg-white/10 text-white"
-                  : "text-white/70 hover:bg-white/5 hover:text-white"
+                  ? "bg-primary-light text-primary"
+                  : "text-gray-500 hover:bg-gray-50 hover:text-gray-900"
               }`}
             >
               {link.label}
