@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
@@ -12,15 +12,27 @@ const plusJakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
+// TODO: Switch metadataBase back to https://buchwaldfamilydentist.com after domain transfer
 export const metadata: Metadata = {
-  metadataBase: new URL("https://buchwaldfamilydentist.com"),
-  title: "Buchwald Family Dentistry & Orthodontics | Dentist in Richardson, TX",
+  metadataBase: new URL("https://buchwald-site.vercel.app"),
+  title: "Buchwald Family Dentistry | Dentist in Richardson, TX",
   description:
-    "Top-rated family and cosmetic dentist in Richardson, TX serving Plano, Allen, Garland, and Coppell. Dr. Max Buchwald Jr. and team offer cleanings, Invisalign, implants, whitening, laser therapy, and more. 4.9 stars on Google.",
+    "Top-rated family dentist in Richardson, TX. Cleanings, Invisalign, implants, whitening, and more. 4.9 stars, 433 reviews.",
+  alternates: {
+    languages: {
+      "en-US": "/",
+    },
+  },
   openGraph: {
-    title: "Buchwald Family Dentistry & Orthodontics | Richardson, TX",
+    title: "Buchwald Family Dentistry | Richardson, TX",
     description:
-      "Your top-rated family and cosmetic dentist in Richardson, TX. Modern care, comfortable visits. Serving Richardson, Plano, Allen, and Garland.",
+      "Top-rated family dentist in Richardson, TX. Modern care, comfortable visits. Serving Plano, Allen, and Garland.",
     type: "website",
     locale: "en_US",
     images: [{ url: "/images/office-1.jpg", width: 1200, height: 630, alt: "Buchwald Family Dentistry office in Richardson, TX" }],

@@ -598,6 +598,7 @@ export default function HomePage() {
             },
             sameAs: [
               "https://www.facebook.com/MaxBuchwaldFamilyDentist/",
+              // TODO: Add YouTube, X (Twitter), and LinkedIn URLs when available
             ],
             hasOfferCatalog: {
               "@type": "OfferCatalog",
