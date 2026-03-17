@@ -199,7 +199,7 @@ export default function HomePage() {
       </section>
 
       {/* About */}
-      <section className="py-20 sm:py-28 bg-white">
+      <section className="py-14 sm:py-20 bg-white">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -246,8 +246,69 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Membership + Insurance */}
+      <section className="py-14 sm:py-18 bg-white">
+        <div className="mx-auto max-w-5xl px-4">
+          <div className="grid gap-4 md:grid-cols-2">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-gray-50 rounded-2xl p-8 sm:p-10"
+            >
+              <p className="text-primary text-sm font-bold uppercase tracking-wider mb-2">
+                No Insurance? No Problem.
+              </p>
+              <h3 className="text-2xl font-extrabold text-gray-900 mb-3">
+                Essential Care Plan
+              </h3>
+              <div className="space-y-4 mb-6">
+                <div className="bg-white rounded-xl p-4">
+                  <div className="flex items-baseline justify-between mb-1">
+                    <p className="font-bold text-gray-900 text-sm">$400/year</p>
+                    <p className="text-primary font-extrabold text-lg">$34<span className="text-gray-400 text-xs font-medium">/mo</span></p>
+                  </div>
+                  <p className="text-gray-400 text-xs">2 cleanings, 2 exams, X-rays, and discounts on all treatments</p>
+                  <p className="text-primary text-xs font-semibold mt-2">0% APR financing through Cherry</p>
+                </div>
+              </div>
+              <a
+                href={BOOKING_URL}
+                className="inline-block rounded-lg bg-primary px-6 py-3 text-sm font-bold text-white hover:bg-primary-dark transition-colors"
+              >
+                Request Appointment
+              </a>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.06 }}
+              className="bg-gray-50 rounded-2xl p-8 sm:p-10"
+            >
+              <p className="text-primary text-sm font-bold uppercase tracking-wider mb-2">
+                Insurance
+              </p>
+              <h3 className="text-2xl font-extrabold text-gray-900 mb-3">
+                We Work With Your Plan
+              </h3>
+              <p className="text-gray-500 text-sm leading-relaxed mb-6">
+                Our insurance coordinator Denielle handles the details so you don&apos;t have to. We&apos;ll break down your benefits, file claims, and make sure you get the most out of your coverage.
+              </p>
+              <a
+                href="tel:972-644-3280"
+                className="inline-block rounded-lg bg-gray-900 px-6 py-3 text-sm font-bold text-white hover:bg-gray-800 transition-colors"
+              >
+                Call to Verify
+              </a>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Services */}
-      <section className="py-16 sm:py-20 bg-gray-50">
+      <section className="py-14 sm:py-18 bg-gray-50">
         <div className="mx-auto max-w-4xl px-4">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -297,76 +358,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Membership + Insurance */}
-      <section className="py-16 sm:py-20 bg-white">
-        <div className="mx-auto max-w-5xl px-4">
-          <div className="grid gap-4 md:grid-cols-2">
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-gray-50 rounded-2xl p-8 sm:p-10"
-            >
-              <p className="text-primary text-sm font-bold uppercase tracking-wider mb-2">
-                No Insurance? No Problem.
-              </p>
-              <h3 className="text-2xl font-extrabold text-gray-900 mb-3">
-                In-Office Membership Plans
-              </h3>
-              <div className="space-y-4 mb-6">
-                <div className="bg-white rounded-xl p-4">
-                  <div className="flex items-baseline justify-between mb-1">
-                    <p className="font-bold text-gray-900 text-sm">Essential Care Plan</p>
-                    <p className="text-primary font-extrabold text-lg">$400<span className="text-gray-400 text-xs font-medium">/yr</span></p>
-                  </div>
-                  <p className="text-gray-400 text-xs">2 cleanings, 2 exams, X-rays, and discounts on all treatments</p>
-                </div>
-                <div className="bg-white rounded-xl p-4">
-                  <div className="flex items-baseline justify-between mb-1">
-                    <p className="font-bold text-gray-900 text-sm">Perio Maintenance Plan</p>
-                    <p className="text-primary font-extrabold text-lg">$500<span className="text-gray-400 text-xs font-medium">/yr</span></p>
-                  </div>
-                  <p className="text-gray-400 text-xs">For patients with gum disease — includes perio maintenance visits and discounts</p>
-                </div>
-              </div>
-              <p className="text-gray-400 text-xs mb-4">Flexible payments available through Cherry Financing</p>
-              <a
-                href={BOOKING_URL}
-                className="inline-block rounded-lg bg-primary px-6 py-3 text-sm font-bold text-white hover:bg-primary-dark transition-colors"
-              >
-                Request Appointment
-              </a>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.06 }}
-              className="bg-gray-50 rounded-2xl p-8 sm:p-10"
-            >
-              <p className="text-primary text-sm font-bold uppercase tracking-wider mb-2">
-                Insurance
-              </p>
-              <h3 className="text-2xl font-extrabold text-gray-900 mb-3">
-                We Work With Your Plan
-              </h3>
-              <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                Our insurance coordinator Denielle handles the details so you don&apos;t have to. We&apos;ll break down your benefits, file claims, and make sure you get the most out of your coverage.
-              </p>
-              <a
-                href="tel:972-644-3280"
-                className="inline-block rounded-lg bg-gray-900 px-6 py-3 text-sm font-bold text-white hover:bg-gray-800 transition-colors"
-              >
-                Call to Verify
-              </a>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* Team */}
-      <section className="py-20 sm:py-28 bg-white">
+      <section className="py-14 sm:py-20 bg-white">
         <div className="mx-auto max-w-5xl px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -410,7 +403,7 @@ export default function HomePage() {
       </section>
 
       {/* Invisalign Promo */}
-      <section className="py-16 sm:py-20 bg-gray-50">
+      <section className="py-14 sm:py-18 bg-gray-50">
         <div className="mx-auto max-w-5xl px-4">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -434,32 +427,6 @@ export default function HomePage() {
               className="flex-shrink-0 rounded-lg bg-white px-7 py-3.5 text-sm font-bold text-primary transition-all hover:bg-gray-50 hover:shadow-lg"
             >
               Request Appointment
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Invisalign Promo Banner */}
-      <section className="py-16 sm:py-20 bg-gray-50">
-        <div className="mx-auto max-w-3xl px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Limited Time Offer</p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-2">
-              Invisalign for as Low as $115/mo
-            </h2>
-            <p className="text-gray-500 text-base mb-2 max-w-lg mx-auto">
-              Straighten your smile with clear aligners — no metal, no wires. Flexible financing with 0% APR options available.
-            </p>
-            <p className="text-gray-400 text-sm mb-8">Free consultation &middot; 0% APR available &middot; Most insurance accepted</p>
-            <Link
-              href="/invisalign"
-              className="inline-block rounded-lg bg-primary px-7 py-3.5 text-sm font-bold text-white transition-all hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/25"
-            >
-              Get Started
             </Link>
           </motion.div>
         </div>
