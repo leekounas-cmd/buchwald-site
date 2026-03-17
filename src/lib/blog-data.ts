@@ -78,4 +78,18 @@ export const blogPosts: BlogPost[] = [
       { q: "Can I whiten my teeth if I have fillings or crowns?", a: "Whitening works on natural teeth only — fillings, crowns, and veneers won't change color. We'll evaluate your smile and let you know the best approach so everything looks consistent." },
     ],
   },
+  {
+    title: "Why You Need a Night Guard (And Why a Custom One Is Worth It)",
+    slug: "why-you-need-a-night-guard",
+    date: "March 17, 2026",
+    readTime: "5 min read",
+    excerpt:
+      "Grinding your teeth at night can cause serious damage over time. Here's why a custom night guard from your dentist is one of the best investments you can make for your smile.",
+    faqs: [
+      { q: "How do I know if I grind my teeth at night?", a: "Most people don't realize they grind. Common signs include waking up with jaw pain or headaches, noticing flat or chipped teeth, or your partner hearing you grind. Dr. Buchwald can also spot wear patterns during your exam." },
+      { q: "How much does a custom night guard cost?", a: "Custom night guards typically cost between $300 and $500. Many dental insurance plans cover part or all of the cost. Our team will check your benefits before you commit to anything." },
+      { q: "How long does a custom night guard last?", a: "With proper care, a custom night guard from our office lasts 5 to 10 years. Compare that to store-bought guards that wear out in a few months — the investment pays for itself." },
+      { q: "Can I use a store-bought night guard instead?", a: "You can, but they're bulky, don't fit well, and can actually shift your bite over time. A custom guard is made from exact impressions of your teeth for a precise, comfortable fit that actually protects you." },
+    ],
+  },
 ];

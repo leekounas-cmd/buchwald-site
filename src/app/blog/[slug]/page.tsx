@@ -415,6 +415,167 @@ function TeethWhiteningSafe() {
   );
 }
 
+function WhyYouNeedNightGuard() {
+  return (
+    <>
+      <p>
+        Here&apos;s something most people don&apos;t realize: if you grind or
+        clench your teeth at night, you could be putting <strong>over 250
+        pounds of force</strong> on your teeth while you sleep. That&apos;s
+        enough to crack teeth, wear down enamel, and cause chronic jaw pain —
+        all without you even knowing it&apos;s happening.
+      </p>
+      <p>
+        A night guard is one of the simplest and most effective ways to protect
+        your teeth. And getting a custom one from your dentist makes a real
+        difference. Here&apos;s why.
+      </p>
+
+      <h2>What Is Teeth Grinding (Bruxism)?</h2>
+      <p>
+        Teeth grinding — technically called <strong>bruxism</strong> — is when
+        you clench or grind your teeth, usually during sleep. Most people who
+        grind have no idea they do it. Stress, anxiety, sleep disorders, and
+        even an off bite can trigger it.
+      </p>
+      <p>Common signs include:</p>
+      <ul>
+        <li>Waking up with jaw soreness or headaches</li>
+        <li>Teeth that look flat, chipped, or worn down</li>
+        <li>Tooth sensitivity that wasn&apos;t there before</li>
+        <li>Tight or tired jaw muscles</li>
+        <li>Your partner hearing you grind at night</li>
+      </ul>
+      <p>
+        If any of that sounds familiar, there&apos;s a good chance you&apos;re
+        grinding.
+      </p>
+
+      <h2>What Happens If You Don&apos;t Treat It</h2>
+      <p>
+        Left unchecked, grinding causes real damage over time. We&apos;re
+        talking:
+      </p>
+      <ul>
+        <li>
+          <strong>Cracked or fractured teeth</strong> — which can mean crowns,
+          root canals, or even extractions
+        </li>
+        <li>
+          <strong>Worn enamel</strong> — once it&apos;s gone, it doesn&apos;t
+          come back
+        </li>
+        <li>
+          <strong>TMJ problems</strong> — jaw pain, clicking, difficulty
+          opening your mouth
+        </li>
+        <li>
+          <strong>Chronic headaches and neck pain</strong> — grinding puts
+          tension on muscles throughout your head and neck
+        </li>
+        <li>
+          <strong>Damaged dental work</strong> — fillings, crowns, and veneers
+          can crack from the pressure
+        </li>
+      </ul>
+      <p>
+        The cost of treating these problems adds up fast. A night guard is a
+        fraction of the cost of a single crown.
+      </p>
+
+      <h2>How a Night Guard Protects Your Teeth</h2>
+      <p>
+        A night guard creates a barrier between your upper and lower teeth. It
+        absorbs the grinding force so your teeth don&apos;t have to. It also
+        helps relax your jaw muscles, which reduces clenching and the headaches
+        and soreness that come with it.
+      </p>
+      <p>Think of it like a seatbelt for your teeth — you hope you
+        don&apos;t need it, but you&apos;ll be glad it&apos;s there.</p>
+
+      <h2>Why a Custom Night Guard Beats Store-Bought</h2>
+      <p>
+        You&apos;ve probably seen night guards at the drugstore for $20-$30.
+        They technically exist, but here&apos;s why most dentists (including us)
+        don&apos;t recommend them:
+      </p>
+      <ul>
+        <li>
+          <strong>Poor fit</strong> — boil-and-bite guards are bulky and
+          uncomfortable. Most people stop wearing them within a few weeks.
+        </li>
+        <li>
+          <strong>Can shift your bite</strong> — a badly fitting guard can
+          actually move your teeth over time, creating new problems.
+        </li>
+        <li>
+          <strong>Wear out quickly</strong> — store-bought guards break down
+          in a few months. Custom guards last 5-10 years.
+        </li>
+        <li>
+          <strong>Less protection</strong> — thinner material and loose fit
+          means less force absorption where it counts.
+        </li>
+      </ul>
+      <p>
+        A custom night guard is made from exact impressions of <em>your</em>
+        {" "}teeth. It fits perfectly, stays comfortable all night, and
+        actually does the job it&apos;s supposed to do.
+      </p>
+
+      <h2>What Getting a Custom Night Guard Looks Like</h2>
+      <p>It&apos;s a simple two-visit process:</p>
+      <ul>
+        <li>
+          <strong>Visit 1:</strong> We take digital impressions of your teeth
+          (quick, comfortable, no gooey molds). These get sent to a lab where
+          your guard is custom-fabricated.
+        </li>
+        <li>
+          <strong>Visit 2:</strong> You come back to pick it up. We check the
+          fit, make any adjustments, and you&apos;re good to go.
+        </li>
+      </ul>
+      <p>
+        That&apos;s it. Most patients say they notice a difference in how they
+        feel within the first week — less jaw tension, fewer headaches, better
+        sleep.
+      </p>
+
+      <h2>Who Should Get a Night Guard?</h2>
+      <p>If you experience any of the following, a night guard is worth
+        discussing:</p>
+      <ul>
+        <li>You wake up with jaw pain or morning headaches</li>
+        <li>Your teeth show signs of wear or flattening</li>
+        <li>You&apos;ve cracked or chipped a tooth with no obvious cause</li>
+        <li>You feel tension in your jaw throughout the day</li>
+        <li>Your partner says you grind at night</li>
+        <li>You deal with a lot of stress (who doesn&apos;t?)</li>
+      </ul>
+      <p>
+        Dr. Buchwald can spot the signs of grinding during a routine exam —
+        even if you didn&apos;t know you were doing it.
+      </p>
+
+      <h2>Protect Your Smile</h2>
+      <p>
+        A custom night guard is one of the best investments you can make for
+        your teeth. It prevents damage before it happens, saves you money on
+        bigger treatments down the road, and helps you sleep more comfortably.
+      </p>
+      <p>
+        If you think you might be grinding,{" "}
+        <Link href="/book" className="text-primary font-semibold underline">
+          request an appointment
+        </Link>{" "}
+        and we&apos;ll take a look. We&apos;ll tell you honestly whether a
+        night guard makes sense for you.
+      </p>
+    </>
+  );
+}
+
 /* ─── Content map ─── */
 
 const contentMap: Record<string, () => React.ReactNode> = {
@@ -423,6 +584,7 @@ const contentMap: Record<string, () => React.ReactNode> = {
   "dental-implants-cost-texas": DentalImplantsCost,
   "signs-you-need-dentist": SignsYouNeedDentist,
   "is-teeth-whitening-safe": TeethWhiteningSafe,
+  "why-you-need-a-night-guard": WhyYouNeedNightGuard,
 };
 
 /* ─── FAQ Accordion ─── */
