@@ -158,17 +158,14 @@ export default function InvisalignPage() {
       <section className="py-16 sm:py-20 bg-white">
         <div className="mx-auto max-w-3xl px-4 text-center">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <p className="text-orange text-sm font-bold uppercase tracking-wider mb-3">Limited Time Offer</p>
-            <p className="text-6xl sm:text-8xl font-extrabold text-gray-900 mb-2">$1,000 OFF</p>
-            <p className="text-xl font-bold text-gray-900 mb-3">Invisalign Treatment</p>
-            <p className="text-gray-400 text-base max-w-md mx-auto mb-3">
-              Schedule your free consultation and take the first step toward a straighter smile.
-            </p>
-            <p className="text-gray-600 text-sm font-medium mb-8">
-              Flexible financing available — as low as $115/month. 0% APR options through Cherry.
+            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Flexible Financing</p>
+            <p className="text-5xl sm:text-7xl font-extrabold text-gray-900 mb-2">$115<span className="text-2xl sm:text-3xl text-gray-400">/mo</span></p>
+            <p className="text-xl font-bold text-gray-900 mb-3">As low as — with 0% APR available</p>
+            <p className="text-gray-400 text-base max-w-md mx-auto mb-8">
+              Schedule your free consultation. Financing through Cherry — no hard credit check, instant approval.
             </p>
             <a href={BOOKING_URL} className="inline-block rounded-lg bg-primary px-7 py-3.5 text-sm font-bold text-white hover:bg-primary-dark transition-all">
-              Claim Your Offer
+              Book Free Consultation
             </a>
           </motion.div>
         </div>
@@ -191,7 +188,7 @@ export default function InvisalignPage() {
       <CTABanner />
       <FAQSchema faqs={faqs} />
       <BreadcrumbSchema items={[{ name: "Invisalign", href: "/invisalign" }]} />
-      <ServiceSchema name="Invisalign Clear Aligners" description="Invisalign clear aligner treatment with $1,000 off promotion at Buchwald Family Dentistry in Richardson, TX." url="/invisalign" />
+      <ServiceSchema name="Invisalign Clear Aligners" description="Invisalign clear aligner treatment starting at $115/month at Buchwald Family Dentistry in Richardson, TX. 0% APR financing available." url="/invisalign" />
     </>
   );
 }

@@ -10,7 +10,7 @@ const services = [
   { title: "Cosmetic Dentistry", description: "Veneers, bonding, smile makeovers, gum contouring.", href: "/services/cosmetic" },
   { title: "Restorative", description: "Implants, bridges, dentures, emergency repair.", href: "/services/restorative" },
   { title: "Teeth Whitening", description: "In-office and take-home professional whitening.", href: "/teeth-whitening" },
-  { title: "Invisalign", description: "Clear aligners — $1,000 off for a limited time.", href: "/invisalign" },
+  { title: "Invisalign", description: "Clear aligners starting at $115/month with financing.", href: "/invisalign" },
   { title: "InnerView Imaging", description: "High-def imaging so you see what we see.", href: "/innerview" },
   { title: "Laser Therapy", description: "Advanced lasers for gentler, faster treatment.", href: "/laser-therapy" },
 ];

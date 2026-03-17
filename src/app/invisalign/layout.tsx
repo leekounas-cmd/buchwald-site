@@ -3,11 +3,11 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Invisalign | Buchwald Family Dentistry | Richardson, TX",
   description:
-    "Get $1,000 off Invisalign clear aligners at Buchwald Family Dentistry in Richardson, TX. Serving Richardson, Plano, Allen & Garland. Free consultation available.",
+    "Invisalign clear aligners starting at $115/month at Buchwald Family Dentistry in Richardson, TX. 0% APR financing available. Free consultation.",
   openGraph: {
     title: "Invisalign | Buchwald Family Dentistry",
     description:
-      "Clear aligners for a straighter smile. $1,000 off Invisalign at Buchwald Family Dentistry in Richardson, TX.",
+      "Invisalign clear aligners starting at $115/month. 0% APR financing at Buchwald Family Dentistry in Richardson, TX.",
   },
 };
 

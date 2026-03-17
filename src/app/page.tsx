@@ -420,13 +420,13 @@ export default function HomePage() {
           >
             <div className="flex-1">
               <p className="text-white/60 text-xs font-bold uppercase tracking-wider mb-2">
-                Limited Time Offer
+                Invisalign Provider
               </p>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-3">
-                $1,000 OFF Invisalign
+                Invisalign Starting at $115/mo
               </h2>
               <p className="text-white/60 text-sm leading-relaxed">
-                Straighten your teeth with clear aligners. No brackets, no wires. Book your free consultation today.
+                Straighten your teeth with clear aligners. No brackets, no wires. 0% APR financing available.
               </p>
             </div>
             <Link
@@ -439,26 +439,28 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Mid-page CTA */}
-      <section className="py-16 bg-white">
+      {/* Invisalign Promo Banner */}
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="mx-auto max-w-3xl px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-3">
-              New patient? We make it easy.
+            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Limited Time Offer</p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-2">
+              Invisalign for as Low as $115/mo
             </h2>
-            <p className="text-gray-500 text-base mb-6 max-w-md mx-auto">
-              Book online in 30 seconds or give us a call. We&apos;ll handle the rest.
+            <p className="text-gray-500 text-base mb-2 max-w-lg mx-auto">
+              Straighten your smile with clear aligners — no metal, no wires. Flexible financing with 0% APR options available.
             </p>
-            <a
-              href={BOOKING_URL}
+            <p className="text-gray-400 text-sm mb-8">Free consultation &middot; 0% APR available &middot; Most insurance accepted</p>
+            <Link
+              href="/invisalign"
               className="inline-block rounded-lg bg-primary px-7 py-3.5 text-sm font-bold text-white transition-all hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/25"
             >
-              Request Appointment
-            </a>
+              Get Started
+            </Link>
           </motion.div>
         </div>
       </section>

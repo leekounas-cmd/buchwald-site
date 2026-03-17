@@ -6,7 +6,7 @@ export function AnnouncementBar() {
   return (
     <div className="bg-primary text-white text-center py-2.5 px-4 text-[13px] font-medium tracking-wide">
       <Link href="/invisalign" className="hover:underline">
-        Limited Time — <span className="font-bold">$1,000 OFF Invisalign</span>. Book your free consult →
+        Invisalign starting at <span className="font-bold">$115/month</span>. Book your free consult →
       </Link>
     </div>
   );
