@@ -9,6 +9,7 @@ import { RelatedServices } from "@/components/RelatedServices";
 import { FAQSchema } from "@/components/FAQSchema";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { ServiceSchema } from "@/components/ServiceSchema";
+import { StatRow, Highlight, Checklist, NumberedList } from "@/components/ContentBlocks";
 
 const BOOKING_URL = "/book";
 
@@ -21,16 +22,16 @@ const included = [
 ];
 
 const addons = [
-  { title: "Fluoride Treatment", price: "$65", description: "Professional enamel strengthening to help prevent decay." },
-  { title: "JET Whitening", price: "$150", description: "Professional-grade air polish whitening — perfect after a cleaning." },
-  { title: "InnerView Scan", price: "$30", description: "Digital scan to identify concealed issues and assess oral health." },
+  { title: "Fluoride Treatment", price: "$65", description: "Professional enamel strengthening to prevent decay." },
+  { title: "JET Whitening", price: "$150", description: "Air polish whitening — perfect after a cleaning." },
+  { title: "InnerView Scan", price: "$30", description: "Digital scan to identify concealed issues." },
 ];
 
 const whatToExpect = [
-  { step: "01", title: "Check-In & Chat", text: "We start with a quick conversation about your dental history, any concerns, and what you're hoping to get out of your visit." },
-  { step: "02", title: "X-Rays & Imaging", text: "Low-radiation digital X-rays give us a clear picture of what's happening below the surface — catching issues early." },
-  { step: "03", title: "Professional Cleaning", text: "Melisa removes plaque and tartar buildup, polishes your teeth, and flosses — leaving your mouth feeling fresh and clean." },
-  { step: "04", title: "Exam & Care Plan", text: "Dr. Buchwald does a thorough exam, reviews your X-rays, checks for cavities, gum issues, and oral cancer — then walks you through a personalized plan." },
+  { title: "Check-In & Chat", desc: "Quick conversation about your dental history and any concerns." },
+  { title: "X-Rays & Imaging", desc: "Low-radiation digital X-rays to catch issues below the surface." },
+  { title: "Professional Cleaning", desc: "Melisa removes plaque, polishes your teeth, and flosses." },
+  { title: "Exam & Care Plan", desc: "Dr. Buchwald reviews everything and walks you through a personalized plan." },
 ];
 
 const faqs = [
@@ -64,7 +65,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 export default function CleaningPage() {
   return (
     <>
-      <section className="py-10 sm:py-20 bg-white">
+      <section className="py-10 sm:py-16 bg-white">
         <div className="mx-auto max-w-6xl px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center">
             <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Preventive Care</p>
@@ -74,61 +75,54 @@ export default function CleaningPage() {
             <Image src="/images/stock/cleaning.jpg" alt="Melisa performing a professional teeth cleaning at Buchwald Family Dentistry" width={1200} height={600} className="rounded-2xl w-full object-cover aspect-video" priority />
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="text-center max-w-3xl mx-auto">
-            <p className="text-gray-500 text-lg leading-relaxed">The foundation of a healthy smile. Routine cleanings and exams keep your teeth strong and catch problems early — before they become painful or expensive.</p>
+            <p className="text-gray-500 text-lg leading-relaxed">The foundation of a healthy smile. Routine cleanings catch problems early — before they become painful or expensive.</p>
           </motion.div>
         </div>
       </section>
 
-      <section className="py-20 sm:py-24 bg-gray-50">
+      <section className="py-12 sm:py-16 bg-gray-50">
         <div className="mx-auto max-w-3xl px-4">
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">What&apos;s Included</h2>
+          <StatRow stats={[
+            { value: "45-60", label: "Minute visit" },
+            { value: "$129", label: "New patient" },
+            { value: "6mo", label: "Recommended frequency" },
+          ]} />
+
+          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-4">What&apos;s Included</h2>
+            <Checklist items={included} />
           </motion.div>
-          <div className="space-y-3">
-            {included.map((item, i) => (
-              <motion.div key={item} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.04 }} className="flex items-start gap-3 bg-white rounded-xl p-5">
-                <span className="h-2 w-2 rounded-full bg-primary flex-shrink-0 mt-1.5" />
-                <p className="text-gray-700 text-[15px] font-medium">{item}</p>
-              </motion.div>
-            ))}
-          </div>
+
+          <Highlight>Every cleaning includes a full exam by Dr. Buchwald — not just a hygienist visit. You see the dentist every time.</Highlight>
         </div>
       </section>
 
       {/* What to Expect */}
-      <section className="py-20 sm:py-24 bg-white">
-        <div className="mx-auto max-w-5xl px-4">
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">What to Expect</h2>
-            <p className="text-gray-400 text-sm mt-2">Your visit from start to finish.</p>
+      <section className="py-12 sm:py-16 bg-white">
+        <div className="mx-auto max-w-3xl px-4">
+          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2">What to Expect</h2>
+            <p className="text-gray-400 text-sm mb-6">Your visit from start to finish.</p>
+            <NumberedList items={whatToExpect} />
           </motion.div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {whatToExpect.map((s, i) => (
-              <motion.div key={s.step} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="bg-gray-50 rounded-xl p-6">
-                <p className="text-primary text-3xl font-extrabold mb-2">{s.step}</p>
-                <h3 className="font-bold text-gray-900 mb-1">{s.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{s.text}</p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
       {/* Add-Ons */}
-      <section className="py-20 sm:py-24 bg-gray-50">
-        <div className="mx-auto max-w-4xl px-4">
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-2">Popular Add-Ons</h2>
-            <p className="text-gray-400 text-sm">Enhance your cleaning with these premium treatments.</p>
+      <section className="py-12 sm:py-16 bg-gray-50">
+        <div className="mx-auto max-w-3xl px-4">
+          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2">Popular Add-Ons</h2>
+            <p className="text-gray-400 text-sm mb-6">Enhance your cleaning with these premium treatments.</p>
           </motion.div>
-          <div className="grid gap-4 sm:grid-cols-3">
+          <div className="grid gap-3 sm:grid-cols-3">
             {addons.map((a, i) => (
-              <motion.div key={a.title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="bg-white rounded-xl p-6">
-                <div className="flex items-baseline justify-between mb-2">
-                  <h3 className="font-bold text-gray-900">{a.title}</h3>
-                  <span className="text-primary font-extrabold text-lg">{a.price}</span>
+              <motion.div key={a.title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="bg-white rounded-xl p-5">
+                <div className="flex items-baseline justify-between mb-1">
+                  <h3 className="font-bold text-gray-900 text-sm">{a.title}</h3>
+                  <span className="text-primary font-extrabold">{a.price}</span>
                 </div>
-                <p className="text-gray-400 text-sm leading-relaxed">{a.description}</p>
+                <p className="text-gray-400 text-xs leading-relaxed">{a.description}</p>
               </motion.div>
             ))}
           </div>
@@ -136,7 +130,7 @@ export default function CleaningPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 sm:py-24 bg-white">
+      <section className="py-12 sm:py-16 bg-white">
         <div className="mx-auto max-w-2xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Common Questions</h2>

@@ -9,23 +9,9 @@ import { RelatedServices } from "@/components/RelatedServices";
 import { FAQSchema } from "@/components/FAQSchema";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { ServiceSchema } from "@/components/ServiceSchema";
+import { StatRow, Checklist, Versus, Highlight } from "@/components/ContentBlocks";
 
 const BOOKING_URL = "/book";
-
-const services = [
-  { title: "Porcelain Veneers", description: "Custom shells that cover the front of your teeth for a flawless, natural look. Fix chips, gaps, discoloration, and more in just two visits." },
-  { title: "Dental Bonding", description: "Quick, affordable repairs for chips, cracks, and gaps using tooth-colored resin. Done in a single visit — no lab work needed." },
-  { title: "Smile Makeovers", description: "A personalized combination of treatments designed together to completely transform your smile. We plan every detail with you." },
-  { title: "Teeth Whitening", description: "Professional in-office and take-home options that brighten your smile 5–7 shades. Safer and more effective than anything over the counter." },
-  { title: "Gum Contouring", description: "Reshape your gum line for a more balanced, symmetrical smile. Done with laser technology for precision and faster healing." },
-  { title: "Tooth Reshaping", description: "Subtle adjustments to length, shape, or surface for a more uniform look. Quick, painless, and can make a big difference." },
-];
-
-const comparisons = [
-  { vs: "Veneers vs. Bonding", detail: "Veneers are more durable and stain-resistant (10–15+ years), but bonding is faster and more affordable for smaller fixes. We'll help you decide based on your goals and budget." },
-  { vs: "Professional vs. OTC Whitening", detail: "Store-bought whitening uses weaker formulas and generic trays. Professional whitening is customized to your teeth, stronger, and supervised — so you get better results without sensitivity issues." },
-  { vs: "Veneers vs. Crowns", detail: "Veneers cover only the front surface and are primarily cosmetic. Crowns wrap the entire tooth and restore structure. If the tooth is damaged, a crown may be the better choice." },
-];
 
 const faqs = [
   { q: "How long do veneers last?", a: "Porcelain veneers typically last 10–15+ years with proper care. They're stain-resistant and extremely durable." },
@@ -58,7 +44,8 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 export default function CosmeticPage() {
   return (
     <>
-      <section className="py-10 sm:py-20 bg-white">
+      {/* Hero */}
+      <section className="py-10 sm:py-16 bg-white">
         <div className="mx-auto max-w-6xl px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center">
             <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Smile Transformations</p>
@@ -73,50 +60,89 @@ export default function CosmeticPage() {
         </div>
       </section>
 
-      <section className="py-20 sm:py-24 bg-gray-50">
-        <div className="mx-auto max-w-4xl px-4">
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+      {/* Stats */}
+      <section className="py-12 sm:py-16 bg-gray-50">
+        <div className="mx-auto max-w-3xl px-4">
+          <StatRow stats={[
+            { value: "10-15yr", label: "Veneer Lifespan" },
+            { value: "1 Visit", label: "Bonding Turnaround" },
+            { value: "5-7", label: "Shades Brighter" },
+          ]} />
+
+          <Highlight>
+            Not sure where to start? Most patients walk in with a goal and leave with a clear plan. No pressure — just honest guidance from a team that does this every day.
+          </Highlight>
+        </div>
+      </section>
+
+      {/* What We Offer */}
+      <section className="py-12 sm:py-16 bg-white">
+        <div className="mx-auto max-w-3xl px-4">
+          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">What We Offer</h2>
           </motion.div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {services.map((s, i) => (
-              <motion.div key={s.title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.04 }} className="bg-white rounded-xl p-6">
-                <div className="flex items-center gap-2 mb-1.5">
-                  <span className="h-2 w-2 rounded-full bg-primary flex-shrink-0" />
-                  <h3 className="font-bold text-gray-900">{s.title}</h3>
-                </div>
-                <p className="text-gray-400 text-sm leading-relaxed">{s.description}</p>
-              </motion.div>
-            ))}
-          </div>
+          <Checklist items={[
+            "Porcelain Veneers — custom shells for a flawless, natural look. Fix chips, gaps, and discoloration in two visits",
+            "Dental Bonding — quick, same-day repairs for chips, cracks, and gaps using tooth-colored resin",
+            "Smile Makeovers — a personalized combination of treatments planned together to transform your smile",
+            "Teeth Whitening — professional in-office and take-home options, 5-7 shades brighter",
+            "Gum Contouring — reshape your gum line with laser technology for a balanced, symmetrical smile",
+            "Tooth Reshaping — subtle adjustments to length, shape, or surface for a more uniform look",
+          ]} />
         </div>
       </section>
 
       {/* Comparisons */}
-      <section className="py-20 sm:py-24 bg-white">
+      <section className="py-12 sm:py-16 bg-gray-50">
         <div className="mx-auto max-w-3xl px-4">
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">How Do They Compare?</h2>
             <p className="text-gray-400 text-sm mt-2">Picking the right treatment can feel overwhelming. Here&apos;s a quick breakdown.</p>
           </motion.div>
-          <div className="space-y-4">
-            {comparisons.map((c, i) => (
-              <motion.div key={c.vs} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="bg-gray-50 rounded-xl p-6">
-                <h3 className="font-bold text-gray-900 mb-1.5">{c.vs}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{c.detail}</p>
-              </motion.div>
-            ))}
-          </div>
+
+          <Versus
+            leftLabel="Veneers"
+            rightLabel="Bonding"
+            left={[
+              "Last 10-15+ years",
+              "Stain-resistant porcelain",
+              "Best for full smile makeovers",
+              "Custom lab-crafted",
+            ]}
+            right={[
+              "Lasts 5-7 years",
+              "Can stain over time",
+              "Best for small, targeted fixes",
+              "Done in a single visit",
+            ]}
+          />
+
+          <Versus
+            leftLabel="Professional Whitening"
+            rightLabel="OTC Whitening"
+            left={[
+              "Custom-fitted trays",
+              "Stronger, supervised formula",
+              "5-7 shades brighter",
+              "Controlled sensitivity",
+            ]}
+            right={[
+              "Generic one-size trays",
+              "Weaker over-the-counter formula",
+              "1-2 shades brighter",
+              "Can cause uneven results",
+            ]}
+          />
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-20 sm:py-24 bg-gray-50">
+      <section className="py-12 sm:py-16 bg-white">
         <div className="mx-auto max-w-2xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Common Questions</h2>
           </motion.div>
-          <div className="bg-white rounded-xl p-6">
+          <div className="bg-gray-50 rounded-xl p-6">
             {faqs.map((faq) => <FAQItem key={faq.q} q={faq.q} a={faq.a} />)}
           </div>
         </div>

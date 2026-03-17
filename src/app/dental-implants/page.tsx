@@ -6,37 +6,9 @@ import { CTABanner } from "@/components/CTABanner";
 import { FAQSchema } from "@/components/FAQSchema";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { ServiceSchema } from "@/components/ServiceSchema";
+import { StatRow, Checklist, Versus, NumberedList, Highlight } from "@/components/ContentBlocks";
 
-const benefits = [
-  { title: "Look Natural", text: "Implants are custom-made to match your existing teeth in shape, size, and color. No one will know the difference." },
-  { title: "Last a Lifetime", text: "With proper care, dental implants can last 25+ years — many patients keep them for life." },
-  { title: "Preserve Jawbone", text: "Unlike bridges or dentures, implants stimulate your jawbone and prevent the bone loss that happens after tooth loss." },
-  { title: "Eat Anything You Want", text: "Implants function like real teeth. No food restrictions, no slipping, no adhesives — just bite and chew normally." },
-];
-
-const processSteps = [
-  { step: "01", title: "Consultation & Planning", text: "We take 3D scans of your jaw, review your health history, and create a personalized treatment plan tailored to your needs." },
-  { step: "02", title: "Implant Placement", text: "A small titanium post is placed into your jawbone. This acts as the root for your new tooth. Most patients say it's easier than expected." },
-  { step: "03", title: "Healing & Integration", text: "Over 3–6 months, the implant fuses with your jawbone in a process called osseointegration. You'll wear a temporary restoration during this time." },
-  { step: "04", title: "Crown Placement", text: "Once healed, we attach a custom-made crown that looks and feels just like a natural tooth. You're done — enjoy your new smile." },
-];
-
-const comparison = {
-  categories: ["Longevity", "Look & Feel", "Maintenance", "Bone Preservation", "Cost"],
-  options: [
-    { name: "Implants", values: ["25+ years / lifetime", "Looks and feels like a real tooth", "Brush and floss normally", "Preserves jawbone", "Higher upfront, lower long-term"] },
-    { name: "Bridges", values: ["5–15 years", "Good appearance, less natural feel", "Special flossing required", "Does not preserve bone", "Moderate upfront cost"] },
-    { name: "Dentures", values: ["5–10 years", "Can slip or feel bulky", "Daily removal and cleaning", "Does not preserve bone", "Lowest upfront cost"] },
-  ],
-};
-
-const candidateChecklist = [
-  "Healthy gums (or willing to treat gum disease first)",
-  "Adequate jawbone density (or willing to do a bone graft)",
-  "Non-smoker (or willing to quit during healing)",
-  "Committed to good oral hygiene",
-  "Looking for a permanent, long-term solution",
-];
+const BOOKING_URL = "/book";
 
 const faqs = [
   { q: "How much do dental implants cost?", a: "The cost varies depending on how many implants you need and whether additional procedures like bone grafting are required. We'll give you a detailed estimate during your consultation." },
@@ -71,7 +43,7 @@ export default function DentalImplantsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-10 sm:py-20 bg-white">
+      <section className="py-10 sm:py-16 bg-white">
         <div className="mx-auto max-w-6xl px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center">
             <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Permanent Solution</p>
@@ -83,99 +55,126 @@ export default function DentalImplantsPage() {
         </div>
       </section>
 
+      {/* Stats */}
+      <section className="py-12 sm:py-16 bg-gray-50">
+        <div className="mx-auto max-w-3xl px-4">
+          <StatRow stats={[
+            { value: "$3-5K", label: "Per Implant" },
+            { value: "25+", label: "Years Lifespan" },
+            { value: "98%", label: "Success Rate" },
+          ]} />
+
+          <Highlight>
+            Implants are the closest thing to getting your real tooth back. They preserve your jawbone, protect neighboring teeth, and let you eat, talk, and smile without thinking twice.
+          </Highlight>
+        </div>
+      </section>
+
       {/* Why Choose Implants */}
-      <section className="py-20 sm:py-24 bg-gray-50">
-        <div className="mx-auto max-w-5xl px-4">
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+      <section className="py-12 sm:py-16 bg-white">
+        <div className="mx-auto max-w-3xl px-4">
+          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Why Choose Implants?</h2>
           </motion.div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {benefits.map((b, i) => (
-              <motion.div key={b.title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="bg-white rounded-xl p-6">
-                <h3 className="font-bold text-gray-900 mb-1">{b.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{b.text}</p>
-              </motion.div>
-            ))}
-          </div>
+          <Checklist items={[
+            "Look natural — custom-made to match your existing teeth in shape, size, and color",
+            "Last a lifetime — with proper care, implants can last 25+ years",
+            "Preserve jawbone — stimulate bone and prevent the loss that happens after tooth loss",
+            "Eat anything — no food restrictions, no slipping, no adhesives",
+            "No impact on adjacent teeth — unlike bridges, implants stand on their own",
+            "Brush and floss normally — no special maintenance required",
+          ]} />
         </div>
       </section>
 
       {/* The Implant Process */}
-      <section className="py-20 sm:py-24 bg-white">
-        <div className="mx-auto max-w-5xl px-4">
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+      <section className="py-12 sm:py-16 bg-gray-50">
+        <div className="mx-auto max-w-3xl px-4">
+          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">The Implant Process</h2>
             <p className="text-gray-400 text-sm mt-2">From consultation to your new smile.</p>
           </motion.div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {processSteps.map((s, i) => (
-              <motion.div key={s.step} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="bg-gray-50 rounded-xl p-6">
-                <p className="text-primary text-3xl font-extrabold mb-2">{s.step}</p>
-                <h3 className="font-bold text-gray-900 mb-1">{s.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{s.text}</p>
-              </motion.div>
-            ))}
-          </div>
+          <NumberedList items={[
+            { title: "Consultation & Planning", desc: "3D scans of your jaw, health history review, and a personalized treatment plan." },
+            { title: "Implant Placement", desc: "A small titanium post is placed into your jawbone — acts as the root for your new tooth." },
+            { title: "Healing & Integration", desc: "Over 3-6 months, the implant fuses with your jawbone (osseointegration). Temporary restoration provided." },
+            { title: "Crown Placement", desc: "Custom-made crown attached that looks and feels just like a natural tooth. You're done." },
+          ]} />
         </div>
       </section>
 
       {/* Implants vs Other Options */}
-      <section className="py-20 sm:py-24 bg-gray-50">
-        <div className="mx-auto max-w-5xl px-4">
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+      <section className="py-12 sm:py-16 bg-white">
+        <div className="mx-auto max-w-3xl px-4">
+          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Implants vs. Other Options</h2>
             <p className="text-gray-400 text-sm mt-2">See how implants compare to bridges and dentures.</p>
           </motion.div>
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="overflow-x-auto">
-            <table className="w-full bg-white rounded-xl overflow-hidden">
-              <thead>
-                <tr className="border-b border-gray-100">
-                  <th className="text-left p-4 text-sm font-bold text-gray-900" />
-                  {comparison.options.map((opt) => (
-                    <th key={opt.name} className="text-left p-4 text-sm font-bold text-gray-900">{opt.name}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {comparison.categories.map((cat, ci) => (
-                  <tr key={cat} className={ci < comparison.categories.length - 1 ? "border-b border-gray-100" : ""}>
-                    <td className="p-4 text-sm font-semibold text-gray-700">{cat}</td>
-                    {comparison.options.map((opt) => (
-                      <td key={opt.name} className="p-4 text-sm text-gray-500">{opt.values[ci]}</td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </motion.div>
+
+          <Versus
+            leftLabel="Implants"
+            rightLabel="Bridges"
+            left={[
+              "Last 25+ years / lifetime",
+              "Look and feel like a real tooth",
+              "Preserve jawbone",
+              "Brush and floss normally",
+              "Don't affect neighboring teeth",
+            ]}
+            right={[
+              "Last 5-15 years",
+              "Good appearance, less natural feel",
+              "Don't prevent bone loss",
+              "Need special flossing",
+              "Require healthy adjacent teeth",
+            ]}
+          />
+
+          <Versus
+            leftLabel="Implants"
+            rightLabel="Dentures"
+            left={[
+              "Fixed and permanent",
+              "No slipping or movement",
+              "No adhesives needed",
+              "Preserve jawbone density",
+              "Higher upfront, lower long-term cost",
+            ]}
+            right={[
+              "Removable daily",
+              "Can slip or feel bulky",
+              "May need adhesives",
+              "Don't prevent bone loss",
+              "Lower upfront, higher long-term cost",
+            ]}
+          />
         </div>
       </section>
 
       {/* Am I a Candidate */}
-      <section className="py-20 sm:py-24 bg-white">
+      <section className="py-12 sm:py-16 bg-gray-50">
         <div className="mx-auto max-w-3xl px-4">
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Am I a Candidate?</h2>
             <p className="text-gray-400 text-sm mt-2">Most adults are good candidates for implants. Here&apos;s what we look for.</p>
           </motion.div>
-          <div className="space-y-3">
-            {candidateChecklist.map((item, i) => (
-              <motion.div key={item} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.04 }} className="flex items-start gap-3 bg-gray-50 rounded-xl p-5">
-                <span className="h-2 w-2 rounded-full bg-primary flex-shrink-0 mt-1.5" />
-                <p className="text-gray-700 text-[15px] font-medium">{item}</p>
-              </motion.div>
-            ))}
-          </div>
+          <Checklist items={[
+            "Healthy gums (or willing to treat gum disease first)",
+            "Adequate jawbone density (or willing to do a bone graft)",
+            "Non-smoker (or willing to quit during healing)",
+            "Committed to good oral hygiene",
+            "Looking for a permanent, long-term solution",
+          ]} />
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-20 sm:py-24 bg-gray-50">
+      <section className="py-12 sm:py-16 bg-white">
         <div className="mx-auto max-w-2xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Common Questions</h2>
           </motion.div>
-          <div className="bg-white rounded-xl p-6">
+          <div className="bg-gray-50 rounded-xl p-6">
             {faqs.map((faq) => <FAQItem key={faq.q} q={faq.q} a={faq.a} />)}
           </div>
         </div>

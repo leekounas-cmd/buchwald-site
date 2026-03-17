@@ -9,23 +9,7 @@ import { RelatedServices } from "@/components/RelatedServices";
 import { FAQSchema } from "@/components/FAQSchema";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { ServiceSchema } from "@/components/ServiceSchema";
-
-const BOOKING_URL = "/book";
-
-const benefits = [
-  "Minimally invasive — no drills, no buzz",
-  "Less discomfort — many procedures need little to no anesthesia",
-  "Enhanced precision — targets damaged tissue without harming healthy gums",
-  "Faster recovery — less swelling and bleeding",
-  "Delivered by our experienced hygiene team using proven technology",
-];
-
-const treatments = [
-  { title: "Gum Disease Treatment", description: "Laser targets and removes infected tissue while promoting regeneration of healthy gums — without cutting or sutures." },
-  { title: "Cold Sore Treatment", description: "Laser therapy can reduce healing time for cold sores and provide immediate relief from discomfort." },
-  { title: "Gum Reshaping", description: "Precisely reshape your gum line for a more balanced, symmetrical smile with minimal discomfort and fast healing." },
-  { title: "Bacterial Reduction", description: "Laser decontamination during cleanings kills bacteria below the gum line that traditional tools can't reach." },
-];
+import { StatRow, Highlight, Checklist, NumberedList } from "@/components/ContentBlocks";
 
 const faqs = [
   { q: "Is laser therapy painful?", a: "Most patients experience little to no pain. Many laser procedures require minimal or no anesthesia. You might feel some warmth or pressure, but it's far more comfortable than traditional methods." },
@@ -58,7 +42,8 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 export default function LaserTherapyPage() {
   return (
     <>
-      <section className="py-10 sm:py-20 bg-white">
+      {/* Hero */}
+      <section className="py-10 sm:py-16 bg-white">
         <div className="mx-auto max-w-6xl px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center">
             <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Advanced Treatment</p>
@@ -77,64 +62,48 @@ export default function LaserTherapyPage() {
         </div>
       </section>
 
-      <section className="py-20 sm:py-24 bg-gray-50">
-        <div className="mx-auto max-w-3xl px-4">
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Why Patients Prefer Laser</h2>
-          </motion.div>
-          <div className="space-y-3">
-            {benefits.map((b, i) => (
-              <motion.div key={b} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.04 }} className="flex items-start gap-3 bg-white rounded-xl p-5">
-                <span className="h-2 w-2 rounded-full bg-primary flex-shrink-0 mt-1.5" />
-                <p className="text-gray-700 text-[15px] font-medium">{b}</p>
-              </motion.div>
-            ))}
-          </div>
+      {/* Stats + Benefits */}
+      <section className="py-12 sm:py-16 bg-gray-50">
+        <div className="mx-auto max-w-4xl px-4">
+          <StatRow stats={[
+            { value: "0", label: "Drills Needed" },
+            { value: "FDA", label: "Approved" },
+            { value: "Same-Day", label: "Recovery" },
+          ]} />
+
+          <Highlight>Most laser procedures require little to no anesthesia — and patients return to normal activities the same day.</Highlight>
+
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-10 mb-4">Why Patients Prefer Laser</h2>
+          <Checklist items={[
+            "Minimally invasive — no drills, no buzz",
+            "Less discomfort — many procedures need little to no anesthesia",
+            "Enhanced precision — targets damaged tissue without harming healthy gums",
+            "Faster recovery — less swelling and bleeding",
+            "Delivered by our experienced hygiene team using proven technology",
+          ]} />
         </div>
       </section>
 
       {/* What We Treat */}
-      <section className="py-20 sm:py-24 bg-white">
-        <div className="mx-auto max-w-4xl px-4">
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">What We Treat with Laser</h2>
-          </motion.div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {treatments.map((t, i) => (
-              <motion.div key={t.title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.04 }} className="bg-gray-50 rounded-xl p-6">
-                <div className="flex items-center gap-2 mb-1.5">
-                  <span className="h-2 w-2 rounded-full bg-primary flex-shrink-0" />
-                  <h3 className="font-bold text-gray-900">{t.title}</h3>
-                </div>
-                <p className="text-gray-400 text-sm leading-relaxed">{t.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Mid CTA */}
-      <section className="py-16 bg-gray-50">
-        <div className="mx-auto max-w-3xl px-4 text-center">
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-3">
-              Curious if laser therapy is right for you?
-            </h2>
-            <p className="text-gray-500 mb-6">Book a free consult and we&apos;ll walk you through it.</p>
-            <a href={BOOKING_URL} className="inline-block rounded-lg bg-primary px-7 py-3.5 text-sm font-bold text-white hover:bg-primary-dark transition-all">
-              Request Appointment
-            </a>
-          </motion.div>
+      <section className="py-12 sm:py-16 bg-white">
+        <div className="mx-auto max-w-3xl px-4">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-4">What We Treat with Laser</h2>
+          <NumberedList items={[
+            { title: "Gum Disease Treatment", desc: "Laser targets and removes infected tissue while promoting regeneration of healthy gums — without cutting or sutures." },
+            { title: "Cold Sore Treatment", desc: "Reduces healing time for cold sores and provides immediate relief from discomfort." },
+            { title: "Gum Reshaping", desc: "Precisely reshape your gum line for a more balanced, symmetrical smile with minimal discomfort and fast healing." },
+            { title: "Bacterial Reduction", desc: "Laser decontamination during cleanings kills bacteria below the gum line that traditional tools can't reach." },
+          ]} />
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-20 sm:py-24 bg-white">
+      <section className="py-12 sm:py-16 bg-gray-50">
         <div className="mx-auto max-w-2xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Common Questions</h2>
           </motion.div>
-          <div className="bg-gray-50 rounded-xl p-6">
+          <div className="bg-white rounded-xl p-6">
             {faqs.map((faq) => <FAQItem key={faq.q} q={faq.q} a={faq.a} />)}
           </div>
         </div>

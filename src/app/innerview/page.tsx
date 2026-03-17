@@ -7,20 +7,7 @@ import { CTABanner } from "@/components/CTABanner";
 import { FAQSchema } from "@/components/FAQSchema";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { ServiceSchema } from "@/components/ServiceSchema";
-
-const detects = [
-  { title: "Cracks", description: "Detects all types of tooth cracks — including hairline fractures that are invisible on X-rays — before they cause pain or tooth loss." },
-  { title: "Failing Restorations", description: "Identifies loss of cement seal on crowns, veneers, and fillings so we can fix them before they fail completely." },
-  { title: "Loose Implant Components", description: "Catches loose abutment screws and early implant fractures before they show up on imaging." },
-  { title: "Implant Stability", description: "Monitors osseointegration quality to determine exactly when an implant is ready for restoration." },
-];
-
-const howItWorks = [
-  { step: "01", title: "Gentle Taps", text: "The handheld device applies 4 micro-taps to each tooth — each lasting just 2.5 milliseconds. No pain, no pressure." },
-  { step: "02", title: "AI Analysis", text: "Sensors capture the energy response from inside the tooth. Cloud-based AI analyzes the data in near real-time." },
-  { step: "03", title: "Objective Results", text: "The system converts readings into clear internal mobility values — giving us objective data instead of guesswork." },
-  { step: "04", title: "Review Together", text: "We walk through the results with you, explain what we found, and discuss next steps if anything needs attention." },
-];
+import { StatRow, Highlight, Checklist, NumberedList } from "@/components/ContentBlocks";
 
 const faqs = [
   { q: "What is InnerView?", a: "InnerView is an FDA-cleared, AI-powered diagnostic device that detects cracks, failing restorations, and implant issues inside your teeth — things that X-rays and visual exams often miss. It's the first and only device cleared to measure 'internal mobility' in teeth." },
@@ -57,7 +44,7 @@ export default function InnerViewPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-10 sm:py-20 bg-white">
+      <section className="py-10 sm:py-16 bg-white">
         <div className="mx-auto max-w-6xl px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center">
             <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">AI-Powered Diagnostics</p>
@@ -70,80 +57,63 @@ export default function InnerViewPage() {
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="text-center max-w-3xl mx-auto">
             <p className="text-gray-500 text-lg leading-relaxed">
-              InnerView uses AI and micro-percussion technology to detect cracks, failing restorations, and implant issues that traditional exams miss. FDA-cleared, pain-free, and done in under 90 seconds.
+              InnerView uses AI and micro-percussion technology to detect cracks, failing restorations, and implant issues that traditional exams miss. Pain-free and done in under 90 seconds.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* What It Detects */}
-      <section className="py-20 sm:py-24 bg-gray-50">
+      {/* Stats + Content */}
+      <section className="py-12 sm:py-16 bg-gray-50">
         <div className="mx-auto max-w-4xl px-4">
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">What InnerView Detects</h2>
-            <p className="text-gray-500 text-base mt-3 max-w-lg mx-auto">Problems that are invisible to X-rays, CBCT, and visual exams — caught before they become emergencies.</p>
-          </motion.div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {detects.map((item, i) => (
-              <motion.div key={item.title} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.04 }} className="bg-white rounded-xl p-6">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="h-2 w-2 rounded-full bg-primary flex-shrink-0" />
-                  <h3 className="font-bold text-gray-900 text-[15px]">{item.title}</h3>
-                </div>
-                <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="py-20 sm:py-24 bg-white">
-        <div className="mx-auto max-w-3xl px-4">
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">How It Works</h2>
-            <p className="text-gray-500 text-base mt-3">3 seconds per tooth. 90 seconds for your entire mouth. Done during your regular visit.</p>
-          </motion.div>
-          <div className="space-y-4">
-            {howItWorks.map((item, i) => (
-              <motion.div key={item.step} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.04 }} className="flex items-start gap-5 bg-gray-50 rounded-xl p-5">
-                <span className="text-primary/20 text-3xl font-extrabold flex-shrink-0">{item.step}</span>
-                <div>
-                  <h3 className="font-bold text-gray-900 text-[15px] mb-1">{item.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{item.text}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Key Stats */}
-      <section className="py-16 bg-gray-50">
-        <div className="mx-auto max-w-4xl px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-4 gap-3 mb-6">
             {[
               { value: "FDA", label: "Cleared" },
               { value: "3 sec", label: "Per Tooth" },
               { value: "29+", label: "Clinical Studies" },
               { value: "0", label: "Radiation" },
-            ].map((stat, i) => (
-              <motion.div key={stat.label} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }}>
-                <p className="text-2xl sm:text-3xl font-extrabold text-gray-900">{stat.value}</p>
-                <p className="text-gray-400 text-sm mt-0.5">{stat.label}</p>
-              </motion.div>
+            ].map((s) => (
+              <div key={s.label} className="bg-primary/5 rounded-xl p-5 text-center">
+                <p className="text-3xl sm:text-4xl font-extrabold text-primary">{s.value}</p>
+                <p className="text-gray-500 text-xs font-medium mt-1">{s.label}</p>
+              </div>
             ))}
           </div>
+
+          <Highlight>InnerView is the first and only FDA-cleared device that measures internal tooth mobility — catching problems before they become emergencies.</Highlight>
+
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-10 mb-2">What InnerView Detects</h2>
+          <p className="text-gray-400 text-sm mb-4">Problems invisible to X-rays, CBCT, and visual exams.</p>
+          <Checklist items={[
+            "All types of tooth cracks — including hairline fractures invisible on X-rays",
+            "Loss of cement seal on crowns, veneers, and fillings before they fail",
+            "Loose abutment screws and early implant fractures",
+            "Osseointegration quality — knows exactly when an implant is ready for restoration",
+          ]} />
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-12 sm:py-16 bg-white">
+        <div className="mx-auto max-w-3xl px-4">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2">How It Works</h2>
+          <p className="text-gray-400 text-sm mb-4">3 seconds per tooth. 90 seconds for your entire mouth. Done during your regular visit.</p>
+          <NumberedList items={[
+            { title: "Gentle Taps", desc: "The handheld device applies 4 micro-taps to each tooth — each lasting just 2.5 milliseconds. No pain, no pressure." },
+            { title: "AI Analysis", desc: "Sensors capture the energy response from inside the tooth. Cloud-based AI analyzes the data in near real-time." },
+            { title: "Objective Results", desc: "The system converts readings into clear internal mobility values — objective data instead of guesswork." },
+            { title: "Review Together", desc: "We walk through the results with you, explain what we found, and discuss next steps if anything needs attention." },
+          ]} />
         </div>
       </section>
 
       {/* FAQs */}
-      <section className="py-20 sm:py-24 bg-white">
+      <section className="py-12 sm:py-16 bg-gray-50">
         <div className="mx-auto max-w-2xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Common Questions</h2>
           </motion.div>
-          <div className="bg-gray-50 rounded-xl p-6">
+          <div className="bg-white rounded-xl p-6">
             {faqs.map((faq) => <FAQItem key={faq.q} q={faq.q} a={faq.a} />)}
           </div>
         </div>

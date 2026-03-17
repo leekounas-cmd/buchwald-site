@@ -9,30 +9,9 @@ import { RelatedServices } from "@/components/RelatedServices";
 import { FAQSchema } from "@/components/FAQSchema";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { ServiceSchema } from "@/components/ServiceSchema";
+import { StatRow, Checklist, Versus, NumberedList, Highlight } from "@/components/ContentBlocks";
 
 const BOOKING_URL = "/book";
-
-const services = [
-  { title: "Dental Implants", description: "Permanent, natural-looking replacements anchored into your jawbone. They function just like real teeth — eat, talk, and smile with confidence." },
-  { title: "Dental Crowns", description: "Custom caps that restore the shape, size, and strength of a damaged tooth. Made to match your natural teeth perfectly." },
-  { title: "Dental Bridges", description: "Fixed prosthetics that fill the gap left by missing teeth. No removable parts — they stay in place and look natural." },
-  { title: "Dentures", description: "Full or partial dentures customized for comfort and a natural appearance. Modern dentures are lighter and more realistic than ever." },
-  { title: "Inlays & Onlays", description: "Custom restorations for teeth that need more than a filling but less than a crown. Precisely crafted for a perfect fit." },
-  { title: "Emergency Repair", description: "Fast solutions for chipped, cracked, or knocked-out teeth when you need help now. Call us and we'll get you in." },
-];
-
-const comparisons = [
-  { vs: "Implants vs. Bridges", detail: "Implants don't rely on neighboring teeth for support and can last a lifetime with proper care. Bridges are less invasive and faster to place, but typically last 10–15 years. We'll help you weigh the pros and cons based on your situation." },
-  { vs: "Implants vs. Dentures", detail: "Implants are fixed and permanent — they feel and function like natural teeth. Dentures are removable and more affordable upfront, but may need adjustments over time. Some patients combine both with implant-supported dentures." },
-  { vs: "Crowns vs. Inlays/Onlays", detail: "Crowns cover the entire tooth and are best for significant damage. Inlays and onlays preserve more natural tooth structure and are ideal when the damage is moderate. We always choose the most conservative option that gets the job done." },
-];
-
-const whatToExpect = [
-  { step: "01", title: "Evaluation", text: "We examine the area, take imaging, and discuss what happened and what you're feeling." },
-  { step: "02", title: "Treatment Plan", text: "We walk you through your options, explain the pros and cons, and help you make the best decision for your situation." },
-  { step: "03", title: "Restoration", text: "Using precise techniques and high-quality materials, we restore your tooth to its natural form and function." },
-  { step: "04", title: "Follow-Up", text: "We check in to make sure everything feels right and your bite is comfortable. Adjustments are quick and easy." },
-];
 
 const faqs = [
   { q: "How long do dental implants last?", a: "With proper care, dental implants can last a lifetime. The crown on top may need replacement after 10–15 years, but the implant itself is designed to be permanent." },
@@ -65,7 +44,8 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 export default function RestorativePage() {
   return (
     <>
-      <section className="py-10 sm:py-20 bg-white">
+      {/* Hero */}
+      <section className="py-10 sm:py-16 bg-white">
         <div className="mx-auto max-w-6xl px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center">
             <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Rebuild &amp; Strengthen</p>
@@ -80,69 +60,105 @@ export default function RestorativePage() {
         </div>
       </section>
 
-      <section className="py-20 sm:py-24 bg-gray-50">
-        <div className="mx-auto max-w-4xl px-4">
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+      {/* Stats */}
+      <section className="py-12 sm:py-16 bg-gray-50">
+        <div className="mx-auto max-w-3xl px-4">
+          <StatRow stats={[
+            { value: "25+yr", label: "Implant Lifespan" },
+            { value: "98%", label: "Success Rate" },
+            { value: "Same-Day", label: "Emergency Repair" },
+          ]} />
+
+          <Highlight>
+            Whether it&apos;s a cracked tooth or a missing one, we have the tools and experience to restore your smile. We always choose the most conservative option that gets the job done.
+          </Highlight>
+        </div>
+      </section>
+
+      {/* What We Offer */}
+      <section className="py-12 sm:py-16 bg-white">
+        <div className="mx-auto max-w-3xl px-4">
+          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">What We Offer</h2>
           </motion.div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {services.map((s, i) => (
-              <motion.div key={s.title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.04 }} className="bg-white rounded-xl p-6">
-                <div className="flex items-center gap-2 mb-1.5">
-                  <span className="h-2 w-2 rounded-full bg-primary flex-shrink-0" />
-                  <h3 className="font-bold text-gray-900">{s.title}</h3>
-                </div>
-                <p className="text-gray-400 text-sm leading-relaxed">{s.description}</p>
-              </motion.div>
-            ))}
-          </div>
+          <Checklist items={[
+            "Dental Implants — permanent, natural-looking replacements anchored into your jawbone",
+            "Dental Crowns — custom caps that restore shape, size, and strength of a damaged tooth",
+            "Dental Bridges — fixed prosthetics that fill the gap left by missing teeth",
+            "Dentures — full or partial, customized for comfort and a natural appearance",
+            "Inlays & Onlays — custom restorations for teeth needing more than a filling but less than a crown",
+            "Emergency Repair — fast solutions for chipped, cracked, or knocked-out teeth",
+          ]} />
         </div>
       </section>
 
       {/* What to Expect */}
-      <section className="py-20 sm:py-24 bg-white">
-        <div className="mx-auto max-w-5xl px-4">
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+      <section className="py-12 sm:py-16 bg-gray-50">
+        <div className="mx-auto max-w-3xl px-4">
+          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">What to Expect</h2>
             <p className="text-gray-400 text-sm mt-2">From evaluation to restoration — here&apos;s how it works.</p>
           </motion.div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {whatToExpect.map((s, i) => (
-              <motion.div key={s.step} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="bg-gray-50 rounded-xl p-6">
-                <p className="text-primary text-3xl font-extrabold mb-2">{s.step}</p>
-                <h3 className="font-bold text-gray-900 mb-1">{s.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{s.text}</p>
-              </motion.div>
-            ))}
-          </div>
+          <NumberedList items={[
+            { title: "Evaluation", desc: "We examine the area, take imaging, and discuss what happened and what you're feeling." },
+            { title: "Treatment Plan", desc: "We walk you through your options, explain the pros and cons, and help you make the best decision." },
+            { title: "Restoration", desc: "Using precise techniques and high-quality materials, we restore your tooth to its natural form and function." },
+            { title: "Follow-Up", desc: "We check in to make sure everything feels right and your bite is comfortable. Adjustments are quick and easy." },
+          ]} />
         </div>
       </section>
 
       {/* Comparisons */}
-      <section className="py-20 sm:py-24 bg-gray-50">
+      <section className="py-12 sm:py-16 bg-white">
         <div className="mx-auto max-w-3xl px-4">
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">How Do They Compare?</h2>
             <p className="text-gray-400 text-sm mt-2">Not sure which option is best? Here&apos;s a breakdown.</p>
           </motion.div>
-          <div className="space-y-4">
-            {comparisons.map((c, i) => (
-              <motion.div key={c.vs} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="bg-white rounded-xl p-6">
-                <h3 className="font-bold text-gray-900 mb-1.5">{c.vs}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{c.detail}</p>
-              </motion.div>
-            ))}
-          </div>
+
+          <Versus
+            leftLabel="Implants"
+            rightLabel="Bridges"
+            left={[
+              "Last 25+ years / lifetime",
+              "Don't rely on neighboring teeth",
+              "Preserve jawbone density",
+              "Brush and floss normally",
+            ]}
+            right={[
+              "Last 10-15 years",
+              "Require healthy adjacent teeth",
+              "Don't prevent bone loss",
+              "Need special flossing",
+            ]}
+          />
+
+          <Versus
+            leftLabel="Crowns"
+            rightLabel="Inlays / Onlays"
+            left={[
+              "Cover the entire tooth",
+              "Best for significant damage",
+              "Maximum structural support",
+              "Ideal after root canals",
+            ]}
+            right={[
+              "Preserve more natural tooth",
+              "Best for moderate damage",
+              "More conservative approach",
+              "Custom lab-crafted fit",
+            ]}
+          />
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-20 sm:py-24 bg-white">
+      <section className="py-12 sm:py-16 bg-gray-50">
         <div className="mx-auto max-w-2xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Common Questions</h2>
           </motion.div>
-          <div className="bg-gray-50 rounded-xl p-6">
+          <div className="bg-white rounded-xl p-6">
             {faqs.map((faq) => <FAQItem key={faq.q} q={faq.q} a={faq.a} />)}
           </div>
         </div>

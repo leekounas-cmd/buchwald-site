@@ -9,16 +9,7 @@ import { RelatedServices } from "@/components/RelatedServices";
 import { FAQSchema } from "@/components/FAQSchema";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { ServiceSchema } from "@/components/ServiceSchema";
-
-const BOOKING_URL = "/book";
-
-const candidateReasons = [
-  "Staining from coffee, tea, wine, or tobacco",
-  "Natural yellowing over time",
-  "Wanting a brighter smile for a special event",
-  "Uneven tooth color after dental work",
-  "Feeling self-conscious about your smile color",
-];
+import { StatRow, Highlight, Checklist, Versus } from "@/components/ContentBlocks";
 
 const faqs = [
   { q: "Does whitening damage my teeth?", a: "No. Professional whitening is safe for your enamel when done under dental supervision. We use controlled concentrations and protect your gums throughout the process." },
@@ -51,7 +42,8 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 export default function TeethWhiteningPage() {
   return (
     <>
-      <section className="py-10 sm:py-20 bg-white">
+      {/* Hero */}
+      <section className="py-10 sm:py-16 bg-white">
         <div className="mx-auto max-w-6xl px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center">
             <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Cosmetic Dentistry</p>
@@ -70,46 +62,41 @@ export default function TeethWhiteningPage() {
         </div>
       </section>
 
-      {/* Options */}
-      <section className="py-20 sm:py-24 bg-gray-50">
+      {/* Stats + Content */}
+      <section className="py-12 sm:py-16 bg-gray-50">
         <div className="mx-auto max-w-4xl px-4">
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Two Ways to a Brighter Smile</h2>
-          </motion.div>
-          <div className="grid gap-4 md:grid-cols-2">
-            {[
-              {
-                title: "In-Office Whitening",
-                description: "Walk in, relax, walk out dramatically brighter. Professional-grade treatment in a single visit — about an hour from start to finish.",
-                features: ["One-visit results (up to 7 shades lighter)", "Professional-grade formula", "Supervised by our team", "Gum protection throughout"],
-              },
-              {
-                title: "Custom Take-Home Trays",
-                description: "Custom-fitted trays and professional gel so you can whiten on your own schedule from the comfort of home.",
-                features: ["Custom-fitted to your teeth", "Professional-grade gel", "Whiten at your own pace", "Great for touch-ups and maintenance"],
-              },
-            ].map((opt, i) => (
-              <motion.div key={opt.title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="bg-white rounded-xl p-7">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{opt.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-5">{opt.description}</p>
-                <ul className="space-y-2">
-                  {opt.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2.5 text-sm text-gray-700 font-medium">
-                      <span className="h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
+          <StatRow stats={[
+            { value: "5-7", label: "Shades Brighter" },
+            { value: "1hr", label: "In-Office Visit" },
+            { value: "1-3yr", label: "Results Last" },
+          ]} />
+
+          <Highlight>Most patients walk out of their first visit noticeably brighter — no sensitivity, no downtime.</Highlight>
+
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-10 mb-4">In-Office vs. Take-Home</h2>
+          <Versus
+            leftLabel="In-Office"
+            rightLabel="Take-Home"
+            left={[
+              "Up to 7 shades in one visit",
+              "Professional-grade formula",
+              "Supervised by our team",
+              "Gum protection throughout",
+            ]}
+            right={[
+              "Gradual results over 1-2 weeks",
+              "Custom-fitted trays",
+              "Whiten on your schedule",
+              "Great for touch-ups",
+            ]}
+          />
         </div>
       </section>
 
       {/* Results */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 bg-white">
         <div className="mx-auto max-w-4xl px-4">
-          <div className="grid gap-10 md:grid-cols-2 items-center">
+          <div className="grid gap-8 md:grid-cols-2 items-center">
             <motion.div initial={{ opacity: 0, x: -15 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Expected Results</p>
               <p className="text-7xl sm:text-8xl font-extrabold text-gray-900 mb-1">5–7</p>
@@ -126,25 +113,22 @@ export default function TeethWhiteningPage() {
       </section>
 
       {/* Good Candidate */}
-      <section className="py-20 sm:py-24 bg-gray-50">
+      <section className="py-12 sm:py-16 bg-gray-50">
         <div className="mx-auto max-w-3xl px-4">
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Is Whitening Right for You?</h2>
-            <p className="text-gray-400 text-sm mt-2">Whitening works great if you&apos;re dealing with any of these.</p>
-          </motion.div>
-          <div className="space-y-3">
-            {candidateReasons.map((r, i) => (
-              <motion.div key={r} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.04 }} className="flex items-start gap-3 bg-white rounded-xl p-5">
-                <span className="h-2 w-2 rounded-full bg-primary flex-shrink-0 mt-1.5" />
-                <p className="text-gray-700 text-[15px] font-medium">{r}</p>
-              </motion.div>
-            ))}
-          </div>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2">Is Whitening Right for You?</h2>
+          <p className="text-gray-400 text-sm mb-4">Whitening works great if you&apos;re dealing with any of these.</p>
+          <Checklist items={[
+            "Staining from coffee, tea, wine, or tobacco",
+            "Natural yellowing over time",
+            "Wanting a brighter smile for a special event",
+            "Uneven tooth color after dental work",
+            "Feeling self-conscious about your smile color",
+          ]} />
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-20 sm:py-24 bg-white">
+      <section className="py-12 sm:py-16 bg-white">
         <div className="mx-auto max-w-2xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Common Questions</h2>
