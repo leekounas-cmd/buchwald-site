@@ -12,7 +12,7 @@ export const blogPosts: BlogPost[] = [
     title: "Why You Need a Night Guard (And Why a Custom One Is Worth It)",
     slug: "why-you-need-a-night-guard",
     date: "March 17, 2026",
-    readTime: "5 min read",
+    readTime: "2 min read",
     excerpt:
       "Grinding your teeth at night can cause serious damage over time. Here's why a custom night guard from your dentist is one of the best investments you can make for your smile.",
     faqs: [
@@ -26,7 +26,7 @@ export const blogPosts: BlogPost[] = [
     title: "What to Expect at Your First Dental Visit",
     slug: "what-to-expect-first-dental-visit",
     date: "March 10, 2026",
-    readTime: "5 min read",
+    readTime: "2 min read",
     excerpt:
       "Nervous about your first appointment? Here's exactly what happens, what to bring, and how we make sure you feel comfortable from the moment you walk in.",
     faqs: [
@@ -40,7 +40,7 @@ export const blogPosts: BlogPost[] = [
     title: "Invisalign vs. Braces: Which Is Right for You?",
     slug: "invisalign-vs-braces",
     date: "February 24, 2026",
-    readTime: "6 min read",
+    readTime: "2 min read",
     excerpt:
       "Thinking about straightening your teeth? Here's an honest comparison of Invisalign and traditional braces — cost, comfort, timeline, and which one might work better for your lifestyle.",
     faqs: [
@@ -54,7 +54,7 @@ export const blogPosts: BlogPost[] = [
     title: "How Much Do Dental Implants Cost in Texas?",
     slug: "dental-implants-cost-texas",
     date: "February 10, 2026",
-    readTime: "7 min read",
+    readTime: "2 min read",
     excerpt:
       "Dental implants are an investment in your smile and your health. Here's a real breakdown of what they cost in Texas, what affects the price, and how to make them affordable.",
     faqs: [
@@ -68,7 +68,7 @@ export const blogPosts: BlogPost[] = [
     title: "5 Signs You Need to See a Dentist ASAP",
     slug: "signs-you-need-dentist",
     date: "January 28, 2026",
-    readTime: "4 min read",
+    readTime: "1 min read",
     excerpt:
       "Some dental issues can't wait. Here are five warning signs that mean you should call your dentist today — not next month.",
     faqs: [
@@ -82,7 +82,7 @@ export const blogPosts: BlogPost[] = [
     title: "Is Teeth Whitening Safe? What Your Dentist Wants You to Know",
     slug: "is-teeth-whitening-safe",
     date: "January 14, 2026",
-    readTime: "5 min read",
+    readTime: "2 min read",
     excerpt:
       "Teeth whitening is one of the most popular cosmetic treatments — but is it actually safe? Here's what you need to know before you brighten your smile.",
     faqs: [
