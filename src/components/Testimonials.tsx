@@ -16,18 +16,6 @@ const reviews = [
     city: "Plano",
     rating: 5,
   },
-  {
-    quote: "I got my Invisalign here and the results are incredible. The team was supportive throughout the entire process. Worth every penny!",
-    name: "Michelle R.",
-    city: "Richardson",
-    rating: 5,
-  },
-  {
-    quote: "Needed a crown and was nervous, but Dr. Buchwald made it completely painless. The whole process was quick and professional. 10/10!",
-    name: "David K.",
-    city: "Allen",
-    rating: 5,
-  },
 ];
 
 export function Testimonials() {

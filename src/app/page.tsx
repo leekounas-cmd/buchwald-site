@@ -148,7 +148,7 @@ export default function HomePage() {
             {[
               { value: "433+", label: "Google Reviews" },
               { value: "4.9", label: "Google Rating" },
-              { value: "$99", label: "New Patient Cleaning" },
+              { value: "$129", label: "New Patient Cleaning" },
               { value: "Mon–Thu", label: "7am – 3pm" },
             ].map((stat, i) => (
               <motion.div
@@ -460,90 +460,6 @@ export default function HomePage() {
               Request Appointment
             </a>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Google Reviews */}
-      <section className="py-20 sm:py-24 bg-white">
-        <div className="mx-auto max-w-5xl px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">
-              Patient Reviews
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3">
-              What Our Patients Say
-            </h2>
-            <a
-              href="https://share.google/9gal12WjpTrHj1b4V"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 hover:opacity-80 transition-opacity"
-            >
-              <div className="flex gap-0.5">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="h-5 w-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
-              <span className="text-sm text-gray-400 font-medium">4.9 on Google &middot; 433 reviews</span>
-            </a>
-          </motion.div>
-
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              { name: "Sarah M.", city: "Richardson", text: "Dr. Buchwald and his team are amazing! They made me feel so comfortable during my visit. The office is modern and clean, and the staff is incredibly friendly.", date: "2 weeks ago" },
-              { name: "James T.", city: "Plano", text: "Best dental experience I've ever had. They explained everything clearly and were so gentle. My kids actually look forward to their cleanings now!", date: "1 month ago" },
-              { name: "Michelle R.", city: "Richardson", text: "I got my Invisalign here and the results are incredible. The team was supportive throughout the entire process. Worth every penny!", date: "3 weeks ago" },
-              { name: "David K.", city: "Allen", text: "Needed a crown and was nervous, but Dr. Buchwald made it completely painless. The whole process was quick and professional. 10/10!", date: "2 months ago" },
-              { name: "Jessica L.", city: "Garland", text: "Denielle is a rockstar with insurance. She got everything sorted before my appointment so I knew exactly what to expect. No surprises.", date: "1 month ago" },
-              { name: "Robert P.", city: "Plano", text: "Melisa did an amazing job on my cleaning. She was thorough but gentle, and took the time to explain proper brushing techniques. Highly recommend!", date: "3 weeks ago" },
-            ].map((review, i) => (
-              <motion.div
-                key={review.name}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.06 }}
-                className="bg-gray-50 rounded-xl p-6"
-              >
-                <div className="flex gap-0.5 mb-3">
-                  {[...Array(5)].map((_, j) => (
-                    <svg key={j} className="h-4 w-4 text-gold" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-gray-700 text-sm leading-relaxed mb-4">&ldquo;{review.text}&rdquo;</p>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-gray-900 font-semibold text-sm">{review.name}</p>
-                    <p className="text-gray-400 text-xs">{review.city}</p>
-                  </div>
-                  <p className="text-gray-300 text-xs">{review.date}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="text-center mt-8">
-            <a
-              href="https://share.google/9gal12WjpTrHj1b4V"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-primary text-sm font-bold hover:gap-3 transition-all"
-            >
-              See All Reviews on Google
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
         </div>
       </section>
 

@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 const FORMSPREE_ID = "xpqyyjkl";
 
 const serviceOptions = [
-  "$99 New Patient Cleaning",
+  "$129 New Patient Cleaning",
   "Cleaning & Exam",
   "General Dentistry",
   "Cosmetic Dentistry",

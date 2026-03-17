@@ -84,13 +84,13 @@ export default function NewPatientPage() {
         </div>
       </section>
 
-      {/* $99 New Patient Special */}
+      {/* $129 New Patient Special */}
       <section className="py-20 sm:py-24 bg-white">
         <div className="mx-auto max-w-3xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-primary/10 rounded-2xl p-8 sm:p-12 text-center">
             <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Limited-Time Offer</p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">$99 New Patient Special</h2>
-            <p className="text-gray-600 text-lg leading-relaxed mb-6">Get a professional cleaning, comprehensive exam, and digital X-rays — all for just $99. No insurance required.</p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">$129 New Patient Special</h2>
+            <p className="text-gray-600 text-lg leading-relaxed mb-6">Get a professional cleaning, comprehensive exam, and digital X-rays — all for just $129. No insurance required.</p>
             <div className="inline-flex flex-col sm:flex-row gap-3 text-sm text-gray-500">
               <span className="flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-primary flex-shrink-0" />Professional cleaning</span>
               <span className="flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-primary flex-shrink-0" />Comprehensive exam</span>
@@ -155,7 +155,7 @@ export default function NewPatientPage() {
       <CTABanner />
       <FAQSchema faqs={faqs} />
       <BreadcrumbSchema items={[{ name: "New Patient", href: "/new-patient" }]} />
-      <ServiceSchema name="New Patient Visit" description="$99 new patient cleaning, exam, and X-rays at Buchwald Family Dentistry in Richardson, TX. Serving Plano, Allen, and Garland." url="/new-patient" />
+      <ServiceSchema name="New Patient Visit" description="$129 new patient cleaning, exam, and X-rays at Buchwald Family Dentistry in Richardson, TX. Serving Plano, Allen, and Garland." url="/new-patient" />
     </>
   );
 }

@@ -82,8 +82,11 @@ export default function InvisalignPage() {
             <Image src="/images/stock/invisalign.jpg" alt="Clear aligners for straighter teeth" width={1200} height={600} className="rounded-2xl w-full object-cover aspect-video" priority />
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="text-center max-w-3xl mx-auto">
-            <p className="text-gray-500 text-lg leading-relaxed">
+            <p className="text-gray-500 text-lg leading-relaxed mb-4">
               Custom-made, virtually invisible aligners that fit your lifestyle. No metal. No wires. Just a straighter smile you&apos;re proud to show off.
+            </p>
+            <p className="text-primary text-lg font-bold">
+              Get started for as low as $115/month with financing.
             </p>
           </motion.div>
         </div>
@@ -158,8 +161,11 @@ export default function InvisalignPage() {
             <p className="text-orange text-sm font-bold uppercase tracking-wider mb-3">Limited Time Offer</p>
             <p className="text-6xl sm:text-8xl font-extrabold text-gray-900 mb-2">$1,000 OFF</p>
             <p className="text-xl font-bold text-gray-900 mb-3">Invisalign Treatment</p>
-            <p className="text-gray-400 text-base max-w-md mx-auto mb-8">
+            <p className="text-gray-400 text-base max-w-md mx-auto mb-3">
               Schedule your free consultation and take the first step toward a straighter smile.
+            </p>
+            <p className="text-gray-600 text-sm font-medium mb-8">
+              Flexible financing available — as low as $115/month. 0% APR options through Cherry.
             </p>
             <a href={BOOKING_URL} className="inline-block rounded-lg bg-primary px-7 py-3.5 text-sm font-bold text-white hover:bg-primary-dark transition-all">
               Claim Your Offer
