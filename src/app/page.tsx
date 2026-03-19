@@ -446,9 +446,9 @@ export default function HomePage() {
             "@context": "https://schema.org",
             "@type": "Dentist",
             name: "Buchwald Family Dentistry & Orthodontics",
-            image: "https://buchwaldfamilydentist.com/images/logo-color.png",
-            "@id": "https://buchwaldfamilydentist.com",
-            url: "https://buchwaldfamilydentist.com",
+            image: "https://buchwaldfamilydentistry.com/images/logo-color.png",
+            "@id": "https://buchwaldfamilydentistry.com",
+            url: "https://buchwaldfamilydentistry.com",
             telephone: "+1-972-644-3280",
             priceRange: "$$",
             address: {
@@ -512,8 +512,8 @@ export default function HomePage() {
             "@type": "VideoObject",
             name: "Buchwald Family Dentistry Office Tour",
             description: "See inside Buchwald Family Dentistry & Orthodontics in Richardson, TX. Modern office, comfortable care.",
-            thumbnailUrl: "https://buchwaldfamilydentist.com/images/office-1.jpg",
-            contentUrl: "https://buchwaldfamilydentist.com/video/hero.mp4",
+            thumbnailUrl: "https://buchwaldfamilydentistry.com/images/office-1.jpg",
+            contentUrl: "https://buchwaldfamilydentistry.com/video/hero.mp4",
             uploadDate: "2025-01-01",
           }),
         }}

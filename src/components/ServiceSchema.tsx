@@ -8,7 +8,7 @@ export function ServiceSchema({ name, description, url }: { name: string; descri
           "@type": "Service",
           name,
           description,
-          url: `https://buchwaldfamilydentist.com${url}`,
+          url: `https://buchwaldfamilydentistry.com${url}`,
           provider: {
             "@type": "Dentist",
             name: "Buchwald Family Dentistry & Orthodontics",

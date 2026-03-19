@@ -15,7 +15,7 @@ export function BreadcrumbSchema({ items }: { items: { name: string; href: strin
             "@type": "ListItem",
             position: i + 1,
             name: item.name,
-            item: `https://buchwaldfamilydentist.com${item.href}`,
+            item: `https://buchwaldfamilydentistry.com${item.href}`,
           })),
         }),
       }}

@@ -18,9 +18,8 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
-// TODO: Switch metadataBase back to https://buchwaldfamilydentist.com after domain transfer
 export const metadata: Metadata = {
-  metadataBase: new URL("https://buchwald-site.vercel.app"),
+  metadataBase: new URL("https://buchwaldfamilydentistry.com"),
   title: "Buchwald Family Dentistry | Dentist in Richardson, TX",
   description:
     "Top-rated family dentist in Richardson, TX. Cleanings, Invisalign, implants, whitening, and more. 4.9 stars, 433 reviews.",
