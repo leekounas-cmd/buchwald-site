@@ -163,6 +163,17 @@ export function Navbar() {
               Dental Blog
             </Link>
 
+            <Link
+              href="/schedule"
+              className={`px-3 py-2 rounded-lg text-[13px] font-medium transition-colors ${
+                pathname === "/schedule"
+                  ? "text-primary bg-primary-light"
+                  : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
+              }`}
+            >
+              Schedule
+            </Link>
+
             <a
               href={BOOKING_URL}
               className="ml-3 rounded-lg bg-primary px-5 py-2.5 text-[13px] font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-md hover:shadow-primary/20"
@@ -280,6 +291,17 @@ export function Navbar() {
             }`}
           >
             Dental Blog
+          </Link>
+
+          <Link
+            href="/schedule"
+            className={`block rounded-lg px-4 py-3 text-sm font-medium transition-colors ${
+              pathname === "/schedule"
+                ? "bg-primary-light text-primary"
+                : "text-gray-500 hover:bg-gray-50 hover:text-gray-900"
+            }`}
+          >
+            Schedule
           </Link>
 
           <a
