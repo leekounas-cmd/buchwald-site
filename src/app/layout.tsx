@@ -5,6 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { StickyBottomBar } from "@/components/StickyBottomBar";
 import { Footer } from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -51,6 +52,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <StickyBottomBar />
+        <Analytics />
       </body>
     </html>
   );
