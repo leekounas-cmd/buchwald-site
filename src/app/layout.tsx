@@ -24,8 +24,9 @@ export const metadata: Metadata = {
   description:
     "Top-rated family dentist in Richardson, TX. Cleanings, Invisalign, implants, whitening, and more. 4.9 stars, 433 reviews.",
   alternates: {
+    canonical: "https://www.buchwaldfamilydentistry.com",
     languages: {
-      "en-US": "/",
+      "en-US": "https://www.buchwaldfamilydentistry.com",
     },
   },
   openGraph: {
@@ -34,7 +35,15 @@ export const metadata: Metadata = {
       "Top-rated family dentist in Richardson, TX. Modern care, comfortable visits. Serving Plano, Allen, and Garland.",
     type: "website",
     locale: "en_US",
+    siteName: "Buchwald Family Dentistry",
     images: [{ url: "/images/office-1.jpg", width: 1200, height: 630, alt: "Buchwald Family Dentistry office in Richardson, TX" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Buchwald Family Dentistry | Dentist in Richardson, TX",
+    description:
+      "Top-rated family dentist in Richardson, TX. Cleanings, Invisalign, implants, whitening, and more. 4.9 stars, 433 reviews.",
+    images: ["/images/office-1.jpg"],
   },
 };
 

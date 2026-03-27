@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
 const reviews = [
@@ -21,16 +21,32 @@ const reviews = [
 export function Testimonials() {
   const [current, setCurrent] = useState(0);
 
+  const sectionRef = useRef<HTMLElement>(null);
+
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % reviews.length);
-    }, 5000);
-    return () => clearInterval(timer);
+    let timer: ReturnType<typeof setInterval>;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          timer = setInterval(() => {
+            setCurrent((prev) => (prev + 1) % reviews.length);
+          }, 5000);
+        } else {
+          clearInterval(timer);
+        }
+      },
+      { threshold: 0.2 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => {
+      clearInterval(timer);
+      observer.disconnect();
+    };
   }, []);
 
   return (
     <>
-      <section className="py-20 sm:py-24 bg-gray-50">
+      <section ref={sectionRef} className="py-20 sm:py-24 bg-gray-50">
         <div className="mx-auto max-w-3xl px-4 text-center">
           <a
             href="https://share.google/9gal12WjpTrHj1b4V"

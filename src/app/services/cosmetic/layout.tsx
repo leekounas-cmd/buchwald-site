@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Cosmetic Dentistry | Veneers, Bonding & Smile Makeovers | Richardson, TX",
   description:
-    "Porcelain veneers, dental bonding, teeth whitening, and smile makeovers at Buchwald Family Dentistry in Richardson, TX. Serving Richardson, Plano, Allen & Garland.",
+    "Porcelain veneers, dental bonding, whitening, and smile makeovers at Buchwald Family Dentistry in Richardson, TX. Book a free consultation today.",
   openGraph: {
     title: "Cosmetic Dentistry | Buchwald Family Dentistry",
     description:

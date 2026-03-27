@@ -52,7 +52,7 @@ export default function CosmeticPage() {
             <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-[1.1] mb-8">Cosmetic Dentistry</h1>
           </motion.div>
           <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.1 }} className="mb-10">
-            <Image src="/images/stock/cosmetic.jpg" alt="Beautiful confident smile" width={1200} height={600} className="rounded-2xl w-full object-cover aspect-video" priority />
+            <Image src="/images/stock/cosmetic.jpg" alt="Cosmetic dentistry smile makeover at Buchwald Family Dentistry in Richardson, TX" width={1200} height={600} className="rounded-2xl w-full object-cover aspect-video" priority />
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="text-center max-w-3xl mx-auto">
             <p className="text-gray-500 text-lg leading-relaxed">Love the way your smile looks. From whitening to veneers, we offer a full range of cosmetic treatments designed to help you feel confident every time you smile.</p>

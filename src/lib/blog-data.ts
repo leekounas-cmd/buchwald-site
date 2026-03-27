@@ -9,6 +9,62 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    title: "How Often Should You Really Go to the Dentist?",
+    slug: "how-often-should-you-go-to-dentist",
+    date: "April 23, 2026",
+    readTime: "2 min read",
+    excerpt:
+      "You've heard the 6-month rule your whole life — but is it always enough? Here's what actually determines how often you should see your dentist.",
+    faqs: [
+      { q: "Is every 6 months really enough for dental checkups?", a: "For most healthy adults, yes — twice a year is the standard recommendation. But if you have gum disease, diabetes, or a history of cavities, your dentist may recommend visits every 3 to 4 months." },
+      { q: "What happens if I skip dental checkups for a year?", a: "Small issues like early cavities or gum inflammation can progress silently. What could've been a simple filling might become a root canal or crown. Regular visits catch things early when they're cheaper and easier to fix." },
+      { q: "Does dental insurance cover two cleanings a year?", a: "Most PPO plans cover two preventive visits per year at 100%. Some plans even cover a third visit if you have gum disease. Our team will verify your benefits so you know exactly what's covered." },
+      { q: "How do I know if I need to go more than twice a year?", a: "Dr. Buchwald will let you know based on your gum health, cavity history, and overall risk factors. If you smoke, have diabetes, or are prone to buildup, more frequent visits help keep things under control." },
+    ],
+  },
+  {
+    title: "When Should Kids Start Going to the Dentist?",
+    slug: "when-should-kids-start-dentist",
+    date: "April 16, 2026",
+    readTime: "2 min read",
+    excerpt:
+      "Most parents wait too long for their child's first dental visit. Here's what the ADA recommends and how to make early visits a positive experience.",
+    faqs: [
+      { q: "What age should a child first see a dentist?", a: "The ADA recommends a first visit by age 1 or within 6 months of the first tooth appearing — whichever comes first. Early visits help catch issues and get kids comfortable with the dentist." },
+      { q: "What happens at a toddler's first dental appointment?", a: "It's very gentle — a quick look at teeth and gums, basic cleaning if needed, and a chat with parents about brushing, diet, and development. The goal is to make it a positive experience." },
+      { q: "Does Buchwald Family Dentistry see kids?", a: "Absolutely. We're a family practice and see patients of all ages, from toddlers to grandparents. Dr. Buchwald is great with kids and knows how to make them feel comfortable." },
+      { q: "How do I prepare my child for their first dental visit?", a: "Keep it simple and positive. Read a book about going to the dentist, avoid using words like 'pain' or 'shot,' and let them know the dentist is a friend who helps keep their smile healthy." },
+    ],
+  },
+  {
+    title: "Does Dental Insurance Cover Invisalign?",
+    slug: "does-insurance-cover-invisalign",
+    date: "April 9, 2026",
+    readTime: "2 min read",
+    excerpt:
+      "Invisalign isn't as out of reach as you think. Here's how insurance, financing, and flexible spending can make clear aligners affordable.",
+    faqs: [
+      { q: "Does PPO dental insurance cover Invisalign?", a: "Many PPO plans include orthodontic benefits that apply to Invisalign — typically covering $1,000 to $2,000 of the total cost. Our team will check your specific plan before you commit to anything." },
+      { q: "How much does Invisalign cost out of pocket?", a: "After insurance, most patients pay between $2,000 and $4,500 out of pocket. We offer monthly financing through Cherry so you can break that into manageable payments." },
+      { q: "Can I use my HSA or FSA for Invisalign?", a: "Yes. Invisalign is considered a qualified medical expense, so you can use your HSA or FSA funds to cover part or all of your out-of-pocket cost." },
+      { q: "Does Buchwald Family Dentistry offer payment plans for Invisalign?", a: "We do. We offer flexible financing with Cherry, including 0% APR options. Our coordinator Denielle will walk you through everything so there are no surprises." },
+    ],
+  },
+  {
+    title: "How to Choose the Right Dentist in Richardson, TX",
+    slug: "how-to-choose-dentist-richardson-tx",
+    date: "April 2, 2026",
+    readTime: "2 min read",
+    excerpt:
+      "Finding a dentist you actually trust isn't easy. Here's what to look for — and what to avoid — when choosing a dental office in Richardson.",
+    faqs: [
+      { q: "What should I look for in a dentist in Richardson, TX?", a: "Look for strong Google reviews, modern technology, a welcoming team, and transparent pricing. A good dentist will never pressure you into treatment you don't need." },
+      { q: "Does Buchwald Family Dentistry accept new patients?", a: "Yes — we're always welcoming new patients from Richardson, Plano, Allen, Garland, and the surrounding DFW area. You can request your first appointment online." },
+      { q: "How do I know if a dentist is good?", a: "Check Google and Yelp reviews, look at their website for before-and-after photos, and pay attention to how the front desk treats you. First impressions matter — if the team is warm and organized, that usually reflects the whole practice." },
+      { q: "Does Buchwald Family Dentistry take my insurance?", a: "We accept most major PPO plans and will verify your benefits before any treatment. If you don't have insurance, we offer a $129 new patient special and flexible financing options." },
+    ],
+  },
+  {
     title: "Why You Need a Night Guard (And Why a Custom One Is Worth It)",
     slug: "why-you-need-a-night-guard",
     date: "March 17, 2026",

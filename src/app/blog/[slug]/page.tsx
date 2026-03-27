@@ -343,9 +343,229 @@ function TeethWhiteningSafe() {
   );
 }
 
+function ChooseDentistRichardson() {
+  return (
+    <>
+      <div className="grid grid-cols-3 gap-3 mb-6">
+        <Stat value="4.9" label="stars on Google" />
+        <Stat value="20+" label="years in Richardson" />
+        <Stat value="$129" label="new patient special" />
+      </div>
+
+      <h2>What to Look For</h2>
+      <Checklist items={[
+        "Strong reviews — check Google, Yelp, and Nextdoor",
+        "Modern technology — digital X-rays, intraoral cameras, same-day options",
+        "Transparent pricing — no surprise bills after treatment",
+        "A team that actually listens and doesn&apos;t pressure you",
+        "Convenient location and hours that work with your schedule",
+      ]} />
+
+      <h2>Red Flags to Avoid</h2>
+      <Versus
+        leftLabel="Green Flags"
+        left={[
+          "Takes time to explain your options",
+          "Shows you X-rays and walks through findings",
+          "Friendly, organized front desk",
+          "Clean, modern office",
+        ]}
+        rightLabel="Red Flags"
+        right={[
+          "Pushes expensive treatment right away",
+          "Rushes through your appointment",
+          "Hard to reach or schedule with",
+          "Outdated equipment and decor",
+        ]}
+      />
+
+      <Highlight>A good dentist earns your trust on the first visit — not by selling you on treatment you don&apos;t need.</Highlight>
+
+      <h2>Why Patients Choose Buchwald</h2>
+      <Checklist items={[
+        "Family-owned practice serving Richardson, Plano, Allen, and Garland",
+        "Advanced tech — InnerView scanner, digital X-rays, laser therapy",
+        "No-pressure approach — Dr. Buchwald explains everything before you decide",
+        "Insurance-friendly with flexible financing through Cherry",
+      ]} />
+
+      <p>
+        <Link href="/meet-us" className="text-primary font-semibold underline">Meet our team</Link> or{" "}
+        <Link href="/new-patient" className="text-primary font-semibold underline">start as a new patient</Link>.
+      </p>
+    </>
+  );
+}
+
+function InsuranceCoverInvisalign() {
+  return (
+    <>
+      <div className="grid grid-cols-3 gap-3 mb-6">
+        <Stat value="$1-2K" label="typical insurance coverage" />
+        <Stat value="$115" label="/mo with financing" />
+        <Stat value="6-18" label="months of treatment" />
+      </div>
+
+      <h2>What Most Plans Cover</h2>
+      <Checklist items={[
+        "Many PPO plans include orthodontic benefits — including Invisalign",
+        "Typical coverage ranges from $1,000 to $2,000 toward treatment",
+        "Some plans have age limits (often 18 or 19) — but many don&apos;t",
+        "HMO plans rarely cover Invisalign unless the provider is in-network for ortho",
+      ]} />
+
+      <h2>PPO vs. HMO Coverage</h2>
+      <Versus
+        leftLabel="PPO Plans"
+        left={[
+          "More likely to cover Invisalign",
+          "Choose your own provider",
+          "$1,000-$2,000 typical benefit",
+          "Lifetime ortho max (one-time use)",
+        ]}
+        rightLabel="HMO Plans"
+        right={[
+          "Limited orthodontic coverage",
+          "Must use in-network provider",
+          "Lower monthly premiums",
+          "May not cover clear aligners at all",
+        ]}
+      />
+
+      <Highlight>Don&apos;t assume your plan won&apos;t cover it. Our coordinator Denielle checks your benefits for free — no commitment needed.</Highlight>
+
+      <h2>Other Ways to Pay</h2>
+      <Checklist items={[
+        "Monthly financing through Cherry — 0% APR options available",
+        "HSA and FSA funds — Invisalign is a qualified expense",
+        "Tax-free dollars through your employer&apos;s flex spending",
+        "We break down your total cost before you start — no surprises",
+      ]} />
+
+      <p>
+        <Link href="/invisalign" className="text-primary font-semibold underline">Learn about Invisalign at our office</Link> or{" "}
+        <Link href="/book" className="text-primary font-semibold underline">book a free consultation</Link>.
+      </p>
+    </>
+  );
+}
+
+function KidsStartDentist() {
+  return (
+    <>
+      <div className="grid grid-cols-3 gap-3 mb-6">
+        <Stat value="Age 1" label="ADA recommended first visit" />
+        <Stat value="42%" label="of kids have cavities by age 11" />
+        <Stat value="20" label="baby teeth to care for" />
+      </div>
+
+      <h2>When to Schedule That First Visit</h2>
+      <Checklist items={[
+        "By age 1 or within 6 months of the first tooth — whichever comes first",
+        "Early visits catch issues like decay, bite problems, and thumb-sucking effects",
+        "It&apos;s more about building comfort than doing major work",
+        "Most kids who start early grow up without dental anxiety",
+      ]} />
+
+      <h2>What Happens at a Kid&apos;s Visit</h2>
+      <Checklist items={[
+        "Gentle exam of teeth, gums, and jaw development",
+        "Basic cleaning if the child is comfortable",
+        "Fluoride treatment to strengthen enamel",
+        "Chat with parents about brushing, diet, and milestones to watch",
+      ]} />
+
+      <Highlight>The goal of the first visit isn&apos;t perfection — it&apos;s making your child feel safe so they grow up comfortable at the dentist.</Highlight>
+
+      <h2>Tips to Make It Fun</h2>
+      <Versus
+        leftLabel="Do"
+        left={[
+          "Keep it positive and simple",
+          "Read a book about the dentist beforehand",
+          "Let them bring a favorite toy",
+          "Celebrate after — make it a good memory",
+        ]}
+        rightLabel="Don&apos;t"
+        right={[
+          "Use words like &quot;pain&quot; or &quot;shot&quot;",
+          "Share your own dental fears",
+          "Bribe with candy (ironic, right?)",
+          "Wait until there&apos;s a problem to go",
+        ]}
+      />
+
+      <p>
+        We see kids of all ages at our Richardson office — families come from Plano, Allen, Garland, and across DFW.{" "}
+        <Link href="/services/cleaning" className="text-primary font-semibold underline">See our cleaning services</Link> or{" "}
+        <Link href="/book" className="text-primary font-semibold underline">book your child&apos;s first visit</Link>.
+      </p>
+    </>
+  );
+}
+
+function HowOftenDentist() {
+  return (
+    <>
+      <div className="grid grid-cols-3 gap-3 mb-6">
+        <Stat value="2x" label="yearly visits recommended" />
+        <Stat value="47%" label="of adults have gum disease" />
+        <Stat value="$200" label="avg cleaning cost (often $0 with insurance)" />
+      </div>
+
+      <h2>The 6-Month Rule</h2>
+      <Checklist items={[
+        "Twice a year is the standard recommendation for healthy adults",
+        "Cleanings remove plaque and tartar that brushing misses",
+        "Exams catch cavities, gum disease, and oral cancer early",
+        "Most insurance plans cover two preventive visits at 100%",
+      ]} />
+
+      <h2>When You Might Need to Go More Often</h2>
+      <Checklist items={[
+        "History of gum disease — every 3-4 months is common",
+        "Diabetes — higher risk for infections and slow healing",
+        "Smokers — more prone to gum disease and buildup",
+        "Pregnancy — hormonal changes increase gum sensitivity",
+        "History of frequent cavities",
+      ]} />
+
+      <Highlight>Skipping visits doesn&apos;t save money — it usually costs more. A $200 cleaning is a lot cheaper than a $1,500 crown.</Highlight>
+
+      <h2>What Happens When You Skip</h2>
+      <Versus
+        leftLabel="Regular Visits"
+        left={[
+          "Small issues caught early",
+          "Simple, affordable fixes",
+          "Healthy gums and fresh breath",
+          "Peace of mind",
+        ]}
+        rightLabel="Skipping Visits"
+        right={[
+          "Problems grow silently",
+          "Root canals, crowns, extractions",
+          "Gum disease and bone loss",
+          "More time and money in the chair",
+        ]}
+      />
+
+      <p>
+        Patients from Richardson, Plano, Garland, and Allen trust us to keep their smiles on track.{" "}
+        <Link href="/services/cleaning" className="text-primary font-semibold underline">Learn about our cleanings</Link> or{" "}
+        <Link href="/book" className="text-primary font-semibold underline">book your next visit</Link>.
+      </p>
+    </>
+  );
+}
+
 /* ─── Content map ─── */
 
 const contentMap: Record<string, () => React.ReactNode> = {
+  "how-to-choose-dentist-richardson-tx": ChooseDentistRichardson,
+  "does-insurance-cover-invisalign": InsuranceCoverInvisalign,
+  "when-should-kids-start-dentist": KidsStartDentist,
+  "how-often-should-you-go-to-dentist": HowOftenDentist,
   "what-to-expect-first-dental-visit": FirstDentalVisit,
   "invisalign-vs-braces": InvisalignVsBraces,
   "dental-implants-cost-texas": DentalImplantsCost,

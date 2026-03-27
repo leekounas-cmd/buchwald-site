@@ -444,13 +444,16 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Dentist",
+            "@type": ["Dentist", "LocalBusiness", "MedicalBusiness"],
             name: "Buchwald Family Dentistry & Orthodontics",
+            alternateName: "Buchwald Family Dentistry",
             image: "https://buchwaldfamilydentistry.com/images/logo-color.png",
             "@id": "https://buchwaldfamilydentistry.com",
             url: "https://buchwaldfamilydentistry.com",
             telephone: "+1-972-644-3280",
             priceRange: "$$",
+            currenciesAccepted: "USD",
+            paymentAccepted: "Cash, Credit Card, Insurance, Financing",
             address: {
               "@type": "PostalAddress",
               streetAddress: "300 N Coit Rd #245",
@@ -467,6 +470,13 @@ export default function HomePage() {
             openingHoursSpecification: [
               { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"], opens: "07:00", closes: "15:00" },
             ],
+            founder: {
+              "@type": "Person",
+              name: "Dr. Max Buchwald Jr.",
+              jobTitle: "Dentist",
+            },
+            medicalSpecialty: "Dentistry",
+            isAcceptingNewPatients: true,
             areaServed: [
               { "@type": "City", name: "Richardson", "@id": "https://en.wikipedia.org/wiki/Richardson,_Texas" },
               { "@type": "City", name: "Plano" },
@@ -483,7 +493,8 @@ export default function HomePage() {
             },
             sameAs: [
               "https://www.facebook.com/MaxBuchwaldFamilyDentist/",
-              // TODO: Add YouTube, X (Twitter), and LinkedIn URLs when available
+              "https://www.instagram.com/buchwaldfamilydentistry/",
+              "https://www.youtube.com/@BuchwaldFamilyDentistry",
             ],
             hasOfferCatalog: {
               "@type": "OfferCatalog",
