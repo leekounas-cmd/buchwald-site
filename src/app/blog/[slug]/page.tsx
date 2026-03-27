@@ -965,8 +965,6 @@ export default function BlogPostPage() {
               &larr; Back to Blog
             </Link>
             <div className="flex items-center gap-3 text-xs text-gray-400 mb-4">
-              <span>{post.date}</span>
-              <span>&middot;</span>
               <span>{post.readTime}</span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-[1.1] mb-4">

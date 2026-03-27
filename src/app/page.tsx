@@ -296,12 +296,20 @@ export default function HomePage() {
               <p className="text-gray-500 text-sm leading-relaxed mb-6">
                 Our insurance coordinator Denielle handles the details so you don&apos;t have to. We&apos;ll break down your benefits, file claims, and make sure you get the most out of your coverage.
               </p>
-              <a
-                href="tel:972-644-3280"
-                className="inline-block rounded-lg bg-gray-900 px-6 py-3 text-sm font-bold text-white hover:bg-gray-800 transition-colors"
-              >
-                Call to Verify
-              </a>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href="tel:972-644-3280"
+                  className="inline-block rounded-lg bg-gray-900 px-6 py-3 text-sm font-bold text-white hover:bg-gray-800 transition-colors text-center"
+                >
+                  Call to Verify
+                </a>
+                <Link
+                  href="/insurance"
+                  className="inline-block rounded-lg bg-white px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 transition-colors text-center"
+                >
+                  See Accepted Plans
+                </Link>
+              </div>
             </motion.div>
           </div>
         </div>

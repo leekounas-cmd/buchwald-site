@@ -44,8 +44,6 @@ export default function BlogPage() {
                   className="group block bg-white rounded-xl p-6 h-full hover:shadow-lg transition-shadow border border-gray-100"
                 >
                   <div className="flex items-center gap-3 text-xs text-gray-400 mb-3">
-                    <span>{post.date}</span>
-                    <span className="h-1 w-1 rounded-full bg-gray-300" />
                     <span className="text-primary font-semibold">{post.readTime}</span>
                   </div>
                   <h2 className="font-bold text-gray-900 text-lg mb-2 leading-snug group-hover:text-primary transition-colors">
