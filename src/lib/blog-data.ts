@@ -9,6 +9,90 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    title: "Why Your Dentist Recommends X-Rays (And Why You Should Say Yes)",
+    slug: "why-dentist-recommends-xrays",
+    date: "June 4, 2026",
+    readTime: "2 min read",
+    excerpt:
+      "Dental X-rays catch problems your dentist can't see with the naked eye. Here's what they find, how safe they really are, and how often you actually need them.",
+    faqs: [
+      { q: "Are dental X-rays safe?", a: "Yes. Modern digital X-rays use extremely low radiation — less than you get on a short airplane flight. Our office uses digital sensors that reduce exposure by up to 80% compared to traditional film." },
+      { q: "How often do I need dental X-rays?", a: "Most adults need a full set every 3 to 5 years and bitewings once a year. If you have active decay or gum disease, your dentist may recommend them more frequently." },
+      { q: "What do dental X-rays detect?", a: "X-rays reveal cavities between teeth, bone loss from gum disease, infections at the root, impacted teeth, cysts, and even some tumors. Many of these problems have zero symptoms until they're advanced." },
+      { q: "Can I skip X-rays if my teeth feel fine?", a: "We wouldn't recommend it. Most serious dental problems — like cavities between teeth or bone loss — don't cause pain until they're well advanced. X-rays catch them early when treatment is simpler and cheaper." },
+    ],
+  },
+  {
+    title: "Dental Implants vs Dentures: Which Is Right for You?",
+    slug: "dental-implants-vs-dentures",
+    date: "May 28, 2026",
+    readTime: "2 min read",
+    excerpt:
+      "Missing teeth? You have options. Here's an honest comparison of dental implants and dentures — cost, comfort, longevity, and which one fits your life better.",
+    faqs: [
+      { q: "Are dental implants better than dentures?", a: "It depends on your situation. Implants feel and function like natural teeth and last 25+ years, but cost more upfront. Dentures are more affordable initially but need replacing every 5 to 10 years." },
+      { q: "How much do dental implants cost compared to dentures?", a: "A single implant runs $3,000 to $5,000 in Texas. A full set of dentures costs $1,000 to $3,000. Over 20 years though, implants often cost less because they don't need replacing." },
+      { q: "Can you switch from dentures to implants?", a: "Yes. Many patients start with dentures and upgrade to implant-supported dentures later. We can evaluate your bone density and walk you through the best path forward." },
+      { q: "Does Buchwald Family Dentistry do both implants and dentures?", a: "We do. Dr. Buchwald will evaluate your situation and give you an honest recommendation based on your health, budget, and goals — no pressure either way." },
+    ],
+  },
+  {
+    title: "Emergency Dentist in Richardson TX: What to Do When It Hurts",
+    slug: "emergency-dentist-richardson-tx",
+    date: "May 21, 2026",
+    readTime: "2 min read",
+    excerpt:
+      "Dental emergencies don't wait for business hours. Here's what counts as an emergency, what to do before you get to the office, and when to call us vs go to the ER.",
+    faqs: [
+      { q: "Does Buchwald Family Dentistry handle dental emergencies?", a: "Yes. We accommodate emergency patients and do our best to see you the same day. Call us at (972) 644-3280 and we'll get you in as quickly as possible." },
+      { q: "What counts as a dental emergency?", a: "Severe toothache, knocked-out tooth, broken or cracked tooth, swelling in the face or gums, uncontrolled bleeding, and loose or displaced teeth are all emergencies that need prompt attention." },
+      { q: "Should I go to the ER or the dentist for a dental emergency?", a: "A dentist is almost always the better call. ERs can manage pain and prescribe antibiotics, but they typically can't do dental procedures. Go to the ER only if you have uncontrolled bleeding, difficulty breathing, or a jaw fracture." },
+      { q: "What should I do while waiting to see the dentist?", a: "For a knocked-out tooth, keep it moist in milk or saliva. For a toothache, rinse with warm salt water and take over-the-counter pain relief. For swelling, apply a cold compress in 20-minute intervals." },
+    ],
+  },
+  {
+    title: "The Real Cost of Skipping the Dentist",
+    slug: "cost-of-skipping-the-dentist",
+    date: "May 14, 2026",
+    readTime: "2 min read",
+    excerpt:
+      "That cleaning you've been putting off? It costs a fraction of what you'll pay if small problems become big ones. Here's the real math on skipping the dentist.",
+    faqs: [
+      { q: "How much does it cost if you don't go to the dentist?", a: "A routine cleaning runs about $200 (often $0 with insurance). Skip it and you're looking at $200 to $400 for fillings, $1,000 to $1,500 for a root canal, or $3,000 to $5,000 for an implant. Prevention always wins." },
+      { q: "What happens if you don't go to the dentist for 5 years?", a: "Plaque hardens into tartar, cavities grow deeper, gum disease progresses, and bone loss can start. Problems that would have been caught early become expensive, multi-visit treatments." },
+      { q: "Can you reverse dental problems by going back to the dentist?", a: "Early gum disease (gingivitis) is reversible with professional cleaning and good home care. But once cavities form or bone is lost, the damage is permanent — it can only be managed, not undone." },
+      { q: "Does dental insurance cover preventive visits?", a: "Most PPO plans cover two cleanings and exams per year at 100%. That means your prevention costs nothing out of pocket. Skipping free visits and paying for major work later doesn't make financial sense." },
+    ],
+  },
+  {
+    title: "Dental Insurance 101: What's Actually Covered?",
+    slug: "dental-insurance-101-whats-covered",
+    date: "May 7, 2026",
+    readTime: "2 min read",
+    excerpt:
+      "Dental insurance can be confusing. Here's a no-jargon breakdown of what's covered, what's not, and how to get the most out of your benefits before they expire.",
+    faqs: [
+      { q: "What does dental insurance typically cover?", a: "Most plans cover preventive care (cleanings, exams, X-rays) at 100%, basic procedures (fillings, extractions) at 80%, and major procedures (crowns, root canals, implants) at 50%. Every plan is different though." },
+      { q: "Does dental insurance cover cosmetic work?", a: "Generally no. Teeth whitening, veneers, and cosmetic bonding are usually not covered. However, some procedures that are both functional and cosmetic — like crowns on visible teeth — may get partial coverage." },
+      { q: "What happens if I don't use my dental benefits?", a: "Most plans reset on January 1. Unused benefits don't roll over — you lose them. If you haven't used your two covered cleanings for the year, you're leaving money on the table." },
+      { q: "Does Buchwald Family Dentistry accept my insurance?", a: "We accept most major PPO plans. Our insurance coordinator Denielle will verify your benefits before any treatment so you know exactly what's covered and what you'll owe." },
+    ],
+  },
+  {
+    title: "What Makes a 5-Star Dental Experience?",
+    slug: "what-makes-5-star-dental-experience",
+    date: "April 30, 2026",
+    readTime: "2 min read",
+    excerpt:
+      "Not all dental offices are created equal. Here's what separates a great experience from an average one — and what you should expect from your dentist.",
+    faqs: [
+      { q: "What makes a dentist 5-star rated?", a: "Consistent great reviews come from a combination of things: a welcoming team, minimal wait times, clear communication, modern technology, and a no-pressure approach to treatment. It's the full experience, not just the dentistry." },
+      { q: "How do I find the best dentist near me?", a: "Check Google reviews (look for 4.8+ with lots of reviews), visit their website, and pay attention to how the front desk treats you on the first call. A great dental office makes you feel comfortable before you even sit in the chair." },
+      { q: "Is Buchwald Family Dentistry highly rated?", a: "We have a 4.9-star rating on Google with hundreds of reviews. Patients from Richardson, Plano, Allen, and Garland consistently mention our team, our technology, and our no-pressure approach." },
+      { q: "What technology should a modern dental office have?", a: "Digital X-rays (less radiation, instant results), intraoral cameras (so you can see what the dentist sees), and modern scanning technology. We use all of these plus laser therapy and the InnerView scanner." },
+    ],
+  },
+  {
     title: "How Often Should You Really Go to the Dentist?",
     slug: "how-often-should-you-go-to-dentist",
     date: "April 23, 2026",

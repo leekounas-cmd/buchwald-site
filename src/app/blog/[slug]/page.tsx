@@ -504,6 +504,326 @@ function KidsStartDentist() {
   );
 }
 
+function FiveStarDentalExperience() {
+  return (
+    <>
+      <div className="grid grid-cols-3 gap-3 mb-6">
+        <Stat value="4.9" label="stars on Google" />
+        <Stat value="20+" label="years serving Richardson" />
+        <Stat value="100s" label="of 5-star reviews" />
+      </div>
+
+      <h2>What Sets a Great Office Apart</h2>
+      <Checklist items={[
+        "You feel welcome the moment you walk in — not like a number",
+        "The team explains your options without pressuring you into treatment",
+        "Modern technology means less discomfort and better results",
+        "They respect your time — minimal wait, efficient appointments",
+        "Communication is clear before, during, and after treatment",
+      ]} />
+
+      <h2>Green Flags vs. Red Flags</h2>
+      <Versus
+        leftLabel="5-Star Office"
+        left={[
+          "Shows you X-rays and explains findings",
+          "Gives you options, not ultimatums",
+          "Organized, friendly front desk",
+          "Modern equipment and clean space",
+        ]}
+        rightLabel="Average Office"
+        right={[
+          "Rushes through your appointment",
+          "Pushes expensive treatment immediately",
+          "Hard to reach or schedule with",
+          "Outdated equipment and tired decor",
+        ]}
+      />
+
+      <Highlight>A great dentist earns your trust by being honest — not by selling you on treatment you don&apos;t need.</Highlight>
+
+      <h2>What Our Patients Say</h2>
+      <Checklist items={[
+        "\"Best dental experience I've ever had\" — heard more than anything else",
+        "Families from Richardson, Plano, Allen, and Garland choose us for a reason",
+        "Dr. Buchwald takes the time to explain everything — no rushed visits",
+        "Our team remembers your name, your story, and your goals",
+      ]} />
+
+      <p>
+        <Link href="/meet-us" className="text-primary font-semibold underline">Meet the team</Link> or{" "}
+        <Link href="/book" className="text-primary font-semibold underline">book your visit</Link> and see the difference for yourself.
+      </p>
+    </>
+  );
+}
+
+function DentalInsurance101() {
+  return (
+    <>
+      <div className="grid grid-cols-3 gap-3 mb-6">
+        <Stat value="100%" label="preventive coverage (most plans)" />
+        <Stat value="80%" label="basic procedures" />
+        <Stat value="50%" label="major procedures" />
+      </div>
+
+      <h2>How Coverage Breaks Down</h2>
+      <Checklist items={[
+        "Preventive (100%): cleanings, exams, X-rays — the stuff that keeps you healthy",
+        "Basic (80%): fillings, simple extractions, root planing",
+        "Major (50%): crowns, bridges, root canals, implants",
+        "Orthodontic: some plans include a lifetime benefit of $1,000-$2,000",
+      ]} />
+
+      <h2>What&apos;s Usually NOT Covered</h2>
+      <Checklist items={[
+        "Cosmetic whitening and veneers",
+        "Adult orthodontics on some plans",
+        "Implants on older plans (though this is changing)",
+        "Anything above your annual maximum (typically $1,000-$2,000/year)",
+      ]} />
+
+      <Highlight>Most plans reset January 1. Unused benefits don&apos;t roll over — use them or lose them.</Highlight>
+
+      <h2>How to Maximize Your Benefits</h2>
+      <Checklist items={[
+        "Use both covered cleanings every year — they're free to you",
+        "Schedule major work before your annual max resets",
+        "Split big treatment plans across two benefit years if possible",
+        "Use HSA or FSA funds to cover your out-of-pocket portion",
+      ]} />
+
+      <p>
+        Not sure what your plan covers? Our coordinator Denielle will check for you.{" "}
+        <Link href="/insurance" className="text-primary font-semibold underline">See our insurance info</Link> or{" "}
+        <Link href="/book" className="text-primary font-semibold underline">book an appointment</Link>.
+      </p>
+    </>
+  );
+}
+
+function CostOfSkippingDentist() {
+  return (
+    <>
+      <div className="grid grid-cols-3 gap-3 mb-6">
+        <Stat value="$200" label="avg cleaning (often $0)" />
+        <Stat value="$1,500" label="avg root canal" />
+        <Stat value="$4,000" label="avg implant" />
+      </div>
+
+      <h2>The Math Is Simple</h2>
+      <Versus
+        leftLabel="Prevention"
+        left={[
+          "Cleaning: $200 (usually $0 with insurance)",
+          "Small filling: $150-$300",
+          "Fluoride treatment: $30-$50",
+          "Total: under $500/year",
+        ]}
+        rightLabel="Neglect"
+        right={[
+          "Root canal + crown: $2,000-$3,000",
+          "Extraction + implant: $4,000-$6,000",
+          "Gum disease treatment: $1,000-$4,000",
+          "Total: thousands in one visit",
+        ]}
+      />
+
+      <h2>What Happens When You Skip</h2>
+      <Checklist items={[
+        "Year 1: Plaque hardens into tartar you can't brush away",
+        "Year 2: Small cavities form between teeth — no symptoms yet",
+        "Year 3: Gum disease starts — inflammation, bleeding, bone loss begins",
+        "Year 5+: Cavities reach the nerve, teeth crack, extraction becomes likely",
+      ]} />
+
+      <Highlight>90% of dental problems are preventable with regular visits. The cleaning you skip today could cost you thousands tomorrow.</Highlight>
+
+      <h2>Getting Back on Track</h2>
+      <Checklist items={[
+        "No judgment — we see patients who haven't been in years",
+        "We'll do a full assessment and prioritize what matters most",
+        "Treatment plans are broken into phases so nothing feels overwhelming",
+        "Flexible financing through Cherry if cost is a concern",
+      ]} />
+
+      <p>
+        Ready to get back on track?{" "}
+        <Link href="/services/cleaning" className="text-primary font-semibold underline">See our cleaning services</Link> or{" "}
+        <Link href="/book" className="text-primary font-semibold underline">book your visit</Link>.
+      </p>
+    </>
+  );
+}
+
+function EmergencyDentistRichardson() {
+  return (
+    <>
+      <div className="grid grid-cols-3 gap-3 mb-6">
+        <Stat value="Same Day" label="emergency appointments" />
+        <Stat value="(972)" label="644-3280 — call now" />
+        <Stat value="20+" label="years in Richardson" />
+      </div>
+
+      <h2>What Counts as a Dental Emergency</h2>
+      <Checklist items={[
+        "Severe toothache that won't go away",
+        "Knocked-out or loose tooth",
+        "Cracked or broken tooth",
+        "Swelling in your face, jaw, or gums",
+        "Uncontrolled bleeding from the mouth",
+        "Lost filling or crown",
+      ]} />
+
+      <h2>What to Do Before You Get Here</h2>
+      <Checklist items={[
+        "Knocked-out tooth: keep it moist — place in milk or hold in your cheek",
+        "Toothache: rinse with warm salt water, take ibuprofen for pain",
+        "Swelling: cold compress on the outside of your cheek, 20 minutes on/off",
+        "Broken tooth: save any pieces, rinse gently, avoid chewing on that side",
+        "Bleeding: apply gentle pressure with clean gauze",
+      ]} />
+
+      <Highlight>Call us at (972) 644-3280 — we accommodate emergencies and do our best to get you in the same day.</Highlight>
+
+      <h2>Dentist vs. ER</h2>
+      <Versus
+        leftLabel="Call Your Dentist"
+        left={[
+          "Toothache or dental pain",
+          "Broken, cracked, or knocked-out tooth",
+          "Lost filling or crown",
+          "Swollen gums or abscess",
+        ]}
+        rightLabel="Go to the ER"
+        right={[
+          "Uncontrolled bleeding",
+          "Difficulty breathing or swallowing",
+          "Jaw fracture or dislocation",
+          "Facial trauma from an accident",
+        ]}
+      />
+
+      <p>
+        We serve Richardson, Plano, Allen, Garland, and the surrounding DFW area.{" "}
+        <Link href="/emergency" className="text-primary font-semibold underline">Learn about our emergency care</Link> or{" "}
+        <Link href="/book" className="text-primary font-semibold underline">request an appointment</Link>.
+      </p>
+    </>
+  );
+}
+
+function ImplantsVsDentures() {
+  return (
+    <>
+      <div className="grid grid-cols-3 gap-3 mb-6">
+        <Stat value="25+" label="year implant lifespan" />
+        <Stat value="5-10yr" label="denture lifespan" />
+        <Stat value="98%" label="implant success rate" />
+      </div>
+
+      <h2>Side-by-Side Comparison</h2>
+      <Versus
+        leftLabel="Dental Implants"
+        left={[
+          "Look and feel like real teeth",
+          "Last 25+ years (often a lifetime)",
+          "Preserve jawbone density",
+          "No adhesives or removal needed",
+          "Eat anything — no restrictions",
+        ]}
+        rightLabel="Dentures"
+        right={[
+          "Lower upfront cost",
+          "Non-surgical option",
+          "Replace every 5-10 years",
+          "Can slip or cause discomfort",
+          "Bone loss continues over time",
+        ]}
+      />
+
+      <h2>Cost Comparison</h2>
+      <Checklist items={[
+        "Single implant: $3,000-$5,000 (lasts 25+ years)",
+        "Full dentures: $1,000-$3,000 (replaced every 5-10 years)",
+        "Over 20 years, implants often cost less total",
+        "Many insurance plans cover a portion of either option",
+        "Financing available through Cherry — 0% APR options",
+      ]} />
+
+      <Highlight>Implants aren&apos;t just about appearance — they protect your jawbone and prevent the facial changes that come with tooth loss.</Highlight>
+
+      <h2>Which One Is Right for You?</h2>
+      <Checklist items={[
+        "Good bone density and overall health? Implants are likely the best investment",
+        "Need a more affordable option right now? Dentures get you functional fast",
+        "Considering both? Implant-supported dentures combine stability with coverage",
+        "Not sure? That's what consultations are for — no pressure, just information",
+      ]} />
+
+      <p>
+        <Link href="/dental-implants" className="text-primary font-semibold underline">Learn about our implant process</Link> or{" "}
+        <Link href="/book" className="text-primary font-semibold underline">book a consultation</Link> — Dr. Buchwald will give you an honest recommendation.
+      </p>
+    </>
+  );
+}
+
+function WhyDentistRecommendsXrays() {
+  return (
+    <>
+      <div className="grid grid-cols-3 gap-3 mb-6">
+        <Stat value="0.005" label="mSv per dental X-ray" />
+        <Stat value="0.04" label="mSv on a 3-hr flight" />
+        <Stat value="80%" label="less radiation with digital" />
+      </div>
+
+      <h2>What X-Rays Catch That Exams Can&apos;t</h2>
+      <Checklist items={[
+        "Cavities between teeth — invisible to the naked eye",
+        "Bone loss from gum disease — often no symptoms until advanced",
+        "Infections at the tooth root — can spread without pain",
+        "Impacted teeth — especially wisdom teeth hiding under the gum",
+        "Cysts, tumors, and other abnormalities — rare but critical to catch early",
+      ]} />
+
+      <h2>Radiation: Real Numbers</h2>
+      <Versus
+        leftLabel="Dental X-Ray"
+        left={[
+          "Single X-ray: 0.005 mSv",
+          "Full mouth series: 0.17 mSv",
+          "Less than a day of natural background radiation",
+          "Digital sensors reduce exposure 80%",
+        ]}
+        rightLabel="Everyday Comparison"
+        right={[
+          "3-hour flight: 0.04 mSv",
+          "Chest X-ray: 0.1 mSv",
+          "Daily background radiation: 0.01 mSv",
+          "Annual background: 3.0 mSv",
+        ]}
+      />
+
+      <Highlight>A single dental X-ray exposes you to less radiation than eating a banana. The risk of missing a hidden problem is far greater than the X-ray itself.</Highlight>
+
+      <h2>How Often You Need Them</h2>
+      <Checklist items={[
+        "Bitewings (cavity check): once a year for most adults",
+        "Full mouth series: every 3-5 years",
+        "Panoramic: as needed for implants, wisdom teeth, or orthodontics",
+        "New patient: a full set so Dr. Buchwald has a complete baseline",
+      ]} />
+
+      <p>
+        Questions about X-rays at your next visit?{" "}
+        <Link href="/services/cleaning" className="text-primary font-semibold underline">See what our checkups include</Link> or{" "}
+        <Link href="/book" className="text-primary font-semibold underline">book your appointment</Link>.
+      </p>
+    </>
+  );
+}
+
 function HowOftenDentist() {
   return (
     <>
@@ -562,6 +882,12 @@ function HowOftenDentist() {
 /* ─── Content map ─── */
 
 const contentMap: Record<string, () => React.ReactNode> = {
+  "what-makes-5-star-dental-experience": FiveStarDentalExperience,
+  "dental-insurance-101-whats-covered": DentalInsurance101,
+  "cost-of-skipping-the-dentist": CostOfSkippingDentist,
+  "emergency-dentist-richardson-tx": EmergencyDentistRichardson,
+  "dental-implants-vs-dentures": ImplantsVsDentures,
+  "why-dentist-recommends-xrays": WhyDentistRecommendsXrays,
   "how-to-choose-dentist-richardson-tx": ChooseDentistRichardson,
   "does-insurance-cover-invisalign": InsuranceCoverInvisalign,
   "when-should-kids-start-dentist": KidsStartDentist,
@@ -700,6 +1026,37 @@ export default function BlogPostPage() {
           { name: "Blog", href: "/blog" },
           { name: post.title, href: `/blog/${post.slug}` },
         ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: post.title,
+            description: post.excerpt,
+            datePublished: post.date,
+            dateModified: post.date,
+            url: `https://buchwaldfamilydentistry.com/blog/${post.slug}`,
+            author: {
+              "@type": "Organization",
+              name: "Buchwald Family Dentistry",
+              url: "https://buchwaldfamilydentistry.com",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Buchwald Family Dentistry",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://buchwaldfamilydentistry.com/images/logo-color.png",
+              },
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `https://buchwaldfamilydentistry.com/blog/${post.slug}`,
+            },
+          }),
+        }}
       />
     </>
   );
