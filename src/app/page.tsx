@@ -71,6 +71,7 @@ export default function HomePage() {
             transition={{ duration: 0.5 }}
             className="text-center"
           >
+            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-4">Richardson&apos;s Most-Loved Family Dentist</p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-[1.1] mb-8">
               Modern Care.<br />
               <span className="text-primary">Comfortable Visits.</span>
