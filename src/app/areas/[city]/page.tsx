@@ -12,8 +12,9 @@ export function generateStaticParams() {
   return areasData.map((area) => ({ city: area.slug }));
 }
 
-export function generateMetadata({ params }: { params: { city: string } }): Metadata {
-  const area = areasData.find((a) => a.slug === params.city);
+export async function generateMetadata({ params }: { params: Promise<{ city: string }> }): Promise<Metadata> {
+  const { city } = await params;
+  const area = areasData.find((a) => a.slug === city);
   if (!area) return {};
 
   const title = `Dentist Near ${area.name}, TX | Buchwald Family Dentistry`;
@@ -41,8 +42,9 @@ const services = [
   { title: "Teeth Whitening", href: "/teeth-whitening" },
 ];
 
-export default function CityPage({ params }: { params: { city: string } }) {
-  const area = areasData.find((a) => a.slug === params.city);
+export default async function CityPage({ params }: { params: Promise<{ city: string }> }) {
+  const { city } = await params;
+  const area = areasData.find((a) => a.slug === city);
   if (!area) notFound();
 
   return (
