@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "motion/react";
+import { trackConversion } from "@/components/Analytics";
 
 const FORMSPREE_ID = "xpqyyjkl";
 
@@ -57,6 +58,7 @@ export default function BookPage() {
     setLoading(false);
 
     if (res.ok) {
+      trackConversion(process.env.NEXT_PUBLIC_GADS_CONVERSION_LABEL);
       setSubmitted(true);
     } else {
       setError("Something went wrong. Please call us at (972) 644-3280.");
