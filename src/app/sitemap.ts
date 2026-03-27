@@ -1,7 +1,18 @@
 import type { MetadataRoute } from "next";
+import { areasData } from "@/lib/areas-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://buchwaldfamilydentistry.com";
+
+  const areaPages: MetadataRoute.Sitemap = [
+    { url: `${baseUrl}/areas`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    ...areasData.map((area) => ({
+      url: `${baseUrl}/areas/${area.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+  ];
 
   return [
     { url: baseUrl, lastModified: new Date(), changeFrequency: "monthly", priority: 1 },
@@ -30,5 +41,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/blog/dental-implants-cost-texas`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/blog/signs-you-need-dentist`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/blog/is-teeth-whitening-safe`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
+    ...areaPages,
   ];
 }
