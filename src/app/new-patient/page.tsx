@@ -62,7 +62,7 @@ export default function NewPatientPage() {
           </motion.div>
 
           <StatRow stats={[
-            { value: "$129", label: "New Patient Special" },
+            { value: "$149", label: "New Patient Special" },
             { value: "60–90 min", label: "First Visit" },
             { value: "4.9★", label: "Google Reviews" },
             { value: "Free", label: "Lifetime Warranty" },
@@ -83,13 +83,13 @@ export default function NewPatientPage() {
         </div>
       </section>
 
-      {/* $129 New Patient Special */}
+      {/* $149 New Patient Special */}
       <section className="py-14 sm:py-18 bg-white">
         <div className="mx-auto max-w-3xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-primary/10 rounded-2xl p-8 sm:p-12 text-center">
             <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Limited-Time Offer</p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">$129 New Patient Special</h2>
-            <p className="text-gray-600 text-lg leading-relaxed mb-6">Professional cleaning, comprehensive exam, and digital X-rays — all for just $129. No insurance required.</p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">$149 New Patient Special</h2>
+            <p className="text-gray-600 text-lg leading-relaxed mb-6">Professional cleaning, comprehensive exam, and digital X-rays — all for just $149. No insurance required.</p>
             <Checklist items={["Professional cleaning", "Comprehensive exam", "Digital X-rays", "Free lifetime warranty on all dental work"]} />
           </motion.div>
         </div>
@@ -134,7 +134,7 @@ export default function NewPatientPage() {
       <CTABanner />
       <FAQSchema faqs={faqs} />
       <BreadcrumbSchema items={[{ name: "New Patient", href: "/new-patient" }]} />
-      <ServiceSchema name="New Patient Visit" description="$129 new patient cleaning, exam, and X-rays at Buchwald Family Dentistry in Richardson, TX. Serving Plano, Allen, and Garland." url="/new-patient" />
+      <ServiceSchema name="New Patient Visit" description="$149 new patient cleaning, exam, and X-rays at Buchwald Family Dentistry in Richardson, TX. Serving Plano, Allen, and Garland." url="/new-patient" />
     </>
   );
 }

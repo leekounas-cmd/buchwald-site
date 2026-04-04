@@ -58,7 +58,7 @@ export function BusinessSchema() {
             name: "New Patient Cleaning & Exam",
             description: "Professional cleaning, comprehensive exam, and digital X-rays for new patients.",
           },
-          price: "129.00",
+          price: "149.00",
           priceCurrency: "USD",
         },
         {

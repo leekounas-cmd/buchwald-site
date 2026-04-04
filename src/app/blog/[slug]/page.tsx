@@ -127,7 +127,7 @@ function FirstDentalVisit() {
     <>
       <div className="grid grid-cols-3 gap-3 mb-6">
         <Stat value="60-90" label="minutes, first visit" />
-        <Stat value="$129" label="new patient special" />
+        <Stat value="$149" label="new patient special" />
         <Stat value="4.9" label="stars on Google" />
       </div>
 
@@ -349,7 +349,7 @@ function ChooseDentistRichardson() {
       <div className="grid grid-cols-3 gap-3 mb-6">
         <Stat value="4.9" label="stars on Google" />
         <Stat value="20+" label="years in Richardson" />
-        <Stat value="$129" label="new patient special" />
+        <Stat value="$149" label="new patient special" />
       </div>
 
       <h2>What to Look For</h2>

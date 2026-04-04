@@ -153,7 +153,7 @@ export default function HomePage() {
             {[
               { value: "433+", label: "Google Reviews" },
               { value: "4.9", label: "Google Rating" },
-              { value: "$129", label: "New Patient Cleaning" },
+              { value: "$149", label: "New Patient Cleaning" },
               { value: "Free", label: "Lifetime Warranty" },
             ].map((stat, i) => (
               <motion.div

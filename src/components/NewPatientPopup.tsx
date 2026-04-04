@@ -87,12 +87,12 @@ export function NewPatientPopup() {
             </h2>
 
             <p className="text-gray-500 text-sm leading-relaxed mb-6">
-              Professional cleaning, comprehensive exam, and digital X-rays for just $129. No insurance required. Free lifetime warranty on all dental work.
+              Professional cleaning, comprehensive exam, and digital X-rays for just $149. No insurance required. Free lifetime warranty on all dental work.
             </p>
 
             {/* Price */}
             <div className="flex items-baseline gap-2 mb-6">
-              <span className="text-4xl font-semibold text-gray-900">$129</span>
+              <span className="text-4xl font-semibold text-gray-900">$149</span>
               <span className="text-sm text-gray-400 line-through">$350+ value</span>
             </div>
 
@@ -116,7 +116,7 @@ export function NewPatientPopup() {
                 rel="noopener noreferrer"
                 className="w-full py-3 px-6 bg-gray-900 text-white text-sm font-medium rounded-lg text-center hover:bg-gray-800 transition-colors"
               >
-                Book My $129 Visit
+                Book My $149 Visit
               </a>
               <a
                 href="tel:9726443280"

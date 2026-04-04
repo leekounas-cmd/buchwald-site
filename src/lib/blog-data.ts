@@ -145,7 +145,7 @@ export const blogPosts: BlogPost[] = [
       { q: "What should I look for in a dentist in Richardson, TX?", a: "Look for strong Google reviews, modern technology, a welcoming team, and transparent pricing. A good dentist will never pressure you into treatment you don't need." },
       { q: "Does Buchwald Family Dentistry accept new patients?", a: "Yes — we're always welcoming new patients from Richardson, Plano, Allen, Garland, and the surrounding DFW area. You can request your first appointment online." },
       { q: "How do I know if a dentist is good?", a: "Check Google and Yelp reviews, look at their website for before-and-after photos, and pay attention to how the front desk treats you. First impressions matter — if the team is warm and organized, that usually reflects the whole practice." },
-      { q: "Does Buchwald Family Dentistry take my insurance?", a: "We accept most major PPO plans and will verify your benefits before any treatment. If you don't have insurance, we offer a $129 new patient special and flexible financing options." },
+      { q: "Does Buchwald Family Dentistry take my insurance?", a: "We accept most major PPO plans and will verify your benefits before any treatment. If you don't have insurance, we offer a $149 new patient special and flexible financing options." },
     ],
   },
   {
