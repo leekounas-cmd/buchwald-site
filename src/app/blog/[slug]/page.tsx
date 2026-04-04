@@ -116,7 +116,7 @@ function WhyYouNeedNightGuard() {
       <p><strong>Visit 2:</strong> Pick up your guard, we check the fit. Done.</p>
       <p>
         Think you might be grinding?{" "}
-        <Link href="/book" className="text-primary font-semibold underline">Book an appointment</Link> — Dr. Buchwald can spot the signs during a routine exam.
+        <a href="https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold underline">Book an appointment</a> — Dr. Buchwald can spot the signs during a routine exam.
       </p>
     </>
   );
@@ -158,7 +158,7 @@ function FirstDentalVisit() {
       ]} />
 
       <p>
-        <Link href="/book" className="text-primary font-semibold underline">Request your first appointment</Link> — we&apos;ll take it from there.
+        <a href="https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold underline">Request your first appointment</a> — we&apos;ll take it from there.
       </p>
     </>
   );
@@ -205,7 +205,7 @@ function InvisalignVsBraces() {
 
       <p>
         <Link href="/invisalign" className="text-primary font-semibold underline">Learn about Invisalign at our office</Link> or{" "}
-        <Link href="/book" className="text-primary font-semibold underline">book a free consultation</Link>.
+        <a href="https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold underline">book a free consultation</a>.
       </p>
     </>
   );
@@ -246,7 +246,7 @@ function DentalImplantsCost() {
 
       <p>
         <Link href="/dental-implants" className="text-primary font-semibold underline">Learn about our implant process</Link> or{" "}
-        <Link href="/book" className="text-primary font-semibold underline">request a consultation</Link>.
+        <a href="https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold underline">request a consultation</a>.
       </p>
     </>
   );
@@ -284,7 +284,7 @@ function SignsYouNeedDentist() {
 
       <p>
         Any of these sound familiar?{" "}
-        <Link href="/book" className="text-primary font-semibold underline">Request an appointment</Link> — we&apos;ll get you taken care of.
+        <a href="https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold underline">Request an appointment</a> — we&apos;ll get you taken care of.
       </p>
     </>
   );
@@ -337,7 +337,7 @@ function TeethWhiteningSafe() {
       <p>
         Curious?{" "}
         <Link href="/teeth-whitening" className="text-primary font-semibold underline">See our whitening services</Link> or{" "}
-        <Link href="/book" className="text-primary font-semibold underline">book a consultation</Link>.
+        <a href="https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold underline">book a consultation</a>.
       </p>
     </>
   );
@@ -444,7 +444,7 @@ function InsuranceCoverInvisalign() {
 
       <p>
         <Link href="/invisalign" className="text-primary font-semibold underline">Learn about Invisalign at our office</Link> or{" "}
-        <Link href="/book" className="text-primary font-semibold underline">book a free consultation</Link>.
+        <a href="https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold underline">book a free consultation</a>.
       </p>
     </>
   );
@@ -498,7 +498,7 @@ function KidsStartDentist() {
       <p>
         We see kids of all ages at our Richardson office — families come from Plano, Allen, Garland, and across DFW.{" "}
         <Link href="/services/cleaning" className="text-primary font-semibold underline">See our cleaning services</Link> or{" "}
-        <Link href="/book" className="text-primary font-semibold underline">book your child&apos;s first visit</Link>.
+        <a href="https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold underline">book your child&apos;s first visit</a>.
       </p>
     </>
   );
@@ -552,7 +552,7 @@ function FiveStarDentalExperience() {
 
       <p>
         <Link href="/meet-us" className="text-primary font-semibold underline">Meet the team</Link> or{" "}
-        <Link href="/book" className="text-primary font-semibold underline">book your visit</Link> and see the difference for yourself.
+        <a href="https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold underline">book your visit</a> and see the difference for yourself.
       </p>
     </>
   );
@@ -596,7 +596,7 @@ function DentalInsurance101() {
       <p>
         Not sure what your plan covers? Our coordinator Denielle will check for you.{" "}
         <Link href="/insurance" className="text-primary font-semibold underline">See our insurance info</Link> or{" "}
-        <Link href="/book" className="text-primary font-semibold underline">book an appointment</Link>.
+        <a href="https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold underline">book an appointment</a>.
       </p>
     </>
   );
@@ -650,7 +650,7 @@ function CostOfSkippingDentist() {
       <p>
         Ready to get back on track?{" "}
         <Link href="/services/cleaning" className="text-primary font-semibold underline">See our cleaning services</Link> or{" "}
-        <Link href="/book" className="text-primary font-semibold underline">book your visit</Link>.
+        <a href="https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold underline">book your visit</a>.
       </p>
     </>
   );
@@ -707,7 +707,7 @@ function EmergencyDentistRichardson() {
       <p>
         We serve Richardson, Plano, Allen, Garland, and the surrounding DFW area.{" "}
         <Link href="/emergency" className="text-primary font-semibold underline">Learn about our emergency care</Link> or{" "}
-        <Link href="/book" className="text-primary font-semibold underline">request an appointment</Link>.
+        <a href="https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold underline">request an appointment</a>.
       </p>
     </>
   );
@@ -763,7 +763,7 @@ function ImplantsVsDentures() {
 
       <p>
         <Link href="/dental-implants" className="text-primary font-semibold underline">Learn about our implant process</Link> or{" "}
-        <Link href="/book" className="text-primary font-semibold underline">book a consultation</Link> — Dr. Buchwald will give you an honest recommendation.
+        <a href="https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold underline">book a consultation</a> — Dr. Buchwald will give you an honest recommendation.
       </p>
     </>
   );
@@ -818,7 +818,7 @@ function WhyDentistRecommendsXrays() {
       <p>
         Questions about X-rays at your next visit?{" "}
         <Link href="/services/cleaning" className="text-primary font-semibold underline">See what our checkups include</Link> or{" "}
-        <Link href="/book" className="text-primary font-semibold underline">book your appointment</Link>.
+        <a href="https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold underline">book your appointment</a>.
       </p>
     </>
   );
@@ -873,7 +873,7 @@ function HowOftenDentist() {
       <p>
         Patients from Richardson, Plano, Garland, and Allen trust us to keep their smiles on track.{" "}
         <Link href="/services/cleaning" className="text-primary font-semibold underline">Learn about our cleanings</Link> or{" "}
-        <Link href="/book" className="text-primary font-semibold underline">book your next visit</Link>.
+        <a href="https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold underline">book your next visit</a>.
       </p>
     </>
   );

@@ -11,7 +11,7 @@ import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { ServiceSchema } from "@/components/ServiceSchema";
 import { StatRow, Checklist, Versus, NumberedList, Highlight } from "@/components/ContentBlocks";
 
-const BOOKING_URL = "/book";
+const BOOKING_URL = "https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE";
 
 const faqs = [
   { q: "How long do dental implants last?", a: "With proper care, dental implants can last a lifetime. The crown on top may need replacement after 10–15 years, but the implant itself is designed to be permanent." },

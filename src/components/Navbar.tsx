@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
-const BOOKING_URL = "/book";
+const BOOKING_URL = "https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE";
 
 const serviceLinks = [
   { href: "/services/cleaning", label: "Cleaning & Exam" },
@@ -153,6 +153,17 @@ export function Navbar() {
             </Link>
 
             <Link
+              href="/emergency"
+              className={`px-3 py-2 rounded-lg text-[13px] font-medium transition-colors ${
+                pathname === "/emergency"
+                  ? "text-primary bg-primary-light"
+                  : "text-red-500 hover:text-red-600 hover:bg-red-50"
+              }`}
+            >
+              Emergency
+            </Link>
+
+            <Link
               href="/blog"
               className={`px-3 py-2 rounded-lg text-[13px] font-medium transition-colors ${
                 pathname.startsWith("/blog")
@@ -160,7 +171,7 @@ export function Navbar() {
                   : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
               }`}
             >
-              Dental Blog
+              Blog
             </Link>
 
             <Link
@@ -178,7 +189,7 @@ export function Navbar() {
               href={BOOKING_URL}
               className="ml-3 rounded-lg bg-primary px-5 py-2.5 text-[13px] font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-md hover:shadow-primary/20"
             >
-              Book Now
+              Schedule My Visit
             </a>
           </div>
 
@@ -283,6 +294,17 @@ export function Navbar() {
           </Link>
 
           <Link
+            href="/emergency"
+            className={`block rounded-lg px-4 py-3 text-sm font-medium transition-colors ${
+              pathname === "/emergency"
+                ? "bg-primary-light text-primary"
+                : "text-red-500 hover:bg-red-50 hover:text-red-600"
+            }`}
+          >
+            Emergency
+          </Link>
+
+          <Link
             href="/blog"
             className={`block rounded-lg px-4 py-3 text-sm font-medium transition-colors ${
               pathname.startsWith("/blog")
@@ -290,7 +312,7 @@ export function Navbar() {
                 : "text-gray-500 hover:bg-gray-50 hover:text-gray-900"
             }`}
           >
-            Dental Blog
+            Blog
           </Link>
 
           <Link
@@ -308,7 +330,7 @@ export function Navbar() {
             href={BOOKING_URL}
             className="mt-3 block rounded-lg bg-primary px-5 py-3 text-center text-sm font-semibold text-white hover:bg-primary-dark"
           >
-            Book Now
+            Schedule My Visit
           </a>
         </div>
       </div>

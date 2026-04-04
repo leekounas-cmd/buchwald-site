@@ -1,8 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "motion/react";
 import { trackConversion } from "@/components/Analytics";
+import { BookingConfirmation } from "@/components/BookingConfirmation";
+import { UrgencyBadge } from "@/components/UrgencyBadge";
 
 const FORMSPREE_ID = "xpqyyjkl";
 
@@ -40,6 +42,8 @@ export default function BookPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [patientName, setPatientName] = useState("");
+  const formRef = useRef<HTMLFormElement>(null);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -59,6 +63,8 @@ export default function BookPage() {
 
     if (res.ok) {
       trackConversion(process.env.NEXT_PUBLIC_GADS_CONVERSION_LABEL);
+      const nameValue = data.get("name");
+      if (nameValue) setPatientName(String(nameValue).split(" ")[0]);
       setSubmitted(true);
     } else {
       setError("Something went wrong. Please call us at (972) 644-3280.");
@@ -68,20 +74,12 @@ export default function BookPage() {
   if (submitted) {
     return (
       <section className="py-20 sm:py-32 bg-white">
-        <div className="mx-auto max-w-lg px-4 text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
-              <svg className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-              </svg>
-            </div>
-            <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">Request Received</h1>
-            <p className="text-gray-500 text-lg leading-relaxed">
-              We&apos;ll get back to you within 1 business day to confirm your appointment. If you need immediate help, call us at{" "}
-              <a href="tel:972-644-3280" className="text-primary font-bold">(972) 644-3280</a>.
-            </p>
-          </motion.div>
-        </div>
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+          <BookingConfirmation
+            patientName={patientName}
+            onReset={() => { setSubmitted(false); setPatientName(""); }}
+          />
+        </motion.div>
       </section>
     );
   }
@@ -93,6 +91,9 @@ export default function BookPage() {
           <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Get Started</p>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3">Request an Appointment</h1>
           <p className="text-gray-500 text-base">Fill out the form below and we&apos;ll reach out to confirm your visit.</p>
+          <div className="flex justify-center mt-4">
+            <UrgencyBadge />
+          </div>
         </motion.div>
 
         <motion.form

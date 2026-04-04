@@ -6,6 +6,8 @@ import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { StickyBottomBar } from "@/components/StickyBottomBar";
 import { Footer } from "@/components/Footer";
 import { Analytics } from "@/components/Analytics";
+import { BusinessSchema } from "@/components/BusinessSchema";
+import { NewPatientPopup } from "@/components/NewPatientPopup";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -56,11 +58,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${plusJakarta.variable} antialiased`}>
+        <BusinessSchema />
         <AnnouncementBar />
         <Navbar />
         <main>{children}</main>
         <Footer />
         <StickyBottomBar />
+        <NewPatientPopup />
         <Analytics />
       </body>
     </html>

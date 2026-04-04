@@ -11,7 +11,7 @@ import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { ServiceSchema } from "@/components/ServiceSchema";
 import { StatRow, Highlight, Checklist, NumberedList } from "@/components/ContentBlocks";
 
-const BOOKING_URL = "/book";
+const BOOKING_URL = "https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE";
 
 const serviceItems = [
   "Fillings — tooth-colored composite, no metal or mercury",

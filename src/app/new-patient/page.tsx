@@ -65,6 +65,7 @@ export default function NewPatientPage() {
             { value: "$129", label: "New Patient Special" },
             { value: "60–90 min", label: "First Visit" },
             { value: "4.9★", label: "Google Reviews" },
+            { value: "Free", label: "Lifetime Warranty" },
           ]} />
 
           <Highlight>We know switching dentists can feel like a big deal. Our goal is to make you feel welcome from the moment you walk in — no judgment, no pressure.</Highlight>
@@ -89,7 +90,7 @@ export default function NewPatientPage() {
             <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Limited-Time Offer</p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">$129 New Patient Special</h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">Professional cleaning, comprehensive exam, and digital X-rays — all for just $129. No insurance required.</p>
-            <Checklist items={["Professional cleaning", "Comprehensive exam", "Digital X-rays"]} />
+            <Checklist items={["Professional cleaning", "Comprehensive exam", "Digital X-rays", "Free lifetime warranty on all dental work"]} />
           </motion.div>
         </div>
       </section>

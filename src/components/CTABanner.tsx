@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 
-const BOOKING_URL = "/book";
+const BOOKING_URL = "https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE";
 
 export function CTABanner() {
   return (

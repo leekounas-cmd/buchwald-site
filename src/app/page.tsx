@@ -3,10 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
-import { Testimonials } from "@/components/Testimonials";
+import { ReviewsCarousel } from "@/components/ReviewsCarousel";
 import { CTABanner } from "@/components/CTABanner";
+import { UrgencyBadge } from "@/components/UrgencyBadge";
 
-const BOOKING_URL = "/book";
+const BOOKING_URL = "https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE";
 
 const services = [
   {
@@ -71,10 +72,10 @@ export default function HomePage() {
             transition={{ duration: 0.5 }}
             className="text-center"
           >
-            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-4">Richardson&apos;s Most-Loved Family Dentist</p>
+            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-4">Richardson&apos;s Top-Rated Family Dentist</p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-[1.1] mb-8">
-              Modern Care.<br />
-              <span className="text-primary">Comfortable Visits.</span>
+              4.9 Stars. 433 Families.<br />
+              <span className="text-primary">Zero Judgment.</span>
             </h1>
           </motion.div>
 
@@ -110,7 +111,7 @@ export default function HomePage() {
                 href={BOOKING_URL}
                 className="rounded-lg bg-primary px-7 py-3.5 text-sm font-bold text-white transition-all hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/25 text-center"
               >
-                Book Appointment
+                Schedule My Visit
               </a>
               <a
                 href="tel:972-644-3280"
@@ -121,23 +122,26 @@ export default function HomePage() {
             </div>
 
             {/* Trust */}
-            <a
-              href="https://share.google/9gal12WjpTrHj1b4V"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 mt-8 justify-center hover:opacity-80 transition-opacity"
-            >
-              <div className="flex gap-0.5">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className={`h-4 w-4 ${i < 4 ? "text-gold" : "text-gold"}`} fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
-              <span className="text-sm text-gray-400">
-                4.9 on Google &middot; 433 reviews
-              </span>
-            </a>
+            <div className="flex flex-col items-center gap-4 mt-8">
+              <UrgencyBadge />
+              <a
+                href="https://share.google/9gal12WjpTrHj1b4V"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 justify-center hover:opacity-80 transition-opacity"
+              >
+                <div className="flex gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="h-4 w-4 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <span className="text-sm text-gray-400">
+                  4.9 on Google &middot; 433 reviews
+                </span>
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -150,7 +154,7 @@ export default function HomePage() {
               { value: "433+", label: "Google Reviews" },
               { value: "4.9", label: "Google Rating" },
               { value: "$129", label: "New Patient Cleaning" },
-              { value: "Mon–Thu", label: "7am – 3pm" },
+              { value: "Free", label: "Lifetime Warranty" },
             ].map((stat, i) => (
               <motion.div
                 key={stat.label}
@@ -188,6 +192,12 @@ export default function HomePage() {
                 <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
               </svg>
               <span className="text-sm font-semibold">Same-Day Appointments</span>
+            </div>
+            <div className="flex items-center gap-2 text-gray-400">
+              <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+              </svg>
+              <span className="text-sm font-semibold">Free Lifetime Warranty</span>
             </div>
             <div className="flex items-center gap-2 text-gray-400">
               <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -441,89 +451,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <Testimonials />
+      {/* Reviews */}
+      <ReviewsCarousel />
 
       {/* CTA */}
       <CTABanner />
 
-      {/* Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": ["Dentist", "LocalBusiness", "MedicalBusiness"],
-            name: "Buchwald Family Dentistry & Orthodontics",
-            alternateName: "Buchwald Family Dentistry",
-            image: "https://buchwaldfamilydentistry.com/images/logo-color.png",
-            "@id": "https://buchwaldfamilydentistry.com",
-            url: "https://buchwaldfamilydentistry.com",
-            telephone: "+1-972-644-3280",
-            priceRange: "$$",
-            currenciesAccepted: "USD",
-            paymentAccepted: "Cash, Credit Card, Insurance, Financing",
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: "300 N Coit Rd #245",
-              addressLocality: "Richardson",
-              addressRegion: "TX",
-              postalCode: "75080",
-              addressCountry: "US",
-            },
-            geo: {
-              "@type": "GeoCoordinates",
-              latitude: 32.9601,
-              longitude: -96.7295,
-            },
-            openingHoursSpecification: [
-              { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"], opens: "07:00", closes: "15:00" },
-            ],
-            founder: {
-              "@type": "Person",
-              name: "Dr. Max Buchwald Jr.",
-              jobTitle: "Dentist",
-            },
-            medicalSpecialty: "Dentistry",
-            isAcceptingNewPatients: true,
-            areaServed: [
-              { "@type": "City", name: "Richardson", "@id": "https://en.wikipedia.org/wiki/Richardson,_Texas" },
-              { "@type": "City", name: "Plano" },
-              { "@type": "City", name: "Allen" },
-              { "@type": "City", name: "Garland" },
-              { "@type": "City", name: "Coppell" },
-              { "@type": "City", name: "Carrollton" },
-            ],
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              bestRating: "5",
-              reviewCount: "433",
-            },
-            sameAs: [
-              "https://www.facebook.com/MaxBuchwaldFamilyDentist/",
-              "https://www.instagram.com/buchwaldfamilydentistry/",
-              "https://www.youtube.com/@BuchwaldFamilyDentistry",
-            ],
-            hasOfferCatalog: {
-              "@type": "OfferCatalog",
-              name: "Dental Services",
-              itemListElement: [
-                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Dental Cleaning & Exam" } },
-                { "@type": "Offer", itemOffered: { "@type": "Service", name: "General Dentistry" } },
-                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Cosmetic Dentistry" } },
-                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Restorative Dentistry" } },
-                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Invisalign" } },
-                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Teeth Whitening" } },
-                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Dental Implants" } },
-                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Laser Therapy" } },
-                { "@type": "Offer", itemOffered: { "@type": "Service", name: "InnerView AI Diagnostics" } },
-                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Emergency Dentistry" } },
-              ],
-            },
-          }),
-        }}
-      />
+      {/* Video Schema (business schema now in layout via BusinessSchema) */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import { TextUsCTA } from "@/components/TextUsCTA";
+import { GoogleMapEmbed } from "@/components/GoogleMapEmbed";
 
 const quickLinks = [
   { href: "/", label: "Home" },
@@ -113,10 +115,16 @@ export function Footer() {
               <a href="tel:972-644-3280" className="block text-white font-semibold hover:text-primary transition-colors">
                 (972) 644-3280
               </a>
+              <TextUsCTA variant="inline" className="text-gray-400 hover:text-white" />
               <p>Mon – Thu: 7am – 3pm<br />Fri – Sun: Closed</p>
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Map */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-8">
+        <GoogleMapEmbed height="250" className="opacity-80 hover:opacity-100 transition-opacity" />
       </div>
 
       <div className="border-t border-white/5">

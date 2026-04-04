@@ -8,7 +8,7 @@ import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { ServiceSchema } from "@/components/ServiceSchema";
 import { StatRow, Checklist, Versus, NumberedList, Highlight } from "@/components/ContentBlocks";
 
-const BOOKING_URL = "/book";
+const BOOKING_URL = "https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE";
 
 const faqs = [
   { q: "How much do dental implants cost?", a: "The cost varies depending on how many implants you need and whether additional procedures like bone grafting are required. We'll give you a detailed estimate during your consultation." },

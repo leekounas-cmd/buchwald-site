@@ -11,7 +11,7 @@ import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { ServiceSchema } from "@/components/ServiceSchema";
 import { StatRow, Checklist, Versus, Highlight } from "@/components/ContentBlocks";
 
-const BOOKING_URL = "/book";
+const BOOKING_URL = "https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE";
 
 const faqs = [
   { q: "How long do veneers last?", a: "Porcelain veneers typically last 10–15+ years with proper care. They're stain-resistant and extremely durable." },
