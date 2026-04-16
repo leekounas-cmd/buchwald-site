@@ -83,8 +83,8 @@ export default function CleaningPage() {
       <section className="py-12 sm:py-16 bg-gray-50">
         <div className="mx-auto max-w-3xl px-4">
           <StatRow stats={[
-            { value: "45-60", label: "Minute visit" },
-            { value: "$99", label: "New patient" },
+            { value: "60 min", label: "Existing patients" },
+            { value: "90 min", label: "New patients" },
             { value: "6mo", label: "Recommended frequency" },
           ]} />
 

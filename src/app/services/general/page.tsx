@@ -80,7 +80,6 @@ export default function GeneralPage() {
           <StatRow stats={[
             { value: "5-10yr", label: "Filling lifespan" },
             { value: "10-15yr", label: "Crown lifespan" },
-            { value: "95%", label: "Root canal success" },
           ]} />
 
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
@@ -88,7 +87,7 @@ export default function GeneralPage() {
             <Checklist items={serviceItems} />
           </motion.div>
 
-          <Highlight>A small cavity today is a $200 filling. Left untreated, it becomes a $1,200 crown or a $2,000 root canal. Catching problems early saves you time, money, and pain.</Highlight>
+          <Highlight>A small cavity today is a $400 filling. Left untreated, it becomes a $2,400 crown or a $4,000 root canal. Catching problems early saves you time, money, and pain.</Highlight>
         </div>
       </section>
 
