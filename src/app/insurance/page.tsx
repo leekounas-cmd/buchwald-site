@@ -28,7 +28,7 @@ const faqs = [
   { q: "Do you accept Medicaid or HMO plans?", a: "We're primarily a PPO-based office. Medicaid and most HMO plans have restrictions that limit the care we can provide. If you're unsure, call us and we'll help figure out your options." },
   { q: "How does the Essential Care Plan work?", a: "It's our in-house membership for patients without insurance. For $99/year, you get a comprehensive exam, full X-rays, and 20% off all other treatments. Cleanings are $150 each. No waiting periods, no deductibles, no maximums." },
   { q: "Can I use my HSA or FSA at your office?", a: "Yes. All dental treatment at our office qualifies as an eligible medical expense for HSA and FSA accounts." },
-  { q: "What does a first visit cost without insurance?", a: "Our new patient special is $99 and includes a comprehensive exam and full digital X-rays. We'll walk you through any recommended treatment and give you a clear cost breakdown before anything is scheduled." },
+  { q: "What does a first visit cost without insurance?", a: "Our new patient special is $149 and includes a professional cleaning, comprehensive exam, and full digital X-rays. We'll walk you through any recommended treatment and give you a clear cost breakdown before anything is scheduled." },
 ];
 
 function FAQItem({ q, a }: { q: string; a: string }) {
@@ -75,7 +75,7 @@ export default function InsurancePage() {
         <div className="mx-auto max-w-4xl px-4">
           <StatRow stats={[
             { value: "Most PPOs", label: "Accepted" },
-            { value: "$99", label: "New patient special" },
+            { value: "$149", label: "New patient special" },
             { value: "$99/yr", label: "Essential Care Plan" },
           ]} />
 

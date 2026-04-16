@@ -6,7 +6,7 @@ import { CTABanner } from "@/components/CTABanner";
 import { StatRow, Highlight } from "@/components/ContentBlocks";
 
 const services = [
-  { title: "Cleaning & Exam", stat: "$99 new patient visit", href: "/services/cleaning" },
+  { title: "Cleaning & Exam", stat: "$149 new patient visit", href: "/services/cleaning" },
   { title: "General Dentistry", stat: "Fillings, crowns, root canals", href: "/services/general" },
   { title: "Cosmetic Dentistry", stat: "Veneers, bonding, smile makeovers", href: "/services/cosmetic" },
   { title: "Restorative", stat: "Implants, bridges, dentures", href: "/services/restorative" },
@@ -38,7 +38,7 @@ export default function ServicesPage() {
           <StatRow stats={[
             { value: "8+", label: "Services offered" },
             { value: "4.9", label: "Google rating" },
-            { value: "$99", label: "New patient special" },
+            { value: "$149", label: "New patient special" },
           ]} />
           <Highlight>One office, one team, every service your family needs — no referrals, no runaround.</Highlight>
         </div>
