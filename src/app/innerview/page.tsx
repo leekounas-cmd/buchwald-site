@@ -15,7 +15,7 @@ const faqs = [
   { q: "How long does a full scan take?", a: "About 3 seconds per tooth, roughly 90 seconds for your entire mouth. It's done by our hygienist during your regular exam — no extra appointment needed." },
   { q: "How is this different from X-rays?", a: "X-rays show bone and tooth structure from the outside. InnerView measures what's happening inside the tooth — detecting micro-movements that indicate cracks, loose restorations, or implant issues that X-rays can't see. They complement each other." },
   { q: "Can it detect cavities?", a: "InnerView is specifically designed to detect structural issues like cracks and failing restorations. For cavities, we use X-rays and visual exams. Together, they give us a complete picture." },
-  { q: "Will my insurance cover it?", a: "Coverage varies by plan. We'll review any fees with you before the scan. Ask Denielle about your specific benefits." },
+  { q: "Will my insurance cover it?", a: "Coverage varies by plan. We'll review any fees with you before the scan. Ask Lee about your specific benefits." },
   { q: "Is InnerView safe?", a: "Yes. It's FDA-cleared, uses no radiation, and is backed by 29+ clinical studies. It's completely non-invasive — just gentle taps on each tooth." },
   { q: "Do I need InnerView at every visit?", a: "Not necessarily, but regular scans let us track changes over time. Think of it like a health trendline for each tooth — we can spot early warning signs and intervene before problems get serious." },
   { q: "Can it check my existing crowns and implants?", a: "Yes — that's one of its biggest strengths. It can detect loose cement seals, failing restorations, and implant stability issues that are impossible to see with traditional methods." },

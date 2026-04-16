@@ -43,7 +43,7 @@ const faqs = [
   { q: "Can Invisalign fix my bite?", a: "Yes. Invisalign treats overbites, underbites, crossbites, open bites, and crowding. Dr. Buchwald has advanced Invisalign training and can handle complex cases." },
   { q: "How many hours a day do I wear them?", a: "20–22 hours per day for best results. You only take them out to eat, drink (anything besides water), brush, and floss." },
   { q: "What if I lose a tray?", a: "Call us. Depending on where you are in treatment, we may have you move to the next tray or order a replacement. It's not a big deal — it happens." },
-  { q: "Is Invisalign covered by insurance?", a: "Many dental insurance plans cover Invisalign the same way they cover braces. Denielle will check your benefits and let you know exactly what's covered." },
+  { q: "Is Invisalign covered by insurance?", a: "Many dental insurance plans cover Invisalign the same way they cover braces. Lee will check your benefits and let you know exactly what's covered." },
   { q: "Am I too old for Invisalign?", a: "Nope. There's no upper age limit. We treat patients of all ages. If your teeth and gums are healthy, you're likely a candidate." },
 ];
 

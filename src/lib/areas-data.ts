@@ -32,7 +32,7 @@ export const areasData: AreaData[] = [
       },
       {
         q: "Do you accept new patients in Richardson?",
-        a: "Absolutely. We welcome new patients of all ages. Our new patient special starts at $149 for a cleaning and exam.",
+        a: "Absolutely. We welcome new patients of all ages. Our new patient special is $99 for a comprehensive exam, X-rays, and consultation.",
       },
       {
         q: "What hours is your Richardson dental office open?",

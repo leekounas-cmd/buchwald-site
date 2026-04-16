@@ -39,7 +39,7 @@ const faqs = [
   { q: "Will the cleaning hurt?", a: "Most patients experience little to no discomfort. If you have sensitive teeth or it's been a while since your last visit, let us know — we'll make adjustments to keep you comfortable." },
   { q: "How long does a cleaning take?", a: "A typical cleaning and exam takes about 45–60 minutes. If you're adding on fluoride or whitening, plan for a little extra time." },
   { q: "What if it's been years since my last visit?", a: "No judgment — we see this all the time. We'll do a thorough evaluation and create a plan to get your oral health back on track." },
-  { q: "Do you accept my insurance?", a: "We work with most major dental insurance plans. Denielle, our insurance coordinator, will verify your benefits and explain your coverage before any treatment." },
+  { q: "Do you accept my insurance?", a: "We work with most major dental insurance plans. Lee, our insurance coordinator, will verify your benefits and explain your coverage before any treatment." },
   { q: "What's the difference between a regular cleaning and a deep cleaning?", a: "A regular cleaning removes plaque and tartar above the gum line. A deep cleaning (scaling and root planing) goes below the gum line to treat early-stage gum disease. We'll let you know which one you need." },
 ];
 
@@ -84,7 +84,7 @@ export default function CleaningPage() {
         <div className="mx-auto max-w-3xl px-4">
           <StatRow stats={[
             { value: "45-60", label: "Minute visit" },
-            { value: "$149", label: "New patient" },
+            { value: "$99", label: "New patient" },
             { value: "6mo", label: "Recommended frequency" },
           ]} />
 

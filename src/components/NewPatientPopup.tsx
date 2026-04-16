@@ -87,18 +87,18 @@ export function NewPatientPopup() {
             </h2>
 
             <p className="text-gray-500 text-sm leading-relaxed mb-6">
-              Professional cleaning, comprehensive exam, and digital X-rays for just $149. No insurance required. Free lifetime warranty on all dental work.
+              Comprehensive exam, digital X-rays, and a full consultation for just $99. No insurance required.
             </p>
 
             {/* Price */}
             <div className="flex items-baseline gap-2 mb-6">
-              <span className="text-4xl font-semibold text-gray-900">$149</span>
-              <span className="text-sm text-gray-400 line-through">$350+ value</span>
+              <span className="text-4xl font-semibold text-gray-900">$99</span>
+              <span className="text-sm text-gray-400 line-through">$300+ value</span>
             </div>
 
             {/* Included */}
             <div className="space-y-2 mb-8">
-              {["Professional cleaning", "Comprehensive exam", "Digital X-rays", "Personalized care plan"].map((item) => (
+              {["Comprehensive exam", "Full set of digital X-rays", "Treatment consultation", "Personalized care plan"].map((item) => (
                 <div key={item} className="flex items-center gap-2.5 text-sm text-gray-600">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-teal-500 flex-shrink-0">
                     <path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -116,7 +116,7 @@ export function NewPatientPopup() {
                 rel="noopener noreferrer"
                 className="w-full py-3 px-6 bg-gray-900 text-white text-sm font-medium rounded-lg text-center hover:bg-gray-800 transition-colors"
               >
-                Book My $149 Visit
+                Book My $99 Visit
               </a>
               <a
                 href="tel:9726443280"

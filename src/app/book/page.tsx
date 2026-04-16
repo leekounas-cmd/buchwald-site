@@ -9,7 +9,7 @@ import { UrgencyBadge } from "@/components/UrgencyBadge";
 const FORMSPREE_ID = "xpqyyjkl";
 
 const serviceOptions = [
-  "$149 New Patient Cleaning",
+  "$99 New Patient Exam & Consultation",
   "Cleaning & Exam",
   "General Dentistry",
   "Cosmetic Dentistry",

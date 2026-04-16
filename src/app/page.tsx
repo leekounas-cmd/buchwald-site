@@ -56,14 +56,28 @@ const team = [
   { name: "Dr. Max Buchwald Jr.", role: "Dentist", image: "/images/dr-buchwald.jpg" },
   { name: "Melisa Kounas", role: "Hygienist", image: "/images/melisa.jpg" },
   { name: "Cathy Kounas", role: "Operations", image: "/images/cathy.jpg" },
-  { name: "Denielle Thiel", role: "Insurance Coordinator", image: "/images/denielle.jpg" },
-  { name: "Lee Kounas", role: "Marketing", image: "/images/lee.jpg" },
+  { name: "Lee Kounas", role: "Marketing & Insurance", image: "/images/lee.jpg" },
+];
+
+const experienceItems = [
+  { icon: "🎧", label: "Noise-canceling headphones" },
+  { icon: "📺", label: "TVs at every chair" },
+  { icon: "🧣", label: "Blankets and pillows" },
+  { icon: "☕", label: "Complimentary beverages" },
+  { icon: "🕐", label: "On-time, no-wait visits" },
+  { icon: "💬", label: "We explain before we start" },
+];
+
+const savingsRows = [
+  { treatment: "Comprehensive Exam", withPlan: "Included", typical: "$150", save: "$150" },
+  { treatment: "Full X-rays", withPlan: "Included", typical: "$150", save: "$150" },
+  { treatment: "Cleaning (each)", withPlan: "$150", typical: "$220", save: "$70" },
 ];
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
+      {/* OBJECTION #1: "This will be uncomfortable / judgmental" */}
       <section className="relative overflow-hidden bg-white">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 sm:py-20">
           <motion.div
@@ -74,8 +88,8 @@ export default function HomePage() {
           >
             <p className="text-primary text-sm font-bold uppercase tracking-wider mb-4">Richardson&apos;s Most-Loved Family Dentist</p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-[1.1] mb-8">
-              Modern Care.<br />
-              <span className="text-primary">Comfortable Visits.</span>
+              Dental Care That<br />
+              <span className="text-primary">Feels Different</span>
             </h1>
           </motion.div>
 
@@ -104,7 +118,7 @@ export default function HomePage() {
             className="text-center max-w-3xl mx-auto"
           >
             <p className="text-gray-500 text-lg sm:text-xl leading-relaxed mb-10">
-              Your family and cosmetic dentist in Richardson, TX. We make going to the dentist something you actually don&apos;t mind.
+              Richardson&apos;s most-trusted family and cosmetic dentist. We built a practice around making you feel at ease, not on edge.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
@@ -121,7 +135,6 @@ export default function HomePage() {
               </a>
             </div>
 
-            {/* Trust */}
             <div className="flex flex-col items-center gap-4 mt-8">
               <UrgencyBadge />
               <a
@@ -146,6 +159,28 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Trust Strip */}
+      <section className="py-8 bg-gray-50">
+        <div className="mx-auto max-w-4xl px-4">
+          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+            {[
+              { icon: "M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z", label: "ADA Member" },
+              { icon: "M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z", label: "Invisalign Provider" },
+              { icon: "M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z", label: "Lifetime Warranty" },
+              { icon: "M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z", label: "Same-Day Appointments" },
+              { icon: "M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z", label: "Cherry Financing" },
+            ].map((item) => (
+              <div key={item.label} className="flex items-center gap-2 text-gray-400">
+                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d={item.icon} />
+                </svg>
+                <span className="text-sm font-semibold">{item.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Stats */}
       <section className="border-y border-gray-100 bg-white">
         <div className="mx-auto max-w-5xl px-4 py-10">
@@ -153,8 +188,8 @@ export default function HomePage() {
             {[
               { value: "433+", label: "Google Reviews" },
               { value: "4.9", label: "Google Rating" },
-              { value: "$149", label: "New Patient Cleaning" },
-              { value: "Free", label: "Lifetime Warranty" },
+              { value: "$99", label: "New Patient Special" },
+              { value: "Lifetime", label: "Warranty" },
             ].map((stat, i) => (
               <motion.div
                 key={stat.label}
@@ -171,214 +206,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Trust Badges */}
-      <section className="py-8 bg-gray-50">
-        <div className="mx-auto max-w-4xl px-4">
-          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
-            <div className="flex items-center gap-2 text-gray-400">
-              <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
-              </svg>
-              <span className="text-sm font-semibold">ADA Member</span>
-            </div>
-            <div className="flex items-center gap-2 text-gray-400">
-              <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
-              </svg>
-              <span className="text-sm font-semibold">Invisalign Provider</span>
-            </div>
-            <div className="flex items-center gap-2 text-gray-400">
-              <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
-              </svg>
-              <span className="text-sm font-semibold">Same-Day Appointments</span>
-            </div>
-            <div className="flex items-center gap-2 text-gray-400">
-              <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
-              </svg>
-              <span className="text-sm font-semibold">Free Lifetime Warranty</span>
-            </div>
-            <div className="flex items-center gap-2 text-gray-400">
-              <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-              </svg>
-              <span className="text-sm font-semibold">Most Insurance Accepted</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About */}
-      <section className="py-14 sm:py-20 bg-white">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.97 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-            >
-              <Image
-                src="/images/office-1.jpg"
-                alt="Front of Buchwald Family Dentistry office in Richardson, TX"
-                width={600}
-                height={450}
-                className="rounded-2xl w-full object-cover aspect-[4/3]"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">
-                About Us
-              </p>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-5">
-                We get it — nobody loves going to the dentist.
-              </h2>
-              <p className="text-gray-500 text-base leading-relaxed mb-4">
-                That&apos;s why we built a practice that actually feels different. Clean, modern, and calm — with a team that takes the time to explain what&apos;s going on and makes sure you&apos;re comfortable before, during, and after.
-              </p>
-              <p className="text-gray-500 text-base leading-relaxed mb-6">
-                Dr. Buchwald and our team have been serving families in Richardson, Plano, and Allen since day one. Whether it&apos;s your first visit or your fiftieth, the goal is simple — leave proud of your smile.
-              </p>
-              <Link
-                href="/meet-us"
-                className="inline-flex items-center gap-2 text-primary text-sm font-bold hover:gap-3 transition-all"
-              >
-                Meet the Team
-                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Membership + Insurance */}
-      <section className="py-14 sm:py-18 bg-white">
-        <div className="mx-auto max-w-5xl px-4">
-          <div className="grid gap-4 md:grid-cols-2">
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-gray-50 rounded-2xl p-8 sm:p-10"
-            >
-              <p className="text-primary text-sm font-bold uppercase tracking-wider mb-2">
-                No Insurance? No Problem.
-              </p>
-              <h3 className="text-2xl font-extrabold text-gray-900 mb-3">
-                Essential Care Plan
-              </h3>
-              <div className="space-y-4 mb-6">
-                <div className="bg-white rounded-xl p-4">
-                  <div className="flex items-baseline justify-between mb-1">
-                    <p className="font-bold text-gray-900 text-sm">$400/year</p>
-                    <p className="text-primary font-extrabold text-lg">$34<span className="text-gray-400 text-xs font-medium">/mo</span></p>
-                  </div>
-                  <p className="text-gray-400 text-xs">2 cleanings, 2 exams, X-rays, and discounts on all treatments</p>
-                  <p className="text-primary text-xs font-semibold mt-2">0% APR financing through Cherry</p>
-                </div>
-              </div>
-              <a
-                href={BOOKING_URL}
-                className="inline-block rounded-lg bg-primary px-6 py-3 text-sm font-bold text-white hover:bg-primary-dark transition-colors"
-              >
-                Request Appointment
-              </a>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.06 }}
-              className="bg-gray-50 rounded-2xl p-8 sm:p-10"
-            >
-              <p className="text-primary text-sm font-bold uppercase tracking-wider mb-2">
-                Insurance
-              </p>
-              <h3 className="text-2xl font-extrabold text-gray-900 mb-3">
-                We Work With Your Plan
-              </h3>
-              <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                Our insurance coordinator Denielle handles the details so you don&apos;t have to. We&apos;ll break down your benefits, file claims, and make sure you get the most out of your coverage.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <a
-                  href="tel:972-644-3280"
-                  className="inline-block rounded-lg bg-gray-900 px-6 py-3 text-sm font-bold text-white hover:bg-gray-800 transition-colors text-center"
-                >
-                  Call to Verify
-                </a>
-                <Link
-                  href="/insurance"
-                  className="inline-block rounded-lg bg-white px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100 transition-colors text-center"
-                >
-                  See Accepted Plans
-                </Link>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services */}
-      <section className="py-14 sm:py-18 bg-gray-50">
-        <div className="mx-auto max-w-4xl px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-10"
-          >
-            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">
-              Our Services
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3">
-              Everything Your Smile Needs
-            </h2>
-            <p className="text-gray-500 text-base max-w-lg mx-auto">
-              From routine cleanings to full smile makeovers — all under one roof.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-wrap justify-center gap-2 mb-8"
-          >
-            {services.map((service) => (
-              <Link
-                key={service.title}
-                href={service.href}
-                className="rounded-full bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-primary hover:text-white transition-all shadow-sm"
-              >
-                {service.title}
-              </Link>
-            ))}
-          </motion.div>
-
-          <div className="text-center">
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-2 text-primary text-sm font-bold hover:gap-3 transition-all"
-            >
-              View All Services
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Team */}
-      <section className="py-14 sm:py-20 bg-white">
+      <section className="py-14 sm:py-20 bg-gray-50">
         <div className="mx-auto max-w-5xl px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -421,8 +250,265 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* OBJECTION #2: "This will be expensive" — Three Paths */}
+      <section className="py-14 sm:py-20 bg-white">
+        <div className="mx-auto max-w-5xl px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-10"
+          >
+            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">No Matter Your Situation</p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3">
+              We&apos;ve Made It Easy to Say Yes
+            </h2>
+            <p className="text-gray-500 text-base max-w-lg mx-auto">
+              Insurance, no insurance, or tight on budget — we have a path that works.
+            </p>
+          </motion.div>
+
+          <div className="grid gap-4 md:grid-cols-3">
+            {/* Insurance */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0 }}
+              className="bg-gray-50 rounded-2xl p-7 flex flex-col"
+            >
+              <p className="text-primary text-xs font-bold uppercase tracking-wider mb-2">Have Insurance</p>
+              <h3 className="text-xl font-extrabold text-gray-900 mb-3">We Handle the Headache</h3>
+              <p className="text-gray-500 text-sm leading-relaxed flex-1 mb-6">
+                Lee verifies your benefits, files all claims, and breaks down your out-of-pocket cost before anything is scheduled. You show up, we handle the rest.
+              </p>
+              <div className="flex flex-col gap-2">
+                <a href="tel:972-644-3280" className="rounded-lg bg-gray-900 px-5 py-2.5 text-sm font-bold text-white hover:bg-gray-800 transition-colors text-center">
+                  Call to Verify Benefits
+                </a>
+                <Link href="/insurance" className="rounded-lg bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 hover:bg-gray-100 transition-colors text-center">
+                  See Accepted Plans
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Membership - Most Popular */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.06 }}
+              className="bg-primary rounded-2xl p-7 flex flex-col relative"
+            >
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-600 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                Most Popular
+              </span>
+              <p className="text-white/70 text-xs font-bold uppercase tracking-wider mb-2">No Insurance</p>
+              <h3 className="text-xl font-extrabold text-white mb-3">Essential Care Plan</h3>
+              <p className="text-white/70 text-sm leading-relaxed flex-1 mb-6">
+                $99/year gets you a full exam and X-rays. Add cleanings at $150 each. Better care than most insurance plans, with no waiting periods or annual maximums.
+              </p>
+              <a
+                href={BOOKING_URL}
+                className="rounded-lg bg-white px-5 py-2.5 text-sm font-bold text-primary hover:bg-gray-50 transition-colors text-center"
+              >
+                Join the Plan
+              </a>
+            </motion.div>
+
+            {/* Financing */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.12 }}
+              className="bg-gray-50 rounded-2xl p-7 flex flex-col"
+            >
+              <p className="text-primary text-xs font-bold uppercase tracking-wider mb-2">Need Flexibility</p>
+              <h3 className="text-xl font-extrabold text-gray-900 mb-3">0% APR Financing</h3>
+              <p className="text-gray-500 text-sm leading-relaxed flex-1 mb-6">
+                Break any treatment into monthly payments through Cherry. Apply in minutes, no impact on credit score, and 0% APR options available.
+              </p>
+              <Link
+                href="/payment-plans"
+                className="rounded-lg bg-gray-900 px-5 py-2.5 text-sm font-bold text-white hover:bg-gray-800 transition-colors text-center"
+              >
+                Check My Payment Options
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Membership Breakdown */}
+      <section className="py-14 sm:py-20 bg-gray-50">
+        <div className="mx-auto max-w-5xl px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-10"
+          >
+            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Essential Care Plan</p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
+              $99/Year. No Insurance Needed.
+            </h2>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-8 items-start">
+            {/* Left: breakdown */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl p-8"
+            >
+              <p className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">What you get</p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "Comprehensive exam (included in $99)",
+                  "Full set of X-rays (included in $99)",
+                  "20% off all other treatments",
+                  "Add cleanings at $150 each",
+                  "No waiting periods",
+                  "No annual maximums",
+                  "No deductibles",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2.5 text-sm text-gray-700">
+                    <svg className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="bg-green-50 rounded-xl p-5 border border-green-100">
+                <p className="text-xs font-bold text-green-700 uppercase tracking-wider mb-3">Year-one math</p>
+                <div className="space-y-1.5 text-sm">
+                  <div className="flex justify-between text-gray-700">
+                    <span>Exam Membership</span>
+                    <span className="font-semibold">$99</span>
+                  </div>
+                  <div className="flex justify-between text-gray-700">
+                    <span>2 Cleanings ($150 each)</span>
+                    <span className="font-semibold">$300</span>
+                  </div>
+                  <div className="border-t border-green-200 pt-1.5 mt-1.5 flex justify-between text-gray-900 font-bold">
+                    <span>Your total</span>
+                    <span>$399</span>
+                  </div>
+                  <div className="flex justify-between text-gray-400 text-xs">
+                    <span>Without the plan</span>
+                    <span>$565+</span>
+                  </div>
+                  <div className="flex justify-between text-green-700 font-extrabold text-base pt-1">
+                    <span>You save</span>
+                    <span>$166+</span>
+                  </div>
+                </div>
+              </div>
+
+              <a
+                href={BOOKING_URL}
+                className="mt-6 w-full inline-block rounded-lg bg-primary px-6 py-3 text-sm font-bold text-white hover:bg-primary-dark transition-colors text-center"
+              >
+                Join the Plan
+              </a>
+            </motion.div>
+
+            {/* Right: savings table */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.06 }}
+            >
+              <p className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Treatment savings</p>
+              <div className="bg-white rounded-2xl overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-gray-50 border-b border-gray-100">
+                      <th className="text-left px-5 py-3 font-semibold text-gray-500 text-xs uppercase tracking-wide">Treatment</th>
+                      <th className="text-right px-5 py-3 font-semibold text-primary text-xs uppercase tracking-wide">With Plan</th>
+                      <th className="text-right px-5 py-3 font-semibold text-gray-400 text-xs uppercase tracking-wide">Typical</th>
+                      <th className="text-right px-5 py-3 font-semibold text-green-600 text-xs uppercase tracking-wide">Save</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {savingsRows.map((row, i) => (
+                      <tr key={row.treatment} className={i % 2 === 1 ? "bg-gray-50/50" : ""}>
+                        <td className="px-5 py-3.5 text-gray-900 font-medium">{row.treatment}</td>
+                        <td className="px-5 py-3.5 text-primary font-semibold text-right">{row.withPlan}</td>
+                        <td className="px-5 py-3.5 text-gray-400 text-right">{row.typical}</td>
+                        <td className="px-5 py-3.5 text-green-600 font-bold text-right">{row.save}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-gray-400 mt-3 px-1">Typical costs based on national dental averages. Actual savings vary by treatment.</p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* OBJECTION #3: "Can I trust them?" */}
+      <ReviewsCarousel />
+
+      {/* Services */}
+      <section className="py-14 sm:py-18 bg-white">
+        <div className="mx-auto max-w-4xl px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-10"
+          >
+            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">
+              Our Services
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3">
+              Everything Your Smile Needs
+            </h2>
+            <p className="text-gray-500 text-base max-w-lg mx-auto">
+              From routine cleanings to full smile makeovers — all under one roof.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-wrap justify-center gap-2 mb-8"
+          >
+            {services.map((service) => (
+              <Link
+                key={service.title}
+                href={service.href}
+                className="rounded-full bg-gray-50 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-primary hover:text-white transition-all shadow-sm"
+              >
+                {service.title}
+              </Link>
+            ))}
+          </motion.div>
+
+          <div className="text-center">
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-2 text-primary text-sm font-bold hover:gap-3 transition-all"
+            >
+              View All Services
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Invisalign Promo */}
-      <section className="py-14 sm:py-18 bg-gray-50">
+      <section className="py-14 sm:py-18 bg-white">
         <div className="mx-auto max-w-5xl px-4">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -445,19 +531,14 @@ export default function HomePage() {
               href="/invisalign"
               className="flex-shrink-0 rounded-lg bg-white px-7 py-3.5 text-sm font-bold text-primary transition-all hover:bg-gray-50 hover:shadow-lg"
             >
-              Request Appointment
+              Learn More
             </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* Reviews */}
-      <ReviewsCarousel />
-
-      {/* CTA */}
       <CTABanner />
 
-      {/* Video Schema (business schema now in layout via BusinessSchema) */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

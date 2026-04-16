@@ -21,7 +21,7 @@ export const invisalignFaqs = [
   },
   {
     q: "Is Invisalign covered by insurance?",
-    a: "Many dental insurance plans cover Invisalign the same way they cover traditional braces, typically up to $1,500. Our insurance coordinator Denielle will check your specific benefits and maximize your coverage. We also offer 0% APR financing through Cherry starting at $115 per month.",
+    a: "Many dental insurance plans cover Invisalign the same way they cover traditional braces, typically up to $1,500. Our insurance coordinator Lee will check your specific benefits and maximize your coverage. We also offer 0% APR financing through Cherry starting at $115 per month.",
   },
   {
     q: "Am I too old for Invisalign?",
@@ -32,7 +32,7 @@ export const invisalignFaqs = [
 export const newPatientFaqs = [
   {
     q: "Do I need insurance to visit Buchwald Family Dentistry?",
-    a: "No. We welcome patients with or without insurance. Our new patient special is $149 for a professional cleaning, comprehensive exam, and digital X-rays, no insurance required. We also offer an Essential Care Plan at $400 per year ($34 per month) that includes 2 cleanings, 2 exams, X-rays, and discounts on all treatments.",
+    a: "No. We welcome patients with or without insurance. Our new patient special is $99 for a comprehensive exam, digital X-rays, and a full consultation — no insurance required. We also offer an Essential Care Plan at $99 per year that includes a comprehensive exam, X-rays, and 20% off all other treatments. Cleanings are $150 each, added as needed.",
   },
   {
     q: "How long is the first dental visit?",
@@ -67,6 +67,6 @@ export const generalFaqs = [
   },
   {
     q: "Does Buchwald Family Dentistry accept my insurance?",
-    a: "We accept most major dental insurance plans. Our insurance coordinator Denielle handles all the details including verifying your benefits, filing claims, and making sure you get the most out of your coverage. Call (972) 644-3280 to verify your specific plan.",
+    a: "We accept most major dental insurance plans. Our insurance coordinator Lee handles all the details including verifying your benefits, filing claims, and making sure you get the most out of your coverage. Call (972) 644-3280 to verify your specific plan.",
   },
 ];

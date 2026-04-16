@@ -17,7 +17,7 @@ const faqs = [
   { q: "How long do veneers last?", a: "Porcelain veneers typically last 10–15+ years with proper care. They're stain-resistant and extremely durable." },
   { q: "Does teeth whitening damage enamel?", a: "No. Professional whitening is safe for your enamel when done correctly. We use controlled formulas and monitor the process to protect your teeth." },
   { q: "Can bonding fix gaps between teeth?", a: "Yes. Dental bonding is a great option for closing small gaps, repairing chips, and improving the shape of teeth — all in one visit." },
-  { q: "Is cosmetic dentistry covered by insurance?", a: "Most cosmetic procedures aren't covered, but some (like bonding for a chipped tooth) may be partially covered. Denielle will check your benefits and explain your options." },
+  { q: "Is cosmetic dentistry covered by insurance?", a: "Most cosmetic procedures aren't covered, but some (like bonding for a chipped tooth) may be partially covered. Lee will check your benefits and explain your options." },
   { q: "How do I know which treatment is right for me?", a: "That's what the consultation is for. We'll look at your teeth, listen to your goals, and walk you through the best options — no pressure, just honest guidance." },
   { q: "Will cosmetic work look natural?", a: "Absolutely. We match color, shape, and translucency to your natural teeth. The goal is always a result that looks like you — just the best version." },
 ];

@@ -23,12 +23,12 @@ const insurancePlans = [
 ];
 
 const faqs = [
-  { q: "Does Buchwald Family Dentistry accept my insurance?", a: "We accept most major PPO plans including Delta Dental, Cigna, MetLife, Aetna, and more. Our insurance coordinator Denielle will verify your specific plan and benefits before your visit — at no cost to you." },
+  { q: "Does Buchwald Family Dentistry accept my insurance?", a: "We accept most major PPO plans including Delta Dental, Cigna, MetLife, Aetna, and more. Our insurance coordinator Lee will verify your specific plan and benefits before your visit, at no cost to you." },
   { q: "What if my insurance doesn't cover a procedure?", a: "We'll always tell you what's covered and what's not before we start. For anything not covered, we offer flexible financing through Cherry with 0% APR options." },
   { q: "Do you accept Medicaid or HMO plans?", a: "We're primarily a PPO-based office. Medicaid and most HMO plans have restrictions that limit the care we can provide. If you're unsure, call us and we'll help figure out your options." },
-  { q: "How does the Essential Care Plan work?", a: "It's our in-house membership for patients without insurance. For $34/month, you get 2 cleanings, an annual exam, X-rays, and 20% off everything else. No waiting periods, no deductibles, no maximums." },
+  { q: "How does the Essential Care Plan work?", a: "It's our in-house membership for patients without insurance. For $99/year, you get a comprehensive exam, full X-rays, and 20% off all other treatments. Cleanings are $150 each. No waiting periods, no deductibles, no maximums." },
   { q: "Can I use my HSA or FSA at your office?", a: "Yes. All dental treatment at our office qualifies as an eligible medical expense for HSA and FSA accounts." },
-  { q: "What does a first visit cost without insurance?", a: "Our new patient special is $149 and includes a comprehensive exam, digital X-rays, and a professional cleaning. We'll also discuss any recommended treatment and give you a clear cost breakdown." },
+  { q: "What does a first visit cost without insurance?", a: "Our new patient special is $99 and includes a comprehensive exam and full digital X-rays. We'll walk you through any recommended treatment and give you a clear cost breakdown before anything is scheduled." },
 ];
 
 function FAQItem({ q, a }: { q: string; a: string }) {
@@ -75,8 +75,8 @@ export default function InsurancePage() {
         <div className="mx-auto max-w-4xl px-4">
           <StatRow stats={[
             { value: "Most PPOs", label: "Accepted" },
-            { value: "$149", label: "New patient special" },
-            { value: "$34/mo", label: "Essential Care Plan" },
+            { value: "$99", label: "New patient special" },
+            { value: "$99/yr", label: "Essential Care Plan" },
           ]} />
 
           <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-10 mb-4">Insurance Plans We Accept</h2>
@@ -105,10 +105,10 @@ export default function InsurancePage() {
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-4">How Insurance Works at Our Office</h2>
             <Checklist items={[
-              "Our coordinator Denielle verifies your benefits before your first visit",
-              "We file all claims directly — you don't deal with paperwork",
+              "Lee verifies your benefits before your first visit",
+              "We file all claims directly, you don't deal with paperwork",
               "We'll tell you your estimated out-of-pocket cost upfront",
-              "No surprise bills — ever",
+              "No surprise bills, ever",
             ]} />
           </motion.div>
         </div>
@@ -125,14 +125,15 @@ export default function InsurancePage() {
             {/* Essential Care Plan */}
             <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-white rounded-xl p-6 border border-gray-100">
               <div className="flex items-baseline gap-2 mb-4">
-                <p className="text-3xl font-extrabold text-primary">$34</p>
-                <p className="text-gray-400 text-sm font-medium">/month</p>
+                <p className="text-3xl font-extrabold text-primary">$99</p>
+                <p className="text-gray-400 text-sm font-medium">/year</p>
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-4">Essential Care Plan</h3>
               <Checklist items={[
-                "2 cleanings per year",
-                "Annual exam and X-rays",
-                "20% off all other services",
+                "Comprehensive exam (included)",
+                "Full set of X-rays (included)",
+                "20% off all other treatments",
+                "Cleanings $150 each (add as needed)",
                 "No deductibles, no maximums, no waiting periods",
               ]} />
             </motion.div>

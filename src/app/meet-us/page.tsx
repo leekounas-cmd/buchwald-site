@@ -26,16 +26,10 @@ const teamMembers = [
     bio: "With over 30 years of dental experience, Cathy keeps the office running smoothly behind the scenes. She is a marathon runner and proud grandmother of four.",
   },
   {
-    name: "Denielle Thiel",
-    role: "Insurance Coordinator",
-    image: "/images/denielle.jpg",
-    bio: "Denielle handles all things insurance so you don't have to. She breaks down benefits, files claims, and makes sure you get the most out of your coverage. A mom of two and lover of the outdoors.",
-  },
-  {
     name: "Lee Kounas",
-    role: "Chief Marketing Officer",
+    role: "Marketing & Insurance Coordinator",
     image: "/images/lee.jpg",
-    bio: "Lee brings a decade of content creation and brand-building experience to the team. He handles everything from digital marketing to patient experience strategy. Mountain biker and soccer dad.",
+    bio: "Lee handles marketing and insurance coordination for the practice. He verifies benefits, files claims, breaks down out-of-pocket costs before treatment, and makes sure patients get the most from their coverage. Mountain biker and soccer dad.",
   },
 ];
 

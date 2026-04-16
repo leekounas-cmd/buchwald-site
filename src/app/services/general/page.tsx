@@ -24,7 +24,7 @@ const serviceItems = [
 
 const concerns = [
   { title: "\"Will it hurt?\"", desc: "Modern anesthetics and gentle techniques. Most patients say it was easier than expected." },
-  { title: "\"How much will it cost?\"", desc: "We're upfront about pricing before treatment. Denielle will verify your insurance and walk you through options." },
+  { title: "\"How much will it cost?\"", desc: "We're upfront about pricing before treatment. Lee will verify your insurance and walk you through options." },
   { title: "\"I haven't been in years\"", desc: "No lectures. We'll assess where you are and build a plan to get you back on track." },
   { title: "\"Do I really need this?\"", desc: "We'll show you what we see and explain why we're recommending it. No surprises, no pressure." },
 ];
@@ -34,7 +34,7 @@ const faqs = [
   { q: "Are root canals painful?", a: "Modern root canals are nothing like the old reputation. With today's anesthetics and techniques, most patients say it feels similar to getting a filling. The infection causing the pain is what we're treating." },
   { q: "What happens if I don't treat a cavity?", a: "Untreated cavities grow. What starts as a small filling can become a crown, a root canal, or even an extraction. Catching it early saves you time, money, and discomfort." },
   { q: "How long do crowns and fillings last?", a: "Composite fillings typically last 5–10 years. Crowns can last 10–15+ years with good care. We use high-quality materials and precise techniques to maximize longevity." },
-  { q: "Do you offer payment plans?", a: "Yes. We offer flexible payment options so cost doesn't stand in the way of the care you need. Ask Denielle about your options." },
+  { q: "Do you offer payment plans?", a: "Yes. We offer flexible payment options so cost doesn't stand in the way of the care you need. Ask Lee about your options." },
   { q: "What are the signs of gum disease?", a: "Bleeding when brushing, red or swollen gums, persistent bad breath, and receding gum lines are common signs. Early-stage gum disease is very treatable — that's why regular visits matter." },
 ];
 

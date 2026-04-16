@@ -12,7 +12,7 @@ const BOOKING_URL = "https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a00830
 
 const faqs = [
   { q: "How much do dental implants cost?", a: "The cost varies depending on how many implants you need and whether additional procedures like bone grafting are required. We'll give you a detailed estimate during your consultation." },
-  { q: "Does insurance cover implants?", a: "Some insurance plans cover a portion of implant treatment. Denielle, our insurance coordinator, will check your benefits and let you know exactly what's covered." },
+  { q: "Does insurance cover implants?", a: "Some insurance plans cover a portion of implant treatment. Lee, our insurance coordinator, will check your benefits and let you know exactly what's covered." },
   { q: "How long do implants last?", a: "With proper care, dental implants can last 25 years or more. Many patients keep them for the rest of their lives." },
   { q: "Is the procedure painful?", a: "Most patients are surprised by how comfortable the procedure is. We use local anesthesia during placement, and any post-procedure discomfort is typically managed with over-the-counter pain relief." },
   { q: "How long is recovery?", a: "Most patients return to normal activities within a day or two. The full healing process (osseointegration) takes 3–6 months, but you'll have a temporary restoration during that time." },
