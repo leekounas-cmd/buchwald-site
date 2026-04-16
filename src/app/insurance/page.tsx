@@ -26,7 +26,7 @@ const faqs = [
   { q: "Does Buchwald Family Dentistry accept my insurance?", a: "We accept most major PPO plans including Delta Dental, Cigna, MetLife, Aetna, and more. Our insurance coordinator Lee will verify your specific plan and benefits before your visit, at no cost to you." },
   { q: "What if my insurance doesn't cover a procedure?", a: "We'll always tell you what's covered and what's not before we start. For anything not covered, we offer flexible financing through Cherry with 0% APR options." },
   { q: "Do you accept Medicaid or HMO plans?", a: "We're primarily a PPO-based office. Medicaid and most HMO plans have restrictions that limit the care we can provide. If you're unsure, call us and we'll help figure out your options." },
-  { q: "How does the Essential Care Plan work?", a: "It's our in-house membership for patients without insurance. For $99/year, you get a comprehensive exam, full X-rays, and 20% off all other treatments. Cleanings are $150 each. No waiting periods, no deductibles, no maximums." },
+  { q: "How does the Essential Care Plan work?", a: "It's our in-house membership for patients without insurance. For $400/year ($34/mo through Cherry), you get 2 cleanings, 2 exams, full X-rays, and 20% off all other treatments. No waiting periods, no deductibles, no maximums. Want more? The Signature Plan at $899/year adds InnerView imaging, fluoride, laser therapy, and jet whitening at every visit." },
   { q: "Can I use my HSA or FSA at your office?", a: "Yes. All dental treatment at our office qualifies as an eligible medical expense for HSA and FSA accounts." },
   { q: "What does a first visit cost without insurance?", a: "Our new patient special is $149 and includes a professional cleaning, comprehensive exam, and full digital X-rays. We'll walk you through any recommended treatment and give you a clear cost breakdown before anything is scheduled." },
 ];
@@ -76,7 +76,7 @@ export default function InsurancePage() {
           <StatRow stats={[
             { value: "Most PPOs", label: "Accepted" },
             { value: "$149", label: "New patient special" },
-            { value: "$99/yr", label: "Essential Care Plan" },
+            { value: "$400/yr", label: "Essential Care Plan" },
           ]} />
 
           <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-10 mb-4">Insurance Plans We Accept</h2>
@@ -121,37 +121,46 @@ export default function InsurancePage() {
             <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-6">No Insurance? No Problem.</h2>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 gap-4">
+          <div className="grid sm:grid-cols-2 gap-4 mb-4">
             {/* Essential Care Plan */}
             <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-white rounded-xl p-6 border border-gray-100">
-              <div className="flex items-baseline gap-2 mb-4">
-                <p className="text-3xl font-extrabold text-primary">$99</p>
+              <div className="flex items-baseline gap-2 mb-1">
+                <p className="text-3xl font-extrabold text-primary">$400</p>
                 <p className="text-gray-400 text-sm font-medium">/year</p>
               </div>
+              <p className="text-xs text-gray-400 mb-4">or $34/mo through Cherry</p>
               <h3 className="text-lg font-bold text-gray-900 mb-4">Essential Care Plan</h3>
               <Checklist items={[
-                "Comprehensive exam (included)",
+                "2 cleanings per year (included)",
+                "2 exams per year (included)",
                 "Full set of X-rays (included)",
                 "20% off all other treatments",
-                "Cleanings $150 each (add as needed)",
                 "No deductibles, no maximums, no waiting periods",
               ]} />
             </motion.div>
 
-            {/* Flexible Financing */}
-            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="bg-white rounded-xl p-6 border border-gray-100">
-              <div className="flex items-baseline gap-2 mb-4">
-                <p className="text-3xl font-extrabold text-primary">0%</p>
-                <p className="text-gray-400 text-sm font-medium">APR options</p>
+            {/* Signature Care Plan */}
+            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="bg-primary rounded-xl p-6 relative">
+              <span className="absolute -top-3 left-6 bg-green-600 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">Best Value</span>
+              <div className="flex items-baseline gap-2 mb-1">
+                <p className="text-3xl font-extrabold text-white">$899</p>
+                <p className="text-white/60 text-sm font-medium">/year</p>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-4">Flexible Financing</h3>
+              <p className="text-xs text-white/60 mb-4">or $75/mo through Cherry</p>
+              <h3 className="text-lg font-bold text-white mb-4">Signature Care Plan</h3>
               <Checklist items={[
-                "Cherry financing with 0% APR options",
-                "Break treatment into monthly payments",
-                "Apply in minutes, no impact on credit score",
+                "Everything in Essential",
+                "InnerView imaging at each visit",
+                "Fluoride at each visit",
+                "Laser therapy at each visit",
+                "Jet whitening at each visit",
               ]} />
+              <p className="text-white/60 text-xs mt-4">Retail value $1,233+. You save $334+.</p>
             </motion.div>
           </div>
+
+          {/* Cherry note */}
+          <p className="text-gray-400 text-xs mt-2">Cherry financing available on both plans. Apply in minutes, no impact on credit score.</p>
         </div>
       </section>
 

@@ -333,7 +333,7 @@ export default function HomePage() {
               <p className="text-white/70 text-xs font-bold uppercase tracking-wider mb-2">No Insurance</p>
               <h3 className="text-xl font-extrabold text-white mb-3">Essential Care Plan</h3>
               <p className="text-white/70 text-sm leading-relaxed flex-1 mb-6">
-                $99/year gets you a full exam and X-rays. Add cleanings at $150 each. Better care than most insurance plans, with no waiting periods or annual maximums.
+                $400/year covers 2 cleanings, 2 exams, full X-rays, and 20% off everything else. No waiting periods, no deductibles, no maximums. Or go all-in with the Signature Plan at $899/year.
               </p>
               <a
                 href={BOOKING_URL}
