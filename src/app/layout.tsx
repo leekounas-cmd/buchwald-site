@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Archivo_Black } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { AnnouncementBar } from "@/components/AnnouncementBar";
@@ -11,6 +11,13 @@ import { NewPatientPopup } from "@/components/NewPatientPopup";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const archivoBlack = Archivo_Black({
+  weight: "400",
+  variable: "--font-archivo-black",
   subsets: ["latin"],
   display: "swap",
 });
@@ -57,7 +64,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${plusJakarta.variable} antialiased`}>
+      <body className={`${plusJakarta.variable} ${archivoBlack.variable} antialiased`} style={{ fontFamily: "var(--font-plus-jakarta)" }}>
         <BusinessSchema />
         <AnnouncementBar />
         <Navbar />

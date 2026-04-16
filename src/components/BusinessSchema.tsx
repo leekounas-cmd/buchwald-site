@@ -3,7 +3,7 @@ import Script from "next/script";
 export function BusinessSchema() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": ["Dentist", "LocalBusiness"],
+    "@type": ["Dentist", "MedicalBusiness", "LocalBusiness"],
     "@id": "https://buchwaldfamilydentistry.com/#dentist",
     name: "Buchwald Family Dentistry & Orthodontics",
     alternateName: "Buchwald Family Dentistry",
@@ -90,6 +90,12 @@ export function BusinessSchema() {
       jobTitle: "Dentist",
       description:
         "DDS from UT Health San Antonio. Member of ADA, TDA, and Academy of General Dentistry. Specialized training in Invisalign, molar endodontics, and implantology.",
+      hasCredential: {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "degree",
+        name: "Doctor of Dental Surgery (DDS)",
+        recognizedBy: { "@type": "Organization", name: "UT Health San Antonio School of Dentistry" },
+      },
     },
     areaServed: [
       { "@type": "City", name: "Richardson" },
@@ -102,7 +108,25 @@ export function BusinessSchema() {
     ],
     paymentAccepted: "Cash, Credit Card, Insurance, Cherry Financing",
     currenciesAccepted: "USD",
-    medicalSpecialty: "Dentistry",
+    medicalSpecialty: [
+      "Dentistry",
+      "CosmeticDentistry",
+      "OrthodonticProcedure",
+      "Endodontics",
+      "Prosthodontics",
+    ],
+    knowsAbout: [
+      "Invisalign",
+      "Dental Implants",
+      "Teeth Whitening",
+      "Porcelain Veneers",
+      "Root Canal Treatment",
+      "Dental Crowns",
+      "Laser Dentistry",
+      "Family Dentistry",
+      "Pediatric Dentistry",
+      "Dental Emergencies",
+    ],
     isAcceptingNewPatients: true,
   };
 

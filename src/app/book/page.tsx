@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { trackConversion } from "@/components/Analytics";
 import { BookingConfirmation } from "@/components/BookingConfirmation";
 import { UrgencyBadge } from "@/components/UrgencyBadge";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 
 const FORMSPREE_ID = "xpqyyjkl";
 
@@ -85,6 +86,8 @@ export default function BookPage() {
   }
 
   return (
+    <>
+    <BreadcrumbSchema items={[{ name: "Book Appointment", href: "/book" }]} />
     <section className="py-10 sm:py-20 bg-white">
       <div className="mx-auto max-w-2xl px-4">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center mb-10">
@@ -248,5 +251,6 @@ export default function BookPage() {
         </motion.form>
       </div>
     </section>
+    </>
   );
 }

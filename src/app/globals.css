@@ -18,6 +18,7 @@
   --color-gray-50: #f9fafb;
   --color-orange: #f97316;
   --font-sans: var(--font-plus-jakarta);
+  --font-archivo: var(--font-archivo-black);
 }
 
 body {

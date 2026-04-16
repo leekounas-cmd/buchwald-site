@@ -935,6 +935,77 @@ function FAQItem({ q, a }: { q: string; a: string }) {
   );
 }
 
+/* ─── Related service links per post ─── */
+
+const relatedLinks: Record<string, { label: string; href: string }[]> = {
+  "why-dentist-recommends-xrays": [
+    { label: "Dental Cleaning & Exam", href: "/services/cleaning" },
+    { label: "Book Your $149 New Patient Visit", href: "/book" },
+  ],
+  "dental-implants-vs-dentures": [
+    { label: "Dental Implants", href: "/dental-implants" },
+    { label: "Restorative Dentistry", href: "/services/restorative" },
+  ],
+  "emergency-dentist-richardson-tx": [
+    { label: "Emergency Dental Care", href: "/emergency" },
+    { label: "Book a Same-Day Appointment", href: "/book" },
+  ],
+  "cost-of-skipping-the-dentist": [
+    { label: "Dental Cleaning & Exam", href: "/services/cleaning" },
+    { label: "General Dentistry", href: "/services/general" },
+    { label: "Insurance & Financing", href: "/insurance" },
+  ],
+  "dental-insurance-101-whats-covered": [
+    { label: "Insurance & Financing", href: "/insurance" },
+    { label: "New Patient Special — $149", href: "/new-patient" },
+  ],
+  "what-makes-5-star-dental-experience": [
+    { label: "Meet the Team", href: "/meet-us" },
+    { label: "Book Your First Visit", href: "/book" },
+  ],
+  "how-often-should-you-go-to-dentist": [
+    { label: "Dental Cleaning & Exam", href: "/services/cleaning" },
+    { label: "Book a Cleaning", href: "/book" },
+  ],
+  "when-should-kids-start-dentist": [
+    { label: "Family Dentistry", href: "/services/cleaning" },
+    { label: "New Patient Info", href: "/new-patient" },
+  ],
+  "does-insurance-cover-invisalign": [
+    { label: "Invisalign at Buchwald", href: "/invisalign" },
+    { label: "Insurance & Financing", href: "/insurance" },
+  ],
+  "how-to-choose-dentist-richardson-tx": [
+    { label: "Meet Dr. Buchwald", href: "/meet-us" },
+    { label: "New Patient Special", href: "/new-patient" },
+    { label: "Book Your First Visit", href: "/book" },
+  ],
+  "why-you-need-a-night-guard": [
+    { label: "General Dentistry", href: "/services/general" },
+    { label: "Book an Appointment", href: "/book" },
+  ],
+  "what-to-expect-first-dental-visit": [
+    { label: "New Patient Special — $149", href: "/new-patient" },
+    { label: "Book Your First Visit", href: "/book" },
+  ],
+  "invisalign-vs-braces": [
+    { label: "Invisalign at Buchwald", href: "/invisalign" },
+    { label: "Book an Invisalign Consultation", href: "/book" },
+  ],
+  "dental-implants-cost-texas": [
+    { label: "Dental Implants", href: "/dental-implants" },
+    { label: "Flexible Financing Options", href: "/payment-plans" },
+  ],
+  "signs-you-need-dentist": [
+    { label: "Book a Same-Day Appointment", href: "/book" },
+    { label: "Emergency Dental Care", href: "/emergency" },
+  ],
+  "is-teeth-whitening-safe": [
+    { label: "Teeth Whitening", href: "/teeth-whitening" },
+    { label: "Cosmetic Dentistry", href: "/services/cosmetic" },
+  ],
+};
+
 /* ─── Page Component ─── */
 
 export default function BlogPostPage() {
@@ -996,6 +1067,26 @@ export default function BlogPostPage() {
         </div>
       </section>
 
+      {/* Related Service Links */}
+      {relatedLinks[slug] && (
+        <section className="py-8 bg-gray-50">
+          <div className="mx-auto max-w-3xl px-4">
+            <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Related at Buchwald</p>
+            <div className="flex flex-wrap gap-2">
+              {relatedLinks[slug].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="rounded-full bg-white border border-gray-200 px-4 py-2 text-sm font-semibold text-gray-700 hover:border-primary hover:text-primary transition-colors"
+                >
+                  {link.label} →
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* FAQ */}
       <section className="py-14 sm:py-18 bg-white">
         <div className="mx-auto max-w-2xl px-4">
@@ -1036,10 +1127,17 @@ export default function BlogPostPage() {
             datePublished: post.date,
             dateModified: post.date,
             url: `https://buchwaldfamilydentistry.com/blog/${post.slug}`,
+            image: {
+              "@type": "ImageObject",
+              url: "https://buchwaldfamilydentistry.com/images/office-1.jpg",
+              width: 1200,
+              height: 630,
+            },
             author: {
-              "@type": "Organization",
-              name: "Buchwald Family Dentistry",
-              url: "https://buchwaldfamilydentistry.com",
+              "@type": "Person",
+              name: "Dr. Max Buchwald Jr.",
+              jobTitle: "Dentist",
+              url: "https://buchwaldfamilydentistry.com/meet-us",
             },
             publisher: {
               "@type": "Organization",

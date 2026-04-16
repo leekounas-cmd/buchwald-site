@@ -11,7 +11,7 @@ export const blogPosts: BlogPost[] = [
   {
     title: "Why Your Dentist Recommends X-Rays (And Why You Should Say Yes)",
     slug: "why-dentist-recommends-xrays",
-    date: "June 4, 2026",
+    date: "2026-06-04",
     readTime: "2 min read",
     excerpt:
       "Dental X-rays catch problems your dentist can't see with the naked eye. Here's what they find, how safe they really are, and how often you actually need them.",
@@ -25,7 +25,7 @@ export const blogPosts: BlogPost[] = [
   {
     title: "Dental Implants vs Dentures: Which Is Right for You?",
     slug: "dental-implants-vs-dentures",
-    date: "May 28, 2026",
+    date: "2026-05-28",
     readTime: "2 min read",
     excerpt:
       "Missing teeth? You have options. Here's an honest comparison of dental implants and dentures — cost, comfort, longevity, and which one fits your life better.",
@@ -39,7 +39,7 @@ export const blogPosts: BlogPost[] = [
   {
     title: "Emergency Dentist in Richardson TX: What to Do When It Hurts",
     slug: "emergency-dentist-richardson-tx",
-    date: "May 21, 2026",
+    date: "2026-05-21",
     readTime: "2 min read",
     excerpt:
       "Dental emergencies don't wait for business hours. Here's what counts as an emergency, what to do before you get to the office, and when to call us vs go to the ER.",
@@ -53,7 +53,7 @@ export const blogPosts: BlogPost[] = [
   {
     title: "The Real Cost of Skipping the Dentist",
     slug: "cost-of-skipping-the-dentist",
-    date: "May 14, 2026",
+    date: "2026-05-14",
     readTime: "2 min read",
     excerpt:
       "That cleaning you've been putting off? It costs a fraction of what you'll pay if small problems become big ones. Here's the real math on skipping the dentist.",
@@ -67,7 +67,7 @@ export const blogPosts: BlogPost[] = [
   {
     title: "Dental Insurance 101: What's Actually Covered?",
     slug: "dental-insurance-101-whats-covered",
-    date: "May 7, 2026",
+    date: "2026-05-07",
     readTime: "2 min read",
     excerpt:
       "Dental insurance can be confusing. Here's a no-jargon breakdown of what's covered, what's not, and how to get the most out of your benefits before they expire.",
@@ -81,7 +81,7 @@ export const blogPosts: BlogPost[] = [
   {
     title: "What Makes a 5-Star Dental Experience?",
     slug: "what-makes-5-star-dental-experience",
-    date: "April 30, 2026",
+    date: "2026-04-30",
     readTime: "2 min read",
     excerpt:
       "Not all dental offices are created equal. Here's what separates a great experience from an average one — and what you should expect from your dentist.",
@@ -95,7 +95,7 @@ export const blogPosts: BlogPost[] = [
   {
     title: "How Often Should You Really Go to the Dentist?",
     slug: "how-often-should-you-go-to-dentist",
-    date: "April 23, 2026",
+    date: "2026-04-23",
     readTime: "2 min read",
     excerpt:
       "You've heard the 6-month rule your whole life — but is it always enough? Here's what actually determines how often you should see your dentist.",
@@ -109,7 +109,7 @@ export const blogPosts: BlogPost[] = [
   {
     title: "When Should Kids Start Going to the Dentist?",
     slug: "when-should-kids-start-dentist",
-    date: "April 16, 2026",
+    date: "2026-04-16",
     readTime: "2 min read",
     excerpt:
       "Most parents wait too long for their child's first dental visit. Here's what the ADA recommends and how to make early visits a positive experience.",
@@ -123,7 +123,7 @@ export const blogPosts: BlogPost[] = [
   {
     title: "Does Dental Insurance Cover Invisalign?",
     slug: "does-insurance-cover-invisalign",
-    date: "April 9, 2026",
+    date: "2026-04-09",
     readTime: "2 min read",
     excerpt:
       "Invisalign isn't as out of reach as you think. Here's how insurance, financing, and flexible spending can make clear aligners affordable.",
@@ -137,7 +137,7 @@ export const blogPosts: BlogPost[] = [
   {
     title: "How to Choose the Right Dentist in Richardson, TX",
     slug: "how-to-choose-dentist-richardson-tx",
-    date: "April 2, 2026",
+    date: "2026-04-02",
     readTime: "2 min read",
     excerpt:
       "Finding a dentist you actually trust isn't easy. Here's what to look for — and what to avoid — when choosing a dental office in Richardson.",
@@ -151,7 +151,7 @@ export const blogPosts: BlogPost[] = [
   {
     title: "Why You Need a Night Guard (And Why a Custom One Is Worth It)",
     slug: "why-you-need-a-night-guard",
-    date: "March 17, 2026",
+    date: "2026-03-17",
     readTime: "2 min read",
     excerpt:
       "Grinding your teeth at night can cause serious damage over time. Here's why a custom night guard from your dentist is one of the best investments you can make for your smile.",
@@ -165,7 +165,7 @@ export const blogPosts: BlogPost[] = [
   {
     title: "What to Expect at Your First Dental Visit",
     slug: "what-to-expect-first-dental-visit",
-    date: "March 10, 2026",
+    date: "2026-03-10",
     readTime: "2 min read",
     excerpt:
       "Nervous about your first appointment? Here's exactly what happens, what to bring, and how we make sure you feel comfortable from the moment you walk in.",
@@ -179,7 +179,7 @@ export const blogPosts: BlogPost[] = [
   {
     title: "Invisalign vs. Braces: Which Is Right for You?",
     slug: "invisalign-vs-braces",
-    date: "February 24, 2026",
+    date: "2026-02-24",
     readTime: "2 min read",
     excerpt:
       "Thinking about straightening your teeth? Here's an honest comparison of Invisalign and traditional braces — cost, comfort, timeline, and which one might work better for your lifestyle.",
@@ -193,7 +193,7 @@ export const blogPosts: BlogPost[] = [
   {
     title: "How Much Do Dental Implants Cost in Texas?",
     slug: "dental-implants-cost-texas",
-    date: "February 10, 2026",
+    date: "2026-02-10",
     readTime: "2 min read",
     excerpt:
       "Dental implants are an investment in your smile and your health. Here's a real breakdown of what they cost in Texas, what affects the price, and how to make them affordable.",
@@ -207,7 +207,7 @@ export const blogPosts: BlogPost[] = [
   {
     title: "5 Signs You Need to See a Dentist ASAP",
     slug: "signs-you-need-dentist",
-    date: "January 28, 2026",
+    date: "2026-01-28",
     readTime: "1 min read",
     excerpt:
       "Some dental issues can't wait. Here are five warning signs that mean you should call your dentist today — not next month.",
@@ -221,7 +221,7 @@ export const blogPosts: BlogPost[] = [
   {
     title: "Is Teeth Whitening Safe? What Your Dentist Wants You to Know",
     slug: "is-teeth-whitening-safe",
-    date: "January 14, 2026",
+    date: "2026-01-14",
     readTime: "2 min read",
     excerpt:
       "Teeth whitening is one of the most popular cosmetic treatments — but is it actually safe? Here's what you need to know before you brighten your smile.",
