@@ -319,28 +319,25 @@ export default function HomePage() {
               </div>
             </motion.div>
 
-            {/* Membership - Most Popular */}
+            {/* Membership */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.06 }}
-              className="bg-primary rounded-2xl p-7 flex flex-col relative"
+              className="bg-gray-50 rounded-2xl p-7 flex flex-col"
             >
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-600 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
-                Most Popular
-              </span>
-              <p className="text-white/70 text-xs font-bold uppercase tracking-wider mb-2">No Insurance</p>
-              <h3 className="text-xl font-extrabold text-white mb-3">Essential Care Plan</h3>
-              <p className="text-white/70 text-sm leading-relaxed flex-1 mb-6">
-                $400/year covers 2 cleanings, 2 exams, full X-rays, and 20% off everything else. No waiting periods, no deductibles, no maximums. Or go all-in with the Signature Plan at $899/year.
+              <p className="text-primary text-xs font-bold uppercase tracking-wider mb-2">No Insurance</p>
+              <h3 className="text-xl font-extrabold text-gray-900 mb-3">Membership Plans</h3>
+              <p className="text-gray-500 text-sm leading-relaxed flex-1 mb-6">
+                Skip the insurance hassle with our in-house discount plans. Two cleanings, two exams, X-rays, and 20% off everything else. Starting at $34/mo through Cherry.
               </p>
-              <a
-                href={BOOKING_URL}
-                className="rounded-lg bg-white px-5 py-2.5 text-sm font-bold text-primary hover:bg-gray-50 transition-colors text-center"
+              <Link
+                href="/membership"
+                className="rounded-lg bg-gray-900 px-5 py-2.5 text-sm font-bold text-white hover:bg-gray-800 transition-colors text-center"
               >
-                Join the Plan
-              </a>
+                See Membership Plans
+              </Link>
             </motion.div>
 
             {/* Financing */}
@@ -362,119 +359,6 @@ export default function HomePage() {
               >
                 Check My Payment Options
               </Link>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Membership Breakdown */}
-      <section className="py-14 sm:py-20 bg-gray-50">
-        <div className="mx-auto max-w-5xl px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-10"
-          >
-            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Essential Care Plan</p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
-              $99/Year. No Insurance Needed.
-            </h2>
-          </motion.div>
-
-          <div className="grid lg:grid-cols-2 gap-8 items-start">
-            {/* Left: breakdown */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-2xl p-8"
-            >
-              <p className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">What you get</p>
-              <ul className="space-y-3 mb-8">
-                {[
-                  "Comprehensive exam (included in $99)",
-                  "Full set of X-rays (included in $99)",
-                  "20% off all other treatments",
-                  "Add cleanings at $150 each",
-                  "No waiting periods",
-                  "No annual maximums",
-                  "No deductibles",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2.5 text-sm text-gray-700">
-                    <svg className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="bg-green-50 rounded-xl p-5 border border-green-100">
-                <p className="text-xs font-bold text-green-700 uppercase tracking-wider mb-3">Year-one math</p>
-                <div className="space-y-1.5 text-sm">
-                  <div className="flex justify-between text-gray-700">
-                    <span>Exam Membership</span>
-                    <span className="font-semibold">$99</span>
-                  </div>
-                  <div className="flex justify-between text-gray-700">
-                    <span>2 Cleanings ($150 each)</span>
-                    <span className="font-semibold">$300</span>
-                  </div>
-                  <div className="border-t border-green-200 pt-1.5 mt-1.5 flex justify-between text-gray-900 font-bold">
-                    <span>Your total</span>
-                    <span>$399</span>
-                  </div>
-                  <div className="flex justify-between text-gray-400 text-xs">
-                    <span>Without the plan</span>
-                    <span>$565+</span>
-                  </div>
-                  <div className="flex justify-between text-green-700 font-extrabold text-base pt-1">
-                    <span>You save</span>
-                    <span>$166+</span>
-                  </div>
-                </div>
-              </div>
-
-              <a
-                href={BOOKING_URL}
-                className="mt-6 w-full inline-block rounded-lg bg-primary px-6 py-3 text-sm font-bold text-white hover:bg-primary-dark transition-colors text-center"
-              >
-                Join the Plan
-              </a>
-            </motion.div>
-
-            {/* Right: savings table */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.06 }}
-            >
-              <p className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Treatment savings</p>
-              <div className="bg-white rounded-2xl overflow-hidden">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="bg-gray-50 border-b border-gray-100">
-                      <th className="text-left px-5 py-3 font-semibold text-gray-500 text-xs uppercase tracking-wide">Treatment</th>
-                      <th className="text-right px-5 py-3 font-semibold text-primary text-xs uppercase tracking-wide">With Plan</th>
-                      <th className="text-right px-5 py-3 font-semibold text-gray-400 text-xs uppercase tracking-wide">Typical</th>
-                      <th className="text-right px-5 py-3 font-semibold text-green-600 text-xs uppercase tracking-wide">Save</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {savingsRows.map((row, i) => (
-                      <tr key={row.treatment} className={i % 2 === 1 ? "bg-gray-50/50" : ""}>
-                        <td className="px-5 py-3.5 text-gray-900 font-medium">{row.treatment}</td>
-                        <td className="px-5 py-3.5 text-primary font-semibold text-right">{row.withPlan}</td>
-                        <td className="px-5 py-3.5 text-gray-400 text-right">{row.typical}</td>
-                        <td className="px-5 py-3.5 text-green-600 font-bold text-right">{row.save}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <p className="text-xs text-gray-400 mt-3 px-1">Typical costs based on national dental averages. Actual savings vary by treatment.</p>
             </motion.div>
           </div>
         </div>
