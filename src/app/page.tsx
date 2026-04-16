@@ -77,71 +77,52 @@ const savingsRows = [
 export default function HomePage() {
   return (
     <>
-      {/* OBJECTION #1: "This will be uncomfortable / judgmental" */}
+      {/* Hero */}
       <section className="relative overflow-hidden bg-white">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 sm:py-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center"
-          >
-            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-4">Richardson&apos;s Most-Loved Family Dentist</p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-[1.1] mb-8">
-              Dental Care That<br />
-              <span className="text-primary">Feels Different</span>
-            </h1>
-          </motion.div>
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.97 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mb-10"
-          >
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              poster="/images/office-1.jpg"
-              className="rounded-2xl w-full object-cover aspect-video"
-            >
-              <source src="/video/hero.mp4" type="video/mp4" />
-            </video>
-          </motion.div>
+            {/* Left column */}
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+              {/* Badge pill */}
+              <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-bold text-primary uppercase tracking-wider mb-6">
+                Richardson&apos;s Most-Loved Family Dentist
+              </span>
 
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <p className="text-gray-500 text-lg sm:text-xl leading-relaxed mb-10">
-              Richardson&apos;s most-trusted family and cosmetic dentist. We built a practice around making you feel at ease, not on edge.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a
-                href={BOOKING_URL}
-                className="rounded-lg bg-primary px-7 py-3.5 text-sm font-bold text-white transition-all hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/25 text-center"
-              >
-                Schedule My Visit
-              </a>
-              <a
-                href="tel:972-644-3280"
-                className="rounded-lg bg-gray-100 px-7 py-3.5 text-sm font-semibold text-gray-900 transition-all hover:bg-gray-200 text-center"
-              >
-                Call (972) 644-3280
-              </a>
-            </div>
+              {/* Headline */}
+              <h1 className="font-archivo text-5xl sm:text-6xl lg:text-7xl leading-[1.05] text-gray-900 mb-6">
+                Dental Care<br />
+                That Feels<br />
+                <span className="text-primary">Different.</span>
+              </h1>
 
-            <div className="flex flex-col items-center gap-4 mt-8">
-              <UrgencyBadge />
+              {/* Subtitle */}
+              <p className="text-gray-500 text-lg leading-relaxed mb-8 max-w-md">
+                Richardson&apos;s most-trusted family dentist. We built a practice around making you feel at ease, not on edge.
+              </p>
+
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row gap-3 mb-8">
+                <a
+                  href={BOOKING_URL}
+                  className="rounded-full bg-primary px-7 py-3.5 text-sm font-bold text-white transition-all hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/25 text-center"
+                >
+                  Book My $149 Visit
+                </a>
+                <a
+                  href="tel:972-644-3280"
+                  className="rounded-full bg-gray-100 px-7 py-3.5 text-sm font-semibold text-gray-900 transition-all hover:bg-gray-200 text-center"
+                >
+                  Call (972) 644-3280
+                </a>
+              </div>
+
+              {/* Stars */}
               <a
                 href="https://share.google/9gal12WjpTrHj1b4V"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 justify-center hover:opacity-80 transition-opacity"
+                className="inline-flex items-center gap-3 hover:opacity-80 transition-opacity mb-5"
               >
                 <div className="flex gap-0.5">
                   {[...Array(5)].map((_, i) => (
@@ -150,12 +131,58 @@ export default function HomePage() {
                     </svg>
                   ))}
                 </div>
-                <span className="text-sm text-gray-400">
-                  4.9 on Google &middot; 433 reviews
-                </span>
+                <span className="text-sm text-gray-400">4.9 on Google · 433 reviews</span>
               </a>
-            </div>
-          </motion.div>
+
+              <UrgencyBadge />
+            </motion.div>
+
+            {/* Right column — video card */}
+            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.15 }} className="relative">
+              {/* Glow */}
+              <div className="absolute -inset-4 rounded-[2.5rem] bg-primary/20 blur-2xl" />
+
+              {/* Video card */}
+              <div className="relative rounded-[2rem] overflow-hidden shadow-2xl">
+                {/* Floating badge — top left */}
+                <div className="absolute top-4 left-4 z-10 rounded-full bg-white/90 backdrop-blur-sm px-4 py-2 shadow-md">
+                  <p className="text-xs font-bold text-gray-900 leading-tight">$149</p>
+                  <p className="text-xs text-gray-500 leading-tight">New Patient Visit</p>
+                </div>
+                {/* Floating badge — top right */}
+                <div className="absolute top-4 right-4 z-10 rounded-full bg-primary text-white px-4 py-2 shadow-md">
+                  <p className="text-xs font-bold leading-tight text-center">Same-Day</p>
+                  <p className="text-xs leading-tight text-center opacity-90">Appointments</p>
+                </div>
+
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  poster="/images/office-1.jpg"
+                  className="w-full object-cover aspect-[4/3]"
+                >
+                  <source src="/video/hero.mp4" type="video/mp4" />
+                </video>
+              </div>
+
+              {/* Stat sub-cards */}
+              <div className="relative grid grid-cols-3 gap-3 mt-4">
+                {[
+                  { value: "433+", label: "5-Star Reviews" },
+                  { value: "4.9★", label: "Google Rating" },
+                  { value: "20+", label: "Yrs Experience" },
+                ].map((s) => (
+                  <div key={s.label} className="rounded-2xl bg-gray-50 border border-gray-100 px-3 py-3 text-center">
+                    <p className="text-lg font-extrabold text-gray-900">{s.value}</p>
+                    <p className="text-xs text-gray-400 mt-0.5">{s.label}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+          </div>
         </div>
       </section>
 
