@@ -152,12 +152,6 @@ export default function SpecialPage() {
               <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-xs text-gray-500">
                 <div className="flex items-center gap-1.5">
                   <svg className="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
-                  </svg>
-                  Lifetime warranty
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <svg className="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
                   </svg>
                   Same-day appointments
@@ -167,6 +161,12 @@ export default function SpecialPage() {
                     <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z" />
                   </svg>
                   Cherry financing
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <svg className="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2l2.39 7.36H22l-6.19 4.5L18.2 21 12 16.5 5.8 21l2.39-7.14L2 9.36h7.61z" />
+                  </svg>
+                  Most insurance accepted
                 </div>
               </div>
             </motion.div>

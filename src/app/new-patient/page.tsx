@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
+import Image from "next/image";
 import { CTABanner } from "@/components/CTABanner";
 import { FAQSchema } from "@/components/FAQSchema";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
@@ -11,9 +12,9 @@ import { StatRow, Highlight, Checklist, NumberedList } from "@/components/Conten
 
 const steps = [
   { title: "Check-In & Paperwork", desc: "Arrive a few minutes early. We keep forms quick and simple so you can get settled in." },
-  { title: "Meet the Team", desc: "You'll meet Dr. Buchwald and our team. We'll learn about your history, concerns, and goals." },
-  { title: "Comprehensive Exam", desc: "Digital X-rays, oral cancer screening, and a thorough check of your teeth, gums, and bite." },
-  { title: "Your Care Plan", desc: "Dr. Buchwald walks you through everything — no surprises, no pressure. Just a clear plan forward." },
+  { title: "Meet Melisa, Your Hygienist", desc: "Melisa is who you'll spend most of your visit with. She'll get to know you, answer your questions, and walk you through everything before she starts." },
+  { title: "Cleaning, X-Rays & Exam", desc: "Melisa does a gentle cleaning, takes digital X-rays, and does an oral cancer screening. Known for being genuinely gentle across 2,000+ cleanings." },
+  { title: "Your Care Plan with Dr. Buchwald", desc: "Dr. Buchwald joins to walk you through everything Melisa found. No surprises, no pressure. Just a clear plan forward." },
 ];
 
 const bringList = [
@@ -25,7 +26,7 @@ const bringList = [
 ];
 
 const faqs = [
-  { q: "Do I need insurance?", a: "Nope. We welcome patients with and without insurance. We offer affordable payment options and will always be upfront about costs before any treatment." },
+  { q: "Do I need insurance?", a: "Nope. The $149 special is designed for patients without insurance. If you DO have dental insurance, your cleaning, exam, and X-rays are usually covered at 100% under preventive care, so you may not need the $149 package at all. Our coordinator Lee will verify your benefits before your visit and tell you exactly what's covered." },
   { q: "How long is the first visit?", a: "Plan for about 60–90 minutes. We take our time with new patients to make sure we get a complete picture of your oral health." },
   { q: "Can I bring my kids?", a: "Absolutely. We're a family practice and love seeing patients of all ages. You can schedule appointments for the whole family on the same day." },
   { q: "What if I haven't been to a dentist in years?", a: "No judgment — seriously. We see patients in every situation and our only goal is to help you move forward with a plan that works for you." },
@@ -66,7 +67,7 @@ export default function NewPatientPage() {
             { value: "$149", label: "New Patient Special" },
             { value: "60–90 min", label: "First Visit" },
             { value: "4.9★", label: "Google Reviews" },
-            { value: "Lifetime", label: "Warranty" },
+            { value: "Same-Day", label: "Appointments" },
           ]} />
 
           <Highlight>We know switching dentists can feel like a big deal. Our goal is to make you feel welcome from the moment you walk in — no judgment, no pressure.</Highlight>
@@ -84,21 +85,80 @@ export default function NewPatientPage() {
         </div>
       </section>
 
-      {/* $149 New Patient Special */}
+      {/* Meet Melisa — your hygienist */}
       <section className="py-14 sm:py-18 bg-white">
-        <div className="mx-auto max-w-3xl px-4">
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-primary/10 rounded-2xl p-8 sm:p-12 text-center">
-            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">New Patients Only</p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">$149 New Patient Special</h2>
-            <p className="text-gray-600 text-lg leading-relaxed mb-6">Professional cleaning*, comprehensive exam, and digital X-rays, all for just $149. No insurance required.</p>
-            <Checklist items={["Professional cleaning*", "Comprehensive exam", "Full set of digital X-rays", "Personalized care plan"]} />
-            <p className="text-gray-500 text-xs mt-6 leading-relaxed max-w-xl mx-auto">
-              *Covers a standard (prophylaxis) cleaning. If it has been a while since your last dental visit, a deep cleaning may be recommended first.{" "}
-              <Link href="/blog/what-is-a-deep-cleaning" className="text-primary font-semibold underline">
-                Why deep cleanings matter
-              </Link>. Have insurance? Your preventive visit is usually fully covered by your plan.
-            </p>
+        <div className="mx-auto max-w-4xl px-4">
+          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-gray-50 rounded-3xl p-8 sm:p-10">
+            <div className="grid sm:grid-cols-[180px_1fr] gap-6 items-center">
+              <div className="relative mx-auto sm:mx-0">
+                <div className="h-32 w-32 sm:h-40 sm:w-40 rounded-full overflow-hidden ring-4 ring-white shadow-lg">
+                  <Image
+                    src="/images/melisa.jpg"
+                    alt="Melisa Kounas, hygienist"
+                    width={160}
+                    height={160}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              </div>
+              <div className="text-center sm:text-left">
+                <p className="text-primary text-xs font-bold uppercase tracking-wider mb-2">Your Hygienist</p>
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2">
+                  You&apos;ll Spend Most of Your Visit with Melisa
+                </h2>
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-4">
+                  Melisa Kounas does your cleaning, X-rays, and the full exam prep. She&apos;s genuinely gentle (over 2,000 cleanings and counting) and patients consistently tell us it&apos;s the most comfortable cleaning they have ever had. Nervous about the dentist? Tell Melisa up front. She will adjust everything to your comfort.
+                </p>
+                <Link href="/meet-us" className="text-primary font-semibold text-sm hover:underline">
+                  Meet the whole team →
+                </Link>
+              </div>
+            </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Insurance callout + $149 New Patient Special */}
+      <section className="py-14 sm:py-18 bg-white">
+        <div className="mx-auto max-w-4xl px-4">
+          <div className="grid md:grid-cols-2 gap-5">
+
+            {/* Have insurance */}
+            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-gray-50 rounded-2xl p-7 sm:p-8 flex flex-col">
+              <p className="text-primary text-xs font-bold uppercase tracking-wider mb-2">Have Insurance?</p>
+              <h3 className="text-xl sm:text-2xl font-extrabold text-gray-900 mb-3">Your Cleaning Is Likely Covered</h3>
+              <p className="text-gray-600 text-sm leading-relaxed flex-1 mb-5">
+                Most PPO plans cover preventive care (cleaning, exam, X-rays) at 100%. If that&apos;s you, skip the $149 package. Lee verifies your benefits before you come in and tells you exactly what&apos;s covered and what (if anything) you owe.
+              </p>
+              <a href="tel:972-644-3280" className="rounded-lg bg-gray-900 px-5 py-3 text-sm font-bold text-white hover:bg-gray-800 transition-colors text-center">
+                Call to Verify Benefits
+              </a>
+            </motion.div>
+
+            {/* No insurance — $149 */}
+            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-primary/10 rounded-2xl p-7 sm:p-8 flex flex-col">
+              <p className="text-primary text-xs font-bold uppercase tracking-wider mb-2">No Insurance?</p>
+              <h3 className="text-xl sm:text-2xl font-extrabold text-gray-900 mb-1">$149 New Patient Special</h3>
+              <p className="text-xs text-gray-500 mb-4">Cleaning*, comprehensive exam, and digital X-rays.</p>
+              <ul className="space-y-2 flex-1 mb-5 text-sm text-gray-700">
+                <li className="flex items-start gap-2"><span className="text-primary font-bold">✓</span> Professional cleaning*</li>
+                <li className="flex items-start gap-2"><span className="text-primary font-bold">✓</span> Comprehensive exam</li>
+                <li className="flex items-start gap-2"><span className="text-primary font-bold">✓</span> Full set of digital X-rays</li>
+                <li className="flex items-start gap-2"><span className="text-primary font-bold">✓</span> Personalized care plan</li>
+              </ul>
+              <a href="https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE" target="_blank" rel="noopener noreferrer" className="rounded-lg bg-primary px-5 py-3 text-sm font-bold text-white hover:bg-primary-dark transition-colors text-center">
+                Book My $149 Visit
+              </a>
+            </motion.div>
+
+          </div>
+
+          <p className="text-gray-500 text-xs mt-6 leading-relaxed text-center max-w-2xl mx-auto">
+            *Covers a standard (prophylaxis) cleaning. If it has been a while since your last dental visit, a deep cleaning may be recommended first.{" "}
+            <Link href="/blog/what-is-a-deep-cleaning" className="text-primary font-semibold underline">
+              Why deep cleanings matter
+            </Link>.
+          </p>
         </div>
       </section>
 

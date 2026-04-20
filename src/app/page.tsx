@@ -186,8 +186,6 @@ export default function HomePage() {
               { icon: "M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z", label: "ADA Member" },
               // Invisalign: sparkle / tooth-align star
               { icon: "M12 2l2.39 7.36H22l-6.19 4.5L18.2 21 12 16.5 5.8 21l2.39-7.14L2 9.36h7.61z", label: "Invisalign Provider" },
-              // Lifetime warranty: star medal / ribbon
-              { icon: "M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z", label: "Lifetime Warranty" },
               // Same-day: clock
               { icon: "M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z", label: "Same-Day Appointments" },
               // Cherry financing: credit card
@@ -212,7 +210,7 @@ export default function HomePage() {
               { value: "433+", label: "Google Reviews" },
               { value: "4.9", label: "Google Rating" },
               { value: "$149", label: "New Patient Special" },
-              { value: "Lifetime", label: "Warranty" },
+              { value: "Same-Day", label: "Appointments" },
             ].map((stat, i) => (
               <motion.div
                 key={stat.label}
