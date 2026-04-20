@@ -9,7 +9,7 @@ export function UrgencyBadge({
 }) {
   const configs = {
     "same-day": { text: "Same-day appointments available", pulse: true },
-    slots: { text: "Limited new patient slots this week", pulse: true },
+    slots: { text: "Now accepting new patients", pulse: true },
     accepting: { text: "Now accepting new patients", pulse: false },
   };
 

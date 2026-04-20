@@ -9,8 +9,10 @@ import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 
 const FORMSPREE_ID = "xpqyyjkl";
 
+const WEAVE_URL = "https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE";
+
 const serviceOptions = [
-  "$149 New Patient Cleaning",
+  "$149 New Patient Cleaning (New Patients Only)",
   "Cleaning & Exam",
   "General Dentistry",
   "Cosmetic Dentistry",
@@ -96,6 +98,17 @@ export default function BookPage() {
           <p className="text-gray-500 text-base">Fill out the form below and we&apos;ll reach out to confirm your visit.</p>
           <div className="flex justify-center mt-4">
             <UrgencyBadge />
+          </div>
+          <div className="mt-6 inline-flex flex-col sm:flex-row items-center justify-center gap-2 rounded-xl bg-primary/5 px-5 py-3 text-sm">
+            <span className="text-gray-500">Want a faster path?</span>
+            <a
+              href={WEAVE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold text-primary hover:underline"
+            >
+              Book instantly through our scheduler →
+            </a>
           </div>
         </motion.div>
 

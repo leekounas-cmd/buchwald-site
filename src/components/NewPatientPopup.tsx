@@ -93,7 +93,7 @@ export function NewPatientPopup() {
             {/* Price */}
             <div className="flex items-baseline gap-2 mb-6">
               <span className="text-4xl font-semibold text-gray-900">$149</span>
-              <span className="text-sm text-gray-400 line-through">$300+ value</span>
+              <span className="text-sm text-gray-400 line-through">$800+ value</span>
             </div>
 
             {/* Included */}

@@ -60,12 +60,12 @@ const team = [
 ];
 
 const experienceItems = [
-  { icon: "🎧", label: "Noise-canceling headphones" },
-  { icon: "📺", label: "TVs at every chair" },
-  { icon: "🧣", label: "Blankets and pillows" },
-  { icon: "☕", label: "Complimentary beverages" },
-  { icon: "🕐", label: "On-time, no-wait visits" },
-  { icon: "💬", label: "We explain before we start" },
+  { label: "Noise-canceling headphones", path: "M12 3a9 9 0 00-9 9v7a2 2 0 002 2h3v-8H5v-1a7 7 0 0114 0v1h-3v8h3a2 2 0 002-2v-7a9 9 0 00-9-9z" },
+  { label: "TVs at every chair", path: "M21 3H3c-1.11 0-2 .89-2 2v12c0 1.1.89 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 14H3V5h18v12z" },
+  { label: "Blankets and pillows", path: "M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z" },
+  { label: "Complimentary beverages", path: "M20 3H4v10a4 4 0 004 4h6a4 4 0 004-4v-3h2a3 3 0 000-6V3zm-2 5V5h2a1 1 0 010 2h-2zM2 21h18v-2H2v2z" },
+  { label: "On-time, no-wait visits", path: "M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z" },
+  { label: "We explain before we start", path: "M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" },
 ];
 
 const savingsRows = [
@@ -191,11 +191,16 @@ export default function HomePage() {
         <div className="mx-auto max-w-4xl px-4">
           <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
             {[
+              // ADA: verified check in shield
               { icon: "M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z", label: "ADA Member" },
-              { icon: "M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z", label: "Invisalign Provider" },
-              { icon: "M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z", label: "Lifetime Warranty" },
+              // Invisalign: sparkle / tooth-align star
+              { icon: "M12 2l2.39 7.36H22l-6.19 4.5L18.2 21 12 16.5 5.8 21l2.39-7.14L2 9.36h7.61z", label: "Invisalign Provider" },
+              // Lifetime warranty: star medal / ribbon
+              { icon: "M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z", label: "Lifetime Warranty" },
+              // Same-day: clock
               { icon: "M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z", label: "Same-Day Appointments" },
-              { icon: "M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z", label: "Cherry Financing" },
+              // Cherry financing: credit card
+              { icon: "M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z", label: "Cherry Financing" },
             ].map((item) => (
               <div key={item.label} className="flex items-center gap-2 text-gray-400">
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -364,8 +369,120 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Hygiene Upgrade Package — for ALL patients, insured or not */}
+      <section className="py-14 sm:py-18 bg-white">
+        <div className="mx-auto max-w-5xl px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-3xl p-8 sm:p-12"
+          >
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <p className="text-primary text-xs font-bold uppercase tracking-wider mb-3">For Everyone, Insured or Not</p>
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">
+                  Upgrade Your Cleaning Visit
+                </h2>
+                <p className="text-gray-600 text-base leading-relaxed mb-6">
+                  Add four premium services to any cleaning visit for one bundled price. If your insurance already covers your preventive visit, this is how you get the full experience.
+                </p>
+                <ul className="space-y-2 mb-6">
+                  {[
+                    { name: "InnerView Imaging", retail: "$30" },
+                    { name: "Fluoride Treatment", retail: "$65" },
+                    { name: "Laser Therapy", retail: "$125" },
+                    { name: "Jet Whitening", retail: "$99" },
+                  ].map((item) => (
+                    <li key={item.name} className="flex items-center justify-between text-sm">
+                      <span className="flex items-center gap-2 text-gray-700">
+                        <svg className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        {item.name}
+                      </span>
+                      <span className="text-gray-400 line-through">{item.retail}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
+                <div className="text-center mb-5">
+                  <p className="text-xs text-gray-400 line-through mb-1">$319 a la carte</p>
+                  <div className="flex items-baseline justify-center gap-2">
+                    <span className="text-5xl font-extrabold text-primary">$249</span>
+                    <span className="text-gray-400 text-sm">/visit</span>
+                  </div>
+                  <p className="text-xs text-green-700 font-semibold mt-1">Save 22%</p>
+                </div>
+                <div className="bg-gray-50 rounded-xl px-4 py-3 mb-5 flex justify-between items-center">
+                  <span className="text-xs text-gray-500">Split via Cherry</span>
+                  <span className="text-sm font-bold text-gray-700">$42/mo</span>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <a
+                    href={BOOKING_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full rounded-lg bg-primary px-5 py-3 text-sm font-bold text-white hover:bg-primary-dark transition-colors text-center"
+                  >
+                    Add to My Next Visit
+                  </a>
+                  <Link
+                    href="/membership"
+                    className="w-full rounded-lg bg-white border border-gray-200 px-5 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors text-center"
+                  >
+                    See Plan Details
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* OBJECTION #3: "Can I trust them?" */}
       <ReviewsCarousel />
+
+      {/* OBJECTION #4: "What will it actually be like?" */}
+      <section className="py-14 sm:py-20 bg-gray-50">
+        <div className="mx-auto max-w-5xl px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-10"
+          >
+            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Your Experience</p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3">
+              A Visit You Won&apos;t Dread
+            </h2>
+            <p className="text-gray-500 text-base max-w-xl mx-auto">
+              We designed every detail to make you feel at home. From the calm, modern office to a team that greets you by name, this isn&apos;t the dentist you grew up dreading.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            {experienceItems.map((item, i) => (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className="bg-white rounded-2xl p-5 flex items-center gap-3 border border-gray-100"
+              >
+                <span className="h-10 w-10 flex-shrink-0 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <svg className="h-5 w-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                    <path d={item.path} />
+                  </svg>
+                </span>
+                <span className="text-sm font-semibold text-gray-800">{item.label}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Services */}
       <section className="py-14 sm:py-18 bg-white">
