@@ -879,9 +879,95 @@ function HowOftenDentist() {
   );
 }
 
+function WhatIsDeepCleaning() {
+  return (
+    <>
+      <div className="grid grid-cols-3 gap-3 mb-6">
+        <Stat value="47%" label="of adults have gum disease" />
+        <Stat value="2,000+" label="cleanings by Melisa" />
+        <Stat value="2 visits" label="typical SRP timeline" />
+      </div>
+
+      <h2>Regular Cleaning vs. Deep Cleaning</h2>
+      <Versus
+        leftLabel="Regular (Prophy)"
+        left={[
+          "Above the gumline only",
+          "For healthy mouths",
+          "1 visit, about 45 minutes",
+          "Covered 100% by most PPOs",
+        ]}
+        rightLabel="Deep (SRP)"
+        right={[
+          "Below the gumline too",
+          "For gum disease",
+          "Usually 2 visits",
+          "Covered 50-80% by most PPOs",
+        ]}
+      />
+
+      <h2>Signs You Might Need One</h2>
+      <Checklist items={[
+        "Haven't seen a dentist in over a year",
+        "Gums bleed when you brush or floss",
+        "Chronic bad breath that won't go away",
+        "Gums look red, swollen, or have pulled back",
+        "Teeth feel loose or shifted",
+        "Dentist measures gum pockets deeper than 4mm",
+      ]} />
+
+      <Highlight>Gum disease is the leading cause of tooth loss in adults. The good news: caught early, it's completely treatable.</Highlight>
+
+      <h2>What Happens During a Deep Cleaning</h2>
+      <Checklist items={[
+        "We numb the area if you want (totally optional for most patients)",
+        "Melisa uses fine instruments and ultrasonic tools to remove tartar below the gumline",
+        "She smooths the root surfaces so gums can reattach cleanly",
+        "Usually done in two visits, one side of the mouth at a time",
+        "You go home with instructions and often a follow-up in 3 months",
+      ]} />
+
+      <h2>Why Melisa's Cleanings Feel Different</h2>
+      <Checklist items={[
+        "Light hand, no digging or rushing",
+        "Explains every step before she does it",
+        "Adjusts pressure and technique to your comfort",
+        "2,000+ cleanings and counting at our Richardson office",
+      ]} />
+
+      <Highlight>If your last cleaning was rough, tell us. We will slow down, numb more, or split the visit. You should never dread a cleaning.</Highlight>
+
+      <h2>The Cost of Waiting</h2>
+      <Versus
+        leftLabel="Deep Cleaning Now"
+        left={[
+          "Stops gum disease in its tracks",
+          "Covered by most PPO plans",
+          "Typically $800-$1,200 (often 50-80% covered)",
+          "Saves your teeth and bone",
+        ]}
+        rightLabel="Wait 2-3 Years"
+        right={[
+          "Bone loss becomes permanent",
+          "Teeth loosen and shift",
+          "Leads to extractions and implants",
+          "$4,000+ per implant to replace a tooth",
+        ]}
+      />
+
+      <p>
+        Not sure if you need one? We measure your gums at every new patient visit and tell you exactly what&apos;s needed.{" "}
+        <Link href="/services/cleaning" className="text-primary font-semibold underline">See our cleaning services</Link> or{" "}
+        <a href="https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold underline">book an appointment</a> and we&apos;ll take it from there.
+      </p>
+    </>
+  );
+}
+
 /* ─── Content map ─── */
 
 const contentMap: Record<string, () => React.ReactNode> = {
+  "what-is-a-deep-cleaning": WhatIsDeepCleaning,
   "what-makes-5-star-dental-experience": FiveStarDentalExperience,
   "dental-insurance-101-whats-covered": DentalInsurance101,
   "cost-of-skipping-the-dentist": CostOfSkippingDentist,
@@ -938,6 +1024,11 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 /* ─── Related service links per post ─── */
 
 const relatedLinks: Record<string, { label: string; href: string }[]> = {
+  "what-is-a-deep-cleaning": [
+    { label: "Dental Cleaning & Exam", href: "/services/cleaning" },
+    { label: "Essential & Signature Plans", href: "/membership" },
+    { label: "Book Your Visit", href: "/book" },
+  ],
   "why-dentist-recommends-xrays": [
     { label: "Dental Cleaning & Exam", href: "/services/cleaning" },
     { label: "Book Your $149 New Patient Visit", href: "/book" },

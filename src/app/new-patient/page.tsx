@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import Link from "next/link";
 import { CTABanner } from "@/components/CTABanner";
 import { FAQSchema } from "@/components/FAQSchema";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
@@ -87,10 +88,16 @@ export default function NewPatientPage() {
       <section className="py-14 sm:py-18 bg-white">
         <div className="mx-auto max-w-3xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-primary/10 rounded-2xl p-8 sm:p-12 text-center">
-            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Limited-Time Offer</p>
+            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">New Patients Only</p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">$149 New Patient Special</h2>
-            <p className="text-gray-600 text-lg leading-relaxed mb-6">Professional cleaning, comprehensive exam, and digital X-rays — all for just $149. No insurance required.</p>
-            <Checklist items={["Professional cleaning", "Comprehensive exam", "Full set of digital X-rays", "Personalized care plan"]} />
+            <p className="text-gray-600 text-lg leading-relaxed mb-6">Professional cleaning*, comprehensive exam, and digital X-rays, all for just $149. No insurance required.</p>
+            <Checklist items={["Professional cleaning*", "Comprehensive exam", "Full set of digital X-rays", "Personalized care plan"]} />
+            <p className="text-gray-500 text-xs mt-6 leading-relaxed max-w-xl mx-auto">
+              *Covers a standard (prophylaxis) cleaning. If it has been a while since your last dental visit, a deep cleaning may be recommended first.{" "}
+              <Link href="/blog/what-is-a-deep-cleaning" className="text-primary font-semibold underline">
+                Why deep cleanings matter
+              </Link>. Have insurance? Your preventive visit is usually fully covered by your plan.
+            </p>
           </motion.div>
         </div>
       </section>

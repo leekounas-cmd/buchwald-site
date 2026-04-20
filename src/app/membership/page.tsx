@@ -2,16 +2,17 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import Link from "next/link";
 import { CTABanner } from "@/components/CTABanner";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 
 const BOOKING_URL = "https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE";
 
 const essentialItems = [
-  "2 professional cleanings per year",
+  "2 professional cleanings per year*",
   "2 comprehensive exams per year",
   "Full set of digital X-rays",
-  "20% off all other treatments",
+  "20% off all other treatments (fillings, crowns, and more)",
   "No waiting periods",
   "No annual maximums",
   "No deductibles",
@@ -27,12 +28,11 @@ const signatureItems = [
   "No waiting periods, maximums, or deductibles",
 ];
 
+
 const essentialSavings = [
-  { treatment: "2 Cleanings", plan: "Included", retail: "$440", save: "$440" },
+  { treatment: "2 Cleanings*", plan: "Included", retail: "$440", save: "$440" },
   { treatment: "2 Exams", plan: "Included", retail: "$300", save: "$300" },
   { treatment: "Full X-rays", plan: "Included", retail: "$150", save: "$150" },
-  { treatment: "Filling (20% off)", plan: "$320", retail: "$400", save: "$80" },
-  { treatment: "Crown (20% off)", plan: "$960", retail: "$1,200", save: "$240" },
 ];
 
 const signatureSavings = [
@@ -69,6 +69,10 @@ const faqs = [
   {
     q: "Is there a contract?",
     a: "The plans are annual. If you pay through Cherry, payments are spread over 12 months. There's no long-term contract beyond the plan year.",
+  },
+  {
+    q: "What if I haven't been to the dentist in a while? Will I still get a regular cleaning?",
+    a: "Maybe. The plan covers standard (prophylaxis) cleanings. If there's significant buildup below the gumline, a deep cleaning (scaling and root planing) may be recommended first to get you healthy. We'll walk you through what's needed and your options before anything is scheduled.",
   },
 ];
 
@@ -176,6 +180,50 @@ export default function MembershipPage() {
           <p className="text-center text-gray-400 text-xs mt-5">
             Cherry financing available on both plans. Apply in minutes, no impact to credit score, 0% APR.
           </p>
+
+          {/* Cleaning asterisk note */}
+          <p className="text-center text-gray-500 text-xs mt-3 max-w-2xl mx-auto">
+            *Covers standard (prophylaxis) cleanings. If it has been a while since your last dental visit, a deep cleaning may be recommended first.{" "}
+            <Link href="/blog/what-is-a-deep-cleaning" className="text-primary font-semibold underline">
+              Learn why deep cleanings matter
+            </Link>.
+          </p>
+        </div>
+      </section>
+
+      {/* Gentle Cleanings with Melisa */}
+      <section className="py-12 sm:py-16 bg-white">
+        <div className="mx-auto max-w-3xl px-4">
+          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-gray-50 rounded-2xl p-8 sm:p-10 text-center">
+            <p className="text-primary text-xs font-bold uppercase tracking-wider mb-3">Cleanings With Melisa</p>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-4">
+              A Cleaning That Doesn&apos;t Hurt
+            </h2>
+            <p className="text-gray-600 text-base leading-relaxed mb-6">
+              A lot of people put off the dentist because their last cleaning was painful. Our hygienist Melisa Kounas is known for being genuinely gentle. After more than 2,000 cleanings in our chair, patients consistently tell us it was the most comfortable cleaning they have ever had.
+            </p>
+            <div className="grid grid-cols-3 gap-3 max-w-lg mx-auto">
+              <div className="bg-white rounded-xl p-4">
+                <p className="text-2xl sm:text-3xl font-extrabold text-primary">2,000+</p>
+                <p className="text-gray-500 text-xs mt-1">Cleanings performed</p>
+              </div>
+              <div className="bg-white rounded-xl p-4">
+                <p className="text-2xl sm:text-3xl font-extrabold text-primary">Gentle</p>
+                <p className="text-gray-500 text-xs mt-1">Hand and technique</p>
+              </div>
+              <div className="bg-white rounded-xl p-4">
+                <p className="text-2xl sm:text-3xl font-extrabold text-primary">No Rush</p>
+                <p className="text-gray-500 text-xs mt-1">We take our time</p>
+              </div>
+            </div>
+            <p className="text-gray-500 text-sm mt-6">
+              Nervous about cleanings?{" "}
+              <Link href="/meet-us" className="text-primary font-semibold underline">Meet Melisa</Link>{" "}
+              or{" "}
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-primary font-semibold underline">book your visit</a>{" "}
+              and tell us up front. We will adjust everything to your comfort.
+            </p>
+          </motion.div>
         </div>
       </section>
 

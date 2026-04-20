@@ -147,7 +147,7 @@ export default function HomePage() {
                 {/* Floating badge — top left */}
                 <div className="absolute top-4 left-4 z-10 rounded-full bg-white/90 backdrop-blur-sm px-4 py-2 shadow-md">
                   <p className="text-xs font-bold text-gray-900 leading-tight">$149</p>
-                  <p className="text-xs text-gray-500 leading-tight">New Patient Visit</p>
+                  <p className="text-xs text-gray-500 leading-tight">New Patients Only</p>
                 </div>
                 {/* Floating badge — top right */}
                 <div className="absolute top-4 right-4 z-10 rounded-full bg-primary text-white px-4 py-2 shadow-md">

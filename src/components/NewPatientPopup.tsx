@@ -129,6 +129,9 @@ export function NewPatientPopup() {
             <p className="text-xs text-gray-400 text-center mt-4">
               Mon-Thu 7am-3pm &middot; Richardson, TX
             </p>
+            <p className="text-[11px] text-gray-400 text-center mt-2 leading-relaxed">
+              *New patients only. Covers a standard cleaning. If it has been a while since your last visit, a deep cleaning may be recommended first. Insurance patients: your preventive visit is usually covered 100% by your plan.
+            </p>
           </div>
         </div>
       </div>
