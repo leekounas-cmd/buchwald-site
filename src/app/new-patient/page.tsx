@@ -118,11 +118,23 @@ export default function NewPatientPage() {
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-6">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">Office Details</h2>
           </motion.div>
-          <StatRow stats={[
-            { value: "300 N Coit Rd #245", label: "Richardson, TX 75080" },
-            { value: "Mon–Thu", label: "7:00 AM – 3:00 PM" },
-            { value: "(972) 644-3280", label: "Call or Text" },
-          ]} />
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div className="bg-primary/5 rounded-xl p-5">
+              <p className="text-primary text-xs font-bold uppercase tracking-wider mb-2">Address</p>
+              <p className="text-gray-900 font-bold text-base leading-snug">300 N Coit Rd #245</p>
+              <p className="text-gray-500 text-sm mt-0.5">Richardson, TX 75080</p>
+            </div>
+            <div className="bg-primary/5 rounded-xl p-5">
+              <p className="text-primary text-xs font-bold uppercase tracking-wider mb-2">Hours</p>
+              <p className="text-gray-900 font-bold text-base leading-snug">Monday–Thursday</p>
+              <p className="text-gray-500 text-sm mt-0.5">7:00 AM – 3:00 PM</p>
+            </div>
+            <div className="bg-primary/5 rounded-xl p-5">
+              <p className="text-primary text-xs font-bold uppercase tracking-wider mb-2">Call or Text</p>
+              <a href="tel:972-644-3280" className="text-gray-900 font-bold text-base leading-snug hover:text-primary">(972) 644-3280</a>
+              <p className="text-gray-500 text-sm mt-0.5">Same-day when possible</p>
+            </div>
+          </div>
         </div>
       </section>
 

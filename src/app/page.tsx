@@ -59,15 +59,6 @@ const team = [
   { name: "Lee Kounas", role: "Marketing & Insurance", image: "/images/lee.jpg" },
 ];
 
-const experienceItems = [
-  { label: "Noise-canceling headphones", path: "M12 3a9 9 0 00-9 9v7a2 2 0 002 2h3v-8H5v-1a7 7 0 0114 0v1h-3v8h3a2 2 0 002-2v-7a9 9 0 00-9-9z" },
-  { label: "TVs at every chair", path: "M21 3H3c-1.11 0-2 .89-2 2v12c0 1.1.89 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 14H3V5h18v12z" },
-  { label: "Blankets and pillows", path: "M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z" },
-  { label: "Complimentary beverages", path: "M20 3H4v10a4 4 0 004 4h6a4 4 0 004-4v-3h2a3 3 0 000-6V3zm-2 5V5h2a1 1 0 010 2h-2zM2 21h18v-2H2v2z" },
-  { label: "On-time, no-wait visits", path: "M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z" },
-  { label: "We explain before we start", path: "M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" },
-];
-
 const savingsRows = [
   { treatment: "Comprehensive Exam", withPlan: "Included", typical: "$150", save: "$150" },
   { treatment: "Full X-rays", withPlan: "Included", typical: "$150", save: "$150" },
@@ -443,46 +434,6 @@ export default function HomePage() {
 
       {/* OBJECTION #3: "Can I trust them?" */}
       <ReviewsCarousel />
-
-      {/* OBJECTION #4: "What will it actually be like?" */}
-      <section className="py-14 sm:py-20 bg-gray-50">
-        <div className="mx-auto max-w-5xl px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-10"
-          >
-            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Your Experience</p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3">
-              A Visit You Won&apos;t Dread
-            </h2>
-            <p className="text-gray-500 text-base max-w-xl mx-auto">
-              We designed every detail to make you feel at home. From the calm, modern office to a team that greets you by name, this isn&apos;t the dentist you grew up dreading.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {experienceItems.map((item, i) => (
-              <motion.div
-                key={item.label}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className="bg-white rounded-2xl p-5 flex items-center gap-3 border border-gray-100"
-              >
-                <span className="h-10 w-10 flex-shrink-0 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <svg className="h-5 w-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                    <path d={item.path} />
-                  </svg>
-                </span>
-                <span className="text-sm font-semibold text-gray-800">{item.label}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Services */}
       <section className="py-14 sm:py-18 bg-white">

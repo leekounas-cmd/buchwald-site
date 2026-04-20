@@ -1,17 +1,27 @@
 "use client";
 
 export function Stat({ value, label }: { value: string; label: string }) {
+  const size = value.length > 10 ? "text-base sm:text-lg" : value.length > 6 ? "text-xl sm:text-2xl" : "text-2xl sm:text-3xl";
   return (
-    <div className="bg-primary/5 rounded-xl p-5 text-center">
-      <p className="text-3xl sm:text-4xl font-extrabold text-primary">{value}</p>
-      <p className="text-gray-500 text-xs font-medium mt-1">{label}</p>
+    <div className="bg-primary/5 rounded-xl p-4 sm:p-5 text-center flex flex-col justify-center min-h-[84px] sm:min-h-[104px]">
+      <p className={`${size} font-extrabold text-primary break-words leading-tight`}>{value}</p>
+      <p className="text-gray-500 text-[11px] sm:text-xs font-medium mt-1 leading-snug">{label}</p>
     </div>
   );
 }
 
+const gridColsMap: Record<number, string> = {
+  1: "grid-cols-1",
+  2: "grid-cols-2",
+  3: "grid-cols-2 sm:grid-cols-3",
+  4: "grid-cols-2 sm:grid-cols-4",
+  5: "grid-cols-2 sm:grid-cols-5",
+};
+
 export function StatRow({ stats }: { stats: { value: string; label: string }[] }) {
+  const cols = gridColsMap[stats.length] ?? "grid-cols-2 sm:grid-cols-4";
   return (
-    <div className={`grid grid-cols-${stats.length} gap-3 mb-6`}>
+    <div className={`grid ${cols} gap-3 mb-6`}>
       {stats.map((s) => (
         <Stat key={s.label} value={s.value} label={s.label} />
       ))}

@@ -204,16 +204,16 @@ export default function MembershipPage() {
             </p>
             <div className="grid grid-cols-3 gap-3 max-w-lg mx-auto">
               <div className="bg-white rounded-xl p-4">
-                <p className="text-2xl sm:text-3xl font-extrabold text-primary">2,000+</p>
-                <p className="text-gray-500 text-xs mt-1">Cleanings performed</p>
+                <p className="text-xl sm:text-2xl font-extrabold text-primary leading-tight">2,000+</p>
+                <p className="text-gray-500 text-[11px] sm:text-xs mt-1 leading-snug">Cleanings performed</p>
               </div>
               <div className="bg-white rounded-xl p-4">
-                <p className="text-2xl sm:text-3xl font-extrabold text-primary">Gentle</p>
-                <p className="text-gray-500 text-xs mt-1">Hand and technique</p>
+                <p className="text-xl sm:text-2xl font-extrabold text-primary leading-tight">Gentle</p>
+                <p className="text-gray-500 text-[11px] sm:text-xs mt-1 leading-snug">Hand and technique</p>
               </div>
               <div className="bg-white rounded-xl p-4">
-                <p className="text-2xl sm:text-3xl font-extrabold text-primary">No Rush</p>
-                <p className="text-gray-500 text-xs mt-1">We take our time</p>
+                <p className="text-xl sm:text-2xl font-extrabold text-primary leading-tight">No Rush</p>
+                <p className="text-gray-500 text-[11px] sm:text-xs mt-1 leading-snug">We take our time</p>
               </div>
             </div>
             <p className="text-gray-500 text-sm mt-6">
