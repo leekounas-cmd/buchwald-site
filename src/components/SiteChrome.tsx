@@ -7,7 +7,7 @@ import { Footer } from "@/components/Footer";
 import { StickyBottomBar } from "@/components/StickyBottomBar";
 import { NewPatientPopup } from "@/components/NewPatientPopup";
 
-const BARE_ROUTES = ["/special"];
+const BARE_ROUTES = ["/special", "/whitening-free"];
 
 function isBare(pathname: string | null) {
   if (!pathname) return false;

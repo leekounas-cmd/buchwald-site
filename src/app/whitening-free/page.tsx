@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
@@ -13,8 +13,8 @@ const PHONE_HREF = "tel:972-644-3280";
 const includedItems = [
   { title: "Comprehensive Exam & Consultation", desc: "Dr. Buchwald walks you through everything he sees. No pressure, no upselling." },
   { title: "Digital X-Rays", desc: "Full set of digital X-rays with 80% less radiation than traditional film." },
-  { title: "Professional Teeth Cleaning", desc: "Gentle cleaning with Melisa, our hygienist with 2,000+ cleanings under her belt." },
-  { title: "BONUS: Jet Whitening", desc: "Stain removal treatment included free with your first visit." },
+  { title: "Professional Cleaning with Melisa", desc: "Gentle cleaning from our hygienist with 2,000+ cleanings under her belt. Known for being genuinely gentle." },
+  { title: "FREE Opalescence Boost Whitening", desc: "In-office professional whitening. Retail $600. Yours free with your new patient visit." },
 ];
 
 const dayOptions = ["Monday", "Tuesday", "Wednesday", "Thursday", "No Preference"];
@@ -23,7 +23,7 @@ function trackTelClick() {
   if (typeof window !== "undefined" && typeof window.gtag === "function") {
     window.gtag("event", "tel_click", {
       send_to: "G-68PGS591ZE",
-      page_path: "/special",
+      page_path: "/whitening-free",
     });
   }
 }
@@ -36,12 +36,11 @@ function Check() {
   );
 }
 
-export default function SpecialPage() {
+export default function WhiteningFreePage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [firstName, setFirstName] = useState("");
-  const formRef = useRef<HTMLFormElement>(null);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -50,8 +49,8 @@ export default function SpecialPage() {
 
     const form = e.currentTarget;
     const data = new FormData(form);
-    data.append("_subject", "New $149 Voucher Claim");
-    data.append("source", "voucher-landing-page");
+    data.append("_subject", "Free Whitening Lead (Insured)");
+    data.append("source", "whitening-free-landing");
 
     const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
       method: "POST",
@@ -66,14 +65,14 @@ export default function SpecialPage() {
       if (typeof window !== "undefined" && typeof window.gtag === "function") {
         window.gtag("event", "form_submit", {
           send_to: "G-68PGS591ZE",
-          form_name: "voucher_form",
-          page_path: "/special",
+          form_name: "whitening_free_form",
+          page_path: "/whitening-free",
         });
       }
       if (typeof window !== "undefined" && typeof (window as unknown as { fbq?: (...args: unknown[]) => void }).fbq === "function") {
         (window as unknown as { fbq: (...args: unknown[]) => void }).fbq("track", "Lead", {
-          content_name: "$149 New Patient Voucher",
-          value: 149,
+          content_name: "Free Whitening Insured",
+          value: 600,
           currency: "USD",
         });
       }
@@ -106,9 +105,9 @@ export default function SpecialPage() {
         </div>
       </header>
 
-      {/* Scarcity bar */}
+      {/* Top bar */}
       <div className="bg-primary text-white text-center py-2 px-4 text-xs sm:text-sm font-semibold">
-        Only 25 vouchers available this month — claim yours before they&apos;re gone
+        Now accepting new patients — Richardson, TX
       </div>
 
       {!submitted ? (
@@ -116,12 +115,12 @@ export default function SpecialPage() {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Left column — offer */}
             <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
-              <p className="text-primary text-xs sm:text-sm font-bold uppercase tracking-wider mb-3">Richardson, TX · New Patient Voucher</p>
+              <p className="text-primary text-xs sm:text-sm font-bold uppercase tracking-wider mb-3">Richardson, TX · Insured New Patients</p>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-[1.1] mb-4">
-                Claim Your <span className="text-primary">$149</span> New Patient Voucher
+                Your Cleaning Is Covered. We&apos;ll Throw In <span className="text-primary">Free Whitening.</span>
               </h1>
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-6">
-                Experience the Buchwald difference with complete transparency and zero hidden fees. Typically valued at <span className="font-bold text-gray-900">$800+</span>.
+                If you have dental insurance, your new patient visit (cleaning, exam, X-rays) is usually covered at <span className="font-bold text-gray-900">100%</span>. Book with us this month and we&apos;ll add an in-office <span className="font-bold text-gray-900">Opalescence Boost whitening treatment</span> — a <span className="line-through">$600</span> retail value — at no extra cost.
               </p>
 
               {/* Stars */}
@@ -152,16 +151,41 @@ export default function SpecialPage() {
                 </ul>
               </div>
 
-              {/* Two-path */}
-              <div className="grid sm:grid-cols-2 gap-3 mb-6">
-                <div className="bg-primary/5 rounded-xl p-4">
-                  <p className="text-xs font-bold uppercase tracking-wider text-primary mb-2">Have Insurance?</p>
-                  <p className="text-sm text-gray-700">Your visit may be fully covered. We&apos;ll verify your benefits and tell you your out-of-pocket cost before anything is scheduled.</p>
-                </div>
-                <div className="bg-gray-100 rounded-xl p-4">
-                  <p className="text-xs font-bold uppercase tracking-wider text-gray-600 mb-2">No Insurance?</p>
-                  <p className="text-sm text-gray-700">No problem. Secure your visit for just $149 with the voucher. Membership plans and Cherry financing also available.</p>
-                </div>
+              {/* Clinical honesty block */}
+              <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6 sm:p-7 mb-6">
+                <p className="text-amber-900 text-xs font-bold uppercase tracking-wider mb-3">How This Actually Works</p>
+                <p className="text-gray-700 text-sm leading-relaxed mb-3">
+                  We don&apos;t know your mouth yet, so we won&apos;t promise anything we can&apos;t keep. Every new patient gets a thorough exam with Melisa first.
+                </p>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li className="flex items-start gap-2">
+                    <span className="text-amber-700 font-bold mt-0.5">•</span>
+                    <span>If your mouth is healthy, you get your cleaning and whitening the same visit.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-amber-700 font-bold mt-0.5">•</span>
+                    <span>If Melisa finds significant buildup below the gumline, you&apos;ll need a deep cleaning first — it&apos;s what keeps gum disease from progressing. Your whitening still happens, just at your follow-up visit.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-amber-700 font-bold mt-0.5">•</span>
+                    <span>Final clinical decisions always belong to Melisa and Dr. Buchwald.</span>
+                  </li>
+                </ul>
+                <p className="text-xs text-gray-500 mt-3">
+                  <Link href="/blog/what-is-a-deep-cleaning" className="text-primary font-semibold underline">
+                    Why deep cleanings matter →
+                  </Link>
+                </p>
+              </div>
+
+              {/* No insurance alt path */}
+              <div className="bg-gray-100 rounded-xl p-4 mb-6 flex items-center justify-between gap-3">
+                <p className="text-sm text-gray-700">
+                  <span className="font-bold">No insurance?</span> We have a $149 new patient package too.
+                </p>
+                <Link href="/special" className="flex-shrink-0 text-sm font-bold text-primary hover:underline whitespace-nowrap">
+                  See $149 option →
+                </Link>
               </div>
 
               {/* Trust strip */}
@@ -174,15 +198,15 @@ export default function SpecialPage() {
                 </div>
                 <div className="flex items-center gap-1.5">
                   <svg className="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z" />
+                    <path d="M12 2l2.39 7.36H22l-6.19 4.5L18.2 21 12 16.5 5.8 21l2.39-7.14L2 9.36h7.61z" />
                   </svg>
-                  Cherry financing
+                  Most PPO plans accepted
                 </div>
                 <div className="flex items-center gap-1.5">
                   <svg className="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2l2.39 7.36H22l-6.19 4.5L18.2 21 12 16.5 5.8 21l2.39-7.14L2 9.36h7.61z" />
+                    <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z" />
                   </svg>
-                  Most insurance accepted
+                  Cherry financing
                 </div>
               </div>
             </motion.div>
@@ -196,12 +220,12 @@ export default function SpecialPage() {
             >
               <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 sm:p-8">
                 <div className="text-center mb-5">
-                  <p className="text-primary text-xs font-bold uppercase tracking-wider mb-1">Claim Your Voucher</p>
-                  <h2 className="text-xl sm:text-2xl font-extrabold text-gray-900">Where should we send it?</h2>
+                  <p className="text-primary text-xs font-bold uppercase tracking-wider mb-1">Claim Your Free Whitening</p>
+                  <h2 className="text-xl sm:text-2xl font-extrabold text-gray-900">Lee will verify your benefits</h2>
                   <p className="text-gray-500 text-sm mt-1">We&apos;ll reach out within one business day.</p>
                 </div>
 
-                <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-2 gap-3">
                     <input
                       type="text"
@@ -232,6 +256,13 @@ export default function SpecialPage() {
                     placeholder="Phone number"
                     className="w-full rounded-lg border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
                   />
+                  <input
+                    type="text"
+                    name="insurance_provider"
+                    required
+                    placeholder="Insurance provider (e.g. Delta Dental, Cigna)"
+                    className="w-full rounded-lg border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                  />
                   <select
                     name="preferred_day"
                     required
@@ -243,17 +274,6 @@ export default function SpecialPage() {
                       <option key={d} value={d}>{d}</option>
                     ))}
                   </select>
-                  <select
-                    name="has_insurance"
-                    required
-                    defaultValue=""
-                    className="w-full rounded-lg border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-white appearance-none"
-                  >
-                    <option value="" disabled>Do you have insurance?</option>
-                    <option value="Yes">Yes, I have dental insurance</option>
-                    <option value="No">No insurance</option>
-                    <option value="Unsure">Not sure</option>
-                  </select>
 
                   {error && <p className="text-red-500 text-sm font-medium">{error}</p>}
 
@@ -262,11 +282,11 @@ export default function SpecialPage() {
                     disabled={loading}
                     className="w-full rounded-lg bg-primary px-5 py-3.5 text-base font-bold text-white hover:bg-primary-dark transition-colors disabled:opacity-50"
                   >
-                    {loading ? "Submitting..." : "Claim My Voucher"}
+                    {loading ? "Submitting..." : "Claim My Free Whitening"}
                   </button>
 
                   <p className="text-[11px] text-gray-400 text-center leading-relaxed">
-                    By submitting, you agree to be contacted at this email and phone. We respect your privacy. No spam.
+                    By submitting, you agree to be contacted at this email and phone. No spam. Your insurance info is used only to verify your benefits.
                   </p>
                 </form>
 
@@ -296,7 +316,7 @@ export default function SpecialPage() {
               </div>
 
               <p className="mt-4 text-[11px] text-gray-400 text-center leading-relaxed">
-                300 N Coit Rd #245, Richardson, TX 75080 · *New patients only. Covers a standard cleaning. A deep cleaning may be recommended if it has been a while since your last visit.
+                300 N Coit Rd #245, Richardson, TX 75080 · Opalescence Boost offer valid for new patients with a clean, healthy exam. Final treatment determined by clinical evaluation.
               </p>
             </motion.div>
           </div>
@@ -318,14 +338,14 @@ export default function SpecialPage() {
               {firstName ? `You're in, ${firstName}.` : "You're in."}
             </h1>
             <p className="text-gray-600 text-base leading-relaxed mb-6">
-              Your voucher is on the way. We&apos;ll reach out within one business day to schedule your visit and answer any questions.
+              Lee will verify your insurance benefits and reach out within one business day to schedule your visit.
             </p>
             <div className="bg-primary/5 rounded-xl p-5 mb-6 text-left">
               <p className="text-xs font-bold uppercase tracking-wider text-primary mb-2">What happens next</p>
               <ol className="space-y-2 text-sm text-gray-700">
-                <li><span className="font-bold">1.</span> Check your email for your voucher</li>
-                <li><span className="font-bold">2.</span> We&apos;ll call or text to confirm your appointment</li>
-                <li><span className="font-bold">3.</span> Show up and enjoy the Buchwald experience</li>
+                <li><span className="font-bold">1.</span> Lee verifies your insurance benefits</li>
+                <li><span className="font-bold">2.</span> We call or text to confirm your appointment</li>
+                <li><span className="font-bold">3.</span> Show up, get your cleaning, walk out with a brighter smile</li>
               </ol>
             </div>
             <a
