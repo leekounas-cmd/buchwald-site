@@ -113,28 +113,32 @@ export default function SpecialPage() {
 
       {!submitted ? (
         <main className="mx-auto max-w-5xl px-4 py-8 sm:py-12">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
-            {/* Left column — offer */}
-            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
-              <p className="text-primary text-xs sm:text-sm font-bold uppercase tracking-wider mb-3">Richardson, TX · New Patient Voucher</p>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-[1.1] mb-4">
-                Claim Your <span className="text-primary">$149</span> New Patient Voucher
-              </h1>
-              <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-6">
-                Experience the Buchwald difference with complete transparency and zero hidden fees. Typically valued at <span className="font-bold text-gray-900">$800+</span>.
-              </p>
+          {/* Hero — full width on all screens */}
+          <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="mb-8 lg:mb-12 max-w-3xl">
+            <p className="text-primary text-xs sm:text-sm font-bold uppercase tracking-wider mb-3">Richardson, TX · New Patient Voucher</p>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-[1.1] mb-4">
+              Claim Your <span className="text-primary">$149</span> New Patient Voucher
+            </h1>
+            <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-5">
+              Experience the Buchwald difference with complete transparency and zero hidden fees. Typically valued at <span className="font-bold text-gray-900">$800+</span>.
+            </p>
 
-              {/* Stars */}
-              <div className="flex items-center gap-3 mb-8">
-                <div className="flex gap-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="h-5 w-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <span className="text-sm text-gray-600 font-medium">4.9 on Google · 433+ reviews</span>
+            {/* Stars */}
+            <div className="flex items-center gap-3">
+              <div className="flex gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="h-5 w-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
               </div>
+              <span className="text-sm text-gray-600 font-medium">4.9 on Google · 433+ reviews</span>
+            </div>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+            {/* Details column — order-2 on mobile (after form), order-1 on desktop (left) */}
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="order-2 lg:order-1">
 
               {/* What's included */}
               <div className="bg-white rounded-2xl p-6 sm:p-7 border border-gray-100 mb-6">
@@ -187,12 +191,12 @@ export default function SpecialPage() {
               </div>
             </motion.div>
 
-            {/* Right column — form */}
+            {/* Form column — order-1 on mobile (first), order-2 on desktop (right) */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
-              className="lg:sticky lg:top-4 self-start"
+              className="order-1 lg:order-2 lg:sticky lg:top-4 self-start"
             >
               <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 sm:p-8">
                 <div className="text-center mb-5">
