@@ -189,6 +189,23 @@ export default function SpecialPage() {
                   Most insurance accepted
                 </div>
               </div>
+
+              {/* Doctor card — bottom of details column */}
+              <div className="mt-8 bg-white rounded-2xl border border-gray-100 p-5 flex items-center gap-4">
+                <Image
+                  src="/images/dr-buchwald.jpg"
+                  alt="Dr. Max Buchwald Jr."
+                  width={56}
+                  height={56}
+                  className="h-14 w-14 rounded-full object-cover"
+                />
+                <div>
+                  <p className="font-bold text-gray-900 text-sm">Dr. Max Buchwald Jr.</p>
+                  <p className="text-xs text-gray-500 mt-0.5">
+                    Family dentist in Richardson, TX. Serving patients across Plano, Allen, and Garland.
+                  </p>
+                </div>
+              </div>
             </motion.div>
 
             {/* Form column — order-1 on mobile (first), order-2 on desktop (right) */}
@@ -279,23 +296,6 @@ export default function SpecialPage() {
                   <a href={PHONE_HREF} onClick={trackTelClick} className="text-primary font-bold text-sm hover:underline">
                     {PHONE}
                   </a>
-                </div>
-              </div>
-
-              {/* Doctor card */}
-              <div className="mt-5 bg-white rounded-2xl border border-gray-100 p-5 flex items-center gap-4">
-                <Image
-                  src="/images/dr-buchwald.jpg"
-                  alt="Dr. Max Buchwald Jr."
-                  width={56}
-                  height={56}
-                  className="h-14 w-14 rounded-full object-cover"
-                />
-                <div>
-                  <p className="font-bold text-gray-900 text-sm">Dr. Max Buchwald Jr.</p>
-                  <p className="text-xs text-gray-500 mt-0.5">
-                    Family dentist in Richardson, TX. Serving patients across Plano, Allen, and Garland.
-                  </p>
                 </div>
               </div>
 
