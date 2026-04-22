@@ -22,7 +22,6 @@ const dayOptions = ["Monday", "Tuesday", "Wednesday", "Thursday", "No Preference
 function trackTelClick() {
   if (typeof window !== "undefined" && typeof window.gtag === "function") {
     window.gtag("event", "tel_click", {
-      send_to: "G-68PGS591ZE",
       page_path: "/special",
     });
   }
@@ -65,9 +64,10 @@ export default function SpecialPage() {
       trackConversion(process.env.NEXT_PUBLIC_GADS_CONVERSION_LABEL);
       if (typeof window !== "undefined" && typeof window.gtag === "function") {
         window.gtag("event", "form_submit", {
-          send_to: "G-68PGS591ZE",
           form_name: "voucher_form",
           page_path: "/special",
+          value: 149,
+          currency: "USD",
         });
       }
       if (typeof window !== "undefined" && typeof (window as unknown as { fbq?: (...args: unknown[]) => void }).fbq === "function") {
