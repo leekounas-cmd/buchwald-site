@@ -27,25 +27,19 @@ export default function ReschedulePage() {
           <h1 className="mb-5 text-3xl font-semibold leading-tight text-slate-900 md:mb-6 md:text-6xl">
             It's been a minute. Let's get you back in.
           </h1>
-          <p className="mx-auto mb-7 max-w-2xl text-base text-slate-600 md:mb-8 md:text-xl">
+          <p className="mx-auto mb-6 max-w-2xl text-base text-slate-600 md:mb-8 md:text-xl">
             Life gets busy. We get it. No guilt trip, no lecture. Just an easy
             way to slide back onto the schedule.
           </p>
 
-          {/* Live schedule strip */}
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group mx-auto mb-8 flex max-w-md items-center justify-center gap-3 rounded-full bg-teal-50 px-5 py-3 text-sm font-medium text-teal-800 transition hover:bg-teal-100 md:text-base"
-          >
+          {/* Live schedule note (not a button) */}
+          <div className="mx-auto mb-8 flex max-w-md items-center justify-center gap-3 text-sm text-slate-500 md:text-base">
             <span className="relative flex h-2.5 w-2.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-75"></span>
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-teal-500"></span>
             </span>
-            Check our actual schedule. Takes 20 seconds.
-            <span className="transition group-hover:translate-x-1">→</span>
-          </a>
+            See our live schedule. Takes 20 seconds.
+          </div>
 
           {/* Offer badge */}
           <div className="mx-auto mb-8 inline-flex items-center gap-3 rounded-full border-2 border-amber-400 bg-white px-5 py-3 shadow-sm md:px-6">
@@ -56,22 +50,15 @@ export default function ReschedulePage() {
             </span>
           </div>
 
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full rounded-full bg-teal-600 px-8 py-4 text-base font-semibold text-white shadow-md transition hover:bg-teal-700 hover:shadow-lg sm:w-auto md:text-lg"
-            >
-              Book Online & Claim My Tray
-            </a>
-            <a
-              href={`tel:${PHONE}`}
-              className="w-full rounded-full border-2 border-slate-900 px-8 py-4 text-base font-semibold text-slate-900 transition hover:bg-slate-900 hover:text-white sm:w-auto md:text-lg"
-            >
-              Call {PHONE_DISPLAY}
-            </a>
-          </div>
+          {/* Single CTA */}
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block rounded-full bg-teal-600 px-10 py-4 text-base font-semibold text-white shadow-md transition hover:bg-teal-700 hover:shadow-lg md:text-lg"
+          >
+            Book Online & Claim My Tray
+          </a>
 
           <p className="mt-6 text-sm text-slate-500">
             One-size-fits-most. Pick it up at your next cleaning.
@@ -155,25 +142,26 @@ export default function ReschedulePage() {
             Pick a time that works. Free whitening tray waiting when you get
             here.
           </p>
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full rounded-full bg-teal-500 px-8 py-4 text-base font-semibold text-white shadow-md transition hover:bg-teal-400 hover:shadow-lg sm:w-auto md:text-lg"
-            >
-              Book Online & Claim My Tray
-            </a>
-            <a
-              href={`sms:${PHONE}`}
-              className="w-full rounded-full border-2 border-white px-8 py-4 text-base font-semibold text-white transition hover:bg-white hover:text-slate-900 sm:w-auto md:text-lg"
-            >
-              Text Us Instead
-            </a>
-          </div>
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block rounded-full bg-teal-500 px-10 py-4 text-base font-semibold text-white shadow-md transition hover:bg-teal-400 hover:shadow-lg md:text-lg"
+          >
+            Book Online & Claim My Tray
+          </a>
           <p className="mt-6 text-sm text-slate-400">
             Free take-home whitening tray for existing patients who book
             online. One per patient. Picked up at your next cleaning visit.
+          </p>
+          <p className="mt-4 text-sm text-slate-400">
+            Prefer to call? {" "}
+            <a
+              href={`tel:${PHONE}`}
+              className="underline hover:text-white"
+            >
+              {PHONE_DISPLAY}
+            </a>
           </p>
         </div>
       </section>
