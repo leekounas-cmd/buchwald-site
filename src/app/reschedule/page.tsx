@@ -69,6 +69,73 @@ export default function ReschedulePage() {
         </div>
       </section>
 
+      {/* Why it matters */}
+      <section className="bg-white py-14 md:py-20">
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="mb-10 text-center md:mb-12">
+            <p
+              className="mb-3 text-xs font-medium uppercase tracking-widest md:text-sm"
+              style={{ color: "#0bbad5" }}
+            >
+              Why It Matters
+            </p>
+            <h2 className="mb-4 text-3xl font-semibold text-slate-900 md:text-4xl">
+              Skipping cleanings catches up fast.
+            </h2>
+            <p className="mx-auto max-w-2xl text-slate-600">
+              We say this not to scare you, but because it's the truth. The
+              longer you wait, the more likely small problems turn into
+              bigger, more expensive ones.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+              <div className="mb-4 text-3xl">🦷</div>
+              <h3 className="mb-2 text-lg font-semibold text-slate-900">
+                Cavities
+              </h3>
+              <p className="text-sm text-slate-600">
+                A cavity caught early is a small filling. Caught late, it's a
+                crown, a root canal, or a lost tooth.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+              <div className="mb-4 text-3xl">🩸</div>
+              <h3 className="mb-2 text-lg font-semibold text-slate-900">
+                Gum Disease
+              </h3>
+              <p className="text-sm text-slate-600">
+                Bleeding or puffy gums are early warning signs. Left alone,
+                periodontal disease can cost you bone and teeth.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+              <div className="mb-4 text-3xl">😬</div>
+              <h3 className="mb-2 text-lg font-semibold text-slate-900">
+                Pain & Sensitivity
+              </h3>
+              <p className="text-sm text-slate-600">
+                If something's already hurting or sensitive to hot and cold,
+                that's your body telling you not to wait.
+              </p>
+            </div>
+          </div>
+
+          <div
+            className="mx-auto mt-10 max-w-2xl rounded-2xl p-6 text-center md:p-8"
+            style={{ backgroundColor: "#e6f8fb" }}
+          >
+            <p className="text-base font-medium text-slate-900 md:text-lg">
+              Feeling any pain, sensitivity, or changes in your gums?
+            </p>
+            <p className="mt-2 text-sm text-slate-700 md:text-base">
+              Don't wait it out. Get seen. We'll make it easy.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Friction killers */}
       <section className="bg-stone-50 py-14 md:py-20">
         <div className="mx-auto max-w-5xl px-6">
