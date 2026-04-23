@@ -59,7 +59,6 @@ export default function ReschedulePage() {
             rel="noopener noreferrer"
             className="inline-block rounded-full px-10 py-4 text-base font-semibold text-white shadow-md transition hover:shadow-lg md:text-lg"
             style={{ backgroundColor: "#0bbad5" }}
-            onMouseEnter={undefined}
           >
             Book Online & Claim My Tray
           </a>
@@ -88,11 +87,11 @@ export default function ReschedulePage() {
                 Insurance
               </p>
               <h3 className="mb-3 text-xl font-semibold text-slate-900">
-                We handle it for you
+                We file it for you
               </h3>
               <p className="text-sm text-slate-600">
-                Lee verifies your benefits and files everything. You'll know
-                your out-of-pocket before you sit down.
+                Most major PPO plans accepted. We submit your claims directly
+                so you don't have to chase paperwork.
               </p>
             </div>
             <div className="rounded-2xl bg-white p-8 shadow-sm">
