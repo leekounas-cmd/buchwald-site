@@ -21,7 +21,10 @@ export default function ReschedulePage() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-b from-stone-50 to-white pt-8 pb-14 md:pt-24 md:pb-28">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <p className="mb-3 text-xs font-medium uppercase tracking-widest text-teal-600 md:mb-4 md:text-sm">
+          <p
+            className="mb-3 text-xs font-medium uppercase tracking-widest md:mb-4 md:text-sm"
+            style={{ color: "#0bbad5" }}
+          >
             A Little Nudge From Your Dental Team
           </p>
           <h1 className="mb-5 text-3xl font-semibold leading-tight text-slate-900 md:mb-6 md:text-6xl">
@@ -35,7 +38,13 @@ export default function ReschedulePage() {
           {/* Offer line */}
           <p className="mb-3 text-base font-semibold text-slate-900 md:text-lg">
             Book online and get a{" "}
-            <span className="text-teal-600">free take-home whitening tray</span>.
+            <span
+              className="font-bold uppercase tracking-wide"
+              style={{ color: "#0bbad5" }}
+            >
+              Free Whitening Tray
+            </span>
+            .
           </p>
 
           {/* Live schedule note */}
@@ -48,7 +57,9 @@ export default function ReschedulePage() {
             href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block rounded-full bg-teal-600 px-10 py-4 text-base font-semibold text-white shadow-md transition hover:bg-teal-700 hover:shadow-lg md:text-lg"
+            className="inline-block rounded-full px-10 py-4 text-base font-semibold text-white shadow-md transition hover:shadow-lg md:text-lg"
+            style={{ backgroundColor: "#0bbad5" }}
+            onMouseEnter={undefined}
           >
             Book Online & Claim My Tray
           </a>
@@ -70,7 +81,10 @@ export default function ReschedulePage() {
 
           <div className="grid gap-6 md:grid-cols-3">
             <div className="rounded-2xl bg-white p-8 shadow-sm">
-              <p className="mb-2 text-sm font-medium uppercase tracking-wider text-teal-600">
+              <p
+                className="mb-2 text-sm font-medium uppercase tracking-wider"
+                style={{ color: "#0bbad5" }}
+              >
                 Insurance
               </p>
               <h3 className="mb-3 text-xl font-semibold text-slate-900">
@@ -82,7 +96,10 @@ export default function ReschedulePage() {
               </p>
             </div>
             <div className="rounded-2xl bg-white p-8 shadow-sm">
-              <p className="mb-2 text-sm font-medium uppercase tracking-wider text-teal-600">
+              <p
+                className="mb-2 text-sm font-medium uppercase tracking-wider"
+                style={{ color: "#0bbad5" }}
+              >
                 No Insurance
               </p>
               <h3 className="mb-3 text-xl font-semibold text-slate-900">
@@ -94,7 +111,10 @@ export default function ReschedulePage() {
               </p>
             </div>
             <div className="rounded-2xl bg-white p-8 shadow-sm">
-              <p className="mb-2 text-sm font-medium uppercase tracking-wider text-teal-600">
+              <p
+                className="mb-2 text-sm font-medium uppercase tracking-wider"
+                style={{ color: "#0bbad5" }}
+              >
                 Need Flexibility
               </p>
               <h3 className="mb-3 text-xl font-semibold text-slate-900">
@@ -139,7 +159,8 @@ export default function ReschedulePage() {
             href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block rounded-full bg-teal-500 px-10 py-4 text-base font-semibold text-white shadow-md transition hover:bg-teal-400 hover:shadow-lg md:text-lg"
+            className="inline-block rounded-full px-10 py-4 text-base font-semibold text-white shadow-md transition hover:shadow-lg md:text-lg"
+            style={{ backgroundColor: "#0bbad5" }}
           >
             Book Online & Claim My Tray
           </a>
