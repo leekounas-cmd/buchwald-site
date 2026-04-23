@@ -32,23 +32,16 @@ export default function ReschedulePage() {
             way to slide back onto the schedule.
           </p>
 
-          {/* Live schedule note (not a button) */}
-          <div className="mx-auto mb-8 flex max-w-md items-center justify-center gap-3 text-sm text-slate-500 md:text-base">
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-75"></span>
-              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-teal-500"></span>
-            </span>
-            See our live schedule. Takes 20 seconds.
-          </div>
+          {/* Offer line */}
+          <p className="mb-3 text-base font-semibold text-slate-900 md:text-lg">
+            Book online and get a{" "}
+            <span className="text-teal-600">free take-home whitening tray</span>.
+          </p>
 
-          {/* Offer badge */}
-          <div className="mx-auto mb-8 inline-flex items-center gap-3 rounded-full border-2 border-amber-400 bg-white px-5 py-3 shadow-sm md:px-6">
-            <span className="text-xl md:text-2xl">✨</span>
-            <span className="text-sm font-semibold text-slate-900 md:text-lg">
-              Book online and get a{" "}
-              <span className="text-teal-600">free take-home whitening tray</span>
-            </span>
-          </div>
+          {/* Live schedule note */}
+          <p className="mb-8 text-sm text-slate-500 md:text-base">
+            See our live schedule. Takes 20 seconds.
+          </p>
 
           {/* Single CTA */}
           <a
@@ -155,11 +148,8 @@ export default function ReschedulePage() {
             online. One per patient. Picked up at your next cleaning visit.
           </p>
           <p className="mt-4 text-sm text-slate-400">
-            Prefer to call? {" "}
-            <a
-              href={`tel:${PHONE}`}
-              className="underline hover:text-white"
-            >
+            Prefer to call?{" "}
+            <a href={`tel:${PHONE}`} className="underline hover:text-white">
               {PHONE_DISPLAY}
             </a>
           </p>
