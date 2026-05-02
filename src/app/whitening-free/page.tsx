@@ -5,8 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { trackConversion } from "@/components/Analytics";
-
-const FORMSPREE_ID = "xpqyyjkl";
+import { FORMSPREE_WHITENING } from "@/lib/formspree";
 const PHONE = "(972) 644-3280";
 const PHONE_HREF = "tel:972-644-3280";
 
@@ -51,7 +50,7 @@ export default function WhiteningFreePage() {
     data.append("_subject", "Free Whitening Lead (Insured)");
     data.append("source", "whitening-free-landing");
 
-    const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+    const res = await fetch(`https://formspree.io/f/${FORMSPREE_WHITENING}`, {
       method: "POST",
       body: data,
       headers: { Accept: "application/json" },

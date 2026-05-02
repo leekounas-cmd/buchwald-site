@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.buchwaldfamilydentistry.com"),
   title: "Buchwald Family Dentistry | Dentist in Richardson, TX",
   description:
-    "$149 New Patient Special in Richardson, TX. Cleaning, exam & X-rays. 4.9 stars, 433+ reviews. Same-day appointments. Most insurance accepted. Call (972) 644-3280.",
+    "Free in-office whitening for new patients in Richardson, TX. Bonus on top of your new patient visit (most insurance covers the visit at 100%). 4.9 stars, 433+ reviews. Free lifetime warranty on all dental work. Call (972) 644-3280.",
   alternates: {
     canonical: "https://www.buchwaldfamilydentistry.com",
     languages: {
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Buchwald Family Dentistry | Richardson, TX",
     description:
-      "$149 New Patient Special · Cleaning, exam & X-rays · 4.9 stars · Same-day appointments · Serving Richardson, Plano, Allen & Garland.",
+      "Free in-office whitening with your new patient visit · Most insurance covers the visit at 100% · 4.9 stars · Free lifetime warranty · Serving Richardson, Plano, Allen & Garland.",
     type: "website",
     locale: "en_US",
     siteName: "Buchwald Family Dentistry",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Buchwald Family Dentistry | Dentist in Richardson, TX",
     description:
-      "$149 New Patient Special · Cleaning, exam & X-rays · 4.9 stars · Same-day appointments · Richardson, TX.",
+      "Free whitening for new patients · Most insurance covers your visit · 4.9 stars · Free lifetime warranty · Richardson, TX.",
     images: ["/images/office-1.jpg"],
   },
 };

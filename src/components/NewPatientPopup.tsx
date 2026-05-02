@@ -83,24 +83,29 @@ export function NewPatientPopup() {
             </div>
 
             <h2 id="popup-title" className="text-2xl font-semibold text-gray-900 mb-2">
-              New patient? Start here.
+              New patient? Whitening&apos;s on us.
             </h2>
 
             <p className="text-gray-500 text-sm leading-relaxed mb-6">
-              Professional cleaning, comprehensive exam, and digital X-rays — all for just $149. No insurance required.
+              $600 of in-office Opalescence Boost whitening, free with your new patient visit. Most insurance covers the visit at 100%.
             </p>
 
             {/* Price */}
             <div className="flex items-baseline gap-2 mb-6">
-              <span className="text-4xl font-semibold text-gray-900">$149</span>
-              <span className="text-sm text-gray-400 line-through">$800+ value</span>
+              <span className="text-4xl font-semibold text-gray-900">FREE</span>
+              <span className="text-sm text-gray-400 line-through">$600 value</span>
             </div>
 
-            {/* Included */}
+            {/* What's free */}
             <div className="space-y-2 mb-8">
-              {["Professional cleaning", "Comprehensive exam", "Full set of digital X-rays", "Personalized care plan"].map((item) => (
+              {[
+                "Free in-office Opalescence Boost whitening",
+                "Single visit, in-office session",
+                "Visible results that day",
+                "$600 retail value, on us",
+              ].map((item) => (
                 <div key={item} className="flex items-center gap-2.5 text-sm text-gray-600">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-teal-500 flex-shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-teal-500 flex-shrink-0" aria-hidden>
                     <path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                   {item}
@@ -111,12 +116,10 @@ export function NewPatientPopup() {
             {/* CTAs */}
             <div className="flex flex-col gap-3">
               <a
-                href="https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/whitening-free"
                 className="w-full py-3 px-6 bg-gray-900 text-white text-sm font-medium rounded-lg text-center hover:bg-gray-800 transition-colors"
               >
-                Book My $149 Visit
+                Claim My Free Whitening
               </a>
               <a
                 href="tel:9726443280"
@@ -130,7 +133,7 @@ export function NewPatientPopup() {
               Mon-Thu 7am-3pm &middot; Richardson, TX
             </p>
             <p className="text-[11px] text-gray-400 text-center mt-2 leading-relaxed">
-              *New patients only. Covers a standard cleaning. If it has been a while since your last visit, a deep cleaning may be recommended first. Insurance patients: your preventive visit is usually covered 100% by your plan.
+              *New patients only. Requires a new patient cleaning, exam, and X-rays. Most insurance covers this visit at 100%. The whitening is the bonus, on us.
             </p>
           </div>
         </div>
