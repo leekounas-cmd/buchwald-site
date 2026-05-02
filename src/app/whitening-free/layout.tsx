@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Free Whitening With Your New Patient Visit | Buchwald Family Dentistry",
+  title: "Free Whitening For New Patients | Buchwald Family Dentistry",
   description:
-    "Insured? Your cleaning, exam & X-rays are usually 100% covered, and we'll throw in a free Opalescence Boost whitening ($600 value). Richardson, TX.",
+    "Get your teeth cleaned with us and we'll add a free in-office Opalescence Boost whitening, a $600 retail value, on the house. Richardson, TX.",
   alternates: {
     canonical: "https://www.buchwaldfamilydentistry.com/whitening-free",
   },
@@ -12,9 +12,9 @@ export const metadata: Metadata = {
     follow: false,
   },
   openGraph: {
-    title: "Free Whitening With Your New Patient Visit | Buchwald Family Dentistry",
+    title: "Free Whitening For New Patients | Buchwald Family Dentistry",
     description:
-      "Insured? Your cleaning is covered. We'll throw in a free Opalescence Boost whitening ($600 value). Richardson, TX.",
+      "Get your teeth cleaned with us. Free in-office Opalescence Boost whitening, a $600 retail value, on the house. Richardson, TX.",
     images: [{ url: "/images/office-1.jpg", width: 1200, height: 630 }],
   },
 };

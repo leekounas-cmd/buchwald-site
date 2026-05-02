@@ -47,7 +47,7 @@ export default function WhiteningFreePage() {
 
     const form = e.currentTarget;
     const data = new FormData(form);
-    data.append("_subject", "Free Whitening Lead (Insured)");
+    data.append("_subject", "Free Whitening Lead");
     data.append("source", "whitening-free-landing");
 
     const res = await fetch(`https://formspree.io/f/${FORMSPREE_WHITENING}`, {
@@ -70,7 +70,7 @@ export default function WhiteningFreePage() {
       }
       if (typeof window !== "undefined" && typeof (window as unknown as { fbq?: (...args: unknown[]) => void }).fbq === "function") {
         (window as unknown as { fbq: (...args: unknown[]) => void }).fbq("track", "Lead", {
-          content_name: "Free Whitening Insured",
+          content_name: "Free Whitening",
           value: 600,
           currency: "USD",
         });
@@ -113,12 +113,12 @@ export default function WhiteningFreePage() {
         <main className="mx-auto max-w-5xl px-4 py-8 sm:py-12">
           {/* Hero — full width on all screens */}
           <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="mb-8 lg:mb-12 max-w-3xl">
-            <p className="text-primary text-xs sm:text-sm font-bold uppercase tracking-wider mb-3">Richardson, TX · Insured New Patients</p>
+            <p className="text-primary text-xs sm:text-sm font-bold uppercase tracking-wider mb-3">Now Accepting New Patients · Richardson, TX</p>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-[1.1] mb-4">
-              Your Cleaning Is Covered. We&apos;ll Throw In <span className="text-primary">Free Whitening.</span>
+              Get your teeth cleaned with us. <span className="text-primary">Free whitening on the house.</span>
             </h1>
             <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-5">
-              If you have dental insurance, your new patient visit (cleaning, exam, X-rays) is usually covered at <span className="font-bold text-gray-900">100%</span>. Book with us this month and we&apos;ll add an in-office <span className="font-bold text-gray-900">Opalescence Boost whitening treatment</span> — a <span className="line-through">$600</span> retail value — at no extra cost.
+              Come in for your new patient visit (cleaning, exam, X-rays) and we&apos;ll add an in-office <span className="font-bold text-gray-900">Opalescence Boost whitening treatment</span>, a <span className="line-through">$600</span> retail value, at no extra cost. Most insurance covers your visit at 100%.
             </p>
 
             {/* Stars */}
@@ -140,7 +140,7 @@ export default function WhiteningFreePage() {
 
               {/* What's included */}
               <div className="bg-white rounded-2xl p-6 sm:p-7 border border-gray-100 mb-6">
-                <p className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-4">What&apos;s Included</p>
+                <p className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-4">What&apos;s Included With Your Cleaning</p>
                 <ul className="space-y-4">
                   {includedItems.map((item) => (
                     <li key={item.title} className="flex items-start gap-3">
@@ -181,14 +181,11 @@ export default function WhiteningFreePage() {
                 </p>
               </div>
 
-              {/* No insurance alt path */}
-              <div className="bg-gray-100 rounded-xl p-4 mb-6 flex items-center justify-between gap-3">
+              {/* Payment options note */}
+              <div className="bg-gray-100 rounded-xl p-4 mb-6">
                 <p className="text-sm text-gray-700">
-                  <span className="font-bold">No insurance?</span> We have a $149 new patient package too.
+                  <span className="font-bold">No insurance?</span> We accept Cherry financing and offer membership plans starting at <span className="font-bold">$34/mo</span>. The free whitening offer still applies.
                 </p>
-                <Link href="/special" className="flex-shrink-0 text-sm font-bold text-primary hover:underline whitespace-nowrap">
-                  See $149 option →
-                </Link>
               </div>
 
               {/* Trust strip */}
@@ -241,8 +238,8 @@ export default function WhiteningFreePage() {
               <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 sm:p-8">
                 <div className="text-center mb-5">
                   <p className="text-primary text-xs font-bold uppercase tracking-wider mb-1">Claim Your Free Whitening</p>
-                  <h2 className="text-xl sm:text-2xl font-extrabold text-gray-900">Lee will verify your benefits</h2>
-                  <p className="text-gray-500 text-sm mt-1">We&apos;ll reach out within one business day.</p>
+                  <h2 className="text-xl sm:text-2xl font-extrabold text-gray-900">Save your spot</h2>
+                  <p className="text-gray-500 text-sm mt-1">Lee or Cathy will reach out within one business day.</p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -279,8 +276,7 @@ export default function WhiteningFreePage() {
                   <input
                     type="text"
                     name="insurance_provider"
-                    required
-                    placeholder="Insurance provider (e.g. Delta Dental, Cigna)"
+                    placeholder="Insurance provider (optional)"
                     className="w-full rounded-lg border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
                   />
                   <select
@@ -306,7 +302,7 @@ export default function WhiteningFreePage() {
                   </button>
 
                   <p className="text-[11px] text-gray-400 text-center leading-relaxed">
-                    By submitting, you agree to be contacted at this email and phone. No spam. Your insurance info is used only to verify your benefits.
+                    By submitting, you agree to be contacted at this email and phone. No spam. If you share insurance info, we use it only to verify your benefits before your visit.
                   </p>
                 </form>
 
@@ -341,13 +337,13 @@ export default function WhiteningFreePage() {
               {firstName ? `You're in, ${firstName}.` : "You're in."}
             </h1>
             <p className="text-gray-600 text-base leading-relaxed mb-6">
-              Lee will verify your insurance benefits and reach out within one business day to schedule your visit.
+              Lee or Cathy will reach out within one business day to schedule your visit.
             </p>
             <div className="bg-primary/5 rounded-xl p-5 mb-6 text-left">
               <p className="text-xs font-bold uppercase tracking-wider text-primary mb-2">What happens next</p>
               <ol className="space-y-2 text-sm text-gray-700">
-                <li><span className="font-bold">1.</span> Lee verifies your insurance benefits</li>
-                <li><span className="font-bold">2.</span> We call or text to confirm your appointment</li>
+                <li><span className="font-bold">1.</span> Lee or Cathy reaches out to confirm a time</li>
+                <li><span className="font-bold">2.</span> If you have insurance, Lee verifies your benefits before the visit</li>
                 <li><span className="font-bold">3.</span> Show up, get your cleaning, walk out with a brighter smile</li>
               </ol>
             </div>
