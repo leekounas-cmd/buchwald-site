@@ -140,9 +140,9 @@ export default function PreviewV4Page() {
 
         {/* ── Announcement Bar ── */}
         <div className="bg-cyan-500 text-white text-center py-2.5 px-4 text-xs font-bold tracking-widest uppercase">
-          New Patient Special —&nbsp;
+          New Patients Welcome —&nbsp;
           <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:no-underline">
-            $149 Cleaning, Exam &amp; X-rays → Book Now
+            Cleaning Covered by Most PPO Insurance → Book Now
           </a>
         </div>
 
@@ -249,8 +249,8 @@ export default function PreviewV4Page() {
                   />
                   {/* Floating badge – top left */}
                   <div className="absolute top-4 left-4 bg-white rounded-2xl px-4 py-3 shadow-xl border border-slate-100">
-                    <p style={archivo} className="text-slate-950 text-lg leading-none">$149</p>
-                    <p className="text-slate-500 text-xs font-semibold mt-0.5">New Patient Visit</p>
+                    <p style={archivo} className="text-slate-950 text-lg leading-none">$0</p>
+                    <p className="text-slate-500 text-xs font-semibold mt-0.5">With Most Insurance</p>
                   </div>
                   {/* Floating badge – top right */}
                   <div className="absolute top-4 right-4 bg-cyan-500 rounded-2xl px-4 py-3 shadow-xl">
@@ -453,7 +453,7 @@ export default function PreviewV4Page() {
               Ready to Love<br />Your Smile?
             </h2>
             <p className="text-cyan-50 text-lg mb-10 max-w-lg mx-auto font-medium">
-              New patients welcome. $149 cleaning, exam &amp; X-rays. No insurance required.
+              New patients welcome. Cleaning, exam &amp; X-rays covered by most PPO insurance.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a
@@ -462,7 +462,7 @@ export default function PreviewV4Page() {
                 rel="noopener noreferrer"
                 className="bg-white hover:bg-slate-50 text-cyan-600 font-bold px-8 py-4 rounded-full text-sm uppercase tracking-widest transition-colors shadow-2xl"
               >
-                Book My $149 Visit
+                Book My New Patient Visit
               </a>
               <a
                 href="tel:972-644-3280"

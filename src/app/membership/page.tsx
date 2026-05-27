@@ -23,7 +23,6 @@ const signatureItems = [
   "InnerView imaging at every visit",
   "Fluoride at every visit",
   "Laser therapy at every visit",
-  "Jet whitening at every visit",
   "20% off all other treatments",
   "No waiting periods, maximums, or deductibles",
 ];
@@ -42,7 +41,6 @@ const signatureSavings = [
   { treatment: "InnerView x2", plan: "Included", retail: "$60", save: "$60" },
   { treatment: "Fluoride x2", plan: "Included", retail: "$130", save: "$130" },
   { treatment: "Laser Therapy x2", plan: "Included", retail: "$250", save: "$250" },
-  { treatment: "Jet Whitening x2", plan: "Included", retail: "$198", save: "$198" },
 ];
 
 const faqs = [
@@ -64,7 +62,7 @@ const faqs = [
   },
   {
     q: "What is the Hygiene Upgrade Package?",
-    a: "It's a per-visit bundle available to anyone — insured or not. For $249, you add InnerView imaging, fluoride, laser therapy, and jet whitening to any cleaning visit. The Signature Plan includes this automatically at both visits each year.",
+    a: "It's a per-visit bundle available to anyone, insured or not. For $249, you add InnerView imaging, fluoride, laser therapy, and jet whitening to any cleaning visit. Signature Plan members get InnerView, fluoride, and laser at both visits each year.",
   },
   {
     q: "Is there a contract?",
@@ -166,8 +164,8 @@ export default function MembershipPage() {
                 ))}
               </ul>
               <div className="bg-white/10 rounded-xl px-4 py-3 mb-6 text-center">
-                <p className="text-white/70 text-xs">Retail value <span className="line-through">$1,233+</span></p>
-                <p className="text-white font-extrabold text-sm">You save $334+ per year</p>
+                <p className="text-white/70 text-xs">Retail value <span className="line-through">$1,330+</span></p>
+                <p className="text-white font-extrabold text-sm">You save $431+ per year</p>
               </div>
               <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="w-full rounded-lg bg-white px-5 py-3 text-sm font-bold text-primary hover:bg-gray-50 transition-colors text-center">
                 Get Started
@@ -299,10 +297,10 @@ export default function MembershipPage() {
                     <span>Plan cost</span><span>$899/year</span>
                   </div>
                   <div className="flex justify-between text-xs text-gray-400 mb-2">
-                    <span>Retail value of included items</span><span>$1,233+</span>
+                    <span>Retail value of included items</span><span>$1,330+</span>
                   </div>
                   <div className="flex justify-between text-green-700 font-extrabold">
-                    <span>You save</span><span>$334+</span>
+                    <span>You save</span><span>$431+</span>
                   </div>
                 </div>
               </div>

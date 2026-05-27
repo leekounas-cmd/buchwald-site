@@ -26,7 +26,8 @@ const bringList = [
 ];
 
 const faqs = [
-  { q: "Do I need insurance?", a: "Nope. The $149 special is designed for patients without insurance. If you DO have dental insurance, your cleaning, exam, and X-rays are usually covered at 100% under preventive care, so you may not need the $149 package at all. Our coordinator Lee will verify your benefits before your visit and tell you exactly what's covered." },
+  { q: "Is my cleaning covered by insurance?", a: "Almost always, yes. Most PPO dental plans cover preventive care (cleaning, exam, X-rays) at 100% with no copay. Our coordinator Lee will verify your benefits before your visit and tell you exactly what's covered and what (if anything) you owe." },
+  { q: "What if I don't have insurance?", a: "No problem. Ask about our membership plans. Essential is $400/year (2 cleanings, 2 exams, X-rays, 20% off other treatments). Signature is $899/year and adds InnerView imaging, fluoride, laser therapy, and jet whitening at every visit. No waiting periods, no deductibles, no annual maximums." },
   { q: "How long is the first visit?", a: "Plan for about 60–90 minutes. We take our time with new patients to make sure we get a complete picture of your oral health." },
   { q: "Can I bring my kids?", a: "Absolutely. We're a family practice and love seeing patients of all ages. You can schedule appointments for the whole family on the same day." },
   { q: "What if I haven't been to a dentist in years?", a: "No judgment — seriously. We see patients in every situation and our only goal is to help you move forward with a plan that works for you." },
@@ -64,7 +65,7 @@ export default function NewPatientPage() {
           </motion.div>
 
           <StatRow stats={[
-            { value: "$149", label: "New Patient Special" },
+            { value: "$0", label: "Cleaning With Most Insurance" },
             { value: "60–90 min", label: "First Visit" },
             { value: "4.9★", label: "Google Reviews" },
             { value: "Same-Day", label: "Appointments" },
@@ -118,43 +119,47 @@ export default function NewPatientPage() {
         </div>
       </section>
 
-      {/* Insurance callout + $149 New Patient Special */}
+      {/* Insurance callout + membership option */}
       <section className="py-14 sm:py-18 bg-white">
         <div className="mx-auto max-w-4xl px-4">
           <div className="grid md:grid-cols-2 gap-5">
 
-            {/* Have insurance */}
-            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-gray-50 rounded-2xl p-7 sm:p-8 flex flex-col">
+            {/* Have insurance — primary */}
+            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-primary/10 rounded-2xl p-7 sm:p-8 flex flex-col">
               <p className="text-primary text-xs font-bold uppercase tracking-wider mb-2">Have Insurance?</p>
-              <h3 className="text-xl sm:text-2xl font-extrabold text-gray-900 mb-3">Your Cleaning Is Likely Covered</h3>
-              <p className="text-gray-600 text-sm leading-relaxed flex-1 mb-5">
-                Most PPO plans cover preventive care (cleaning, exam, X-rays) at 100%. If that&apos;s you, skip the $149 package. Lee verifies your benefits before you come in and tells you exactly what&apos;s covered and what (if anything) you owe.
-              </p>
-              <a href="tel:972-644-3280" className="rounded-lg bg-gray-900 px-5 py-3 text-sm font-bold text-white hover:bg-gray-800 transition-colors text-center">
+              <h3 className="text-xl sm:text-2xl font-extrabold text-gray-900 mb-1">Your Cleaning Is Covered</h3>
+              <p className="text-xs text-gray-500 mb-4">Most PPO plans cover preventive care at 100%.</p>
+              <ul className="space-y-2 flex-1 mb-5 text-sm text-gray-700">
+                <li className="flex items-start gap-2"><span className="text-primary font-bold">✓</span> Professional cleaning</li>
+                <li className="flex items-start gap-2"><span className="text-primary font-bold">✓</span> Comprehensive exam</li>
+                <li className="flex items-start gap-2"><span className="text-primary font-bold">✓</span> Full set of digital X-rays</li>
+                <li className="flex items-start gap-2"><span className="text-primary font-bold">✓</span> Benefits verified before your visit</li>
+              </ul>
+              <a href="tel:972-644-3280" className="rounded-lg bg-primary px-5 py-3 text-sm font-bold text-white hover:bg-primary-dark transition-colors text-center">
                 Call to Verify Benefits
               </a>
             </motion.div>
 
-            {/* No insurance — $149 */}
-            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-primary/10 rounded-2xl p-7 sm:p-8 flex flex-col">
+            {/* No insurance — membership */}
+            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-gray-50 rounded-2xl p-7 sm:p-8 flex flex-col">
               <p className="text-primary text-xs font-bold uppercase tracking-wider mb-2">No Insurance?</p>
-              <h3 className="text-xl sm:text-2xl font-extrabold text-gray-900 mb-1">$149 New Patient Special</h3>
-              <p className="text-xs text-gray-500 mb-4">Cleaning*, comprehensive exam, and digital X-rays.</p>
+              <h3 className="text-xl sm:text-2xl font-extrabold text-gray-900 mb-1">Join a Membership Plan</h3>
+              <p className="text-xs text-gray-500 mb-4">No waiting periods, no deductibles, no maximums.</p>
               <ul className="space-y-2 flex-1 mb-5 text-sm text-gray-700">
-                <li className="flex items-start gap-2"><span className="text-primary font-bold">✓</span> Professional cleaning*</li>
-                <li className="flex items-start gap-2"><span className="text-primary font-bold">✓</span> Comprehensive exam</li>
-                <li className="flex items-start gap-2"><span className="text-primary font-bold">✓</span> Full set of digital X-rays</li>
-                <li className="flex items-start gap-2"><span className="text-primary font-bold">✓</span> Personalized care plan</li>
+                <li className="flex items-start gap-2"><span className="text-primary font-bold">✓</span> Essential at $400/year (2 cleanings, exams, X-rays)</li>
+                <li className="flex items-start gap-2"><span className="text-primary font-bold">✓</span> Signature at $899/year (adds InnerView, fluoride, laser)</li>
+                <li className="flex items-start gap-2"><span className="text-primary font-bold">✓</span> 20% off all other treatments</li>
+                <li className="flex items-start gap-2"><span className="text-primary font-bold">✓</span> Cherry financing available (from $34/mo)</li>
               </ul>
-              <a href="https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE" target="_blank" rel="noopener noreferrer" className="rounded-lg bg-primary px-5 py-3 text-sm font-bold text-white hover:bg-primary-dark transition-colors text-center">
-                Book My $149 Visit
-              </a>
+              <Link href="/membership" className="rounded-lg bg-gray-900 px-5 py-3 text-sm font-bold text-white hover:bg-gray-800 transition-colors text-center">
+                See Membership Plans
+              </Link>
             </motion.div>
 
           </div>
 
           <p className="text-gray-500 text-xs mt-6 leading-relaxed text-center max-w-2xl mx-auto">
-            *Covers a standard (prophylaxis) cleaning. If it has been a while since your last dental visit, a deep cleaning may be recommended first.{" "}
+            If it has been a while since your last dental visit, a deep cleaning may be recommended first.{" "}
             <Link href="/blog/what-is-a-deep-cleaning" className="text-primary font-semibold underline">
               Why deep cleanings matter
             </Link>.
@@ -213,7 +218,7 @@ export default function NewPatientPage() {
       <CTABanner />
       <FAQSchema faqs={faqs} />
       <BreadcrumbSchema items={[{ name: "New Patient", href: "/new-patient" }]} />
-      <ServiceSchema name="New Patient Visit" description="$149 new patient cleaning, exam, and X-rays at Buchwald Family Dentistry in Richardson, TX. Serving Plano, Allen, and Garland." url="/new-patient" />
+      <ServiceSchema name="New Patient Visit" description="New patient cleaning, exam, and X-rays at Buchwald Family Dentistry in Richardson, TX. Covered at 100% by most PPO insurance. Serving Plano, Allen, and Garland." url="/new-patient" />
     </>
   );
 }

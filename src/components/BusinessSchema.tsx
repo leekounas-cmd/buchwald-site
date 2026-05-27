@@ -56,10 +56,8 @@ export function BusinessSchema() {
           itemOffered: {
             "@type": "Service",
             name: "New Patient Cleaning & Exam",
-            description: "Professional cleaning, comprehensive exam, and digital X-rays for new patients.",
+            description: "Professional cleaning, comprehensive exam, and digital X-rays for new patients. Covered at 100% by most PPO insurance plans.",
           },
-          price: "149.00",
-          priceCurrency: "USD",
         },
         {
           "@type": "Offer",

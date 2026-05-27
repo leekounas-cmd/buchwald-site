@@ -1,11 +1,9 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { StickyBottomBar } from "@/components/StickyBottomBar";
-import { NewPatientPopup } from "@/components/NewPatientPopup";
 
 const BARE_ROUTES = ["/special", "/whitening-free"];
 
@@ -17,12 +15,7 @@ function isBare(pathname: string | null) {
 export function SiteChromeTop() {
   const pathname = usePathname();
   if (isBare(pathname)) return null;
-  return (
-    <>
-      <AnnouncementBar />
-      <Navbar />
-    </>
-  );
+  return <Navbar />;
 }
 
 export function SiteChromeBottom() {
@@ -32,7 +25,6 @@ export function SiteChromeBottom() {
     <>
       <Footer />
       <StickyBottomBar />
-      <NewPatientPopup />
     </>
   );
 }

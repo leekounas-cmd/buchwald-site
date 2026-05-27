@@ -32,7 +32,7 @@ export const invisalignFaqs = [
 export const newPatientFaqs = [
   {
     q: "Do I need insurance to visit Buchwald Family Dentistry?",
-    a: "No. We welcome patients with or without insurance. Our new patient special is $149 for a professional cleaning, comprehensive exam, and digital X-rays — no insurance required. After your visit, ask about our membership plans: Essential at $400/year (2 cleanings, 2 exams, X-rays, 20% off) or Signature at $899/year (everything in Essential plus InnerView, fluoride, laser, and whitening at every visit).",
+    a: "No. We welcome patients with or without insurance. If you have a PPO plan, your new patient cleaning, exam, and X-rays are usually covered at 100% under preventive care. If you don't have insurance, ask about our membership plans: Essential at $400/year (2 cleanings, 2 exams, X-rays, 20% off) or Signature at $899/year (everything in Essential plus InnerView, fluoride, and laser at every visit).",
   },
   {
     q: "How long is the first dental visit?",

@@ -113,11 +113,6 @@ export default function HomePage() {
 
               {/* Video card */}
               <div className="relative rounded-[2rem] overflow-hidden shadow-2xl">
-                {/* Floating badge — top left */}
-                <div className="absolute top-4 left-4 z-10 rounded-full bg-white/90 backdrop-blur-sm px-4 py-2 shadow-md">
-                  <p className="text-xs font-bold text-gray-900 leading-tight">FREE Whitening</p>
-                  <p className="text-xs text-gray-500 leading-tight">New Patients Only</p>
-                </div>
                 {/* Floating badge — top right */}
                 <div className="absolute top-4 right-4 z-10 rounded-full bg-primary text-white px-4 py-2 shadow-md">
                   <p className="text-xs font-bold leading-tight text-center">Same-Day</p>
@@ -162,12 +157,12 @@ export default function HomePage() {
                 <QuickBookCTA className="rounded-full bg-gray-900 px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-gray-800 text-center cursor-pointer">
                   Quick Book, We&apos;ll Call You
                 </QuickBookCTA>
-                <a
-                  href="/whitening-free"
+                <Link
+                  href="/new-patient"
                   className="rounded-full bg-primary px-7 py-3.5 text-sm font-bold text-white transition-all hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/25 text-center"
                 >
-                  Claim My Free Whitening
-                </a>
+                  New Patient? Start Here
+                </Link>
               </div>
               <p className="text-xs text-gray-400 mt-3">
                 Prefer to call? <a href="tel:972-644-3280" className="font-semibold text-gray-700 hover:text-primary transition-colors">(972) 644-3280</a>
@@ -242,7 +237,7 @@ export default function HomePage() {
             {[
               { value: "433+", label: "Google Reviews" },
               { value: "4.9", label: "Google Rating" },
-              { value: "$600", label: "Free Whitening Bonus" },
+              { value: "Most PPOs", label: "Cleaning Covered 100%" },
               { value: "Lifetime", label: "Free Warranty" },
             ].map((stat, i) => (
               <motion.div

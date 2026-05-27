@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Welcome Back | Buchwald Family Dentistry",
   description:
-    "Book online and we'll throw in a free take-home whitening tray at your next cleaning.",
+    "Welcome back. Book your next cleaning online in 20 seconds. Same team, same easy energy.",
   robots: {
     index: false,
     follow: false,
@@ -35,18 +35,6 @@ export default function ReschedulePage() {
             way to slide back onto the schedule.
           </p>
 
-          {/* Offer line */}
-          <p className="mb-3 text-base font-semibold text-slate-900 md:text-lg">
-            Book online and get a{" "}
-            <span
-              className="font-bold uppercase tracking-wide"
-              style={{ color: "#0bbad5" }}
-            >
-              Free Whitening Tray
-            </span>
-            .
-          </p>
-
           {/* Live schedule note */}
           <p className="mb-8 text-sm text-slate-500 md:text-base">
             See our live schedule. Takes 20 seconds.
@@ -60,11 +48,11 @@ export default function ReschedulePage() {
             className="inline-block rounded-full px-10 py-4 text-base font-semibold text-white shadow-md transition hover:shadow-lg md:text-lg"
             style={{ backgroundColor: "#0bbad5" }}
           >
-            Book Online & Claim My Tray
+            Book Online
           </a>
 
           <p className="mt-6 text-sm text-slate-500">
-            One-size-fits-most. Pick it up at your next cleaning.
+            Prefer to call? <a href={`tel:${PHONE}`} className="underline hover:text-slate-700">{PHONE_DISPLAY}</a>
           </p>
         </div>
       </section>
@@ -218,8 +206,7 @@ export default function ReschedulePage() {
             Ready when you are.
           </h2>
           <p className="mb-8 text-lg text-slate-200">
-            Pick a time that works. Free whitening tray waiting when you get
-            here.
+            Pick a time that works. Same team, same easy energy.
           </p>
           <a
             href={BOOKING_URL}
@@ -228,13 +215,9 @@ export default function ReschedulePage() {
             className="inline-block rounded-full px-10 py-4 text-base font-semibold text-white shadow-md transition hover:shadow-lg md:text-lg"
             style={{ backgroundColor: "#0bbad5" }}
           >
-            Book Online & Claim My Tray
+            Book Online
           </a>
           <p className="mt-6 text-sm text-slate-400">
-            Free take-home whitening tray for existing patients who book
-            online. One per patient. Picked up at your next cleaning visit.
-          </p>
-          <p className="mt-4 text-sm text-slate-400">
             Prefer to call?{" "}
             <a href={`tel:${PHONE}`} className="underline hover:text-white">
               {PHONE_DISPLAY}

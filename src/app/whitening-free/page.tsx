@@ -13,7 +13,7 @@ const includedItems = [
   { title: "Comprehensive Exam & Consultation", desc: "Dr. Buchwald walks you through everything he sees. No pressure, no upselling." },
   { title: "Digital X-Rays", desc: "Full set of digital X-rays with 80% less radiation than traditional film." },
   { title: "Professional Cleaning with Melisa", desc: "Gentle cleaning from our hygienist with 2,000+ cleanings under her belt. Known for being genuinely gentle." },
-  { title: "FREE Opalescence Boost Whitening", desc: "In-office professional whitening. Retail $600. Yours free with your new patient visit." },
+  { title: "Insurance Verified Before You Come In", desc: "Lee verifies your benefits and tells you exactly what (if anything) you owe. No surprise bills." },
 ];
 
 const dayOptions = ["Monday", "Tuesday", "Wednesday", "Thursday", "No Preference"];
@@ -47,7 +47,7 @@ export default function WhiteningFreePage() {
 
     const form = e.currentTarget;
     const data = new FormData(form);
-    data.append("_subject", "Free Whitening Lead");
+    data.append("_subject", "New Patient Lead");
     data.append("source", "whitening-free-landing");
 
     const res = await fetch(`https://formspree.io/f/${FORMSPREE_WHITENING}`, {
@@ -62,17 +62,13 @@ export default function WhiteningFreePage() {
       trackConversion(process.env.NEXT_PUBLIC_GADS_CONVERSION_LABEL);
       if (typeof window !== "undefined" && typeof window.gtag === "function") {
         window.gtag("event", "form_submit", {
-          form_name: "whitening_free_form",
+          form_name: "new_patient_form",
           page_path: "/whitening-free",
-          value: 600,
-          currency: "USD",
         });
       }
       if (typeof window !== "undefined" && typeof (window as unknown as { fbq?: (...args: unknown[]) => void }).fbq === "function") {
         (window as unknown as { fbq: (...args: unknown[]) => void }).fbq("track", "Lead", {
-          content_name: "Free Whitening",
-          value: 600,
-          currency: "USD",
+          content_name: "New Patient Lead",
         });
       }
       const fn = data.get("first_name");
@@ -115,10 +111,10 @@ export default function WhiteningFreePage() {
           <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="mb-8 lg:mb-12 max-w-3xl">
             <p className="text-primary text-xs sm:text-sm font-bold uppercase tracking-wider mb-3">Now Accepting New Patients · Richardson, TX</p>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-[1.1] mb-4">
-              Get your teeth cleaned with us. <span className="text-primary">Free whitening on the house.</span>
+              Your new patient visit, <span className="text-primary">covered by insurance.</span>
             </h1>
             <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-5">
-              Come in for your new patient visit (cleaning, exam, X-rays) and we&apos;ll add an in-office <span className="font-bold text-gray-900">Opalescence Boost whitening treatment</span>, a <span className="line-through">$600</span> retail value, at no extra cost. Most insurance covers your visit at 100%.
+              Cleaning, exam, and X-rays are typically covered at <span className="font-bold text-gray-900">100% under preventive care</span> by most PPO plans. We verify your benefits before your visit so you know exactly what (if anything) you owe.
             </p>
 
             {/* Stars */}
@@ -158,16 +154,16 @@ export default function WhiteningFreePage() {
               <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6 sm:p-7 mb-6">
                 <p className="text-amber-900 text-xs font-bold uppercase tracking-wider mb-3">How This Actually Works</p>
                 <p className="text-gray-700 text-sm leading-relaxed mb-3">
-                  We don&apos;t know your mouth yet, so we won&apos;t promise anything we can&apos;t keep. Every new patient gets a thorough exam with Melisa first.
+                  Every new patient gets a thorough exam with Melisa first. No surprises, no upsells.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-700">
                   <li className="flex items-start gap-2">
                     <span className="text-amber-700 font-bold mt-0.5">•</span>
-                    <span>If your mouth is healthy, you get your cleaning and whitening the same visit.</span>
+                    <span>If your mouth is healthy, you get your standard cleaning the same visit.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-amber-700 font-bold mt-0.5">•</span>
-                    <span>If Melisa finds significant buildup below the gumline, you&apos;ll need a deep cleaning first — it&apos;s what keeps gum disease from progressing. Your whitening still happens, just at your follow-up visit.</span>
+                    <span>If Melisa finds significant buildup below the gumline, you&apos;ll need a deep cleaning first. It&apos;s what keeps gum disease from progressing, and we explain costs before any work happens.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-amber-700 font-bold mt-0.5">•</span>
@@ -184,7 +180,7 @@ export default function WhiteningFreePage() {
               {/* Payment options note */}
               <div className="bg-gray-100 rounded-xl p-4 mb-6">
                 <p className="text-sm text-gray-700">
-                  <span className="font-bold">No insurance?</span> We accept Cherry financing and offer membership plans starting at <span className="font-bold">$34/mo</span>. The free whitening offer still applies.
+                  <span className="font-bold">No insurance?</span> We accept Cherry financing and offer membership plans starting at <span className="font-bold">$34/mo</span>.
                 </p>
               </div>
 
@@ -237,7 +233,7 @@ export default function WhiteningFreePage() {
             >
               <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 sm:p-8">
                 <div className="text-center mb-5">
-                  <p className="text-primary text-xs font-bold uppercase tracking-wider mb-1">Claim Your Free Whitening</p>
+                  <p className="text-primary text-xs font-bold uppercase tracking-wider mb-1">Get Started</p>
                   <h2 className="text-xl sm:text-2xl font-extrabold text-gray-900">Save your spot</h2>
                   <p className="text-gray-500 text-sm mt-1">Lee or Cathy will reach out within one business day.</p>
                 </div>
@@ -298,7 +294,7 @@ export default function WhiteningFreePage() {
                     disabled={loading}
                     className="w-full rounded-lg bg-primary px-5 py-3.5 text-base font-bold text-white hover:bg-primary-dark transition-colors disabled:opacity-50"
                   >
-                    {loading ? "Submitting..." : "Claim My Free Whitening"}
+                    {loading ? "Submitting..." : "Save My Spot"}
                   </button>
 
                   <p className="text-[11px] text-gray-400 text-center leading-relaxed">
@@ -315,7 +311,7 @@ export default function WhiteningFreePage() {
               </div>
 
               <p className="mt-4 text-[11px] text-gray-400 text-center leading-relaxed">
-                300 N Coit Rd #245, Richardson, TX 75080 · Opalescence Boost offer valid for new patients with a clean, healthy exam. Final treatment determined by clinical evaluation.
+                300 N Coit Rd #245, Richardson, TX 75080 · New patients welcome. Coverage subject to your plan. Treatment determined by clinical evaluation.
               </p>
             </motion.div>
           </div>
@@ -344,7 +340,7 @@ export default function WhiteningFreePage() {
               <ol className="space-y-2 text-sm text-gray-700">
                 <li><span className="font-bold">1.</span> Lee or Cathy reaches out to confirm a time</li>
                 <li><span className="font-bold">2.</span> If you have insurance, Lee verifies your benefits before the visit</li>
-                <li><span className="font-bold">3.</span> Show up, get your cleaning, walk out with a brighter smile</li>
+                <li><span className="font-bold">3.</span> Show up, get your cleaning, meet the team</li>
               </ol>
             </div>
             <a

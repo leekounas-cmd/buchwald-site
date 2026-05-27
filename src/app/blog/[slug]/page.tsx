@@ -128,7 +128,7 @@ function FirstDentalVisit() {
     <>
       <div className="grid grid-cols-3 gap-3 mb-6">
         <Stat value="60-90" label="minutes, first visit" />
-        <Stat value="$149" label="new patient special" />
+        <Stat value="$0" label="cleaning with most insurance" />
         <Stat value="4.9" label="stars on Google" />
       </div>
 
@@ -350,7 +350,7 @@ function ChooseDentistRichardson() {
       <div className="grid grid-cols-3 gap-3 mb-6">
         <Stat value="4.9" label="stars on Google" />
         <Stat value="20+" label="years in Richardson" />
-        <Stat value="$149" label="new patient special" />
+        <Stat value="433+" label="Google reviews" />
       </div>
 
       <h2>What to Look For</h2>
@@ -1032,7 +1032,7 @@ const relatedLinks: Record<string, { label: string; href: string }[]> = {
   ],
   "why-dentist-recommends-xrays": [
     { label: "Dental Cleaning & Exam", href: "/services/cleaning" },
-    { label: "Book Your $149 New Patient Visit", href: "/book" },
+    { label: "Book Your New Patient Visit", href: "/book" },
   ],
   "dental-implants-vs-dentures": [
     { label: "Dental Implants", href: "/dental-implants" },
@@ -1049,7 +1049,7 @@ const relatedLinks: Record<string, { label: string; href: string }[]> = {
   ],
   "dental-insurance-101-whats-covered": [
     { label: "Insurance & Financing", href: "/insurance" },
-    { label: "New Patient Special — $149", href: "/new-patient" },
+    { label: "New Patient Info", href: "/new-patient" },
   ],
   "what-makes-5-star-dental-experience": [
     { label: "Meet the Team", href: "/meet-us" },
@@ -1077,7 +1077,7 @@ const relatedLinks: Record<string, { label: string; href: string }[]> = {
     { label: "Book an Appointment", href: "/book" },
   ],
   "what-to-expect-first-dental-visit": [
-    { label: "New Patient Special — $149", href: "/new-patient" },
+    { label: "New Patient Info", href: "/new-patient" },
     { label: "Book Your First Visit", href: "/book" },
   ],
   "invisalign-vs-braces": [

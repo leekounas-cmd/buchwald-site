@@ -32,7 +32,7 @@ export const areasData: AreaData[] = [
       },
       {
         q: "Do you accept new patients in Richardson?",
-        a: "Absolutely. We welcome new patients of all ages. Our new patient special is $149 for a professional cleaning, exam, and X-rays.",
+        a: "Absolutely. We welcome new patients of all ages. Your cleaning, exam, and X-rays are covered at 100% by most PPO insurance plans. No insurance? Ask about our Essential and Signature membership plans.",
       },
       {
         q: "What hours is your Richardson dental office open?",

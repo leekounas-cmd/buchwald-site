@@ -12,7 +12,7 @@ const FORMSPREE_ID = "xpqyyjkl";
 const WEAVE_URL = "https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE";
 
 const serviceOptions = [
-  "$149 New Patient Cleaning (New Patients Only)",
+  "New Patient Cleaning, Exam & X-rays",
   "Cleaning & Exam",
   "General Dentistry",
   "Cosmetic Dentistry",

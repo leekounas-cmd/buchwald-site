@@ -14,7 +14,7 @@ const includedItems = [
   { title: "Comprehensive Exam & Consultation", desc: "Dr. Buchwald walks you through everything he sees. No pressure, no upselling." },
   { title: "Digital X-Rays", desc: "Full set of digital X-rays with 80% less radiation than traditional film." },
   { title: "Professional Teeth Cleaning", desc: "Gentle cleaning with Melisa, our hygienist with 2,000+ cleanings under her belt." },
-  { title: "BONUS: Jet Whitening", desc: "Stain removal treatment included free with your first visit." },
+  { title: "Insurance Verified Before You Come In", desc: "Lee verifies your benefits and tells you exactly what (if anything) you owe before your visit. No surprise bills." },
 ];
 
 const dayOptions = ["Monday", "Tuesday", "Wednesday", "Thursday", "No Preference"];
@@ -49,8 +49,8 @@ export default function SpecialPage() {
 
     const form = e.currentTarget;
     const data = new FormData(form);
-    data.append("_subject", "New $149 Voucher Claim");
-    data.append("source", "voucher-landing-page");
+    data.append("_subject", "New Patient Lead");
+    data.append("source", "special-landing-page");
 
     const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
       method: "POST",
@@ -64,17 +64,13 @@ export default function SpecialPage() {
       trackConversion(process.env.NEXT_PUBLIC_GADS_CONVERSION_LABEL);
       if (typeof window !== "undefined" && typeof window.gtag === "function") {
         window.gtag("event", "form_submit", {
-          form_name: "voucher_form",
+          form_name: "new_patient_form",
           page_path: "/special",
-          value: 149,
-          currency: "USD",
         });
       }
       if (typeof window !== "undefined" && typeof (window as unknown as { fbq?: (...args: unknown[]) => void }).fbq === "function") {
         (window as unknown as { fbq: (...args: unknown[]) => void }).fbq("track", "Lead", {
-          content_name: "$149 New Patient Voucher",
-          value: 149,
-          currency: "USD",
+          content_name: "New Patient Lead",
         });
       }
       const fn = data.get("first_name");
@@ -108,19 +104,19 @@ export default function SpecialPage() {
 
       {/* Scarcity bar */}
       <div className="bg-primary text-white text-center py-2 px-4 text-xs sm:text-sm font-semibold">
-        Only 25 vouchers available this month — claim yours before they&apos;re gone
+        Booking new patients this month. Verify your benefits and grab a spot.
       </div>
 
       {!submitted ? (
         <main className="mx-auto max-w-5xl px-4 py-8 sm:py-12">
           {/* Hero — full width on all screens */}
           <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="mb-8 lg:mb-12 max-w-3xl">
-            <p className="text-primary text-xs sm:text-sm font-bold uppercase tracking-wider mb-3">Richardson, TX · New Patient Voucher</p>
+            <p className="text-primary text-xs sm:text-sm font-bold uppercase tracking-wider mb-3">Richardson, TX · New Patient Offer</p>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-[1.1] mb-4">
-              Claim Your <span className="text-primary">$149</span> New Patient Voucher
+              Your New Patient Visit, <span className="text-primary">Covered by Insurance.</span>
             </h1>
             <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-5">
-              Experience the Buchwald difference with complete transparency and zero hidden fees. Typically valued at <span className="font-bold text-gray-900">$800+</span>.
+              Most PPO insurance covers your new patient cleaning, exam, and X-rays at 100%. We verify your benefits before your visit so you know exactly what (if anything) you owe.
             </p>
 
             {/* Stars */}
@@ -160,11 +156,11 @@ export default function SpecialPage() {
               <div className="grid sm:grid-cols-2 gap-3 mb-6">
                 <div className="bg-primary/5 rounded-xl p-4">
                   <p className="text-xs font-bold uppercase tracking-wider text-primary mb-2">Have Insurance?</p>
-                  <p className="text-sm text-gray-700">Your visit may be fully covered. We&apos;ll verify your benefits and tell you your out-of-pocket cost before anything is scheduled.</p>
+                  <p className="text-sm text-gray-700">Most PPO plans cover preventive care at 100%. We verify your benefits before your visit and tell you exactly what (if anything) you owe.</p>
                 </div>
                 <div className="bg-gray-100 rounded-xl p-4">
                   <p className="text-xs font-bold uppercase tracking-wider text-gray-600 mb-2">No Insurance?</p>
-                  <p className="text-sm text-gray-700">No problem. Secure your visit for just $149 with the voucher. Membership plans and Cherry financing also available.</p>
+                  <p className="text-sm text-gray-700">Ask about our Essential ($400/yr) and Signature ($899/yr) membership plans. No waiting periods, no deductibles, no maximums. Cherry financing available.</p>
                 </div>
               </div>
 
@@ -217,8 +213,8 @@ export default function SpecialPage() {
             >
               <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 sm:p-8">
                 <div className="text-center mb-5">
-                  <p className="text-primary text-xs font-bold uppercase tracking-wider mb-1">Claim Your Voucher</p>
-                  <h2 className="text-xl sm:text-2xl font-extrabold text-gray-900">Where should we send it?</h2>
+                  <p className="text-primary text-xs font-bold uppercase tracking-wider mb-1">Get Started</p>
+                  <h2 className="text-xl sm:text-2xl font-extrabold text-gray-900">Where should we reach you?</h2>
                   <p className="text-gray-500 text-sm mt-1">We&apos;ll reach out within one business day.</p>
                 </div>
 
@@ -283,7 +279,7 @@ export default function SpecialPage() {
                     disabled={loading}
                     className="w-full rounded-lg bg-primary px-5 py-3.5 text-base font-bold text-white hover:bg-primary-dark transition-colors disabled:opacity-50"
                   >
-                    {loading ? "Submitting..." : "Claim My Voucher"}
+                    {loading ? "Submitting..." : "Send My Info"}
                   </button>
 
                   <p className="text-[11px] text-gray-400 text-center leading-relaxed">
@@ -300,7 +296,7 @@ export default function SpecialPage() {
               </div>
 
               <p className="mt-4 text-[11px] text-gray-400 text-center leading-relaxed">
-                300 N Coit Rd #245, Richardson, TX 75080 · *New patients only. Covers a standard cleaning. A deep cleaning may be recommended if it has been a while since your last visit.
+                300 N Coit Rd #245, Richardson, TX 75080 · *New patients only. Coverage subject to your plan. A deep cleaning may be recommended if it has been a while since your last visit.
               </p>
             </motion.div>
           </div>
@@ -322,14 +318,14 @@ export default function SpecialPage() {
               {firstName ? `You're in, ${firstName}.` : "You're in."}
             </h1>
             <p className="text-gray-600 text-base leading-relaxed mb-6">
-              Your voucher is on the way. We&apos;ll reach out within one business day to schedule your visit and answer any questions.
+              We&apos;ll reach out within one business day to verify your insurance and schedule your visit.
             </p>
             <div className="bg-primary/5 rounded-xl p-5 mb-6 text-left">
               <p className="text-xs font-bold uppercase tracking-wider text-primary mb-2">What happens next</p>
               <ol className="space-y-2 text-sm text-gray-700">
-                <li><span className="font-bold">1.</span> Check your email for your voucher</li>
-                <li><span className="font-bold">2.</span> We&apos;ll call or text to confirm your appointment</li>
-                <li><span className="font-bold">3.</span> Show up and enjoy the Buchwald experience</li>
+                <li><span className="font-bold">1.</span> We verify your insurance benefits (free, no obligation)</li>
+                <li><span className="font-bold">2.</span> We call or text to confirm your appointment</li>
+                <li><span className="font-bold">3.</span> Show up and meet the team</li>
               </ol>
             </div>
             <a
