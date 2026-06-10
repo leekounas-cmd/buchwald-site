@@ -5,7 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { StickyBottomBar } from "@/components/StickyBottomBar";
 
-const BARE_ROUTES = ["/special", "/whitening-free"];
+const BARE_ROUTES = ["/special", "/whitening-free", "/preview-v5"];
 
 function isBare(pathname: string | null) {
   if (!pathname) return false;
