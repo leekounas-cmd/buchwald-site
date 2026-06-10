@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Teeth Whitening | Buchwald Family Dentistry | Richardson, TX",
   description:
     "Professional teeth whitening at Buchwald Family Dentistry in Richardson, TX. In-office and take-home options. Results in one visit. Book today.",
+  alternates: {
+    canonical: "/teeth-whitening",
+  },
   openGraph: {
     title: "Teeth Whitening | Buchwald Family Dentistry",
     description:

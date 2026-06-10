@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Flexible dental financing through Cherry. 0% APR options available. Break any treatment into manageable monthly payments. Buchwald Family Dentistry in Richardson, TX.",
   alternates: {
-    canonical: "https://www.buchwaldfamilydentistry.com/payment-plans",
+    canonical: "/payment-plans",
   },
 };
 

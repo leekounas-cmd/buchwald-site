@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     "In-house dental discount plans for patients without insurance. Essential at $400/year or Signature at $899/year. Two cleanings, exams, X-rays, and 20% off all treatments. Richardson, TX.",
   alternates: {
-    canonical: "https://www.buchwaldfamilydentistry.com/membership",
+    canonical: "/membership",
   },
   openGraph: {
     title: "Dental Membership Plans | Buchwald Family Dentistry",

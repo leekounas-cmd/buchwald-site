@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "General Dentistry | Fillings, Crowns & Root Canals | Buchwald Family Dentistry | Richardson, TX",
   description:
     "Fillings, crowns, root canals, extractions, and gum treatment at Buchwald Family Dentistry in Richardson, TX. 4.9 stars. Call (972) 644-3280.",
+  alternates: {
+    canonical: "/services/general",
+  },
   openGraph: {
     title: "General Dentistry | Buchwald Family Dentistry",
     description:

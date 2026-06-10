@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Dental Cleaning & Exam | Buchwald Family Dentistry | Richardson, TX",
   description:
     "Professional dental cleanings, exams, and digital X-rays at Buchwald Family Dentistry in Richardson, TX. Serving Richardson, Plano, Allen & Garland. New patients welcome.",
+  alternates: {
+    canonical: "/services/cleaning",
+  },
   openGraph: {
     title: "Dental Cleaning & Exam | Buchwald Family Dentistry",
     description:

@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Dental Implants | Permanent Tooth Replacement | Buchwald Family Dentistry | Richardson, TX",
   description:
     "Dental implants in Richardson, TX. Natural-looking, permanent tooth replacement by Dr. Buchwald. Serving Plano, Allen, Garland, and Coppell.",
+  alternates: {
+    canonical: "/dental-implants",
+  },
   openGraph: {
     title: "Dental Implants | Permanent Tooth Replacement | Buchwald Family Dentistry",
     description:

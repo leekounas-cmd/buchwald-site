@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Areas We Serve | Buchwald Family Dentistry | Richardson, TX",
   description:
     "Buchwald Family Dentistry serves Richardson, Plano, Allen, Garland, Coppell, and Carrollton, TX. Modern care, comfortable visits. Call (972) 644-3280.",
+  alternates: {
+    canonical: "/areas",
+  },
   openGraph: {
     title: "Areas We Serve | Buchwald Family Dentistry | Richardson, TX",
     description:

@@ -18,11 +18,17 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   if (!area) return {};
 
   const title = `Dentist Near ${area.name}, TX | Buchwald Family Dentistry`;
-  const description = `Buchwald Family Dentistry proudly serves ${area.name}, TX — just ${area.distance} from our Richardson office. Modern care, comfortable visits. Call (972) 644-3280.`;
+  const description =
+    area.distance === "0 minutes"
+      ? `Buchwald Family Dentistry is proudly based in ${area.name}, TX, right on N Coit Road. Modern care, comfortable visits. Call (972) 644-3280.`
+      : `Buchwald Family Dentistry proudly serves ${area.name}, TX, just ${area.distance} from our Richardson office. Modern care, comfortable visits. Call (972) 644-3280.`;
 
   return {
     title,
     description,
+    alternates: {
+      canonical: `/areas/${area.slug}`,
+    },
     openGraph: {
       title,
       description,

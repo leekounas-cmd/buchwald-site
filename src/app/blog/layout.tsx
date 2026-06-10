@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Dental Health Blog | Buchwald Family Dentistry | Richardson, TX",
   description:
     "Dental health tips, guides, and insights from Buchwald Family Dentistry in Richardson, TX. Serving patients in Plano, Allen, and the surrounding communities.",
+  alternates: {
+    canonical: "/blog",
+  },
   openGraph: {
     title: "Dental Health Blog | Buchwald Family Dentistry | Richardson, TX",
     description:

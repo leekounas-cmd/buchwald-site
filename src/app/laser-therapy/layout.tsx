@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Laser Therapy | Buchwald Family Dentistry | Richardson, TX",
   description:
     "Advanced laser dental therapy at Buchwald Family Dentistry in Richardson, TX. Minimally invasive gum treatment with faster recovery. Serving Richardson, Plano, Allen & Garland.",
+  alternates: {
+    canonical: "/laser-therapy",
+  },
   openGraph: {
     title: "Laser Therapy | Buchwald Family Dentistry",
     description:

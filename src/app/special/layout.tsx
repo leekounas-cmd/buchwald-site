@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     "Most PPO insurance covers your new patient cleaning, exam, and X-rays at 100%. We verify your benefits before your visit. Richardson, TX.",
   alternates: {
-    canonical: "https://www.buchwaldfamilydentistry.com/special",
+    canonical: "/special",
   },
   robots: {
     index: false,

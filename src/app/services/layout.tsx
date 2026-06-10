@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Our Services | Buchwald Family Dentistry | Richardson, TX",
   description:
     "Comprehensive dental services in Richardson, TX. Cleanings, cosmetic dentistry, Invisalign, whitening, laser therapy, and more. Call (972) 644-3280.",
+  alternates: {
+    canonical: "/services",
+  },
   openGraph: {
     title: "Dental Services | Buchwald Family Dentistry | Richardson, TX",
     description:

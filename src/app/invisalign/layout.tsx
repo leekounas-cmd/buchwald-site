@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Invisalign | Buchwald Family Dentistry | Richardson, TX",
   description:
     "Invisalign clear aligners starting at $115/month at Buchwald Family Dentistry in Richardson, TX. 0% APR financing available. Free consultation.",
+  alternates: {
+    canonical: "/invisalign",
+  },
   openGraph: {
     title: "Invisalign | Buchwald Family Dentistry",
     description:

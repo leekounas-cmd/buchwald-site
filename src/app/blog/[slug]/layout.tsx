@@ -18,6 +18,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${post.title} | Buchwald Family Dentistry | Richardson, TX`,
     description: post.excerpt,
+    alternates: {
+      canonical: `/blog/${post.slug}`,
+    },
     openGraph: {
       title: `${post.title} | Buchwald Family Dentistry`,
       description: post.excerpt,
