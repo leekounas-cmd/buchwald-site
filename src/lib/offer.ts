@@ -21,6 +21,15 @@ export const offer = {
     body: "$169 for everything, including both whitening services. ($99 Jet Whitening value included free.)",
   },
 
+  // Deep cleaning path. Full mouth = 4 quads. D4341 $374/quad, D4342 $287/quad, laser therapy $250 for all 4.
+  // Range: (4 x 287) + 250 = $1,398 up to (4 x 374) + 250 = $1,746. Over 12 Cherry payments: ~$117 to ~$146/mo.
+  deepCleaning: {
+    heading: "If a deep cleaning is what you need",
+    body: "A full-mouth deep cleaning with laser therapy (it helps your gums heal faster and better) typically runs $1,398 to $1,746, depending on what your teeth need.",
+    monthly: "Through Cherry financing with 0% APR options, that breaks down to about $117 to $146 a month over 12 months, with as little as $117 down.",
+    insuredNote: "Have insurance? It often covers part of a deep cleaning. We verify your exact cost before anything starts.",
+  },
+
   // Required disclosure. The first sentence is verbatim from the live site. Do not reword it.
   deepCleaningDisclosure:
     "If it has been a while since your last dental visit, a deep cleaning may be recommended first.",

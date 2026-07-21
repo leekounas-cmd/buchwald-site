@@ -108,6 +108,15 @@ export function PricingCards() {
         <p className="mx-auto mt-6 max-w-4xl text-center text-base text-gray-600">
           *{offer.deepCleaningDisclosure} {offer.deepCleaningFollowup}
         </p>
+        <div className="mx-auto mt-8 max-w-4xl rounded-2xl border border-primary/30 bg-primary-light p-7">
+          <p className="font-bold text-gray-900">{offer.deepCleaning.heading}</p>
+          <p className="mt-2 text-gray-700">{offer.deepCleaning.body}</p>
+          <p className="mt-3 text-lg font-bold text-gray-900">
+            About $117 to $146 a month
+            <span className="font-normal text-gray-700"> over 12 months through Cherry, with as little as $117 down.</span>
+          </p>
+          <p className="mt-3 text-sm text-gray-600">{offer.deepCleaning.insuredNote}</p>
+        </div>
       </div>
     </section>
   );
