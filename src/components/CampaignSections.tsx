@@ -96,17 +96,17 @@ export function PricingCards() {
         <div className="mx-auto mt-8 grid max-w-4xl gap-6 md:grid-cols-2">
           <div className="rounded-2xl bg-white p-7 shadow-sm ring-1 ring-gray-200">
             <p className="text-sm font-bold uppercase tracking-wide text-primary">{offer.insuredCard.title}</p>
-            <p className="mt-3 text-2xl font-bold text-gray-900">Covered at 100% by most PPO plans</p>
+            <p className="mt-3 text-2xl font-bold text-gray-900">Covered at 100% by most PPO plans*</p>
             <p className="mt-3 text-gray-600">{offer.insuredCard.body}</p>
           </div>
           <div className="rounded-2xl bg-white p-7 shadow-sm ring-1 ring-gray-200">
             <p className="text-sm font-bold uppercase tracking-wide text-primary">{offer.uninsuredCard.title}</p>
-            <p className="mt-3 text-2xl font-bold text-gray-900">{offer.uninsuredPrice} for the full visit</p>
+            <p className="mt-3 text-2xl font-bold text-gray-900">{offer.uninsuredPrice} for the full visit*</p>
             <p className="mt-3 text-gray-600">{offer.uninsuredCard.body}</p>
           </div>
         </div>
         <p className="mx-auto mt-6 max-w-4xl text-center text-base text-gray-600">
-          {offer.deepCleaningDisclosure} {offer.deepCleaningFollowup}
+          *{offer.deepCleaningDisclosure} {offer.deepCleaningFollowup}
         </p>
       </div>
     </section>
