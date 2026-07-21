@@ -24,11 +24,11 @@ export const offer = {
   // Deep cleaning path. Full mouth = 4 quads. D4341 $374/quad, D4342 $287/quad, laser therapy $250 for all 4.
   // Range: (4 x 287) + 250 = $1,398 up to (4 x 374) + 250 = $1,746. Over 12 Cherry payments: ~$117 to ~$146/mo.
   deepCleaning: {
-    heading: "If it's been a while and you need a deep cleaning",
-    body: "A deep cleaning costs more than a regular cleaning, but it's the visit that gets your gums back on the right track instead of heading toward gum disease, bad breath, and bone loss. We add laser therapy to every deep cleaning so you heal faster and better.",
+    heading: "Been a while? You're not alone.",
+    body: "Most new patients who have been away a few years need a deep cleaning, and it's nothing to be embarrassed about. It clears the buildup a regular cleaning can't reach and stops gum disease before it turns into bad breath and bone loss. Caught now, it's very fixable. Waiting is what makes it expensive. And every deep cleaning includes laser therapy, so your gums heal faster and you feel better sooner.",
     price: "As low as $117 down",
     priceTail: "with easy monthly payments through Cherry.",
-    insuredNote: "Have insurance? It often covers part of a deep cleaning. Either way, we walk you through your exact numbers before anything starts.",
+    insuredNote: "Have insurance? It often covers part of a deep cleaning. Either way, no lectures and no judgment. We walk you through your exact numbers before anything starts.",
   },
 
   // Required disclosure. The first sentence is verbatim from the live site. Do not reword it.
