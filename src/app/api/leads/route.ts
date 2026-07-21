@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { FORMSPREE_WHITENING } from "@/lib/formspree";
 
 // Inserts a campaign lead into the Supabase `leads` table via the REST API.
 // Uses fetch directly so we don't need the supabase-js package.
@@ -48,6 +49,25 @@ export async function POST(request: Request) {
     const detail = await res.text();
     console.error("[leads] Supabase insert failed:", res.status, detail);
     return NextResponse.json({ error: "Could not save lead" }, { status: 502 });
+  }
+
+  // Email notification via Formspree so the front desk sees the lead immediately.
+  // Best-effort: the lead is already saved, so a notification failure never fails the request.
+  try {
+    await fetch(`https://formspree.io/f/${FORMSPREE_WHITENING}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        _subject: `New Ads Lead (${page}) - call to schedule`,
+        name,
+        phone,
+        email,
+        insurance: hasInsurance,
+        came_from: `${page} via ${source}`,
+      }),
+    });
+  } catch (err) {
+    console.error("[leads] Formspree notification failed:", err);
   }
 
   return NextResponse.json({ ok: true });
