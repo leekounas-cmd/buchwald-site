@@ -94,17 +94,18 @@ function GoogleIcon() {
   );
 }
 
-export function ReviewsCarousel() {
+export function ReviewsCarousel({ limit }: { limit?: number } = {}) {
+  const shownReviews = limit ? reviews.slice(0, limit) : reviews;
   const [current, setCurrent] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   const next = useCallback(() => {
-    setCurrent((prev) => (prev + 1) % reviews.length);
-  }, []);
+    setCurrent((prev) => (prev + 1) % shownReviews.length);
+  }, [shownReviews.length]);
 
   const prev = useCallback(() => {
-    setCurrent((prev) => (prev - 1 + reviews.length) % reviews.length);
-  }, []);
+    setCurrent((prev) => (prev - 1 + shownReviews.length) % shownReviews.length);
+  }, [shownReviews.length]);
 
   useEffect(() => {
     if (!isAutoPlaying) return;
@@ -112,7 +113,7 @@ export function ReviewsCarousel() {
     return () => clearInterval(timer);
   }, [isAutoPlaying, next]);
 
-  const review = reviews[current];
+  const review = shownReviews[current];
 
   return (
     <>
@@ -164,7 +165,7 @@ export function ReviewsCarousel() {
             </button>
 
             <div className="flex gap-1.5">
-              {reviews.map((_, i) => (
+              {shownReviews.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => { setCurrent(i); setIsAutoPlaying(false); }}
