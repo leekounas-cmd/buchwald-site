@@ -83,8 +83,8 @@ const features = [
     desc: "We work to get you in fast — especially for pain or urgent concerns. Call us.",
   },
   {
-    title: "Lifetime Warranty",
-    desc: "We stand behind every restoration done at our office. Quality work, guaranteed.",
+    title: "The Same Team Every Visit",
+    desc: "Dr. Buchwald and the same four-person team care for you at every appointment.",
   },
 ];
 

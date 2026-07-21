@@ -14,7 +14,7 @@ export const offer = {
 
   insuredCard: {
     title: "With insurance",
-    body: "Most PPO plans cover your cleaning, exam, and x-rays at 100%. We verify your benefits before you come in. Your whitening is free on top.",
+    body: "Most PPO plans cover your cleaning, exam, and x-rays at 100%. We verify your benefits before you come in. Your Jet Whitening and take-home trays are still free on top.",
   },
   uninsuredCard: {
     title: "Without insurance",
@@ -35,7 +35,7 @@ export const offer = {
     { title: "Take-home Opalescence whitening trays", desc: "Custom trays and professional gel to keep whitening at home on your schedule." },
   ],
 
-  trustRow: ["4.9★ on Google", "433+ reviews", "Free lifetime warranty", "Same team every visit"],
+  trustRow: ["4.9★ on Google", "433+ reviews", "Same-day appointments", "Same team every visit"],
 
   hours: {
     days: "Monday to Thursday",

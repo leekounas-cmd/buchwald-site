@@ -185,7 +185,7 @@ export default function PreviewV3Page() {
         {/* TRUST STRIP */}
         <div style={{ background: C.white, borderBottom: `1px solid ${C.gray200}`, padding: "16px 24px" }}>
           <div style={{ maxWidth: 1080, margin: "0 auto", display: "flex", justifyContent: "center", gap: 40, fontSize: 13, color: C.gray500, fontWeight: 500 }}>
-            {["ADA Member", "Invisalign Provider", "Lifetime Warranty", "Same-Day Appointments", "Cherry Financing"].map(b => (
+            {["ADA Member", "Invisalign Provider", "Same Team Every Visit", "Same-Day Appointments", "Cherry Financing"].map(b => (
               <span key={b} style={{ display: "flex", alignItems: "center", gap: 6 }}>
                 <span style={{ color: C.blue600, fontWeight: 700 }}>✓</span> {b}
               </span>

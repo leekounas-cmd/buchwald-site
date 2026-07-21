@@ -209,7 +209,7 @@ export default function PreviewV5() {
                 </div>
               </div>
               <p className="mt-6 text-sm text-[#8FA9B5] text-center">
-                Same-day appointments · Free lifetime warranty · ADA member
+                Same-day appointments · Same team every visit · ADA member
               </p>
             </div>
           </div>

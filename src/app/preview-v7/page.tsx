@@ -197,7 +197,7 @@ export default function PreviewV7() {
                 <p className="text-xs font-bold leading-snug px-3">4.9 stars<br />433 reviews<br />on Google</p>
               </div>
               <p className="mt-12 text-sm text-[#8FA9B5] text-center pl-16 sm:pl-0">
-                Same-day appointments · Free lifetime warranty · ADA member
+                Same-day appointments · Same team every visit · ADA member
               </p>
             </div>
           </div>
