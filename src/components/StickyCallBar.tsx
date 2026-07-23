@@ -1,12 +1,11 @@
 "use client";
 
 import { PHONE_HREF } from "@/lib/offer";
+import { fireEvent } from "@/lib/track";
 
 export function StickyCallBar({ page }: { page: string }) {
   function fireTel() {
-    if (typeof window !== "undefined" && typeof window.gtag === "function") {
-      window.gtag("event", "tel_click", { page });
-    }
+    fireEvent("tel_click", page);
   }
 
   function scrollToForm() {

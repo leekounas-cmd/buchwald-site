@@ -2,11 +2,10 @@
 
 import { CampaignForm } from "@/components/CampaignForm";
 import { offer, PHONE_DISPLAY, PHONE_HREF, WEAVE_ADS_URL } from "@/lib/offer";
+import { fireEvent } from "@/lib/track";
 
 export function fireCampaignEvent(name: string, page: string) {
-  if (typeof window !== "undefined" && typeof window.gtag === "function") {
-    window.gtag("event", name, { page });
-  }
+  fireEvent(name, page);
 }
 
 export function CampaignHero({

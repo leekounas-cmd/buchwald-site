@@ -22,6 +22,7 @@ export default function VisitPage() {
         page={PAGE}
         title="Your First Visit, Made Easy"
         subtitle="Exam, x-rays, and cleaning, plus free Jet Whitening and take-home whitening trays."
+        badge="Ends July 31"
       />
 
       <TrustRow />

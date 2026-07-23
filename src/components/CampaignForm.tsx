@@ -2,14 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { PHONE_DISPLAY, PHONE_HREF, WEAVE_ADS_URL } from "@/lib/offer";
+import { fireEvent } from "@/lib/track";
 
 const INSURANCE_OPTIONS = ["Yes", "No", "Not sure"];
-
-function fireEvent(name: string, page: string) {
-  if (typeof window !== "undefined" && typeof window.gtag === "function") {
-    window.gtag("event", name, { page });
-  }
-}
 
 export function CampaignForm({ page, formId }: { page: string; formId?: string }) {
   const [name, setName] = useState("");
