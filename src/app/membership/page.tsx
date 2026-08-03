@@ -61,10 +61,6 @@ const faqs = [
     a: "Yes. Both plans are available through Cherry financing. Essential is $34/mo and Signature is $75/mo, both on a 12-month term at 0% APR.",
   },
   {
-    q: "What is the Hygiene Upgrade Package?",
-    a: "It's a per-visit bundle available to anyone, insured or not. For $249, you add InnerView imaging, fluoride, laser therapy, and jet whitening to any cleaning visit. Signature Plan members get InnerView, fluoride, and laser at both visits each year.",
-  },
-  {
     q: "Is there a contract?",
     a: "The plans are annual. If you pay through Cherry, payments are spread over 12 months. There's no long-term contract beyond the plan year.",
   },
@@ -306,46 +302,6 @@ export default function MembershipPage() {
               </div>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* Hygiene Upgrade */}
-      <section className="py-12 sm:py-16 bg-gray-50">
-        <div className="mx-auto max-w-3xl px-4">
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-white rounded-2xl p-8 border border-gray-100">
-            <p className="text-primary text-xs font-bold uppercase tracking-wider mb-2">For Everyone, Insured or Not</p>
-            <h2 className="text-2xl font-extrabold text-gray-900 mb-2">Hygiene Upgrade Package</h2>
-            <p className="text-gray-500 text-sm mb-6">Add these four services to any cleaning visit for one bundled price. Available to any patient.</p>
-
-            <div className="grid sm:grid-cols-2 gap-4 mb-6">
-              {[
-                { name: "InnerView Imaging", price: "$30" },
-                { name: "Fluoride Treatment", price: "$65" },
-                { name: "Laser Therapy", price: "$125" },
-                { name: "Jet Whitening", price: "$99" },
-              ].map((item) => (
-                <div key={item.name} className="flex justify-between items-center bg-gray-50 rounded-xl px-4 py-3">
-                  <span className="text-sm text-gray-700 font-medium">{item.name}</span>
-                  <span className="text-sm text-gray-400 line-through">{item.price} a la carte</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="bg-primary/5 rounded-xl px-5 py-4 flex items-center justify-between mb-6">
-              <div>
-                <p className="text-xs text-gray-500 mb-1">Bundled price (save 22%)</p>
-                <p className="text-3xl font-extrabold text-primary">$249 <span className="text-base font-normal text-gray-400">/visit</span></p>
-              </div>
-              <div className="text-right">
-                <p className="text-xs text-gray-400">Split via Cherry</p>
-                <p className="text-sm font-bold text-gray-700">$84/mo for 2 visits/year</p>
-              </div>
-            </div>
-
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="w-full rounded-lg bg-gray-900 px-5 py-3 text-sm font-bold text-white hover:bg-gray-800 transition-colors text-center block">
-              Add to My Next Visit
-            </a>
-          </motion.div>
         </div>
       </section>
 
