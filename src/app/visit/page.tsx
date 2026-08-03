@@ -21,8 +21,8 @@ export default function VisitPage() {
       <CampaignHero
         page={PAGE}
         title="Your First Visit, Made Easy"
-        subtitle="Exam, x-rays, and cleaning, plus free Jet Whitening and take-home whitening trays."
-        badge="Ends July 31"
+        subtitle="Exam, x-rays, and cleaning, plus free Jet Whitening and take-home whitening trays. Most PPO plans cover it at 100%. No insurance? $169 covers everything."
+        badge={`Ends ${offer.expiresShort}`}
       />
 
       <TrustRow />

@@ -34,8 +34,8 @@ export default function FreeWhiteningPage() {
       <CampaignHero
         page={PAGE}
         title="Free Whitening for New Patients"
-        subtitle="Jet Whitening plus take-home trays, included with your first exam and cleaning. Ends July 31."
-        badge="Ends July 31"
+        subtitle={`Jet Whitening plus take-home trays, included with your first exam and cleaning. Ends ${offer.expiresShort}.`}
+        badge={`Ends ${offer.expiresShort}`}
       />
 
       <TrustRow />

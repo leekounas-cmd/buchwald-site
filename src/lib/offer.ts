@@ -10,7 +10,8 @@ export const WEAVE_ADS_URL =
 export const offer = {
   uninsuredPrice: "$169",
   jetWhiteningValue: "$99",
-  expires: "July 31, 2026",
+  expires: "August 31, 2026",
+  expiresShort: "August 31",
 
   insuredCard: {
     title: "With insurance",
@@ -57,7 +58,7 @@ export const offer = {
   finePrint: [
     "New patients only",
     "Whitening provided with a completed exam and cleaning",
-    "Offer expires July 31, 2026",
+    "Offer expires August 31, 2026",
     "Cannot be combined with other offers",
     "Subject to clinical eligibility",
   ],
