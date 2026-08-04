@@ -63,9 +63,8 @@ export default function FormsPage() {
       {/* ===== Hero ===== */}
       <section className="bg-[#0C1820] text-white overflow-hidden">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 pt-14 pb-16 sm:pt-20 sm:pb-24">
-          <div className="flex flex-col lg:flex-row lg:items-center gap-y-12 gap-x-16">
-            <div className="max-w-2xl">
-              <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary mb-6">
+          <div className="max-w-2xl">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary mb-6">
                 You&rsquo;re booked. The hard part is done.
               </p>
               <h1 className="font-archivo text-[clamp(2.4rem,5.4vw,4rem)] leading-[1.06] mb-7">
@@ -85,17 +84,9 @@ export default function FormsPage() {
               >
                 Start Step 1
               </a>
-              <p className="mt-8 text-sm text-[#8FA9B5]">
-                We&rsquo;ll see you soon. The blankets are ready.
-              </p>
-            </div>
-            <div className="h-32 w-32 sm:h-36 sm:w-36 shrink-0 rounded-full bg-orange text-white flex items-center justify-center text-center rotate-[-8deg] lg:mx-auto">
-              <p className="text-sm font-bold leading-snug px-4">
-                10 min,
-                <br />
-                tops. Promise.
-              </p>
-            </div>
+            <p className="mt-8 text-sm text-[#8FA9B5]">
+              We&rsquo;ll see you soon. The blankets are ready.
+            </p>
           </div>
         </div>
       </section>
