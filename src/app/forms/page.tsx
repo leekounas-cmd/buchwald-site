@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/offer";
 import { fireEvent } from "@/lib/track";
 
@@ -64,8 +63,8 @@ export default function FormsPage() {
       {/* ===== Hero ===== */}
       <section className="bg-[#0C1820] text-white overflow-hidden">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 pt-14 pb-16 sm:pt-20 sm:pb-24">
-          <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-x-14 gap-y-14 items-center">
-            <div>
+          <div className="flex flex-col lg:flex-row lg:items-center gap-y-12 gap-x-16">
+            <div className="max-w-2xl">
               <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary mb-6">
                 You&rsquo;re booked. The hard part is done.
               </p>
@@ -86,28 +85,15 @@ export default function FormsPage() {
               >
                 Start Step 1
               </a>
-            </div>
-
-            <div className="relative max-w-md mx-auto lg:mx-0 w-full">
-              <div className="rounded-t-full rounded-b-3xl overflow-hidden">
-                <Image
-                  src="/images/stock/kids-exam.jpg"
-                  alt="A warm welcome from the Buchwald team"
-                  width={760}
-                  height={950}
-                  priority
-                  className="w-full object-cover aspect-[4/5]"
-                />
-              </div>
-              <div className="absolute -bottom-5 -left-4 sm:-left-8 h-28 w-28 rounded-full bg-orange text-white flex items-center justify-center text-center rotate-[-8deg]">
-                <p className="text-xs font-bold leading-snug px-3">
-                  10 min,
-                  <br />
-                  tops. Promise.
-                </p>
-              </div>
-              <p className="mt-12 text-sm text-[#8FA9B5] text-center pl-16 sm:pl-0">
+              <p className="mt-8 text-sm text-[#8FA9B5]">
                 We&rsquo;ll see you soon. The blankets are ready.
+              </p>
+            </div>
+            <div className="h-32 w-32 sm:h-36 sm:w-36 shrink-0 rounded-full bg-orange text-white flex items-center justify-center text-center rotate-[-8deg] lg:mx-auto">
+              <p className="text-sm font-bold leading-snug px-4">
+                10 min,
+                <br />
+                tops. Promise.
               </p>
             </div>
           </div>
