@@ -111,7 +111,7 @@ export function SectionHeading({
 export type NumberedRow = {
   n: string;
   title: string;
-  body: string;
+  body: React.ReactNode;
   meta?: string;
   cta?: { label: string; href: string; external?: boolean; onClickEvent?: never };
 };

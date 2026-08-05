@@ -11,7 +11,15 @@ const steps = [
   {
     n: "01",
     title: "Check-in and paperwork",
-    body: "Arrive a few minutes early, or knock the forms out from your couch ahead of time at buchwaldfamilydentistry.com/forms. Either way, no clipboard marathon.",
+    body: (
+      <>
+        Arrive a few minutes early, or knock the forms out from your couch ahead of time on our{" "}
+        <Link href="/forms" className="text-primary-dark font-semibold underline">
+          new patient forms page
+        </Link>
+        . Either way, no clipboard marathon.
+      </>
+    ),
   },
   {
     n: "02",

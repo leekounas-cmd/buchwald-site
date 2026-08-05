@@ -277,7 +277,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-28">
           <div className="max-w-3xl">
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary mb-4">
-              The visit itself
+              The staff
             </p>
             <h2 className="font-archivo text-4xl sm:text-5xl leading-[1.05] mb-6">
               A visit you won&apos;t dread.

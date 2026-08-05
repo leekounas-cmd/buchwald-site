@@ -9,6 +9,7 @@ const quickLinks = [
   { href: "/meet-us", label: "Meet Us" },
   { href: "/areas", label: "Areas We Serve" },
   { href: "/insurance", label: "Insurance" },
+  { href: "/forms", label: "New Patient Forms" },
 ];
 
 const serviceLinks = [
