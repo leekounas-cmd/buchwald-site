@@ -120,7 +120,7 @@ export default function PreviewV8() {
       <header className="bg-[#0C1820]">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-5 flex items-center justify-between gap-6">
           <Link href="/preview-v8" className="shrink-0">
-            <Image src="/images/logo-white-trim.png" alt="Buchwald Family Dentistry" width={475} height={117} priority className="h-10 w-auto" />
+            <Image src="/images/logo-white-trim.png" alt="Buchwald Family Dentistry" width={475} height={117} priority className="h-8 w-auto" />
           </Link>
           <nav className="hidden md:flex items-center gap-7 text-sm font-medium text-[#B9CBD4]">
             <Link href="/services" className="hover:text-white transition-colors">Services</Link>
@@ -128,14 +128,29 @@ export default function PreviewV8() {
             <Link href="/insurance" className="hover:text-white transition-colors">Insurance</Link>
             <Link href="/meet-us" className="hover:text-white transition-colors">Meet Us</Link>
           </nav>
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full bg-primary px-6 py-2.5 text-sm font-bold text-white hover:bg-primary-dark transition-colors shrink-0"
-          >
-            Book a Visit
-          </a>
+          <div className="flex items-center gap-3 shrink-0">
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-primary px-6 py-2.5 text-sm font-bold text-white hover:bg-primary-dark transition-colors"
+            >
+              Book a Visit
+            </a>
+            <details className="md:hidden relative">
+              <summary className="list-none [&::-webkit-details-marker]:hidden cursor-pointer p-2 -m-1 text-white" aria-label="Menu">
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
+                  <path strokeLinecap="round" d="M4 7h16M4 12h16M4 17h16" />
+                </svg>
+              </summary>
+              <nav className="absolute right-0 top-full z-50 mt-3 w-52 rounded-2xl bg-[#132430] border border-white/10 p-2 shadow-xl">
+                <Link href="/services" className="block rounded-xl px-4 py-3 text-sm font-semibold text-white hover:bg-white/5">Services</Link>
+                <Link href="/membership" className="block rounded-xl px-4 py-3 text-sm font-semibold text-white hover:bg-white/5">Pricing</Link>
+                <Link href="/insurance" className="block rounded-xl px-4 py-3 text-sm font-semibold text-white hover:bg-white/5">Insurance</Link>
+                <Link href="/meet-us" className="block rounded-xl px-4 py-3 text-sm font-semibold text-white hover:bg-white/5">Meet Us</Link>
+              </nav>
+            </details>
+          </div>
         </div>
       </header>
 
