@@ -1,10 +1,6 @@
-"use client";
-
-import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
-import { CTABanner } from "@/components/CTABanner";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
+import { InkHero, TickerBand, SectionHeading, FaqRows, InkCTA } from "@/components/v8";
 
 const BOOKING_URL = "https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE";
 
@@ -27,26 +23,25 @@ const signatureItems = [
   "No waiting periods, maximums, or deductibles",
 ];
 
-
 const essentialSavings = [
-  { treatment: "2 Cleanings*", plan: "Included", retail: "$440", save: "$440" },
-  { treatment: "2 Exams", plan: "Included", retail: "$300", save: "$300" },
-  { treatment: "Full X-rays", plan: "Included", retail: "$150", save: "$150" },
+  { treatment: "2 Cleanings*", plan: "Included", retail: "$440" },
+  { treatment: "2 Exams", plan: "Included", retail: "$300" },
+  { treatment: "Full X-rays", plan: "Included", retail: "$150" },
 ];
 
 const signatureSavings = [
-  { treatment: "2 Cleanings", plan: "Included", retail: "$440", save: "$440" },
-  { treatment: "2 Exams", plan: "Included", retail: "$300", save: "$300" },
-  { treatment: "Full X-rays", plan: "Included", retail: "$150", save: "$150" },
-  { treatment: "InnerView x2", plan: "Included", retail: "$60", save: "$60" },
-  { treatment: "Fluoride x2", plan: "Included", retail: "$130", save: "$130" },
-  { treatment: "Laser Therapy x2", plan: "Included", retail: "$250", save: "$250" },
+  { treatment: "2 Cleanings", plan: "Included", retail: "$440" },
+  { treatment: "2 Exams", plan: "Included", retail: "$300" },
+  { treatment: "Full X-rays", plan: "Included", retail: "$150" },
+  { treatment: "InnerView x2", plan: "Included", retail: "$60" },
+  { treatment: "Fluoride x2", plan: "Included", retail: "$130" },
+  { treatment: "Laser Therapy x2", plan: "Included", retail: "$250" },
 ];
 
 const faqs = [
   {
     q: "Do I need to have insurance to join?",
-    a: "No. These plans are designed specifically for patients without dental insurance. They give you the same level of preventive care — without the middleman.",
+    a: "No. These plans are designed specifically for patients without dental insurance. They give you the same level of preventive care, without the middleman.",
   },
   {
     q: "Can I join the plan at my first visit?",
@@ -72,27 +67,62 @@ const faqs = [
 
 function Check({ white }: { white?: boolean }) {
   return (
-    <svg className={`h-4 w-4 flex-shrink-0 mt-0.5 ${white ? "text-white" : "text-primary"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+    <svg className={`h-4 w-4 flex-shrink-0 mt-0.5 ${white ? "text-primary" : "text-primary"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
     </svg>
   );
 }
 
-function FAQItem({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false);
+function SavingsTable({
+  label,
+  rows,
+  planCost,
+  retailValue,
+  savings,
+}: {
+  label: string;
+  rows: { treatment: string; plan: string; retail: string }[];
+  planCost: string;
+  retailValue: string;
+  savings: string;
+}) {
   return (
-    <div className="border-b border-gray-100 last:border-0">
-      <button onClick={() => setOpen(!open)} className="flex w-full items-center justify-between py-4 text-left gap-4">
-        <span className="font-semibold text-gray-900 text-[15px]">{q}</span>
-        <motion.span animate={{ rotate: open ? 45 : 0 }} className="text-primary text-lg flex-shrink-0 font-bold">+</motion.span>
-      </button>
-      <AnimatePresence>
-        {open && (
-          <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.2 }} className="overflow-hidden">
-            <p className="text-gray-500 text-sm leading-relaxed pb-4">{a}</p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+    <div>
+      <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary-dark mb-4">{label}</p>
+      <div className="bg-white rounded-3xl overflow-hidden ring-1 ring-[#0C1820]/10">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="border-b border-gray-200">
+              <th className="text-left px-5 py-3.5 font-bold text-gray-400 text-xs uppercase tracking-wider">Item</th>
+              <th className="text-right px-5 py-3.5 font-bold text-primary-dark text-xs uppercase tracking-wider">Your Cost</th>
+              <th className="text-right px-5 py-3.5 font-bold text-gray-400 text-xs uppercase tracking-wider">Retail</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row) => (
+              <tr key={row.treatment} className="border-b border-gray-100 last:border-0">
+                <td className="px-5 py-3.5 text-gray-700">{row.treatment}</td>
+                <td className="px-5 py-3.5 text-primary-dark font-bold text-right">{row.plan}</td>
+                <td className="px-5 py-3.5 text-gray-400 text-right">{row.retail}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <div className="px-5 py-5 bg-[#0C1820] text-white">
+          <div className="flex justify-between text-sm font-bold mb-1">
+            <span>Plan cost</span>
+            <span className="font-archivo">{planCost}</span>
+          </div>
+          <div className="flex justify-between text-xs text-[#8FA9B5] mb-2">
+            <span>Retail value of included items</span>
+            <span>{retailValue}</span>
+          </div>
+          <div className="flex justify-between font-extrabold text-primary">
+            <span>You save</span>
+            <span className="font-archivo">{savings}</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -100,34 +130,51 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 export default function MembershipPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="py-10 sm:py-16 bg-white">
-        <div className="mx-auto max-w-4xl px-4 text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">No Insurance Needed</p>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-[1.1] mb-5">
-              In-House Discount Plans
-            </h1>
-            <p className="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
-              Two plans designed for patients without insurance. Get preventive care, big discounts on treatment, and pay monthly through Cherry.
-            </p>
-          </motion.div>
+      <InkHero
+        eyebrow="No insurance? No problem."
+        title={
+          <>
+            Two plans. Zero <span className="text-primary">insurance games.</span>
+          </>
+        }
+        intro="Preventive care, big discounts on treatment, and monthly payments through Cherry. Built for patients without insurance."
+      >
+        <div className="flex flex-col sm:flex-row gap-3">
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full bg-primary px-8 py-4 text-sm font-bold text-white text-center hover:bg-primary-dark transition-colors"
+          >
+            Book and Join at Your Visit
+          </a>
+          <a
+            href="tel:972-644-3280"
+            className="rounded-full border border-white/25 px-8 py-4 text-sm font-semibold text-white text-center hover:border-white/60 transition-colors"
+          >
+            Call (972) 644-3280
+          </a>
         </div>
-      </section>
+      </InkHero>
 
-      {/* Plan Cards */}
-      <section className="py-12 sm:py-16 bg-gray-50">
-        <div className="mx-auto max-w-4xl px-4">
-          <div className="grid sm:grid-cols-2 gap-6">
+      <TickerBand items={["No waiting periods", "No deductibles", "No annual maximums", "0% APR with Cherry"]} />
 
+      {/* Plan cards */}
+      <section className="bg-[#F2F7F8]">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-16 sm:py-24">
+          <SectionHeading
+            eyebrow="Pick your plan"
+            title="The money part, in plain English."
+          />
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
             {/* Essential */}
-            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-white rounded-2xl p-7 border border-gray-100 flex flex-col">
-              <p className="text-primary text-xs font-bold uppercase tracking-wider mb-2">Essential Care Plan</p>
+            <div className="bg-white rounded-3xl p-8 ring-1 ring-[#0C1820]/10 flex flex-col">
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary-dark mb-3">Essential Care Plan</p>
               <div className="flex items-baseline gap-2 mb-1">
-                <span className="text-4xl font-extrabold text-gray-900">$400</span>
+                <span className="font-archivo text-4xl text-[#0C1820]">$400</span>
                 <span className="text-gray-400 text-sm">/year</span>
               </div>
-              <p className="text-xs text-gray-400 mb-6">or $34/mo through Cherry</p>
+              <p className="text-xs text-gray-400 mb-7">or $34/mo through Cherry</p>
               <ul className="space-y-2.5 flex-1 mb-8">
                 {essentialItems.map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-sm text-gray-700">
@@ -136,188 +183,146 @@ export default function MembershipPage() {
                   </li>
                 ))}
               </ul>
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="w-full rounded-lg bg-primary px-5 py-3 text-sm font-bold text-white hover:bg-primary-dark transition-colors text-center">
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full rounded-full bg-primary px-5 py-3.5 text-sm font-bold text-white hover:bg-primary-dark transition-colors text-center"
+              >
                 Get Started
               </a>
               <p className="text-xs text-gray-400 text-center mt-3">Call (972) 644-3280 to sign up at your visit</p>
-            </motion.div>
+            </div>
 
             {/* Signature */}
-            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-primary rounded-2xl p-7 flex flex-col relative">
-              <span className="absolute -top-3 left-6 bg-green-500 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">Best Value</span>
-              <p className="text-white/70 text-xs font-bold uppercase tracking-wider mb-2">Signature Care Plan</p>
+            <div className="bg-[#0C1820] text-white rounded-3xl p-8 flex flex-col relative">
+              <span className="absolute -top-3 left-8 bg-primary text-white text-[11px] font-bold uppercase tracking-wider px-4 py-1 rounded-full">
+                Best Value
+              </span>
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary mb-3">Signature Care Plan</p>
               <div className="flex items-baseline gap-2 mb-1">
-                <span className="text-4xl font-extrabold text-white">$899</span>
-                <span className="text-white/60 text-sm">/year</span>
+                <span className="font-archivo text-4xl">$899</span>
+                <span className="text-[#8FA9B5] text-sm">/year</span>
               </div>
-              <p className="text-xs text-white/60 mb-6">or $75/mo through Cherry</p>
+              <p className="text-xs text-[#8FA9B5] mb-7">or $75/mo through Cherry</p>
               <ul className="space-y-2.5 flex-1 mb-8">
                 {signatureItems.map((item) => (
-                  <li key={item} className="flex items-start gap-2.5 text-sm text-white/90">
+                  <li key={item} className="flex items-start gap-2.5 text-sm text-[#B9CBD4]">
                     <Check white />
                     {item}
                   </li>
                 ))}
               </ul>
-              <div className="bg-white/10 rounded-xl px-4 py-3 mb-6 text-center">
-                <p className="text-white/70 text-xs">Retail value <span className="line-through">$1,330+</span></p>
-                <p className="text-white font-extrabold text-sm">You save $431+ per year</p>
+              <div className="rounded-2xl bg-white/[0.06] border border-white/10 px-4 py-3 mb-7 text-center">
+                <p className="text-[#8FA9B5] text-xs">
+                  Retail value <span className="line-through">$1,330+</span>
+                </p>
+                <p className="font-extrabold text-sm text-primary">You save $431+ per year</p>
               </div>
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="w-full rounded-lg bg-white px-5 py-3 text-sm font-bold text-primary hover:bg-gray-50 transition-colors text-center">
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full rounded-full bg-primary px-5 py-3.5 text-sm font-bold text-white hover:bg-primary-dark transition-colors text-center"
+              >
                 Get Started
               </a>
-              <p className="text-xs text-white/50 text-center mt-3">Call (972) 644-3280 to sign up at your visit</p>
-            </motion.div>
+              <p className="text-xs text-[#8FA9B5] text-center mt-3">Call (972) 644-3280 to sign up at your visit</p>
+            </div>
           </div>
 
-          {/* Cherry note */}
-          <p className="text-center text-gray-400 text-xs mt-5">
+          <p className="text-gray-400 text-xs mt-6 max-w-4xl">
             Cherry financing available on both plans. Apply in minutes, no impact to credit score, 0% APR.
           </p>
-
-          {/* Cleaning asterisk note */}
-          <p className="text-center text-gray-500 text-xs mt-3 max-w-2xl mx-auto">
-            *Covers standard (prophylaxis) cleanings. If it has been a while since your last dental visit, a deep cleaning may be recommended first.{" "}
-            <Link href="/blog/what-is-a-deep-cleaning" className="text-primary font-semibold underline">
+          <p className="text-gray-500 text-xs mt-2 max-w-2xl">
+            *Covers standard (prophylaxis) cleanings. If it has been a while since your last dental visit, a deep
+            cleaning may be recommended first.{" "}
+            <Link href="/blog/what-is-a-deep-cleaning" className="text-primary-dark font-semibold underline">
               Learn why deep cleanings matter
-            </Link>.
+            </Link>
+            .
           </p>
         </div>
       </section>
 
-      {/* Gentle Cleanings with Melisa */}
-      <section className="py-12 sm:py-16 bg-white">
-        <div className="mx-auto max-w-3xl px-4">
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-gray-50 rounded-2xl p-8 sm:p-10 text-center">
-            <p className="text-primary text-xs font-bold uppercase tracking-wider mb-3">Cleanings With Melisa</p>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-4">
-              A Cleaning That Doesn&apos;t Hurt
-            </h2>
-            <p className="text-gray-600 text-base leading-relaxed mb-6">
-              A lot of people put off the dentist because their last cleaning was painful. Our hygienist Melisa Kounas is known for being genuinely gentle. After more than 2,000 cleanings in our chair, patients consistently tell us it was the most comfortable cleaning they have ever had.
-            </p>
-            <div className="grid grid-cols-3 gap-3 max-w-lg mx-auto">
-              <div className="bg-white rounded-xl p-4">
-                <p className="text-xl sm:text-2xl font-extrabold text-primary leading-tight">2,000+</p>
-                <p className="text-gray-500 text-[11px] sm:text-xs mt-1 leading-snug">Cleanings performed</p>
+      {/* Gentle cleanings with Melisa */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-16 sm:py-24">
+          <SectionHeading
+            eyebrow="Cleanings with Melisa"
+            title="A cleaning that doesn't hurt."
+            intro="A lot of people put off the dentist because their last cleaning was painful. Our hygienist Melisa Kounas is known for being genuinely gentle. Patients consistently tell us it was the most comfortable cleaning they have ever had."
+          />
+          <div className="grid sm:grid-cols-3 max-w-3xl">
+            {[
+              { stat: "2,000+", label: "Cleanings performed" },
+              { stat: "Gentle", label: "Hand and technique" },
+              { stat: "No rush", label: "We take our time" },
+            ].map((s) => (
+              <div key={s.stat} className="border-t border-gray-200 py-6 sm:pr-10">
+                <p className="font-archivo text-3xl text-primary">{s.stat}</p>
+                <p className="text-gray-500 text-sm mt-1">{s.label}</p>
               </div>
-              <div className="bg-white rounded-xl p-4">
-                <p className="text-xl sm:text-2xl font-extrabold text-primary leading-tight">Gentle</p>
-                <p className="text-gray-500 text-[11px] sm:text-xs mt-1 leading-snug">Hand and technique</p>
-              </div>
-              <div className="bg-white rounded-xl p-4">
-                <p className="text-xl sm:text-2xl font-extrabold text-primary leading-tight">No Rush</p>
-                <p className="text-gray-500 text-[11px] sm:text-xs mt-1 leading-snug">We take our time</p>
-              </div>
-            </div>
-            <p className="text-gray-500 text-sm mt-6">
-              Nervous about cleanings?{" "}
-              <Link href="/meet-us" className="text-primary font-semibold underline">Meet Melisa</Link>{" "}
-              or{" "}
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-primary font-semibold underline">book your visit</a>{" "}
-              and tell us up front. We will adjust everything to your comfort.
-            </p>
-          </motion.div>
+            ))}
+          </div>
+          <p className="text-gray-500 text-sm mt-4 max-w-2xl">
+            Nervous about cleanings?{" "}
+            <Link href="/meet-us" className="text-primary-dark font-semibold underline">
+              Meet Melisa
+            </Link>{" "}
+            or{" "}
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-primary-dark font-semibold underline">
+              book your visit
+            </a>{" "}
+            and tell us up front. We will adjust everything to your comfort.
+          </p>
         </div>
       </section>
 
-      {/* Savings Tables */}
-      <section className="py-12 sm:py-16 bg-white">
-        <div className="mx-auto max-w-5xl px-4">
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">Year-One Math</h2>
-            <p className="text-gray-500 text-sm mt-2">What you pay vs. what you would have paid without a plan.</p>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 gap-8">
-            {/* Essential savings */}
-            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <p className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-3">Essential Plan — $400/yr</p>
-              <div className="bg-gray-50 rounded-2xl overflow-hidden">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b border-gray-200">
-                      <th className="text-left px-4 py-3 font-semibold text-gray-400 text-xs uppercase tracking-wide">Item</th>
-                      <th className="text-right px-4 py-3 font-semibold text-primary text-xs uppercase tracking-wide">Your Cost</th>
-                      <th className="text-right px-4 py-3 font-semibold text-gray-400 text-xs uppercase tracking-wide">Retail</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {essentialSavings.map((row, i) => (
-                      <tr key={row.treatment} className={i % 2 === 1 ? "bg-white" : ""}>
-                        <td className="px-4 py-3 text-gray-700">{row.treatment}</td>
-                        <td className="px-4 py-3 text-primary font-semibold text-right">{row.plan}</td>
-                        <td className="px-4 py-3 text-gray-400 text-right">{row.retail}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-                <div className="px-4 py-4 border-t border-gray-200 bg-green-50">
-                  <div className="flex justify-between text-sm font-bold text-gray-900 mb-1">
-                    <span>Plan cost</span><span>$400/year</span>
-                  </div>
-                  <div className="flex justify-between text-xs text-gray-400 mb-2">
-                    <span>Retail value of included items</span><span>$890+</span>
-                  </div>
-                  <div className="flex justify-between text-green-700 font-extrabold">
-                    <span>You save</span><span>$290+</span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Signature savings */}
-            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-              <p className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-3">Signature Plan — $899/yr</p>
-              <div className="bg-gray-50 rounded-2xl overflow-hidden">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b border-gray-200">
-                      <th className="text-left px-4 py-3 font-semibold text-gray-400 text-xs uppercase tracking-wide">Item</th>
-                      <th className="text-right px-4 py-3 font-semibold text-primary text-xs uppercase tracking-wide">Your Cost</th>
-                      <th className="text-right px-4 py-3 font-semibold text-gray-400 text-xs uppercase tracking-wide">Retail</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {signatureSavings.map((row, i) => (
-                      <tr key={row.treatment} className={i % 2 === 1 ? "bg-white" : ""}>
-                        <td className="px-4 py-3 text-gray-700">{row.treatment}</td>
-                        <td className="px-4 py-3 text-primary font-semibold text-right">{row.plan}</td>
-                        <td className="px-4 py-3 text-gray-400 text-right">{row.retail}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-                <div className="px-4 py-4 border-t border-gray-200 bg-green-50">
-                  <div className="flex justify-between text-sm font-bold text-gray-900 mb-1">
-                    <span>Plan cost</span><span>$899/year</span>
-                  </div>
-                  <div className="flex justify-between text-xs text-gray-400 mb-2">
-                    <span>Retail value of included items</span><span>$1,330+</span>
-                  </div>
-                  <div className="flex justify-between text-green-700 font-extrabold">
-                    <span>You save</span><span>$431+</span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+      {/* Year-one math */}
+      <section className="bg-[#F2F7F8]">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-16 sm:py-24">
+          <SectionHeading
+            eyebrow="Do the math"
+            title="Year-one math."
+            intro="What you pay vs. what you would have paid without a plan."
+          />
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
+            <SavingsTable
+              label="Essential Plan, $400/yr"
+              rows={essentialSavings}
+              planCost="$400/year"
+              retailValue="$890+"
+              savings="$290+"
+            />
+            <SavingsTable
+              label="Signature Plan, $899/yr"
+              rows={signatureSavings}
+              planCost="$899/year"
+              retailValue="$1,330+"
+              savings="$431+"
+            />
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-12 sm:py-16 bg-white">
-        <div className="mx-auto max-w-2xl px-4">
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
-            <h2 className="text-3xl font-extrabold text-gray-900">Common Questions</h2>
-          </motion.div>
-          <div className="bg-gray-50 rounded-xl p-6">
-            {faqs.map((faq) => <FAQItem key={faq.q} q={faq.q} a={faq.a} />)}
+      <section className="bg-white">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-16 sm:py-24">
+          <SectionHeading eyebrow="Before you ask" title="Common questions." />
+          <div className="max-w-3xl">
+            <FaqRows faqs={faqs} />
           </div>
         </div>
       </section>
 
-      <CTABanner />
+      <InkCTA
+        title="Ready to skip the insurance maze?"
+        intro="Book online in two minutes, or call and Cathy will get you signed up."
+        primary={{ label: "Book My Visit", href: BOOKING_URL, external: true }}
+        secondary={{ label: "Call (972) 644-3280", href: "tel:972-644-3280" }}
+        footnote="300 N Coit Rd #245, Richardson, TX · Mon to Thu, 7am to 3pm"
+      />
       <BreadcrumbSchema items={[{ name: "Membership Plans", href: "/membership" }]} />
     </>
   );

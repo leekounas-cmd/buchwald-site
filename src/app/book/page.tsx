@@ -90,27 +90,32 @@ export default function BookPage() {
   return (
     <>
     <BreadcrumbSchema items={[{ name: "Book Appointment", href: "/book" }]} />
-    <section className="py-10 sm:py-20 bg-white">
-      <div className="mx-auto max-w-2xl px-4">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center mb-10">
-          <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Get Started</p>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3">Request an Appointment</h1>
-          <p className="text-gray-500 text-base">Fill out the form below and we&apos;ll reach out to confirm your visit.</p>
-          <div className="flex justify-center mt-4">
+    <section className="bg-[#0C1820] text-white">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 pt-8 pb-14 sm:pt-10 sm:pb-16">
+        <div className="max-w-3xl">
+          <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary mb-6">Get started</p>
+          <h1 className="font-archivo text-[clamp(2.2rem,5vw,3.8rem)] leading-[1.06] mb-7">
+            Grab a <span className="text-primary">spot.</span>
+          </h1>
+          <p className="text-[#B9CBD4] text-lg leading-relaxed max-w-md mb-7">
+            Fill out the form and we&apos;ll reach out to confirm your visit.
+          </p>
+          <div className="flex flex-wrap items-center gap-4">
             <UrgencyBadge />
-          </div>
-          <div className="mt-6 inline-flex flex-col sm:flex-row items-center justify-center gap-2 rounded-xl bg-primary/5 px-5 py-3 text-sm">
-            <span className="text-gray-500">Want a faster path?</span>
             <a
               href={WEAVE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-bold text-primary hover:underline"
+              className="text-sm font-bold text-primary hover:text-white transition-colors"
             >
-              Book instantly through our scheduler →
+              In a hurry? Book instantly through our scheduler →
             </a>
           </div>
-        </motion.div>
+        </div>
+      </div>
+    </section>
+    <section className="py-12 sm:py-16 bg-white">
+      <div className="mx-auto max-w-2xl px-4">
 
         <motion.form
           onSubmit={handleSubmit}
@@ -253,7 +258,7 @@ export default function BookPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full rounded-lg bg-primary px-7 py-3.5 text-sm font-bold text-white hover:bg-primary-dark transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full rounded-full bg-primary px-7 py-4 text-sm font-bold text-white hover:bg-primary-dark transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? "Sending..." : "Submit Request"}
           </button>
