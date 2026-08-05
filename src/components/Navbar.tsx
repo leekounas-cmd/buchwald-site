@@ -155,10 +155,6 @@ export function Navbar() {
               <Link href="/blog" className={desktopLink(pathname.startsWith("/blog"))}>
                 Blog
               </Link>
-              <Link href="/schedule" className={desktopLink(pathname === "/schedule")}>
-                Schedule
-              </Link>
-
               <a
                 href={BOOKING_URL}
                 className="ml-3 rounded-full bg-primary px-6 py-2.5 text-[13px] font-bold text-white transition-colors hover:bg-primary-dark"
@@ -252,10 +248,6 @@ export function Navbar() {
             <Link href="/blog" className={mobileLink(pathname.startsWith("/blog"))}>
               Blog
             </Link>
-            <Link href="/schedule" className={mobileLink(pathname === "/schedule")}>
-              Schedule
-            </Link>
-
             <a
               href={BOOKING_URL}
               className="mt-3 block rounded-full bg-primary px-5 py-3.5 text-center text-sm font-bold text-white hover:bg-primary-dark"

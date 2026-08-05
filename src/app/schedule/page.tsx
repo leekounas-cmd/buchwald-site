@@ -25,7 +25,7 @@ export default function SchedulePage() {
 
     const form = e.currentTarget;
     const data = new FormData(form);
-    data.append("form-type", "April Schedule Request");
+    data.append("form-type", "Schedule Request");
 
     const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
       method: "POST",
@@ -69,10 +69,10 @@ export default function SchedulePage() {
     <section className="py-10 sm:py-20 bg-white">
       <div className="mx-auto max-w-xl px-4">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center mb-8">
-          <p className="text-primary-dark text-xs font-bold uppercase tracking-[0.22em] mb-3">April Appointments</p>
+          <p className="text-primary-dark text-xs font-bold uppercase tracking-[0.22em] mb-3">Schedule a Visit</p>
           <h1 className="font-archivo text-3xl sm:text-4xl text-gray-900 mb-3">Time to Get on the Schedule</h1>
           <p className="text-gray-500 text-base max-w-md mx-auto">
-            April is filling up fast. Pick what works for you and we&apos;ll get you locked in.
+            Pick what works for you and we&apos;ll get you locked in.
           </p>
         </motion.div>
 

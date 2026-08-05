@@ -4,6 +4,7 @@ import "./globals.css";
 import { SiteChromeTop, SiteChromeBottom } from "@/components/SiteChrome";
 import { Analytics } from "@/components/Analytics";
 import { BusinessSchema } from "@/components/BusinessSchema";
+import { ScrollReset } from "@/components/ScrollReset";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -55,6 +56,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${plusJakarta.variable} ${archivoBlack.variable} antialiased`} style={{ fontFamily: "var(--font-plus-jakarta)" }}>
         <BusinessSchema />
+        <ScrollReset />
         <SiteChromeTop />
         <main>{children}</main>
         <SiteChromeBottom />
