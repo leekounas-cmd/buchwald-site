@@ -120,7 +120,7 @@ export default function PreviewV8() {
       <header className="bg-[#0C1820]">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-5 flex items-center justify-between gap-6">
           <Link href="/preview-v8" className="shrink-0">
-            <Image src="/images/logo-white.png" alt="Buchwald Family Dentistry" width={170} height={40} priority className="h-9 w-auto" />
+            <Image src="/images/logo-white-trim.png" alt="Buchwald Family Dentistry" width={475} height={117} priority className="h-10 w-auto" />
           </Link>
           <nav className="hidden md:flex items-center gap-7 text-sm font-medium text-[#B9CBD4]">
             <Link href="/services" className="hover:text-white transition-colors">Services</Link>
@@ -141,7 +141,7 @@ export default function PreviewV8() {
 
       {/* ===== Hero (text-only, forms-page vibe) ===== */}
       <section className="bg-[#0C1820] text-white overflow-hidden">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 pt-16 pb-16 sm:pt-24 sm:pb-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 pt-8 pb-16 sm:pt-10 sm:pb-24">
           <div className="max-w-3xl animate-[slideUp_0.7s_ease-out_both]">
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary mb-6">
               Richardson&apos;s family dentist since forever-ish
@@ -441,7 +441,7 @@ export default function PreviewV8() {
       {/* ===== Footer ===== */}
       <footer className="bg-[#0C1820] border-t border-white/10 text-[#8FA9B5]">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-6 text-sm">
-          <Image src="/images/logo-white.png" alt="Buchwald Family Dentistry" width={150} height={36} className="h-8 w-auto opacity-80" />
+          <Image src="/images/logo-white-trim.png" alt="Buchwald Family Dentistry" width={475} height={117} className="h-9 w-auto opacity-80" />
           <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             <Link href="/services" className="hover:text-white transition-colors">Services</Link>
             <Link href="/insurance" className="hover:text-white transition-colors">Insurance</Link>
