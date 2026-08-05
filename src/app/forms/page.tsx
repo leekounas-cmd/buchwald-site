@@ -71,10 +71,22 @@ export default function FormsPage() {
                 Now for the world&rsquo;s{" "}
                 <span className="text-primary">easiest paperwork.</span>
               </h1>
-              <p className="text-[#B9CBD4] text-lg leading-relaxed max-w-md">
+              <p className="text-[#B9CBD4] text-lg leading-relaxed max-w-md mb-9">
                 Two quick things before your visit. Finish them from your phone
                 and you walk straight to the chair instead of the clipboard.
               </p>
+              <a
+                href="#step-1"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document
+                    .getElementById("step-1")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="inline-flex rounded-full bg-primary px-8 py-4 text-sm font-bold text-white hover:bg-primary-dark transition-colors"
+              >
+                Get Started
+              </a>
             <p className="mt-8 text-sm text-[#8FA9B5]">
               We&rsquo;ll see you soon. The blankets are ready.
             </p>
@@ -113,7 +125,8 @@ export default function FormsPage() {
             {steps.map((s) => (
               <div
                 key={s.n}
-                className="grid sm:grid-cols-[110px_1fr] gap-x-10 gap-y-4 border-t border-gray-200 py-10"
+                id={s.n === "01" ? "step-1" : undefined}
+                className="grid sm:grid-cols-[110px_1fr] gap-x-10 gap-y-4 border-t border-gray-200 py-10 scroll-mt-24"
               >
                 <span className="font-archivo text-4xl text-primary">{s.n}</span>
                 <div>
