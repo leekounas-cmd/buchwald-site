@@ -146,9 +146,22 @@ export default function PreviewV8() {
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary mb-6">
               Richardson&apos;s family dentist since forever-ish
             </p>
-            <h1 className="font-archivo text-[clamp(2.6rem,6.2vw,4.8rem)] leading-[1.06] mb-7">
+            <h1 className="font-archivo text-[clamp(2.6rem,6.2vw,4.8rem)] leading-[1.06] mb-9">
               The dentist visit you might actually <span className="text-primary">look forward&nbsp;to.</span>
             </h1>
+            <div className="mb-9 rounded-3xl overflow-hidden animate-[slideUp_0.7s_ease-out_0.15s_both]">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                poster="/images/office-1.jpg"
+                className="w-full object-cover aspect-video"
+                aria-label="A look inside the Buchwald Family Dentistry office"
+              >
+                <source src="/video/hero.mp4" type="video/mp4" />
+              </video>
+            </div>
             <p className="text-[#B9CBD4] text-lg leading-relaxed max-w-md mb-9">
               Warm hellos, honest prices, and a blanket if you want one. Twenty plus years of taking care of Richardson, zero lectures given.
             </p>
@@ -172,21 +185,6 @@ export default function PreviewV8() {
               <Stars />
               <span className="text-sm text-[#8FA9B5]">4.9 on Google · 441 reviews</span>
             </a>
-          </div>
-
-          {/* Office video */}
-          <div className="mt-14 rounded-3xl overflow-hidden animate-[slideUp_0.7s_ease-out_0.15s_both]">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              poster="/images/office-1.jpg"
-              className="w-full object-cover aspect-video sm:aspect-[21/9]"
-              aria-label="A look inside the Buchwald Family Dentistry office"
-            >
-              <source src="/video/hero.mp4" type="video/mp4" />
-            </video>
           </div>
 
           {/* Insurance banner chip */}
