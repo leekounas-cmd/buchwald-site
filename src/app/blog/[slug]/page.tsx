@@ -50,7 +50,7 @@ function Versus({ left, right, leftLabel, rightLabel }: { left: string[]; right:
   return (
     <div className="grid grid-cols-2 gap-3 my-5">
       <div className="bg-primary/5 rounded-xl p-4">
-        <p className="text-primary text-xs font-bold uppercase tracking-wider mb-3">{leftLabel}</p>
+        <p className="text-primary-dark text-xs font-bold uppercase tracking-[0.22em] mb-3">{leftLabel}</p>
         <ul className="space-y-2">
           {left.map((item) => (
             <li key={item} className="text-gray-600 text-sm flex items-start gap-2">
@@ -350,7 +350,7 @@ function ChooseDentistRichardson() {
       <div className="grid grid-cols-3 gap-3 mb-6">
         <Stat value="4.9" label="stars on Google" />
         <Stat value="20+" label="years in Richardson" />
-        <Stat value="433+" label="Google reviews" />
+        <Stat value="441" label="Google reviews" />
       </div>
 
       <h2>What to Look For</h2>
@@ -1188,7 +1188,7 @@ export default function BlogPostPage() {
             viewport={{ once: true }}
             className="text-center mb-8"
           >
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
+            <h2 className="font-archivo text-2xl sm:text-3xl text-gray-900">
               Common Questions
             </h2>
           </motion.div>

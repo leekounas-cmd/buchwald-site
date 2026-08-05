@@ -68,8 +68,8 @@ export default function CleaningPage() {
       <section className="py-10 sm:py-16 bg-white">
         <div className="mx-auto max-w-6xl px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center">
-            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Preventive Care</p>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-[1.1] mb-8">Dental Cleaning &amp; Exam</h1>
+            <p className="text-primary-dark text-xs font-bold uppercase tracking-[0.22em] mb-3">Preventive Care</p>
+            <h1 className="font-archivo text-4xl sm:text-5xl text-gray-900 leading-[1.1] mb-8">Dental Cleaning &amp; Exam</h1>
           </motion.div>
           <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.1 }} className="mb-10">
             <Image src="/images/stock/cleaning.jpg" alt="Melisa performing a professional teeth cleaning at Buchwald Family Dentistry" width={1200} height={600} className="rounded-2xl w-full object-cover aspect-video" priority />
@@ -89,7 +89,7 @@ export default function CleaningPage() {
           ]} />
 
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-4">What&apos;s Included</h2>
+            <h2 className="font-archivo text-2xl sm:text-3xl text-gray-900 mb-4">What&apos;s Included</h2>
             <Checklist items={included} />
           </motion.div>
 
@@ -101,7 +101,7 @@ export default function CleaningPage() {
       <section className="py-12 sm:py-16 bg-white">
         <div className="mx-auto max-w-3xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2">What to Expect</h2>
+            <h2 className="font-archivo text-2xl sm:text-3xl text-gray-900 mb-2">What to Expect</h2>
             <p className="text-gray-400 text-sm mb-6">Your visit from start to finish.</p>
             <NumberedList items={whatToExpect} />
           </motion.div>
@@ -112,7 +112,7 @@ export default function CleaningPage() {
       <section className="py-12 sm:py-16 bg-gray-50">
         <div className="mx-auto max-w-3xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2">Popular Add-Ons</h2>
+            <h2 className="font-archivo text-2xl sm:text-3xl text-gray-900 mb-2">Popular Add-Ons</h2>
             <p className="text-gray-400 text-sm mb-6">Enhance your cleaning with these premium treatments.</p>
           </motion.div>
           <div className="grid gap-3 sm:grid-cols-3">
@@ -133,7 +133,7 @@ export default function CleaningPage() {
       <section className="py-12 sm:py-16 bg-white">
         <div className="mx-auto max-w-2xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Common Questions</h2>
+            <h2 className="font-archivo text-3xl sm:text-4xl text-gray-900">Common Questions</h2>
           </motion.div>
           <div className="bg-gray-50 rounded-xl p-6">
             {faqs.map((faq) => <FAQItem key={faq.q} q={faq.q} a={faq.a} />)}

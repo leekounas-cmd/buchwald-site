@@ -73,8 +73,8 @@ export default function InvisalignPage() {
       <section className="py-10 sm:py-20 bg-white">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center">
-            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Invisalign Provider</p>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-[1.1] mb-8">
+            <p className="text-primary-dark text-xs font-bold uppercase tracking-[0.22em] mb-3">Invisalign Provider</p>
+            <h1 className="font-archivo text-4xl sm:text-5xl text-gray-900 leading-[1.1] mb-8">
               Straighten Your Smile with Clear Aligners
             </h1>
           </motion.div>
@@ -96,7 +96,7 @@ export default function InvisalignPage() {
       <section className="py-20 sm:py-24 bg-gray-50">
         <div className="mx-auto max-w-4xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Why Invisalign?</h2>
+            <h2 className="font-archivo text-3xl sm:text-4xl text-gray-900">Why Invisalign?</h2>
           </motion.div>
           <div className="grid gap-3 sm:grid-cols-2">
             {benefits.map((b, i) => (
@@ -113,7 +113,7 @@ export default function InvisalignPage() {
       <section className="py-20 sm:py-24 bg-white">
         <div className="mx-auto max-w-5xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">How It Works</h2>
+            <h2 className="font-archivo text-3xl sm:text-4xl text-gray-900">How It Works</h2>
           </motion.div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((s, i) => (
@@ -131,7 +131,7 @@ export default function InvisalignPage() {
       <section className="py-20 sm:py-24 bg-gray-50">
         <div className="mx-auto max-w-3xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Invisalign vs. Braces</h2>
+            <h2 className="font-archivo text-3xl sm:text-4xl text-gray-900">Invisalign vs. Braces</h2>
             <p className="text-gray-400 text-sm mt-2">See how they stack up side by side.</p>
           </motion.div>
           <div className="space-y-3">
@@ -158,13 +158,13 @@ export default function InvisalignPage() {
       <section className="py-16 sm:py-20 bg-white">
         <div className="mx-auto max-w-3xl px-4 text-center">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Flexible Financing</p>
+            <p className="text-primary-dark text-xs font-bold uppercase tracking-[0.22em] mb-3">Flexible Financing</p>
             <p className="text-5xl sm:text-7xl font-extrabold text-gray-900 mb-2">$115<span className="text-2xl sm:text-3xl text-gray-400">/mo</span></p>
             <p className="text-xl font-bold text-gray-900 mb-3">As low as — with 0% APR available</p>
             <p className="text-gray-400 text-base max-w-md mx-auto mb-8">
               Schedule your free consultation. Financing through Cherry — no hard credit check, instant approval.
             </p>
-            <a href={BOOKING_URL} className="inline-block rounded-lg bg-primary px-7 py-3.5 text-sm font-bold text-white hover:bg-primary-dark transition-all">
+            <a href={BOOKING_URL} className="inline-block rounded-full bg-primary px-7 py-3.5 text-sm font-bold text-white hover:bg-primary-dark transition-all">
               Book Free Consultation
             </a>
           </motion.div>
@@ -175,7 +175,7 @@ export default function InvisalignPage() {
       <section className="py-20 sm:py-24 bg-gray-50">
         <div className="mx-auto max-w-2xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Common Questions</h2>
+            <h2 className="font-archivo text-3xl sm:text-4xl text-gray-900">Common Questions</h2>
           </motion.div>
           <div className="bg-white rounded-xl p-6">
             {faqs.map((faq) => <FAQItem key={faq.q} q={faq.q} a={faq.a} />)}

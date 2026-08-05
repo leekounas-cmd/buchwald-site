@@ -20,10 +20,10 @@ export default function AreasPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">
+              <p className="text-primary-dark text-xs font-bold uppercase tracking-[0.22em] mb-3">
                 Areas We Serve
               </p>
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-[1.1] mb-5">
+              <h1 className="font-archivo text-4xl sm:text-5xl text-gray-900 leading-[1.1] mb-5">
                 Serving Families Across DFW
               </h1>
               <p className="text-gray-500 text-lg leading-relaxed">

@@ -61,7 +61,7 @@ export default function AprilBookingPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">You&apos;re All Set!</h1>
+            <h1 className="font-archivo text-3xl sm:text-4xl text-gray-900 mb-4">You&apos;re All Set!</h1>
             <p className="text-gray-500 text-lg leading-relaxed">
               We&apos;ll reach out shortly to confirm your April appointment. If you need us sooner, call{" "}
               <a href="tel:972-644-3280" className="text-primary font-bold">(972) 644-3280</a>.
@@ -85,7 +85,7 @@ export default function AprilBookingPage() {
             <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
             <span className="text-xs font-bold text-primary uppercase tracking-wider">April Openings</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3">
+          <h1 className="font-archivo text-3xl sm:text-4xl text-gray-900 mb-3">
             Time for Your Cleaning
           </h1>
           <p className="text-gray-500 text-base max-w-sm mx-auto">
@@ -180,7 +180,7 @@ export default function AprilBookingPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full rounded-lg bg-primary px-7 py-3.5 text-sm font-bold text-white hover:bg-primary-dark transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full rounded-full bg-primary px-7 py-3.5 text-sm font-bold text-white hover:bg-primary-dark transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? "Sending..." : "Book My Cleaning"}
           </button>

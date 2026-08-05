@@ -46,8 +46,8 @@ export default function TeethWhiteningPage() {
       <section className="py-10 sm:py-16 bg-white">
         <div className="mx-auto max-w-6xl px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center">
-            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Cosmetic Dentistry</p>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-[1.1] mb-8">
+            <p className="text-primary-dark text-xs font-bold uppercase tracking-[0.22em] mb-3">Cosmetic Dentistry</p>
+            <h1 className="font-archivo text-4xl sm:text-5xl text-gray-900 leading-[1.1] mb-8">
               Professional Teeth Whitening
             </h1>
           </motion.div>
@@ -73,7 +73,7 @@ export default function TeethWhiteningPage() {
 
           <Highlight>Most patients walk out of their first visit noticeably brighter — no sensitivity, no downtime.</Highlight>
 
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-10 mb-4">In-Office vs. Take-Home</h2>
+          <h2 className="font-archivo text-2xl sm:text-3xl text-gray-900 mt-10 mb-4">In-Office vs. Take-Home</h2>
           <Versus
             leftLabel="In-Office"
             rightLabel="Take-Home"
@@ -98,7 +98,7 @@ export default function TeethWhiteningPage() {
         <div className="mx-auto max-w-4xl px-4">
           <div className="grid gap-8 md:grid-cols-2 items-center">
             <motion.div initial={{ opacity: 0, x: -15 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Expected Results</p>
+              <p className="text-primary-dark text-xs font-bold uppercase tracking-[0.22em] mb-3">Expected Results</p>
               <p className="text-7xl sm:text-8xl font-extrabold text-gray-900 mb-1">5–7</p>
               <p className="text-xl font-bold text-gray-900 mb-3">Shade Improvement</p>
               <p className="text-gray-500 text-base leading-relaxed">
@@ -115,7 +115,7 @@ export default function TeethWhiteningPage() {
       {/* Good Candidate */}
       <section className="py-12 sm:py-16 bg-gray-50">
         <div className="mx-auto max-w-3xl px-4">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2">Is Whitening Right for You?</h2>
+          <h2 className="font-archivo text-2xl sm:text-3xl text-gray-900 mb-2">Is Whitening Right for You?</h2>
           <p className="text-gray-400 text-sm mb-4">Whitening works great if you&apos;re dealing with any of these.</p>
           <Checklist items={[
             "Staining from coffee, tea, wine, or tobacco",
@@ -131,7 +131,7 @@ export default function TeethWhiteningPage() {
       <section className="py-12 sm:py-16 bg-white">
         <div className="mx-auto max-w-2xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Common Questions</h2>
+            <h2 className="font-archivo text-3xl sm:text-4xl text-gray-900">Common Questions</h2>
           </motion.div>
           <div className="bg-gray-50 rounded-xl p-6">
             {faqs.map((faq) => <FAQItem key={faq.q} q={faq.q} a={faq.a} />)}

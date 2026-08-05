@@ -132,7 +132,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       {/* Why Patients Choose Us */}
       <section className="py-12 sm:py-16 bg-gray-50">
         <div className="mx-auto max-w-5xl px-4">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-8">
+          <h2 className="font-archivo text-2xl sm:text-3xl text-gray-900 mb-8">
             Why Patients from {area.name} Choose Us
           </h2>
           <div className="space-y-3">
@@ -162,7 +162,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       {/* Services */}
       <section className="py-12 sm:py-16 bg-white">
         <div className="mx-auto max-w-5xl px-4">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-3">
+          <h2 className="font-archivo text-2xl sm:text-3xl text-gray-900 mb-3">
             Services Available for {area.name} Patients
           </h2>
           <p className="text-gray-500 text-sm mb-8">
@@ -189,7 +189,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       {/* Neighborhoods */}
       <section className="py-12 sm:py-16 bg-gray-50">
         <div className="mx-auto max-w-5xl px-4">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-3">
+          <h2 className="font-archivo text-2xl sm:text-3xl text-gray-900 mb-3">
             {area.name} Neighborhoods We Serve
           </h2>
           <p className="text-gray-500 text-sm mb-8">
@@ -211,7 +211,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       {/* FAQ */}
       <section className="py-12 sm:py-16 bg-white">
         <div className="mx-auto max-w-3xl px-4">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-8">
+          <h2 className="font-archivo text-2xl sm:text-3xl text-gray-900 mb-8">
             Frequently Asked Questions — {area.name}
           </h2>
           <AreaFAQ faqs={area.faqs} />

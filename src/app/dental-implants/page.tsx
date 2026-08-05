@@ -46,8 +46,8 @@ export default function DentalImplantsPage() {
       <section className="py-10 sm:py-16 bg-white">
         <div className="mx-auto max-w-6xl px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center">
-            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Permanent Solution</p>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-[1.1] mb-8">Dental Implants That Look &amp; Feel Real</h1>
+            <p className="text-primary-dark text-xs font-bold uppercase tracking-[0.22em] mb-3">Permanent Solution</p>
+            <h1 className="font-archivo text-4xl sm:text-5xl text-gray-900 leading-[1.1] mb-8">Dental Implants That Look &amp; Feel Real</h1>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="text-center max-w-3xl mx-auto">
             <p className="text-gray-500 text-lg leading-relaxed">Missing a tooth shouldn&apos;t mean missing out. Dental implants are the gold standard for permanent tooth replacement — designed to look, feel, and function like the real thing.</p>
@@ -74,7 +74,7 @@ export default function DentalImplantsPage() {
       <section className="py-12 sm:py-16 bg-white">
         <div className="mx-auto max-w-3xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Why Choose Implants?</h2>
+            <h2 className="font-archivo text-3xl sm:text-4xl text-gray-900">Why Choose Implants?</h2>
           </motion.div>
           <Checklist items={[
             "Look natural — custom-made to match your existing teeth in shape, size, and color",
@@ -91,7 +91,7 @@ export default function DentalImplantsPage() {
       <section className="py-12 sm:py-16 bg-gray-50">
         <div className="mx-auto max-w-3xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">The Implant Process</h2>
+            <h2 className="font-archivo text-3xl sm:text-4xl text-gray-900">The Implant Process</h2>
             <p className="text-gray-400 text-sm mt-2">From consultation to your new smile.</p>
           </motion.div>
           <NumberedList items={[
@@ -107,7 +107,7 @@ export default function DentalImplantsPage() {
       <section className="py-12 sm:py-16 bg-white">
         <div className="mx-auto max-w-3xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Implants vs. Other Options</h2>
+            <h2 className="font-archivo text-3xl sm:text-4xl text-gray-900">Implants vs. Other Options</h2>
             <p className="text-gray-400 text-sm mt-2">See how implants compare to bridges and dentures.</p>
           </motion.div>
 
@@ -155,7 +155,7 @@ export default function DentalImplantsPage() {
       <section className="py-12 sm:py-16 bg-gray-50">
         <div className="mx-auto max-w-3xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Am I a Candidate?</h2>
+            <h2 className="font-archivo text-3xl sm:text-4xl text-gray-900">Am I a Candidate?</h2>
             <p className="text-gray-400 text-sm mt-2">Most adults are good candidates for implants. Here&apos;s what we look for.</p>
           </motion.div>
           <Checklist items={[
@@ -172,7 +172,7 @@ export default function DentalImplantsPage() {
       <section className="py-12 sm:py-16 bg-white">
         <div className="mx-auto max-w-2xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Common Questions</h2>
+            <h2 className="font-archivo text-3xl sm:text-4xl text-gray-900">Common Questions</h2>
           </motion.div>
           <div className="bg-gray-50 rounded-xl p-6">
             {faqs.map((faq) => <FAQItem key={faq.q} q={faq.q} a={faq.a} />)}

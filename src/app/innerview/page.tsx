@@ -47,8 +47,8 @@ export default function InnerViewPage() {
       <section className="py-10 sm:py-16 bg-white">
         <div className="mx-auto max-w-6xl px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center">
-            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">AI-Powered Diagnostics</p>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-[1.1] mb-8">
+            <p className="text-primary-dark text-xs font-bold uppercase tracking-[0.22em] mb-3">AI-Powered Diagnostics</p>
+            <h1 className="font-archivo text-4xl sm:text-5xl text-gray-900 leading-[1.1] mb-8">
               See What X-Rays Can&apos;t
             </h1>
           </motion.div>
@@ -82,7 +82,7 @@ export default function InnerViewPage() {
 
           <Highlight>InnerView is the first and only FDA-cleared device that measures internal tooth mobility — catching problems before they become emergencies.</Highlight>
 
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-10 mb-2">What InnerView Detects</h2>
+          <h2 className="font-archivo text-2xl sm:text-3xl text-gray-900 mt-10 mb-2">What InnerView Detects</h2>
           <p className="text-gray-400 text-sm mb-4">Problems invisible to X-rays, CBCT, and visual exams.</p>
           <Checklist items={[
             "All types of tooth cracks — including hairline fractures invisible on X-rays",
@@ -96,7 +96,7 @@ export default function InnerViewPage() {
       {/* How It Works */}
       <section className="py-12 sm:py-16 bg-white">
         <div className="mx-auto max-w-3xl px-4">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2">How It Works</h2>
+          <h2 className="font-archivo text-2xl sm:text-3xl text-gray-900 mb-2">How It Works</h2>
           <p className="text-gray-400 text-sm mb-4">3 seconds per tooth. 90 seconds for your entire mouth. Done during your regular visit.</p>
           <NumberedList items={[
             { title: "Gentle Taps", desc: "The handheld device applies 4 micro-taps to each tooth — each lasting just 2.5 milliseconds. No pain, no pressure." },
@@ -111,7 +111,7 @@ export default function InnerViewPage() {
       <section className="py-12 sm:py-16 bg-gray-50">
         <div className="mx-auto max-w-2xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Common Questions</h2>
+            <h2 className="font-archivo text-3xl sm:text-4xl text-gray-900">Common Questions</h2>
           </motion.div>
           <div className="bg-white rounded-xl p-6">
             {faqs.map((faq) => <FAQItem key={faq.q} q={faq.q} a={faq.a} />)}

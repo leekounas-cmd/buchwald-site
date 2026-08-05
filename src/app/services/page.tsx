@@ -23,8 +23,8 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-6xl px-4">
           <div className="max-w-2xl">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-              <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">What We Offer</p>
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-[1.1] mb-5">Our Services</h1>
+              <p className="text-primary-dark text-xs font-bold uppercase tracking-[0.22em] mb-3">What We Offer</p>
+              <h1 className="font-archivo text-4xl sm:text-5xl text-gray-900 leading-[1.1] mb-5">Our Services</h1>
               <p className="text-gray-500 text-lg leading-relaxed">
                 From routine cleanings to full smile transformations. Everything your family needs under one roof.
               </p>
@@ -38,7 +38,7 @@ export default function ServicesPage() {
           <StatRow stats={[
             { value: "8+", label: "Services offered" },
             { value: "4.9", label: "Google rating" },
-            { value: "433+", label: "Google reviews" },
+            { value: "441", label: "Google reviews" },
           ]} />
           <Highlight>One office, one team, every service your family needs — no referrals, no runaround.</Highlight>
         </div>

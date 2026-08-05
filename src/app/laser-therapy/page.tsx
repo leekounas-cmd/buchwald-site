@@ -46,8 +46,8 @@ export default function LaserTherapyPage() {
       <section className="py-10 sm:py-16 bg-white">
         <div className="mx-auto max-w-6xl px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center">
-            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Advanced Treatment</p>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-[1.1] mb-8">
+            <p className="text-primary-dark text-xs font-bold uppercase tracking-[0.22em] mb-3">Advanced Treatment</p>
+            <h1 className="font-archivo text-4xl sm:text-5xl text-gray-900 leading-[1.1] mb-8">
               Advanced Laser Therapy
             </h1>
           </motion.div>
@@ -73,7 +73,7 @@ export default function LaserTherapyPage() {
 
           <Highlight>Most laser procedures require little to no anesthesia — and patients return to normal activities the same day.</Highlight>
 
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-10 mb-4">Why Patients Prefer Laser</h2>
+          <h2 className="font-archivo text-2xl sm:text-3xl text-gray-900 mt-10 mb-4">Why Patients Prefer Laser</h2>
           <Checklist items={[
             "Minimally invasive — no drills, no buzz",
             "Less discomfort — many procedures need little to no anesthesia",
@@ -87,7 +87,7 @@ export default function LaserTherapyPage() {
       {/* What We Treat */}
       <section className="py-12 sm:py-16 bg-white">
         <div className="mx-auto max-w-3xl px-4">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-4">What We Treat with Laser</h2>
+          <h2 className="font-archivo text-2xl sm:text-3xl text-gray-900 mb-4">What We Treat with Laser</h2>
           <NumberedList items={[
             { title: "Gum Disease Treatment", desc: "Laser targets and removes infected tissue while promoting regeneration of healthy gums — without cutting or sutures." },
             { title: "Cold Sore Treatment", desc: "Reduces healing time for cold sores and provides immediate relief from discomfort." },
@@ -101,7 +101,7 @@ export default function LaserTherapyPage() {
       <section className="py-12 sm:py-16 bg-gray-50">
         <div className="mx-auto max-w-2xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Common Questions</h2>
+            <h2 className="font-archivo text-3xl sm:text-4xl text-gray-900">Common Questions</h2>
           </motion.div>
           <div className="bg-white rounded-xl p-6">
             {faqs.map((faq) => <FAQItem key={faq.q} q={faq.q} a={faq.a} />)}

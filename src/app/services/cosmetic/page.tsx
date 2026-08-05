@@ -48,8 +48,8 @@ export default function CosmeticPage() {
       <section className="py-10 sm:py-16 bg-white">
         <div className="mx-auto max-w-6xl px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center">
-            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Smile Transformations</p>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-[1.1] mb-8">Cosmetic Dentistry</h1>
+            <p className="text-primary-dark text-xs font-bold uppercase tracking-[0.22em] mb-3">Smile Transformations</p>
+            <h1 className="font-archivo text-4xl sm:text-5xl text-gray-900 leading-[1.1] mb-8">Cosmetic Dentistry</h1>
           </motion.div>
           <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.1 }} className="mb-10">
             <Image src="/images/stock/cosmetic.jpg" alt="Cosmetic dentistry smile makeover at Buchwald Family Dentistry in Richardson, TX" width={1200} height={600} className="rounded-2xl w-full object-cover aspect-video" priority />
@@ -79,7 +79,7 @@ export default function CosmeticPage() {
       <section className="py-12 sm:py-16 bg-white">
         <div className="mx-auto max-w-3xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">What We Offer</h2>
+            <h2 className="font-archivo text-3xl sm:text-4xl text-gray-900">What We Offer</h2>
           </motion.div>
           <Checklist items={[
             "Porcelain Veneers — custom shells for a flawless, natural look. Fix chips, gaps, and discoloration in two visits",
@@ -96,7 +96,7 @@ export default function CosmeticPage() {
       <section className="py-12 sm:py-16 bg-gray-50">
         <div className="mx-auto max-w-3xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">How Do They Compare?</h2>
+            <h2 className="font-archivo text-3xl sm:text-4xl text-gray-900">How Do They Compare?</h2>
             <p className="text-gray-400 text-sm mt-2">Picking the right treatment can feel overwhelming. Here&apos;s a quick breakdown.</p>
           </motion.div>
 
@@ -140,7 +140,7 @@ export default function CosmeticPage() {
       <section className="py-12 sm:py-16 bg-white">
         <div className="mx-auto max-w-2xl px-4">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Common Questions</h2>
+            <h2 className="font-archivo text-3xl sm:text-4xl text-gray-900">Common Questions</h2>
           </motion.div>
           <div className="bg-gray-50 rounded-xl p-6">
             {faqs.map((faq) => <FAQItem key={faq.q} q={faq.q} a={faq.a} />)}

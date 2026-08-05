@@ -13,7 +13,7 @@ export function BusinessSchema() {
     telephone: "+19726443280",
     email: "Receptionist245@outlook.com",
     description:
-      "Top-rated family dentist in Richardson, TX. Cleanings, Invisalign, implants, whitening, cosmetic and restorative dentistry. 4.9 stars, 433+ Google reviews.",
+      "Top-rated family dentist in Richardson, TX. Cleanings, Invisalign, implants, whitening, cosmetic and restorative dentistry. 4.9 stars, 441 Google reviews.",
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
@@ -25,8 +25,8 @@ export function BusinessSchema() {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 32.9601,
-      longitude: -96.7677,
+      latitude: 32.9556215,
+      longitude: -96.7685791,
     },
     openingHoursSpecification: [
       {
@@ -39,7 +39,7 @@ export function BusinessSchema() {
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.9",
-      reviewCount: "433",
+      reviewCount: "441",
       bestRating: "5",
     },
     sameAs: [

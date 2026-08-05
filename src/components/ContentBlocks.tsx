@@ -1,10 +1,8 @@
-"use client";
-
 export function Stat({ value, label }: { value: string; label: string }) {
-  const size = value.length > 10 ? "text-base sm:text-lg" : value.length > 6 ? "text-xl sm:text-2xl" : "text-2xl sm:text-3xl";
+  const size = value.length > 10 ? "text-lg sm:text-xl" : value.length > 6 ? "text-2xl sm:text-3xl" : "text-3xl sm:text-4xl";
   return (
-    <div className="bg-primary/5 rounded-xl p-4 sm:p-5 text-center flex flex-col justify-center min-h-[84px] sm:min-h-[104px]">
-      <p className={`${size} font-extrabold text-primary break-words leading-tight`}>{value}</p>
+    <div className="border-t border-[#0C1820]/15 py-4 pr-6">
+      <p className={`${size} font-archivo text-primary break-words leading-tight`}>{value}</p>
       <p className="text-gray-500 text-[11px] sm:text-xs font-medium mt-1 leading-snug">{label}</p>
     </div>
   );
@@ -31,8 +29,8 @@ export function StatRow({ stats }: { stats: { value: string; label: string }[] }
 
 export function Highlight({ children }: { children: React.ReactNode }) {
   return (
-    <div className="bg-gray-50 border-l-4 border-primary rounded-r-xl p-4 my-5">
-      <p className="text-gray-700 text-sm font-semibold leading-relaxed">{children}</p>
+    <div className="bg-[#F2F7F8] border-l-4 border-primary rounded-r-2xl px-5 py-4 my-6">
+      <p className="text-gray-700 text-[15px] font-semibold leading-relaxed">{children}</p>
     </div>
   );
 }
@@ -57,8 +55,8 @@ export function Checklist({ items }: { items: string[] }) {
 export function Versus({ left, right, leftLabel, rightLabel }: { left: string[]; right: string[]; leftLabel: string; rightLabel: string }) {
   return (
     <div className="grid grid-cols-2 gap-3 my-5">
-      <div className="bg-primary/5 rounded-xl p-4">
-        <p className="text-primary text-xs font-bold uppercase tracking-wider mb-3">{leftLabel}</p>
+      <div className="bg-[#F2F7F8] rounded-2xl p-5">
+        <p className="text-primary text-xs font-bold uppercase tracking-[0.22em] mb-3">{leftLabel}</p>
         <ul className="space-y-2">
           {left.map((item) => (
             <li key={item} className="text-gray-600 text-sm flex items-start gap-2">
@@ -67,8 +65,8 @@ export function Versus({ left, right, leftLabel, rightLabel }: { left: string[];
           ))}
         </ul>
       </div>
-      <div className="bg-gray-50 rounded-xl p-4">
-        <p className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-3">{rightLabel}</p>
+      <div className="bg-white ring-1 ring-[#0C1820]/10 rounded-2xl p-5">
+        <p className="text-gray-400 text-xs font-bold uppercase tracking-[0.22em] mb-3">{rightLabel}</p>
         <ul className="space-y-2">
           {right.map((item) => (
             <li key={item} className="text-gray-500 text-sm flex items-start gap-2">
@@ -86,7 +84,7 @@ export function NumberedList({ items }: { items: { title: string; desc: string }
     <div className="space-y-4 my-4">
       {items.map((item, i) => (
         <div key={item.title} className="flex gap-4 items-start">
-          <span className="text-primary text-2xl font-extrabold flex-shrink-0">
+          <span className="font-archivo text-2xl text-primary flex-shrink-0">
             {String(i + 1).padStart(2, "0")}
           </span>
           <div>
@@ -101,7 +99,7 @@ export function NumberedList({ items }: { items: { title: string; desc: string }
 
 export function CompareCard({ title, items }: { title: string; items: { label: string; a: string; b: string; aLabel?: string; bLabel?: string }[] }) {
   return (
-    <div className="bg-gray-50 rounded-xl p-5 my-5">
+    <div className="bg-[#F2F7F8] rounded-2xl p-6 my-6">
       <p className="font-bold text-gray-900 text-sm mb-4">{title}</p>
       <div className="space-y-3">
         {items.map((item) => (

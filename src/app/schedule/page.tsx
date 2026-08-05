@@ -52,7 +52,7 @@ export default function SchedulePage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">You&apos;re All Set</h1>
+            <h1 className="font-archivo text-3xl sm:text-4xl text-gray-900 mb-4">You&apos;re All Set</h1>
             <p className="text-gray-500 text-lg leading-relaxed mb-2">
               We&apos;ll send you a text to confirm your appointment.
             </p>
@@ -69,8 +69,8 @@ export default function SchedulePage() {
     <section className="py-10 sm:py-20 bg-white">
       <div className="mx-auto max-w-xl px-4">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center mb-8">
-          <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">April Appointments</p>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3">Time to Get on the Schedule</h1>
+          <p className="text-primary-dark text-xs font-bold uppercase tracking-[0.22em] mb-3">April Appointments</p>
+          <h1 className="font-archivo text-3xl sm:text-4xl text-gray-900 mb-3">Time to Get on the Schedule</h1>
           <p className="text-gray-500 text-base max-w-md mx-auto">
             April is filling up fast. Pick what works for you and we&apos;ll get you locked in.
           </p>
@@ -167,7 +167,7 @@ export default function SchedulePage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full rounded-lg bg-primary px-7 py-3.5 text-sm font-bold text-white hover:bg-primary-dark transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full rounded-full bg-primary px-7 py-3.5 text-sm font-bold text-white hover:bg-primary-dark transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? "Sending..." : "Lock In My Spot"}
           </button>

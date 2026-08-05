@@ -190,7 +190,7 @@ export default function ReschedulePage() {
             <span className="text-2xl">⭐⭐⭐⭐⭐</span>
           </div>
           <p className="mb-4 text-xl font-medium text-slate-900 md:text-2xl">
-            4.9 stars. 433+ Google reviews. The same team you remember.
+            4.9 stars. 441 Google reviews. The same team you remember.
           </p>
           <p className="text-slate-600">
             Dr. Buchwald, Melisa, Cathy, and Lee are all still here. Same

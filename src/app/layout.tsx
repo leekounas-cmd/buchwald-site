@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://buchwaldfamilydentistry.com"),
   title: "Buchwald Family Dentistry | Dentist in Richardson, TX",
   description:
-    "Family dentist in Richardson, TX. Most PPO insurance covers your new patient cleaning, exam, and X-rays at 100%. 4.9 stars, 433+ reviews. Same four-person team every visit. Call (972) 644-3280.",
+    "Family dentist in Richardson, TX. Most PPO insurance covers your new patient cleaning, exam, and X-rays at 100%. 4.9 stars, 441 reviews. Same four-person team every visit. Call (972) 644-3280.",
   alternates: {
     canonical: "/",
   },
