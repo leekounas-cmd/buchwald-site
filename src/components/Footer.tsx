@@ -24,18 +24,18 @@ const serviceLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-gray-900 text-white pb-24 lg:pb-0">
+    <footer className="bg-[#0C1820] text-white pb-24 lg:pb-0 border-t border-white/10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <Image
-              src="/images/logo-white.png"
+              src="/images/logo-white-trim.png"
               alt="Buchwald Family Dentistry"
-              width={160}
-              height={40}
+              width={475}
+              height={117}
               className="h-9 w-auto mb-5"
             />
-            <p className="text-gray-400 text-sm leading-relaxed mb-6">
+            <p className="text-[#8FA9B5] text-sm leading-relaxed mb-6">
               Modern care. Comfortable visits.<br />
               Richardson, TX.
             </p>
@@ -44,7 +44,7 @@ export function Footer() {
                 href="https://www.instagram.com/buchwaldfamilydentistry"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-9 w-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all"
+                className="h-9 w-9 rounded-full bg-white/5 flex items-center justify-center text-[#8FA9B5] hover:bg-primary hover:text-white transition-all"
                 aria-label="Instagram"
               >
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
@@ -55,7 +55,7 @@ export function Footer() {
                 href="https://facebook.com/MaxBuchwaldFamilyDentist"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-9 w-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all"
+                className="h-9 w-9 rounded-full bg-white/5 flex items-center justify-center text-[#8FA9B5] hover:bg-primary hover:text-white transition-all"
                 aria-label="Facebook"
               >
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
@@ -66,7 +66,7 @@ export function Footer() {
                 href="https://www.youtube.com/@BuchwaldFamilyDentistry"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-9 w-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all"
+                className="h-9 w-9 rounded-full bg-white/5 flex items-center justify-center text-[#8FA9B5] hover:bg-primary hover:text-white transition-all"
                 aria-label="YouTube"
               >
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
@@ -77,13 +77,13 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-4">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.22em] text-[#8FA9B5] mb-4">
               Pages
             </h3>
             <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-gray-400 text-sm hover:text-white transition-colors">
+                  <Link href={link.href} className="text-[#8FA9B5] text-sm hover:text-white transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -92,13 +92,13 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-4">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.22em] text-[#8FA9B5] mb-4">
               Services
             </h3>
             <ul className="space-y-2.5">
               {serviceLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-gray-400 text-sm hover:text-white transition-colors">
+                  <Link href={link.href} className="text-[#8FA9B5] text-sm hover:text-white transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -107,15 +107,15 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-4">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.22em] text-[#8FA9B5] mb-4">
               Contact
             </h3>
-            <div className="space-y-3 text-sm text-gray-400">
+            <div className="space-y-3 text-sm text-[#8FA9B5]">
               <p>300 N Coit Rd #245<br />Richardson, TX 75080</p>
               <a href="tel:972-644-3280" className="block text-white font-semibold hover:text-primary transition-colors">
                 (972) 644-3280
               </a>
-              <TextUsCTA variant="inline" className="text-gray-400 hover:text-white" />
+              <TextUsCTA variant="inline" className="text-[#8FA9B5] hover:text-white" />
               <p>Mon – Thu: 7am – 3pm<br />Fri – Sun: Closed</p>
             </div>
           </div>
@@ -127,9 +127,9 @@ export function Footer() {
         <GoogleMapEmbed height="250" className="opacity-80 hover:opacity-100 transition-opacity" />
       </div>
 
-      <div className="border-t border-white/5">
+      <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-5">
-          <p className="text-center text-xs text-gray-500">
+          <p className="text-center text-xs text-white/30">
             &copy; {new Date().getFullYear()} Buchwald Family Dentistry &amp; Orthodontics. All rights reserved.
           </p>
         </div>

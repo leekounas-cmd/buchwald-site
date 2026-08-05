@@ -1,56 +1,78 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "motion/react";
-import { ReviewsCarousel } from "@/components/ReviewsCarousel";
-import { CTABanner } from "@/components/CTABanner";
-import { UrgencyBadge } from "@/components/UrgencyBadge";
-import { QuickBookCTA } from "@/components/QuickBookModal";
 
 const BOOKING_URL = "https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE";
+const PHONE = "(972) 644-3280";
+const PHONE_HREF = "tel:972-644-3280";
+const REVIEWS_URL = "https://share.google/9gal12WjpTrHj1b4V";
+
+const niceties = [
+  "Blankets and pillows",
+  "TVs at every chair",
+  "Zero lectures",
+  "Same-day visits",
+  "Stickers for the brave",
+  "Headphones on request",
+];
+
+const promises = [
+  {
+    n: "01",
+    title: "Zero judgment",
+    body: "Two years away or twenty, nobody here will ask why. We start where you are and figure out the rest together.",
+  },
+  {
+    n: "02",
+    title: "The price before the chair",
+    body: "Your cost in writing before any treatment starts. Lee runs your insurance and walks you through every line.",
+  },
+  {
+    n: "03",
+    title: "Comfort first",
+    body: "Raise a hand and everything pauses. You set the pace, we keep the blankets warm.",
+  },
+];
+
+const ledger = [
+  {
+    title: "Insured? Your first visit",
+    price: "usually $0",
+    body: "Most PPO plans cover your new patient cleaning, exam, and X-rays at 100%. We verify your exact benefits before you book.",
+    href: "/insurance",
+    link: "See accepted plans",
+  },
+  {
+    title: "Essential Care Plan",
+    price: "$400/yr",
+    body: "No insurance needed. Two cleanings, two exams, full X-rays, 20% off everything else. $34 a month with Cherry.",
+    href: "/membership",
+    link: "See plan details",
+  },
+  {
+    title: "Signature Care Plan",
+    price: "$899/yr",
+    body: "Everything in Essential, plus imaging, fluoride, laser therapy, and jet whitening at every cleaning. $75 a month.",
+    href: "/membership",
+    link: "Compare plans",
+  },
+  {
+    title: "Bigger treatment",
+    price: "0% APR",
+    body: "Cherry splits any treatment into monthly payments. Apply in minutes, no credit score impact.",
+    href: "/payment-plans",
+    link: "Check payment options",
+  },
+];
 
 const services = [
-  {
-    title: "Cleaning & Exam",
-    description: "Routine cleanings, X-rays, and comprehensive exams to keep your smile healthy.",
-    href: "/services/cleaning",
-  },
-  {
-    title: "General Dentistry",
-    description: "Fillings, crowns, root canals, extractions, and everyday dental care.",
-    href: "/services/general",
-  },
-  {
-    title: "Cosmetic Dentistry",
-    description: "Veneers, bonding, and smile makeovers that transform the way you look.",
-    href: "/services/cosmetic",
-  },
-  {
-    title: "Teeth Whitening",
-    description: "In-office and take-home options for a brighter, more confident smile.",
-    href: "/teeth-whitening",
-  },
-  {
-    title: "Invisalign",
-    description: "Clear aligners that straighten your teeth without brackets or wires.",
-    href: "/invisalign",
-  },
-  {
-    title: "Restorative",
-    description: "Implants, bridges, dentures. We rebuild smiles that look and feel natural.",
-    href: "/services/restorative",
-  },
-  {
-    title: "InnerView Imaging",
-    description: "High-definition imaging so you can see exactly what we see.",
-    href: "/innerview",
-  },
-  {
-    title: "Laser Therapy",
-    description: "Gentler procedures, less discomfort, and faster recovery with advanced lasers.",
-    href: "/laser-therapy",
-  },
+  { n: "01", title: "Cleaning & Exam", desc: "Cleanings, X-rays, and exams that run on time.", href: "/services/cleaning" },
+  { n: "02", title: "General Dentistry", desc: "Fillings, crowns, root canals, the everyday work.", href: "/services/general" },
+  { n: "03", title: "Cosmetic Dentistry", desc: "Veneers and makeovers that still look like you.", href: "/services/cosmetic" },
+  { n: "04", title: "Teeth Whitening", desc: "In-office or take-home, results in one visit.", href: "/teeth-whitening" },
+  { n: "05", title: "Invisalign", desc: "Clear aligners from $115 a month.", href: "/invisalign" },
+  { n: "06", title: "Restorative", desc: "Implants, bridges, and dentures that feel right.", href: "/services/restorative" },
+  { n: "07", title: "InnerView Imaging", desc: "See exactly what we see, in plain English.", href: "/innerview" },
+  { n: "08", title: "Laser Therapy", desc: "Gentler gums, faster recovery.", href: "/laser-therapy" },
 ];
 
 const team = [
@@ -60,430 +82,327 @@ const team = [
   { name: "Lee Kounas", role: "Marketing & Insurance", image: "/images/lee.jpg" },
 ];
 
-const savingsRows = [
-  { treatment: "Comprehensive Exam", withPlan: "Included", typical: "$150", save: "$150" },
-  { treatment: "Full X-rays", withPlan: "Included", typical: "$150", save: "$150" },
-  { treatment: "Cleaning (each)", withPlan: "$150", typical: "$220", save: "$70" },
-];
+function Stars({ className = "h-3.5 w-3.5" }: { className?: string }) {
+  return (
+    <span className="inline-flex gap-0.5 text-gold" aria-label="5 stars">
+      {[...Array(5)].map((_, i) => (
+        <svg key={i} className={className} fill="currentColor" viewBox="0 0 20 20" aria-hidden>
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+      ))}
+    </span>
+  );
+}
+
+function Arrow() {
+  return (
+    <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+    </svg>
+  );
+}
 
 export default function HomePage() {
   return (
-    <>
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-white">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-0 items-start">
-
-            {/* Badge pill — left col, row 1 */}
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="order-1 lg:col-start-1 lg:row-start-1 inline-flex w-fit items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-bold text-primary uppercase tracking-wider mb-6"
-            >
-              Richardson&apos;s Most-Loved Family Dentist
-            </motion.span>
-
-            {/* Headline + subhead — left col, row 2 */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.05 }}
-              className="order-2 lg:col-start-1 lg:row-start-2 mb-6 lg:mb-8"
-            >
-              <h1 className="font-archivo text-5xl sm:text-6xl lg:text-7xl leading-[1.05] text-gray-900 mb-6">
-                Dental Care<br />
-                That Feels<br />
-                <span className="text-primary">Different.</span>
-              </h1>
-              <p className="text-gray-500 text-lg leading-relaxed max-w-md">
-                Richardson&apos;s most-trusted family dentist. We built a practice around making you feel at ease, not on edge.
-              </p>
-            </motion.div>
-
-            {/* Video card — desktop: right col spanning rows 1-5; mobile: order 3 (between subhead and CTAs) */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="order-3 lg:col-start-2 lg:row-start-1 lg:row-span-5 lg:self-center relative mb-8 lg:mb-0"
-            >
-              {/* Glow */}
-              <div className="absolute -inset-4 rounded-[2.5rem] bg-primary/20 blur-2xl" />
-
-              {/* Video card */}
-              <div className="relative rounded-[2rem] overflow-hidden shadow-2xl">
-                {/* Floating badge — top right */}
-                <div className="absolute top-4 right-4 z-10 rounded-full bg-primary text-white px-4 py-2 shadow-md">
-                  <p className="text-xs font-bold leading-tight text-center">Same-Day</p>
-                  <p className="text-xs leading-tight text-center opacity-90">Appointments</p>
-                </div>
-
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  poster="/images/office-1.jpg"
-                  className="w-full object-cover aspect-[4/3]"
-                >
-                  <source src="/video/hero.mp4" type="video/mp4" />
-                </video>
-              </div>
-
-              {/* Stat sub-cards */}
-              <div className="relative grid grid-cols-3 gap-3 mt-4">
-                {[
-                  { value: "433+", label: "5-Star Reviews" },
-                  { value: "4.9★", label: "Google Rating" },
-                  { value: "20+", label: "Yrs Experience" },
-                ].map((s) => (
-                  <div key={s.label} className="rounded-2xl bg-gray-50 border border-gray-100 px-3 py-3 text-center">
-                    <p className="text-lg font-extrabold text-gray-900">{s.value}</p>
-                    <p className="text-xs text-gray-400 mt-0.5">{s.label}</p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* CTAs — left col, row 3 */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.15 }}
-              className="order-4 lg:col-start-1 lg:row-start-3 mb-6"
-            >
-              <div className="flex flex-col sm:flex-row gap-3">
-                <QuickBookCTA className="rounded-full bg-gray-900 px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-gray-800 text-center cursor-pointer">
-                  Quick Book, We&apos;ll Call You
-                </QuickBookCTA>
-                <Link
-                  href="/new-patient"
-                  className="rounded-full bg-primary px-7 py-3.5 text-sm font-bold text-white transition-all hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/25 text-center"
-                >
-                  New Patient? Start Here
-                </Link>
-              </div>
-              <p className="text-xs text-gray-400 mt-3">
-                Prefer to call? <a href="tel:972-644-3280" className="font-semibold text-gray-700 hover:text-primary transition-colors">(972) 644-3280</a>
-              </p>
-            </motion.div>
-
-            {/* Stars — left col, row 4 */}
-            <motion.a
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              href="https://share.google/9gal12WjpTrHj1b4V"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="order-5 lg:col-start-1 lg:row-start-4 inline-flex w-fit items-center gap-3 hover:opacity-80 transition-opacity mb-5"
-            >
-              <div className="flex gap-0.5">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="h-4 w-4 text-gold" fill="currentColor" viewBox="0 0 20 20" aria-hidden>
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
-              <span className="text-sm text-gray-400">4.9 on Google · 433 reviews</span>
-            </motion.a>
-
-            {/* Urgency — left col, row 5 */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.25 }}
-              className="order-6 lg:col-start-1 lg:row-start-5"
-            >
-              <UrgencyBadge />
-            </motion.div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* Trust Strip */}
-      <section className="py-8 bg-gray-50">
-        <div className="mx-auto max-w-4xl px-4">
-          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
-            {[
-              // ADA: verified check in shield
-              { icon: "M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z", label: "ADA Member" },
-              // Invisalign: sparkle / tooth-align star
-              { icon: "M12 2l2.39 7.36H22l-6.19 4.5L18.2 21 12 16.5 5.8 21l2.39-7.14L2 9.36h7.61z", label: "Invisalign Provider" },
-              // Same-day: clock
-              { icon: "M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z", label: "Same-Day Appointments" },
-              // Cherry financing: credit card
-              { icon: "M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z", label: "Cherry Financing" },
-            ].map((item) => (
-              <div key={item.label} className="flex items-center gap-2 text-gray-400">
-                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d={item.icon} />
-                </svg>
-                <span className="text-sm font-semibold">{item.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="border-y border-gray-100 bg-white">
-        <div className="mx-auto max-w-5xl px-4 py-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {[
-              { value: "433+", label: "Google Reviews" },
-              { value: "4.9", label: "Google Rating" },
-              { value: "Most PPOs", label: "Cleaning Covered 100%" },
-              { value: "2,000+", label: "Gentle Cleanings by Melisa" },
-            ].map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.06 }}
-              >
-                <p className="text-2xl sm:text-3xl font-extrabold text-gray-900">{stat.value}</p>
-                <p className="text-gray-400 text-sm mt-0.5">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="py-14 sm:py-20 bg-gray-50">
-        <div className="mx-auto max-w-5xl px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">
-              Our Team
+    <div className="bg-white text-gray-900" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
+      {/* ===== Hero (text-only, forms-page vibe) ===== */}
+      <section className="bg-[#0C1820] text-white overflow-hidden">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 pt-8 pb-16 sm:pt-10 sm:pb-24">
+          <div className="max-w-3xl animate-[slideUp_0.7s_ease-out_both]">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary mb-6">
+              Richardson&apos;s family dentist since forever-ish
             </p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-12">
-              Same four people. Every visit.
+            <h1 className="font-archivo text-[clamp(2.6rem,6.2vw,4.8rem)] leading-[1.06] mb-9">
+              The dentist visit you might actually <span className="text-primary">look forward&nbsp;to.</span>
+            </h1>
+            <div className="mb-9 rounded-3xl overflow-hidden animate-[slideUp_0.7s_ease-out_0.15s_both]">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                poster="/images/office-1.jpg"
+                className="w-full object-cover aspect-video"
+                aria-label="A look inside the Buchwald Family Dentistry office"
+              >
+                <source src="/video/hero.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <p className="text-[#B9CBD4] text-lg leading-relaxed max-w-md mb-9">
+              Warm hellos, honest prices, and a blanket if you want one. Twenty plus years of taking care of Richardson, zero lectures given.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 mb-7">
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full bg-primary px-8 py-4 text-sm font-bold text-white text-center hover:bg-primary-dark transition-colors"
+              >
+                Book Online in 2 Minutes
+              </a>
+              <a
+                href={PHONE_HREF}
+                className="rounded-full border border-white/25 px-8 py-4 text-sm font-semibold text-white text-center hover:border-white/60 transition-colors"
+              >
+                Call {PHONE}
+              </a>
+            </div>
+            <a href={REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 hover:opacity-80 transition-opacity">
+              <Stars />
+              <span className="text-sm text-[#8FA9B5]">4.9 on Google · 441 reviews</span>
+            </a>
+          </div>
+
+          {/* Insurance banner chip */}
+          <Link
+            href="/new-patient"
+            className="group mt-14 flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-2xl bg-white/[0.06] border border-white/10 px-6 py-5 hover:border-primary/50 transition-colors animate-[slideUp_0.7s_ease-out_0.2s_both]"
+          >
+            <p className="text-sm sm:text-base text-white">
+              <span className="font-bold">New here?</span>{" "}
+              <span className="text-[#B9CBD4]">Most PPO insurance covers your first cleaning, exam, and X-rays at 100%.</span>
+            </p>
+            <span className="inline-flex items-center gap-2 text-sm font-bold text-primary">
+              Start here <Arrow />
+            </span>
+          </Link>
+        </div>
+      </section>
+
+      {/* ===== Niceties band ===== */}
+      <div className="bg-primary">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-4 flex flex-wrap justify-center gap-x-3 gap-y-1 text-sm font-bold text-white">
+          {niceties.map((n, i) => (
+            <span key={n} className="flex items-center gap-3">
+              {n}
+              {i < niceties.length - 1 && <span aria-hidden className="text-white/50">·</span>}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* ===== Promises (editorial rows) ===== */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-28">
+          <div className="max-w-2xl mb-14">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary-dark mb-4">
+              For the ones who&apos;ve been putting it off
+            </p>
+            <h2 className="font-archivo text-4xl sm:text-5xl leading-[1.05]">
+              Three promises, every single visit.
             </h2>
-          </motion.div>
-
-          <div className="flex flex-wrap justify-center gap-10 sm:gap-14">
-            {team.map((member, i) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.06 }}
-              >
-                <Link href="/meet-us" className="group block">
-                  <div className="h-20 w-20 sm:h-24 sm:w-24 rounded-full overflow-hidden mb-3 mx-auto ring-2 ring-gray-100 group-hover:ring-primary transition-all">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      width={96}
-                      height={96}
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-                  <p className="font-bold text-gray-900 text-sm">{member.name}</p>
-                  <p className="text-gray-400 text-xs">{member.role}</p>
-                </Link>
-              </motion.div>
-            ))}
           </div>
-        </div>
-      </section>
-
-      {/* OBJECTION #2: "This will be expensive" — Three Paths */}
-      <section className="py-14 sm:py-20 bg-white">
-        <div className="mx-auto max-w-5xl px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-10"
-          >
-            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">No Matter Your Situation</p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3">
-              We&apos;ve Made It Easy to Say Yes
-            </h2>
-            <p className="text-gray-500 text-base max-w-lg mx-auto">
-              Insurance, no insurance, or tight on budget. We have a path that works.
-            </p>
-          </motion.div>
-
-          <div className="grid gap-4 md:grid-cols-3">
-            {/* Insurance */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0 }}
-              className="bg-gray-50 rounded-2xl p-7 flex flex-col"
-            >
-              <p className="text-primary text-xs font-bold uppercase tracking-wider mb-2">Have Insurance</p>
-              <h3 className="text-xl font-extrabold text-gray-900 mb-3">We Handle the Headache</h3>
-              <p className="text-gray-500 text-sm leading-relaxed flex-1 mb-6">
-                Lee verifies your benefits, files all claims, and breaks down your out-of-pocket cost before anything is scheduled. You show up, we handle the rest.
-              </p>
-              <div className="flex flex-col gap-2">
-                <a href="tel:972-644-3280" className="rounded-lg bg-gray-900 px-5 py-2.5 text-sm font-bold text-white hover:bg-gray-800 transition-colors text-center">
-                  Call to Verify Benefits
-                </a>
-                <Link href="/insurance" className="rounded-lg bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 hover:bg-gray-100 transition-colors text-center">
-                  See Accepted Plans
-                </Link>
+          <div>
+            {promises.map((p) => (
+              <div key={p.n} className="grid sm:grid-cols-[110px_1fr] lg:grid-cols-[110px_320px_1fr] gap-x-10 gap-y-2 items-baseline border-t border-gray-200 py-9">
+                <span className="font-archivo text-3xl text-primary">{p.n}</span>
+                <h3 className="text-xl font-extrabold">{p.title}</h3>
+                <p className="text-gray-500 leading-relaxed max-w-xl">{p.body}</p>
               </div>
-            </motion.div>
-
-            {/* Membership */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.06 }}
-              className="bg-gray-50 rounded-2xl p-7 flex flex-col"
-            >
-              <p className="text-primary text-xs font-bold uppercase tracking-wider mb-2">No Insurance</p>
-              <h3 className="text-xl font-extrabold text-gray-900 mb-3">Membership Plans</h3>
-              <p className="text-gray-500 text-sm leading-relaxed flex-1 mb-6">
-                Skip the insurance hassle with our in-house discount plans. Two cleanings, two exams, X-rays, and 20% off everything else. Starting at $34/mo through Cherry.
-              </p>
-              <Link
-                href="/membership"
-                className="rounded-lg bg-gray-900 px-5 py-2.5 text-sm font-bold text-white hover:bg-gray-800 transition-colors text-center"
-              >
-                See Membership Plans
-              </Link>
-            </motion.div>
-
-            {/* Financing */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.12 }}
-              className="bg-gray-50 rounded-2xl p-7 flex flex-col"
-            >
-              <p className="text-primary text-xs font-bold uppercase tracking-wider mb-2">Need Flexibility</p>
-              <h3 className="text-xl font-extrabold text-gray-900 mb-3">0% APR Financing</h3>
-              <p className="text-gray-500 text-sm leading-relaxed flex-1 mb-6">
-                Break any treatment into monthly payments through Cherry. Apply in minutes, no impact on credit score, and 0% APR options available.
-              </p>
-              <Link
-                href="/payment-plans"
-                className="rounded-lg bg-gray-900 px-5 py-2.5 text-sm font-bold text-white hover:bg-gray-800 transition-colors text-center"
-              >
-                Check My Payment Options
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* OBJECTION #3: "Can I trust them?" */}
-      <ReviewsCarousel />
-
-      {/* Services */}
-      <section className="py-14 sm:py-18 bg-white">
-        <div className="mx-auto max-w-4xl px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-10"
-          >
-            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">
-              Our Services
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3">
-              Everything Your Smile Needs
-            </h2>
-            <p className="text-gray-500 text-base max-w-lg mx-auto">
-              From routine cleanings to full smile makeovers. All under one roof.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-wrap justify-center gap-2 mb-8"
-          >
-            {services.map((service) => (
-              <Link
-                key={service.title}
-                href={service.href}
-                className="rounded-full bg-gray-50 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-primary hover:text-white transition-all shadow-sm"
-              >
-                {service.title}
-              </Link>
             ))}
-          </motion.div>
-
-          <div className="text-center">
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-2 text-primary text-sm font-bold hover:gap-3 transition-all"
-            >
-              View All Services
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
           </div>
         </div>
       </section>
 
-      {/* Invisalign Promo */}
-      <section className="py-14 sm:py-18 bg-white">
-        <div className="mx-auto max-w-5xl px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-primary rounded-2xl p-8 sm:p-12 flex flex-col sm:flex-row items-center gap-8"
-          >
-            <div className="flex-1">
-              <p className="text-white/60 text-xs font-bold uppercase tracking-wider mb-2">
-                Invisalign Provider
+      {/* ===== Cost ledger ===== */}
+      <section className="bg-[#F2F7F8]">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-28">
+          <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-x-16 gap-y-12">
+            <div className="lg:sticky lg:top-10 self-start">
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary-dark mb-4">
+                No mystery invoices, ever
               </p>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-3">
-                Invisalign Starting at $115/mo
+              <h2 className="font-archivo text-4xl sm:text-5xl leading-[1.05] mb-6">
+                The money part, in plain English.
               </h2>
-              <p className="text-white/60 text-sm leading-relaxed">
-                Straighten your teeth with clear aligners. No brackets, no wires. 0% APR financing available.
+              <p className="text-gray-500 leading-relaxed mb-8 max-w-sm">
+                Lee runs your insurance, files the claims, and puts your out-of-pocket cost in writing before anything is scheduled.
+              </p>
+              <a
+                href={PHONE_HREF}
+                className="inline-flex rounded-full bg-[#0C1820] px-7 py-3.5 text-sm font-bold text-white hover:bg-[#1A2E3B] transition-colors"
+              >
+                Call to Verify My Benefits
+              </a>
+            </div>
+            <div>
+              {ledger.map((row) => (
+                <div key={row.title} className="border-t border-[#0C1820]/10 py-8 first:border-t-0 first:pt-0">
+                  <div className="flex items-baseline gap-2">
+                    <h3 className="text-lg sm:text-xl font-extrabold shrink-0">{row.title}</h3>
+                    <span aria-hidden className="flex-1 border-b-2 border-dotted border-[#0C1820]/20 -translate-y-1.5 mx-2" />
+                    <p className="font-archivo text-xl sm:text-2xl text-[#0C1820] shrink-0">{row.price}</p>
+                  </div>
+                  <p className="text-gray-500 text-sm leading-relaxed max-w-lg mt-2.5 mb-3">{row.body}</p>
+                  <Link href={row.href} className="group inline-flex items-center gap-2 text-sm font-bold text-primary-dark hover:text-[#0C1820] transition-colors">
+                    {row.link} <Arrow />
+                  </Link>
+                </div>
+              ))}
+              <p className="border-t border-[#0C1820]/10 pt-5 text-xs text-gray-400">
+                Coverage depends on your specific plan. We check your exact benefits before your visit, free.
               </p>
             </div>
-            <Link
-              href="/invisalign"
-              className="flex-shrink-0 rounded-lg bg-white px-7 py-3.5 text-sm font-bold text-primary transition-all hover:bg-gray-50 hover:shadow-lg"
-            >
-              Learn More
-            </Link>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      <CTABanner />
+      {/* ===== Services (numbered index, full width) ===== */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-28">
+          <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary-dark mb-4">
+            Everything under one roof
+          </p>
+          <h2 className="font-archivo text-4xl sm:text-5xl leading-[1.05] mb-12">
+            What we do here.
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-x-12">
+            {services.map((s) => (
+              <Link key={s.n} href={s.href} className="group flex gap-5 border-t border-gray-200 py-6">
+                <span className="font-archivo text-sm text-gray-300 pt-1 group-hover:text-primary transition-colors">{s.n}</span>
+                <span>
+                  <span className="flex items-center gap-2 text-base font-extrabold group-hover:text-primary-dark transition-colors">
+                    {s.title} <Arrow />
+                  </span>
+                  <span className="block text-sm text-gray-500 leading-relaxed mt-1">{s.desc}</span>
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "VideoObject",
-            name: "Buchwald Family Dentistry Office Tour",
-            description: "See inside Buchwald Family Dentistry & Orthodontics in Richardson, TX. Modern office, comfortable care.",
-            thumbnailUrl: "https://buchwaldfamilydentistry.com/images/office-1.jpg",
-            contentUrl: "https://buchwaldfamilydentistry.com/video/hero.mp4",
-            uploadDate: "2025-01-01",
-          }),
-        }}
-      />
-    </>
+      {/* ===== Experience band (real office video) ===== */}
+      <section className="bg-[#0C1820] text-white">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-28">
+          <div className="max-w-3xl">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary mb-4">
+              The visit itself
+            </p>
+            <h2 className="font-archivo text-4xl sm:text-5xl leading-[1.05] mb-6">
+              A visit you won&apos;t dread.
+            </h2>
+            <p className="text-[#B9CBD4] leading-relaxed mb-8 max-w-md">
+              Calm rooms, friendly faces, and a team that explains everything before anything happens. This isn&apos;t the dentist you grew up dreading.
+            </p>
+            <div className="flex flex-wrap gap-2.5 mb-10">
+              {niceties.map((n) => (
+                <span key={n} className="rounded-full border border-white/20 px-4 py-1.5 text-[13px] font-semibold text-white">
+                  {n}
+                </span>
+              ))}
+            </div>
+            <div className="border-t border-white/10 pt-7">
+              <p className="text-sm font-bold mb-5">Same four people, every visit.</p>
+              <div className="flex flex-wrap gap-x-8 gap-y-4">
+                {team.map((m) => (
+                  <Link key={m.name} href="/meet-us" className="group flex items-center gap-3">
+                    <span className="h-12 w-12 rounded-full overflow-hidden ring-1 ring-white/20 group-hover:ring-primary transition-all">
+                      <Image src={m.image} alt={m.name} width={48} height={48} className="h-full w-full object-cover" />
+                    </span>
+                    <span>
+                      <span className="block text-sm font-bold leading-tight">{m.name}</span>
+                      <span className="block text-xs text-[#8FA9B5]">{m.role}</span>
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Reviews wall ===== */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-28">
+          <div className="max-w-2xl mb-14">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary-dark mb-4">In their words</p>
+            <h2 className="font-archivo text-4xl sm:text-5xl leading-[1.05]">
+              4.9 stars. 441 reviews. Zero coaching.
+            </h2>
+          </div>
+          <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-x-14 gap-y-10">
+            <figure className="border-t-2 border-[#0C1820] pt-8">
+              <Stars className="h-4 w-4" />
+              <blockquote className="font-archivo text-2xl sm:text-[2rem] leading-snug mt-5 mb-6">
+                &ldquo;No pressure, no upselling. Just honest recommendations. That&apos;s rare and I appreciate it.&rdquo;
+              </blockquote>
+              <figcaption className="text-sm text-gray-500">
+                <span className="font-bold text-gray-900">Mark P.</span> · Richardson · Google review
+              </figcaption>
+            </figure>
+            <div className="flex flex-col gap-10">
+              <figure className="border-t border-gray-200 pt-7">
+                <Stars />
+                <blockquote className="text-base leading-relaxed text-gray-700 mt-4 mb-4">
+                  &ldquo;My daughter loves going to the dentist because this office makes it such a fun experience.&rdquo;
+                </blockquote>
+                <figcaption className="text-sm text-gray-500">
+                  <span className="font-bold text-gray-900">Amanda L.</span> · Garland
+                </figcaption>
+              </figure>
+              <figure className="border-t border-gray-200 pt-7">
+                <Stars />
+                <blockquote className="text-base leading-relaxed text-gray-700 mt-4 mb-4">
+                  &ldquo;Went in for an emergency toothache and they got me in the same day. Pain was gone immediately.&rdquo;
+                </blockquote>
+                <figcaption className="text-sm text-gray-500">
+                  <span className="font-bold text-gray-900">Carlos G.</span> · Richardson
+                </figcaption>
+              </figure>
+              <a
+                href={REVIEWS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 text-sm font-bold text-primary-dark hover:text-[#0C1820] transition-colors"
+              >
+                Read all 441 reviews on Google <Arrow />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Invisalign band ===== */}
+      <Link href="/invisalign" className="group block bg-primary text-white">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-8 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <p className="font-archivo text-xl sm:text-2xl">Invisalign from $115/mo, 0% APR.</p>
+          <span className="inline-flex items-center gap-2 text-sm font-bold">
+            Straighten things out <Arrow />
+          </span>
+        </div>
+      </Link>
+
+      {/* ===== Final CTA ===== */}
+      <section className="bg-[#0C1820] text-white">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-28 text-center">
+          <h2 className="font-archivo text-[clamp(2.4rem,5.6vw,4.2rem)] leading-[1.04] mb-6">
+            Come say hi,<br className="sm:hidden" /> Richardson.
+          </h2>
+          <p className="text-[#B9CBD4] text-lg max-w-md mx-auto mb-10">
+            Book online in two minutes, or call and Cathy will find a time that works.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-primary px-9 py-4 text-sm font-bold text-white hover:bg-primary-dark transition-colors"
+            >
+              Book My Visit
+            </a>
+            <a
+              href={PHONE_HREF}
+              className="rounded-full border border-white/25 px-9 py-4 text-sm font-semibold text-white hover:border-white/60 transition-colors"
+            >
+              Call {PHONE}
+            </a>
+          </div>
+          <p className="text-sm text-[#8FA9B5]">
+            300 N Coit Rd #245, Richardson, TX · Mon to Thu, 8am to 5pm
+          </p>
+        </div>
+      </section>
+    </div>
   );
 }

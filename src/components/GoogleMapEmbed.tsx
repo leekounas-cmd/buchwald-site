@@ -8,7 +8,7 @@ export function GoogleMapEmbed({
   return (
     <div className={`w-full overflow-hidden rounded-xl ${className}`}>
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3346.8!2d-96.7677!3d32.9601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c1f5b35f8ccc1%3A0x3b9e2b8e1c8e8f0!2sBuchwald%20Family%20Dentistry%20%26%20Orthodontics!5e0!3m2!1sen!2sus!4v1700000000000"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3346.9!2d-96.7685791!3d32.9556215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c21c71e9ec75d%3A0x4aa114e6a05f753c!2sBuchwald%20Family%20Dentistry%20%26%20Orthodontics!5e0!3m2!1sen!2sus!4v1722700000000"
         width="100%"
         height={height}
         style={{ border: 0 }}

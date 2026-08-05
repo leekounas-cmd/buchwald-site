@@ -6,6 +6,8 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const BOOKING_URL = "https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE";
+const PHONE = "(972) 644-3280";
+const PHONE_HREF = "tel:972-644-3280";
 
 const serviceLinks = [
   { href: "/services/cleaning", label: "Cleaning & Exam" },
@@ -18,11 +20,6 @@ const serviceLinks = [
   { href: "/innerview", label: "InnerView" },
   { href: "/laser-therapy", label: "Laser Therapy" },
   { href: "/emergency", label: "Emergency Dentistry" },
-];
-
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/meet-us", label: "Meet Us" },
 ];
 
 export function Navbar() {
@@ -56,284 +53,218 @@ export function Navbar() {
 
   const isServicePage = serviceLinks.some((l) => pathname === l.href) || pathname === "/services" || pathname === "/new-patient";
 
-  return (
-    <nav
-      className={`sticky top-0 z-50 transition-all duration-200 ${
-        scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-200"
-          : "bg-white border-b border-gray-100"
-      }`}
-    >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="flex-shrink-0">
-            <Image
-              src="/images/logo-color.png"
-              alt="Buchwald Family Dentistry"
-              width={160}
-              height={40}
-              className="h-16 lg:h-9 w-auto"
-              priority
-            />
-          </Link>
+  const desktopLink = (active: boolean, danger = false) =>
+    `px-3 py-2 rounded-full text-[13px] font-medium transition-colors ${
+      active
+        ? "text-white bg-white/10"
+        : danger
+          ? "text-red-400 hover:text-red-300 hover:bg-white/5"
+          : "text-[#B9CBD4] hover:text-white hover:bg-white/5"
+    }`;
 
-          {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-1">
-            <Link
-              href="/"
-              className={`px-3 py-2 rounded-lg text-[13px] font-medium transition-colors ${
-                pathname === "/"
-                  ? "text-primary bg-primary-light"
-                  : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
-              }`}
-            >
+  const mobileLink = (active: boolean, danger = false) =>
+    `block rounded-xl px-4 py-3 text-sm font-semibold transition-colors ${
+      active
+        ? "bg-white/10 text-white"
+        : danger
+          ? "text-red-400 hover:bg-white/5"
+          : "text-[#B9CBD4] hover:bg-white/5 hover:text-white"
+    }`;
+
+  return (
+    <>
+      {/* Utility line */}
+      <div className="bg-[#0C1820] border-b border-white/10">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-2 flex items-center justify-between text-xs text-[#8FA9B5]">
+          <p className="truncate">300 N Coit Rd #245, Richardson, TX</p>
+          <a href={PHONE_HREF} className="font-semibold text-white hover:text-primary transition-colors shrink-0">
+            {PHONE}
+          </a>
+        </div>
+      </div>
+
+      <nav
+        className={`sticky top-0 z-50 bg-[#0C1820] transition-shadow duration-200 ${
+          scrolled ? "shadow-lg shadow-black/20" : ""
+        }`}
+      >
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="flex h-16 items-center justify-between gap-4">
+            <Link href="/" className="flex-shrink-0">
+              <Image
+                src="/images/logo-white-trim.png"
+                alt="Buchwald Family Dentistry"
+                width={475}
+                height={117}
+                className="h-8 w-auto"
+                priority
+              />
+            </Link>
+
+            {/* Desktop Nav */}
+            <div className="hidden lg:flex items-center gap-1">
+              <Link href="/" className={desktopLink(pathname === "/")}>
+                Home
+              </Link>
+
+              {/* Services Dropdown */}
+              <div
+                ref={dropdownRef}
+                className="relative"
+                onMouseEnter={() => setServicesOpen(true)}
+                onMouseLeave={() => setServicesOpen(false)}
+              >
+                <Link
+                  href="/services"
+                  className={`${desktopLink(isServicePage)} inline-flex items-center gap-1`}
+                >
+                  Services
+                  <svg className={`h-3 w-3 transition-transform ${servicesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </Link>
+
+                {servicesOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-60 rounded-2xl bg-[#132430] border border-white/10 py-2 shadow-xl z-50">
+                    {serviceLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className={`block px-4 py-2.5 text-sm transition-colors ${
+                          pathname === link.href
+                            ? "text-white bg-white/5 font-semibold"
+                            : "text-[#B9CBD4] hover:text-white hover:bg-white/5"
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <Link href="/new-patient" className={desktopLink(pathname === "/new-patient")}>
+                New Patients
+              </Link>
+              <Link href="/meet-us" className={desktopLink(pathname === "/meet-us")}>
+                Meet Us
+              </Link>
+              <Link href="/emergency" className={desktopLink(pathname === "/emergency", true)}>
+                Emergency
+              </Link>
+              <Link href="/blog" className={desktopLink(pathname.startsWith("/blog"))}>
+                Blog
+              </Link>
+              <Link href="/schedule" className={desktopLink(pathname === "/schedule")}>
+                Schedule
+              </Link>
+
+              <a
+                href={BOOKING_URL}
+                className="ml-3 rounded-full bg-primary px-6 py-2.5 text-[13px] font-bold text-white transition-colors hover:bg-primary-dark"
+              >
+                Book a Visit
+              </a>
+            </div>
+
+            {/* Mobile: CTA + hamburger */}
+            <div className="flex lg:hidden items-center gap-2">
+              <a
+                href={BOOKING_URL}
+                className="rounded-full bg-primary px-4 py-2 text-[13px] font-bold text-white hover:bg-primary-dark transition-colors"
+              >
+                Book a Visit
+              </a>
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                className="text-white p-2"
+                aria-label="Toggle menu"
+              >
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  {menuOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7h16M4 12h16M4 17h16" />
+                  )}
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <div
+          className={`lg:hidden overflow-hidden transition-all duration-200 bg-[#0C1820] ${
+            menuOpen ? "max-h-[640px] border-t border-white/10" : "max-h-0"
+          }`}
+        >
+          <div className="px-4 pb-6 pt-2 space-y-0.5">
+            <Link href="/" className={mobileLink(pathname === "/")}>
               Home
             </Link>
 
-            {/* Services Dropdown */}
-            <div
-              ref={dropdownRef}
-              className="relative"
-              onMouseEnter={() => setServicesOpen(true)}
-              onMouseLeave={() => setServicesOpen(false)}
-            >
-              <Link
-                href="/services"
-                className={`px-3 py-2 rounded-lg text-[13px] font-medium transition-colors inline-flex items-center gap-1 ${
-                  isServicePage
-                    ? "text-primary bg-primary-light"
-                    : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
-                }`}
-              >
-                Services
-                <svg className={`h-3 w-3 transition-transform ${servicesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-              </Link>
-
-              {servicesOpen && (
-                <div className="absolute top-full left-0 mt-1 w-56 bg-white rounded-xl shadow-lg border border-gray-100 py-2 z-50">
-                  {serviceLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className={`block px-4 py-2.5 text-sm transition-colors ${
-                        pathname === link.href
-                          ? "text-primary bg-primary-light font-medium"
-                          : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
-                      }`}
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            <Link
-              href="/new-patient"
-              className={`px-3 py-2 rounded-lg text-[13px] font-medium transition-colors ${
-                pathname === "/new-patient"
-                  ? "text-primary bg-primary-light"
-                  : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
+            {/* Mobile Services Accordion */}
+            <button
+              onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+              className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold transition-colors ${
+                isServicePage ? "bg-white/10 text-white" : "text-[#B9CBD4] hover:bg-white/5 hover:text-white"
               }`}
             >
+              Services
+              <svg className={`h-4 w-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            {mobileServicesOpen && (
+              <div className="pl-4 space-y-0.5">
+                <Link
+                  href="/services"
+                  className={`block rounded-xl px-4 py-2.5 text-sm transition-colors ${
+                    pathname === "/services" ? "text-white font-semibold" : "text-[#8FA9B5] hover:text-white"
+                  }`}
+                >
+                  All Services
+                </Link>
+                {serviceLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`block rounded-xl px-4 py-2.5 text-sm transition-colors ${
+                      pathname === link.href ? "text-white font-semibold" : "text-[#8FA9B5] hover:text-white"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+
+            <Link href="/new-patient" className={mobileLink(pathname === "/new-patient")}>
               New Patients
             </Link>
-
-            <Link
-              href="/meet-us"
-              className={`px-3 py-2 rounded-lg text-[13px] font-medium transition-colors ${
-                pathname === "/meet-us"
-                  ? "text-primary bg-primary-light"
-                  : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
-              }`}
-            >
+            <Link href="/meet-us" className={mobileLink(pathname === "/meet-us")}>
               Meet Us
             </Link>
-
-            <Link
-              href="/emergency"
-              className={`px-3 py-2 rounded-lg text-[13px] font-medium transition-colors ${
-                pathname === "/emergency"
-                  ? "text-primary bg-primary-light"
-                  : "text-red-500 hover:text-red-600 hover:bg-red-50"
-              }`}
-            >
+            <Link href="/emergency" className={mobileLink(pathname === "/emergency", true)}>
               Emergency
             </Link>
-
-            <Link
-              href="/blog"
-              className={`px-3 py-2 rounded-lg text-[13px] font-medium transition-colors ${
-                pathname.startsWith("/blog")
-                  ? "text-primary bg-primary-light"
-                  : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
-              }`}
-            >
+            <Link href="/blog" className={mobileLink(pathname.startsWith("/blog"))}>
               Blog
             </Link>
-
-            <Link
-              href="/schedule"
-              className={`px-3 py-2 rounded-lg text-[13px] font-medium transition-colors ${
-                pathname === "/schedule"
-                  ? "text-primary bg-primary-light"
-                  : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
-              }`}
-            >
+            <Link href="/schedule" className={mobileLink(pathname === "/schedule")}>
               Schedule
             </Link>
 
             <a
               href={BOOKING_URL}
-              className="ml-3 rounded-lg bg-primary px-5 py-2.5 text-[13px] font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-md hover:shadow-primary/20"
+              className="mt-3 block rounded-full bg-primary px-5 py-3.5 text-center text-sm font-bold text-white hover:bg-primary-dark"
             >
-              Schedule My Visit
+              Book a Visit
             </a>
           </div>
-
-          {/* Mobile Hamburger */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="lg:hidden text-gray-700 p-2"
-            aria-label="Toggle menu"
-          >
-            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              {menuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
         </div>
-      </div>
-
-      {/* Mobile Menu */}
-      <div
-        className={`lg:hidden overflow-hidden transition-all duration-200 bg-white ${
-          menuOpen ? "max-h-[600px] border-t border-gray-100" : "max-h-0"
-        }`}
-      >
-        <div className="px-4 pb-6 pt-2 space-y-0.5">
-          <Link
-            href="/"
-            className={`block rounded-lg px-4 py-3 text-sm font-medium transition-colors ${
-              pathname === "/"
-                ? "bg-primary-light text-primary"
-                : "text-gray-500 hover:bg-gray-50 hover:text-gray-900"
-            }`}
-          >
-            Home
-          </Link>
-
-          {/* Mobile Services Accordion */}
-          <button
-            onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-            className={`flex w-full items-center justify-between rounded-lg px-4 py-3 text-sm font-medium transition-colors ${
-              isServicePage
-                ? "bg-primary-light text-primary"
-                : "text-gray-500 hover:bg-gray-50 hover:text-gray-900"
-            }`}
-          >
-            Services
-            <svg className={`h-4 w-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-
-          {mobileServicesOpen && (
-            <div className="pl-4 space-y-0.5">
-              <Link
-                href="/services"
-                className={`block rounded-lg px-4 py-2.5 text-sm transition-colors ${
-                  pathname === "/services"
-                    ? "text-primary font-medium"
-                    : "text-gray-400 hover:text-gray-900"
-                }`}
-              >
-                All Services
-              </Link>
-              {serviceLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`block rounded-lg px-4 py-2.5 text-sm transition-colors ${
-                    pathname === link.href
-                      ? "text-primary font-medium"
-                      : "text-gray-400 hover:text-gray-900"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          )}
-
-          <Link
-            href="/new-patient"
-            className={`block rounded-lg px-4 py-3 text-sm font-medium transition-colors ${
-              pathname === "/new-patient"
-                ? "bg-primary-light text-primary"
-                : "text-gray-500 hover:bg-gray-50 hover:text-gray-900"
-            }`}
-          >
-            New Patients
-          </Link>
-
-          <Link
-            href="/meet-us"
-            className={`block rounded-lg px-4 py-3 text-sm font-medium transition-colors ${
-              pathname === "/meet-us"
-                ? "bg-primary-light text-primary"
-                : "text-gray-500 hover:bg-gray-50 hover:text-gray-900"
-            }`}
-          >
-            Meet Us
-          </Link>
-
-          <Link
-            href="/emergency"
-            className={`block rounded-lg px-4 py-3 text-sm font-medium transition-colors ${
-              pathname === "/emergency"
-                ? "bg-primary-light text-primary"
-                : "text-red-500 hover:bg-red-50 hover:text-red-600"
-            }`}
-          >
-            Emergency
-          </Link>
-
-          <Link
-            href="/blog"
-            className={`block rounded-lg px-4 py-3 text-sm font-medium transition-colors ${
-              pathname.startsWith("/blog")
-                ? "bg-primary-light text-primary"
-                : "text-gray-500 hover:bg-gray-50 hover:text-gray-900"
-            }`}
-          >
-            Blog
-          </Link>
-
-          <Link
-            href="/schedule"
-            className={`block rounded-lg px-4 py-3 text-sm font-medium transition-colors ${
-              pathname === "/schedule"
-                ? "bg-primary-light text-primary"
-                : "text-gray-500 hover:bg-gray-50 hover:text-gray-900"
-            }`}
-          >
-            Schedule
-          </Link>
-
-          <a
-            href={BOOKING_URL}
-            className="mt-3 block rounded-lg bg-primary px-5 py-3 text-center text-sm font-semibold text-white hover:bg-primary-dark"
-          >
-            Schedule My Visit
-          </a>
-        </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 }
