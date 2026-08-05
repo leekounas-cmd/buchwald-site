@@ -9,6 +9,11 @@ const BOOKING_URL = "https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a00830
 const PHONE = "(972) 644-3280";
 const PHONE_HREF = "tel:972-644-3280";
 
+const newPatientLinks = [
+  { href: "/new-patient", label: "What's My Visit Like?" },
+  { href: "/forms", label: "First Visit Forms" },
+];
+
 const serviceLinks = [
   { href: "/services/cleaning", label: "Cleaning & Exam" },
   { href: "/services/general", label: "General Dentistry" },
@@ -26,9 +31,12 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [newPatientsOpen, setNewPatientsOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileNewPatientsOpen, setMobileNewPatientsOpen] = useState(false);
   const pathname = usePathname();
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const npDropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -39,6 +47,7 @@ export function Navbar() {
   useEffect(() => {
     setMenuOpen(false);
     setMobileServicesOpen(false);
+    setMobileNewPatientsOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -46,12 +55,16 @@ export function Navbar() {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setServicesOpen(false);
       }
+      if (npDropdownRef.current && !npDropdownRef.current.contains(e.target as Node)) {
+        setNewPatientsOpen(false);
+      }
     }
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const isServicePage = serviceLinks.some((l) => pathname === l.href) || pathname === "/services" || pathname === "/new-patient";
+  const isServicePage = serviceLinks.some((l) => pathname === l.href) || pathname === "/services";
+  const isNewPatientArea = pathname === "/new-patient" || pathname === "/forms";
 
   const desktopLink = (active: boolean, danger = false) =>
     `px-3 py-2 rounded-full text-[13px] font-medium transition-colors ${
@@ -106,9 +119,41 @@ export function Navbar() {
               <Link href="/" className={desktopLink(pathname === "/")}>
                 Home
               </Link>
-              <Link href="/new-patient" className={desktopLink(pathname === "/new-patient")}>
-                New Patients
-              </Link>
+              {/* New Patients Dropdown */}
+              <div
+                ref={npDropdownRef}
+                className="relative"
+                onMouseEnter={() => setNewPatientsOpen(true)}
+                onMouseLeave={() => setNewPatientsOpen(false)}
+              >
+                <Link
+                  href="/new-patient"
+                  className={`${desktopLink(isNewPatientArea)} inline-flex items-center gap-1`}
+                >
+                  New Patients
+                  <svg className={`h-3 w-3 transition-transform ${newPatientsOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </Link>
+
+                {newPatientsOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-60 rounded-2xl bg-[#132430] border border-white/10 py-2 shadow-xl z-50">
+                    {newPatientLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className={`block px-4 py-2.5 text-sm transition-colors ${
+                          pathname === link.href
+                            ? "text-white bg-white/5 font-semibold"
+                            : "text-[#B9CBD4] hover:text-white hover:bg-white/5"
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
               <Link href="/meet-us" className={desktopLink(pathname === "/meet-us")}>
                 Meet Us
               </Link>
@@ -190,16 +235,42 @@ export function Navbar() {
         {/* Mobile Menu */}
         <div
           className={`lg:hidden overflow-hidden transition-all duration-200 bg-[#0C1820] ${
-            menuOpen ? "max-h-[640px] border-t border-white/10" : "max-h-0"
+            menuOpen ? "max-h-[1000px] border-t border-white/10" : "max-h-0"
           }`}
         >
           <div className="px-4 pb-6 pt-2 space-y-0.5">
             <Link href="/" className={mobileLink(pathname === "/")}>
               Home
             </Link>
-            <Link href="/new-patient" className={mobileLink(pathname === "/new-patient")}>
+            {/* Mobile New Patients Accordion */}
+            <button
+              onClick={() => setMobileNewPatientsOpen(!mobileNewPatientsOpen)}
+              className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold transition-colors ${
+                isNewPatientArea ? "bg-white/10 text-white" : "text-[#B9CBD4] hover:bg-white/5 hover:text-white"
+              }`}
+            >
               New Patients
-            </Link>
+              <svg className={`h-4 w-4 transition-transform ${mobileNewPatientsOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            {mobileNewPatientsOpen && (
+              <div className="pl-4 space-y-0.5">
+                {newPatientLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`block rounded-xl px-4 py-2.5 text-sm transition-colors ${
+                      pathname === link.href ? "text-white font-semibold" : "text-[#8FA9B5] hover:text-white"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+
             <Link href="/meet-us" className={mobileLink(pathname === "/meet-us")}>
               Meet Us
             </Link>
