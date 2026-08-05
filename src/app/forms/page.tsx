@@ -71,19 +71,10 @@ export default function FormsPage() {
                 Now for the world&rsquo;s{" "}
                 <span className="text-primary">easiest paperwork.</span>
               </h1>
-              <p className="text-[#B9CBD4] text-lg leading-relaxed max-w-md mb-9">
+              <p className="text-[#B9CBD4] text-lg leading-relaxed max-w-md">
                 Two quick things before your visit. Finish them from your phone
                 and you walk straight to the chair instead of the clipboard.
               </p>
-              <a
-                href={WEAVE_NEW_PATIENT_FORMS_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => fireEvent("forms_click", PAGE)}
-                className="inline-flex rounded-full bg-primary px-8 py-4 text-sm font-bold text-white hover:bg-primary-dark transition-colors"
-              >
-                Start Step 1
-              </a>
             <p className="mt-8 text-sm text-[#8FA9B5]">
               We&rsquo;ll see you soon. The blankets are ready.
             </p>
