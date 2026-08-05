@@ -128,7 +128,7 @@ export default function SpecialPage() {
                   </svg>
                 ))}
               </div>
-              <span className="text-sm text-gray-600 font-medium">4.9 on Google · 433+ reviews</span>
+              <span className="text-sm text-gray-600 font-medium">4.9 on Google · 441 reviews</span>
             </div>
           </motion.div>
 
@@ -277,7 +277,7 @@ export default function SpecialPage() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full rounded-lg bg-primary px-5 py-3.5 text-base font-bold text-white hover:bg-primary-dark transition-colors disabled:opacity-50"
+                    className="w-full rounded-full bg-primary px-5 py-3.5 text-base font-bold text-white hover:bg-primary-dark transition-colors disabled:opacity-50"
                   >
                     {loading ? "Submitting..." : "Send My Info"}
                   </button>
@@ -314,7 +314,7 @@ export default function SpecialPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-3">
+            <h1 className="font-archivo text-2xl sm:text-3xl text-gray-900 mb-3">
               {firstName ? `You're in, ${firstName}.` : "You're in."}
             </h1>
             <p className="text-gray-600 text-base leading-relaxed mb-6">
@@ -331,7 +331,7 @@ export default function SpecialPage() {
             <a
               href={PHONE_HREF}
               onClick={trackTelClick}
-              className="inline-block rounded-lg bg-primary px-6 py-3 text-sm font-bold text-white hover:bg-primary-dark transition-colors"
+              className="inline-block rounded-full bg-primary px-6 py-3 text-sm font-bold text-white hover:bg-primary-dark transition-colors"
             >
               Or call us now: {PHONE}
             </a>
