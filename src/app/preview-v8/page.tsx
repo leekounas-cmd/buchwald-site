@@ -174,6 +174,21 @@ export default function PreviewV8() {
             </a>
           </div>
 
+          {/* Office video */}
+          <div className="mt-14 rounded-3xl overflow-hidden animate-[slideUp_0.7s_ease-out_0.15s_both]">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              poster="/images/office-1.jpg"
+              className="w-full object-cover aspect-video sm:aspect-[21/9]"
+              aria-label="A look inside the Buchwald Family Dentistry office"
+            >
+              <source src="/video/hero.mp4" type="video/mp4" />
+            </video>
+          </div>
+
           {/* Insurance banner chip */}
           <Link
             href="/new-patient"
@@ -296,52 +311,37 @@ export default function PreviewV8() {
       {/* ===== Experience band (real office video) ===== */}
       <section className="bg-[#0C1820] text-white">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-28">
-          <div className="grid lg:grid-cols-2 gap-x-16 gap-y-12 items-center">
-            <div className="rounded-3xl overflow-hidden order-2 lg:order-1 max-w-md mx-auto lg:mx-0 w-full">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                poster="/images/office-1.jpg"
-                className="w-full object-cover aspect-[4/5]"
-                aria-label="A look inside the Buchwald Family Dentistry office"
-              >
-                <source src="/video/hero.mp4" type="video/mp4" />
-              </video>
+          <div className="max-w-3xl">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary mb-4">
+              The visit itself
+            </p>
+            <h2 className="font-archivo text-4xl sm:text-5xl leading-[1.05] mb-6">
+              A visit you won&apos;t dread.
+            </h2>
+            <p className="text-[#B9CBD4] leading-relaxed mb-8 max-w-md">
+              Calm rooms, friendly faces, and a team that explains everything before anything happens. This isn&apos;t the dentist you grew up dreading.
+            </p>
+            <div className="flex flex-wrap gap-2.5 mb-10">
+              {niceties.map((n) => (
+                <span key={n} className="rounded-full border border-white/20 px-4 py-1.5 text-[13px] font-semibold text-white">
+                  {n}
+                </span>
+              ))}
             </div>
-            <div className="order-1 lg:order-2">
-              <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary mb-4">
-                The visit itself
-              </p>
-              <h2 className="font-archivo text-4xl sm:text-5xl leading-[1.05] mb-6">
-                A visit you won&apos;t dread.
-              </h2>
-              <p className="text-[#B9CBD4] leading-relaxed mb-8 max-w-md">
-                Calm rooms, friendly faces, and a team that explains everything before anything happens. This isn&apos;t the dentist you grew up dreading.
-              </p>
-              <div className="flex flex-wrap gap-2.5 mb-10">
-                {niceties.map((n) => (
-                  <span key={n} className="rounded-full border border-white/20 px-4 py-1.5 text-[13px] font-semibold text-white">
-                    {n}
-                  </span>
+            <div className="border-t border-white/10 pt-7">
+              <p className="text-sm font-bold mb-5">Same four people, every visit.</p>
+              <div className="flex flex-wrap gap-x-8 gap-y-4">
+                {team.map((m) => (
+                  <Link key={m.name} href="/meet-us" className="group flex items-center gap-3">
+                    <span className="h-12 w-12 rounded-full overflow-hidden ring-1 ring-white/20 group-hover:ring-primary transition-all">
+                      <Image src={m.image} alt={m.name} width={48} height={48} className="h-full w-full object-cover" />
+                    </span>
+                    <span>
+                      <span className="block text-sm font-bold leading-tight">{m.name}</span>
+                      <span className="block text-xs text-[#8FA9B5]">{m.role}</span>
+                    </span>
+                  </Link>
                 ))}
-              </div>
-              <div className="border-t border-white/10 pt-7">
-                <p className="text-sm font-bold mb-5">Same four people, every visit.</p>
-                <div className="flex flex-wrap gap-x-8 gap-y-4">
-                  {team.map((m) => (
-                    <Link key={m.name} href="/meet-us" className="group flex items-center gap-3">
-                      <span className="h-12 w-12 rounded-full overflow-hidden ring-1 ring-white/20 group-hover:ring-primary transition-all">
-                        <Image src={m.image} alt={m.name} width={48} height={48} className="h-full w-full object-cover" />
-                      </span>
-                      <span>
-                        <span className="block text-sm font-bold leading-tight">{m.name}</span>
-                        <span className="block text-xs text-[#8FA9B5]">{m.role}</span>
-                      </span>
-                    </Link>
-                  ))}
-                </div>
               </div>
             </div>
           </div>
