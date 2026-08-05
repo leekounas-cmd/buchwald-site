@@ -106,6 +106,18 @@ export function Navbar() {
               <Link href="/" className={desktopLink(pathname === "/")}>
                 Home
               </Link>
+              <Link href="/new-patient" className={desktopLink(pathname === "/new-patient")}>
+                New Patients
+              </Link>
+              <Link href="/meet-us" className={desktopLink(pathname === "/meet-us")}>
+                Meet Us
+              </Link>
+              <Link href="/emergency" className={desktopLink(pathname === "/emergency", true)}>
+                Emergency
+              </Link>
+              <Link href="/blog" className={desktopLink(pathname.startsWith("/blog"))}>
+                Blog
+              </Link>
 
               {/* Services Dropdown */}
               <div
@@ -125,7 +137,7 @@ export function Navbar() {
                 </Link>
 
                 {servicesOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-60 rounded-2xl bg-[#132430] border border-white/10 py-2 shadow-xl z-50">
+                  <div className="absolute top-full right-0 mt-2 w-60 rounded-2xl bg-[#132430] border border-white/10 py-2 shadow-xl z-50">
                     {serviceLinks.map((link) => (
                       <Link
                         key={link.href}
@@ -142,19 +154,6 @@ export function Navbar() {
                   </div>
                 )}
               </div>
-
-              <Link href="/new-patient" className={desktopLink(pathname === "/new-patient")}>
-                New Patients
-              </Link>
-              <Link href="/meet-us" className={desktopLink(pathname === "/meet-us")}>
-                Meet Us
-              </Link>
-              <Link href="/emergency" className={desktopLink(pathname === "/emergency", true)}>
-                Emergency
-              </Link>
-              <Link href="/blog" className={desktopLink(pathname.startsWith("/blog"))}>
-                Blog
-              </Link>
               <a
                 href={BOOKING_URL}
                 className="ml-3 rounded-full bg-primary px-6 py-2.5 text-[13px] font-bold text-white transition-colors hover:bg-primary-dark"
@@ -198,6 +197,18 @@ export function Navbar() {
             <Link href="/" className={mobileLink(pathname === "/")}>
               Home
             </Link>
+            <Link href="/new-patient" className={mobileLink(pathname === "/new-patient")}>
+              New Patients
+            </Link>
+            <Link href="/meet-us" className={mobileLink(pathname === "/meet-us")}>
+              Meet Us
+            </Link>
+            <Link href="/emergency" className={mobileLink(pathname === "/emergency", true)}>
+              Emergency
+            </Link>
+            <Link href="/blog" className={mobileLink(pathname.startsWith("/blog"))}>
+              Blog
+            </Link>
 
             {/* Mobile Services Accordion */}
             <button
@@ -236,21 +247,15 @@ export function Navbar() {
               </div>
             )}
 
-            <Link href="/new-patient" className={mobileLink(pathname === "/new-patient")}>
-              New Patients
-            </Link>
-            <Link href="/meet-us" className={mobileLink(pathname === "/meet-us")}>
-              Meet Us
-            </Link>
-            <Link href="/emergency" className={mobileLink(pathname === "/emergency", true)}>
-              Emergency
-            </Link>
-            <Link href="/blog" className={mobileLink(pathname.startsWith("/blog"))}>
-              Blog
-            </Link>
+            <a
+              href="sms:9726443280"
+              className="mt-3 block rounded-full border border-white/25 px-5 py-3.5 text-center text-sm font-semibold text-white hover:border-white/60 transition-colors"
+            >
+              Text Us
+            </a>
             <a
               href={BOOKING_URL}
-              className="mt-3 block rounded-full bg-primary px-5 py-3.5 text-center text-sm font-bold text-white hover:bg-primary-dark"
+              className="mt-2 block rounded-full bg-primary px-5 py-3.5 text-center text-sm font-bold text-white hover:bg-primary-dark"
             >
               Book a Visit
             </a>
