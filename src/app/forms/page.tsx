@@ -68,8 +68,8 @@ export default function FormsPage() {
                 You&rsquo;re booked. The hard part is done.
               </p>
               <h1 className="font-archivo text-[clamp(2.4rem,5.4vw,4rem)] leading-[1.06] mb-7">
-                Now for the world&rsquo;s{" "}
-                <span className="text-primary">easiest paperwork.</span>
+                Let&rsquo;s get the paperwork{" "}
+                <span className="text-primary">out of the way.</span>
               </h1>
               <p className="text-[#B9CBD4] text-lg leading-relaxed max-w-md mb-9">
                 Two quick things before your visit. Finish them from your phone
