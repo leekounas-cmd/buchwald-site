@@ -29,7 +29,7 @@ export function StickyBottomBar() {
       <a
         href={BOOKING_URL}
         onClick={() => fireEvent("booking_click", pathname ?? "/")}
-        className="flex-[1.4] rounded-full bg-primary py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-primary-dark"
+        className="flex-1 rounded-full bg-primary py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-primary-dark"
       >
         Schedule
       </a>
