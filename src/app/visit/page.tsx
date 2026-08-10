@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { ReviewsCarousel } from "@/components/ReviewsCarousel";
 import { StickyCallBar } from "@/components/StickyCallBar";
 import {
@@ -51,24 +50,14 @@ export default function VisitPage() {
       </section>
 
       <section className="bg-gray-50 py-14 md:py-20">
-        <div className="mx-auto flex max-w-4xl flex-col items-center gap-8 px-6 md:flex-row md:gap-12">
-          <Image
-            src="/images/melisa.jpg"
-            alt="Melisa, hygienist at Buchwald Family Dentistry"
-            width={280}
-            height={280}
-            className="h-56 w-56 flex-shrink-0 rounded-2xl object-cover md:h-64 md:w-64"
-          />
-          <div className="text-center md:text-left">
-            <h2 className="font-archivo text-3xl text-gray-900">
-              Your Cleaning Is with Melisa
-            </h2>
-            <p className="mt-4 text-lg text-gray-600">
-              Melisa has done 2,000+ cleanings and is known for being genuinely gentle. If it&rsquo;s
-              been a while or you get nervous at the dentist, tell her. She&rsquo;ll take it slow and
-              explain everything before she starts.
-            </p>
-          </div>
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <h2 className="font-archivo text-3xl text-gray-900">
+            Gentle Cleanings, No Rush
+          </h2>
+          <p className="mt-4 text-lg text-gray-600">
+            If it&rsquo;s been a while or you get nervous at the dentist, tell us. Your hygienist
+            will take it slow and explain everything before they start.
+          </p>
         </div>
       </section>
 

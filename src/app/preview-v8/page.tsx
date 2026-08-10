@@ -78,8 +78,6 @@ const services = [
 
 const team = [
   { name: "Dr. Max Buchwald Jr.", role: "Dentist", image: "/images/dr-buchwald.jpg" },
-  { name: "Melisa Kounas", role: "Hygienist", image: "/images/melisa.jpg" },
-  { name: "Cathy Kounas", role: "Operations", image: "/images/cathy.jpg" },
   { name: "Lee Kounas", role: "Marketing & Insurance", image: "/images/lee.jpg" },
 ];
 
@@ -342,7 +340,7 @@ export default function PreviewV8() {
               ))}
             </div>
             <div className="border-t border-white/10 pt-7">
-              <p className="text-sm font-bold mb-5">Same four people, every visit.</p>
+              <p className="text-sm font-bold mb-5">Familiar faces, every visit.</p>
               <div className="flex flex-wrap gap-x-8 gap-y-4">
                 {team.map((m) => (
                   <Link key={m.name} href="/meet-us" className="group flex items-center gap-3">
@@ -429,7 +427,7 @@ export default function PreviewV8() {
             Come say hi,<br className="sm:hidden" /> Richardson.
           </h2>
           <p className="text-[#B9CBD4] text-lg max-w-md mx-auto mb-10">
-            Book online in two minutes, or call and Cathy will find a time that works.
+            Book online in two minutes, or call and we&apos;ll find a time that works.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
             <a

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Welcome Back | Buchwald Family Dentistry",
   description:
-    "Welcome back. Book your next cleaning online in 20 seconds. Same team, same easy energy.",
+    "Welcome back. Book your next cleaning online in 20 seconds. Same chairs, same easy energy.",
   robots: {
     index: false,
     follow: false,
@@ -190,11 +190,11 @@ export default function ReschedulePage() {
             <span className="text-2xl">⭐⭐⭐⭐⭐</span>
           </div>
           <p className="mb-4 text-xl font-medium text-slate-900 md:text-2xl">
-            4.9 stars. 441 Google reviews. The same team you remember.
+            4.9 stars. 441 Google reviews. Still the office you remember.
           </p>
           <p className="text-slate-600">
-            Dr. Buchwald, Melisa, Cathy, and Lee are all still here. Same
-            chairs, same easy energy.
+            Dr. Buchwald and Lee are still here. Same chairs, same easy
+            energy.
           </p>
         </div>
       </section>
@@ -206,7 +206,7 @@ export default function ReschedulePage() {
             Ready when you are.
           </h2>
           <p className="mb-8 text-lg text-slate-200">
-            Pick a time that works. Same team, same easy energy.
+            Pick a time that works. Same chairs, same easy energy.
           </p>
           <a
             href={BOOKING_URL}

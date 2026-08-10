@@ -23,7 +23,7 @@ const whoForItems = [
 ];
 
 const steps = [
-  { title: "Exam and cleaning", desc: "Dr. Buchwald and Melisa take care of your checkup and a gentle, thorough cleaning." },
+  { title: "Exam and cleaning", desc: "Dr. Buchwald and your hygienist take care of your checkup and a gentle, thorough cleaning." },
   { title: "Jet Whitening added", desc: "About ten minutes, right in the same chair. It lifts coffee, tea, and wine staining." },
   { title: "Leave with your trays", desc: "You go home with custom Opalescence trays and professional gel to keep whitening on your schedule." },
 ];

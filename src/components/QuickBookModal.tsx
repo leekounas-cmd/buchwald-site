@@ -150,7 +150,7 @@ export function QuickBookCTA({
                       Have us call you.
                     </h2>
                     <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                      Drop your number. Lee or Cathy calls you back the same day.
+                      Drop your number. Lee calls you back the same day.
                       No phone tag, no full form.
                     </p>
 
@@ -252,7 +252,7 @@ export function QuickBookCTA({
                       Got it{firstName ? `, ${firstName}` : ""}.
                     </h2>
                     <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                      Lee or Cathy will call you back, usually within 2 hours
+                      Lee will call you back, usually within 2 hours
                       during office hours (Mon–Thu, 7am to 3pm).
                     </p>
                     <button

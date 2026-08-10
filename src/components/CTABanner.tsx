@@ -8,7 +8,7 @@ export function CTABanner() {
           Ready to love your smile?
         </h2>
         <p className="text-[#B9CBD4] text-lg max-w-md mx-auto mb-9">
-          New patients welcome. Book online in two minutes, or call and Cathy will find a time that works.
+          New patients welcome. Book online in two minutes, or call and we&apos;ll find a time that works.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <a

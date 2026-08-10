@@ -30,7 +30,7 @@ const addons = [
 const whatToExpect = [
   { title: "Check-In & Chat", desc: "Quick conversation about your dental history and any concerns." },
   { title: "X-Rays & Imaging", desc: "Low-radiation digital X-rays to catch issues below the surface." },
-  { title: "Professional Cleaning", desc: "Melisa removes plaque, polishes your teeth, and flosses." },
+  { title: "Professional Cleaning", desc: "Your hygienist removes plaque, polishes your teeth, and flosses." },
   { title: "Exam & Care Plan", desc: "Dr. Buchwald reviews everything and walks you through a personalized plan." },
 ];
 
@@ -72,7 +72,7 @@ export default function CleaningPage() {
             <h1 className="font-archivo text-4xl sm:text-5xl text-gray-900 leading-[1.1] mb-8">Dental Cleaning &amp; Exam</h1>
           </motion.div>
           <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.1 }} className="mb-10">
-            <Image src="/images/stock/cleaning.jpg" alt="Melisa performing a professional teeth cleaning at Buchwald Family Dentistry" width={1200} height={600} className="rounded-2xl w-full object-cover aspect-video" priority />
+            <Image src="/images/stock/cleaning.jpg" alt="Professional teeth cleaning at Buchwald Family Dentistry" width={1200} height={600} className="rounded-2xl w-full object-cover aspect-video" priority />
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="text-center max-w-3xl mx-auto">
             <p className="text-gray-500 text-lg leading-relaxed">The foundation of a healthy smile. Routine cleanings catch problems early — before they become painful or expensive.</p>

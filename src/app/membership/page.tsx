@@ -245,17 +245,17 @@ export default function MembershipPage() {
         </div>
       </section>
 
-      {/* Gentle cleanings with Melisa */}
+      {/* Gentle cleanings */}
       <section className="bg-white">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-16 sm:py-24">
           <SectionHeading
-            eyebrow="Cleanings with Melisa"
+            eyebrow="Gentle cleanings"
             title="A cleaning that doesn't hurt."
-            intro="A lot of people put off the dentist because their last cleaning was painful. Our hygienist Melisa Kounas is known for being genuinely gentle. Patients consistently tell us it was the most comfortable cleaning they have ever had."
+            intro="A lot of people put off the dentist because their last cleaning was painful. Gentle is the standard here. Patients consistently tell us it was the most comfortable cleaning they have ever had."
           />
           <div className="grid sm:grid-cols-3 max-w-3xl">
             {[
-              { stat: "2,000+", label: "Cleanings performed" },
+              { stat: "Explained", label: "Every step, before it happens" },
               { stat: "Gentle", label: "Hand and technique" },
               { stat: "No rush", label: "We take our time" },
             ].map((s) => (
@@ -268,7 +268,7 @@ export default function MembershipPage() {
           <p className="text-gray-500 text-sm mt-4 max-w-2xl">
             Nervous about cleanings?{" "}
             <Link href="/meet-us" className="text-primary-dark font-semibold underline">
-              Meet Melisa
+              Meet the team
             </Link>{" "}
             or{" "}
             <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-primary-dark font-semibold underline">
@@ -318,7 +318,7 @@ export default function MembershipPage() {
 
       <InkCTA
         title="Ready to skip the insurance maze?"
-        intro="Book online in two minutes, or call and Cathy will get you signed up."
+        intro="Book online in two minutes, or call and we'll get you signed up."
         primary={{ label: "Book My Visit", href: BOOKING_URL, external: true }}
         secondary={{ label: "Call (972) 644-3280", href: "tel:972-644-3280" }}
         footnote="300 N Coit Rd #245, Richardson, TX · Mon to Thu, 7am to 3pm"

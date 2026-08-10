@@ -15,18 +15,6 @@ const teamMembers = [
     bio: "Dr. Max Buchwald Jr. earned his dental degree from UT Health San Antonio and is a proud member of the American Dental Association. He has completed advanced training in Invisalign, endodontics, and implantology. Outside the office, Dr. Buchwald is a triathlete and volunteers at local shelters.",
   },
   {
-    name: "Melisa Kounas, RDH",
-    role: "Registered Dental Hygienist",
-    image: "/images/melisa.jpg",
-    bio: "Melisa is a UNT alumna who graduated summa cum laude and received the prestigious Golden Scaler Award. She brings precision, warmth, and genuine care to every cleaning. A marathon finisher and mom of two boys.",
-  },
-  {
-    name: "Cathy Kounas",
-    role: "Operations Leader",
-    image: "/images/cathy.jpg",
-    bio: "With over 30 years of dental experience, Cathy keeps the office running smoothly behind the scenes. She is a marathon runner and proud grandmother of four.",
-  },
-  {
     name: "Lee Kounas",
     role: "Marketing & Insurance Coordinator",
     image: "/images/lee.jpg",
@@ -94,35 +82,19 @@ export default function MeetUsPage() {
         eyebrow="Our team"
         title={
           <>
-            Same four faces, <span className="text-primary">every visit.</span>
+            Familiar faces, <span className="text-primary">every visit.</span>
           </>
         }
         intro="We're a team that genuinely cares about your comfort, your health, and your smile. Get to know the people behind it."
       />
 
-      {/* Team photo, full width under hero */}
-      <section className="bg-[#0C1820]">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 pb-16 sm:pb-20 -mt-2">
-          <div className="rounded-3xl overflow-hidden">
-            <Image
-              src="/images/team-group.jpg"
-              alt="Buchwald Family Dentistry team in Richardson, TX"
-              width={1200}
-              height={600}
-              className="w-full object-cover aspect-video"
-              priority
-            />
-          </div>
-        </div>
-      </section>
-
-      <TickerBand items={["One dentist", "One hygienist", "One front desk", "Zero rotating strangers"]} />
+      <TickerBand items={["One dentist", "One small team", "Everyone knows your name"]} />
 
       {/* Team cards */}
       <section className="bg-[#F2F7F8]">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-16 sm:py-24">
           <SectionHeading eyebrow="The people" title="Meet everyone." />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2 max-w-2xl">
             {teamMembers.map((member) => (
               <TeamCard key={member.name} member={member} />
             ))}
@@ -150,7 +122,7 @@ export default function MeetUsPage() {
 
       <InkCTA
         title="Come meet us in person."
-        intro="Book online in two minutes, or call and Cathy will find a time that works."
+        intro="Book online in two minutes, or call and we'll find a time that works."
         primary={{ label: "Book My Visit", href: BOOKING_URL, external: true }}
         secondary={{ label: "Call (972) 644-3280", href: "tel:972-644-3280" }}
         footnote="300 N Coit Rd #245, Richardson, TX · Mon to Thu, 7am to 3pm"

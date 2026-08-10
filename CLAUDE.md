@@ -198,7 +198,7 @@ The new homepage walks visitors through their fears in a specific order. Each se
 11. Experience      - OBJECTION #4: "What will it actually be like?"
                       6 comfort amenities grid (headphones, TVs, etc.)
 12. Services grid   - 8 service cards with icons
-13. Team            - 4 members: Dr. Max, Melisa, Cathy, Lee
+13. Team            - 2 members: Dr. Max, Lee
                       Lee is "Marketing & Insurance"
 14. Invisalign      - Blue band, $115/mo starting, 0% APR callout
 15. Final CTA       - Dark section, "Ready to Love Your Smile?"
@@ -210,11 +210,11 @@ The new homepage walks visitors through their fears in a specific order. Each se
 ## Team Roster (Current)
 
 1. **Dr. Max Buchwald Jr.** - Dentist
-2. **Melisa Kounas** - Hygienist
-3. **Cathy Kounas** - Operations
-4. **Lee Kounas** - Marketing & Insurance Coordinator
+2. **Lee Kounas** - Marketing & Insurance Coordinator
 
-Denielle Thiel is no longer on the team. Remove her from `/meet-us`, the homepage team section, and any other references across the site.
+Melisa Kounas and Cathy Kounas are no longer with the company (removed site-wide Aug 2026). There is no set hygienist right now, so never name a hygienist in copy. Use "your hygienist" or "our hygiene team" instead. Do not use melisa.jpg, cathy.jpg, or team-group.jpg (the group photo includes former staff).
+
+Denielle Thiel is also no longer on the team.
 
 ## Voucher Campaign Strategy (Facebook/Instagram Ads)
 

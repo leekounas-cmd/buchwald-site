@@ -41,12 +41,12 @@ export const offer = {
   included: [
     { title: "Exam", desc: "Dr. Buchwald checks everything and walks you through what he sees. No pressure." },
     { title: "Digital x-rays", desc: "A full set of digital x-rays with far less radiation than traditional film." },
-    { title: "Cleaning", desc: "A thorough, gentle cleaning with Melisa, our hygienist." },
+    { title: "Cleaning", desc: "A thorough, gentle cleaning from our hygiene team." },
     { title: "Jet Whitening", desc: "A ten-minute polish that lifts coffee, tea, and wine staining. Normally $99 as an add-on." },
     { title: "Take-home Opalescence whitening trays", desc: "Custom trays and professional gel to keep whitening at home on your schedule." },
   ],
 
-  trustRow: ["4.9★ on Google", "433+ reviews", "Same-day appointments", "Same team every visit"],
+  trustRow: ["4.9★ on Google", "433+ reviews", "Same-day appointments", "Gentle, unhurried visits"],
 
   hours: {
     days: "Monday to Thursday",

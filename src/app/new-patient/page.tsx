@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { FAQSchema } from "@/components/FAQSchema";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { ServiceSchema } from "@/components/ServiceSchema";
@@ -23,18 +22,18 @@ const steps = [
   },
   {
     n: "02",
-    title: "Meet Melisa, your hygienist",
-    body: "Melisa is who you'll spend most of your visit with. She'll get to know you, answer your questions, and walk you through everything before she starts.",
+    title: "Meet your hygienist",
+    body: "Your hygienist is who you'll spend most of your visit with. They'll get to know you, answer your questions, and walk you through everything before they start.",
   },
   {
     n: "03",
     title: "Cleaning, X-rays, and exam",
-    body: "Melisa does a gentle cleaning, takes digital X-rays, and does an oral cancer screening. Known for being genuinely gentle across 2,000+ cleanings.",
+    body: "A gentle cleaning, digital X-rays, and an oral cancer screening. Gentle isn't a buzzword here, it's the standard.",
   },
   {
     n: "04",
     title: "Your care plan with Dr. Buchwald",
-    body: "Dr. Buchwald joins to walk you through everything Melisa found. No surprises, no pressure. Just a clear plan forward.",
+    body: "Dr. Buchwald joins to walk you through everything the exam found. No surprises, no pressure. Just a clear plan forward.",
   },
 ];
 
@@ -97,40 +96,28 @@ export default function NewPatientPage() {
         </div>
       </section>
 
-      {/* Meet Melisa */}
+      {/* Your hygienist */}
       <section className="bg-[#F2F7F8]">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-16 sm:py-24">
-          <div className="grid sm:grid-cols-[200px_1fr] gap-10 items-center max-w-4xl">
-            <div className="h-40 w-40 sm:h-48 sm:w-48 rounded-full overflow-hidden ring-1 ring-[#0C1820]/10 mx-auto sm:mx-0">
-              <Image
-                src="/images/melisa.jpg"
-                alt="Melisa Kounas, hygienist"
-                width={192}
-                height={192}
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary-dark mb-4">Your hygienist</p>
-              <h2 className="font-archivo text-3xl sm:text-4xl leading-[1.05] mb-5">
-                You&apos;ll spend most of your visit with Melisa.
-              </h2>
-              <p className="text-gray-500 leading-relaxed mb-5">
-                Melisa Kounas does your cleaning, X-rays, and the full exam prep. She&apos;s genuinely gentle (over
-                2,000 cleanings and counting) and patients consistently tell us it&apos;s the most comfortable cleaning
-                they have ever had. Nervous about the dentist? Tell Melisa up front. She will adjust everything to your
-                comfort.
-              </p>
-              <Link
-                href="/meet-us"
-                className="group inline-flex items-center gap-2 text-sm font-bold text-primary-dark hover:text-[#0C1820] transition-colors"
-              >
-                Meet the whole team
-                <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-            </div>
+          <div className="max-w-3xl">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary-dark mb-4">Your hygienist</p>
+            <h2 className="font-archivo text-3xl sm:text-4xl leading-[1.05] mb-5">
+              Gentle cleanings, no rushing.
+            </h2>
+            <p className="text-gray-500 leading-relaxed mb-5">
+              Your hygienist handles your cleaning, X-rays, and the full exam prep, and patients consistently tell
+              us it was the most comfortable cleaning they have ever had. Nervous about the dentist? Say so up
+              front. We will adjust everything to your comfort.
+            </p>
+            <Link
+              href="/meet-us"
+              className="group inline-flex items-center gap-2 text-sm font-bold text-primary-dark hover:text-[#0C1820] transition-colors"
+            >
+              Meet the team
+              <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
@@ -231,7 +218,7 @@ export default function NewPatientPage() {
 
       <InkCTA
         title="Come say hi, Richardson."
-        intro="Book online in two minutes, or call and Cathy will find a time that works."
+        intro="Book online in two minutes, or call and we'll find a time that works."
         primary={{ label: "Book My First Visit", href: BOOKING_URL, external: true }}
         secondary={{ label: "Call (972) 644-3280", href: "tel:972-644-3280" }}
         footnote="300 N Coit Rd #245, Richardson, TX · Mon to Thu, 7am to 3pm"

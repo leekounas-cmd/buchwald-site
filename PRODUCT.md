@@ -20,11 +20,11 @@ Three brand-voice words: looked-after, plainspoken, unhurried.
 - 4.9 stars, 433+ Google reviews
 - Free lifetime warranty on all dental work
 - Most PPO insurance covers new-patient cleaning, exam, and X-rays at 100% (current lead offer; the $149 special and free-whitening offers were REMOVED site-wide, do not resurrect them)
-- Named team: Dr. Max Buchwald Jr. (dentist), Melisa Kounas (hygienist), Cathy Kounas (operations), Lee Kounas (marketing + insurance coordinator)
+- Named team: Dr. Max Buchwald Jr. (dentist), Lee Kounas (marketing + insurance coordinator). Melisa and Cathy left Aug 2026; no set hygienist right now, so never name a hygienist in copy
 - Membership plans: Essential $400/yr, Signature $899/yr, Hygiene Upgrade $249/visit; Cherry financing on everything
 - Invisalign from $115/mo, 0% APR
 - Comfort amenities: noise-canceling headphones, TVs at every chair, blankets and pillows, complimentary beverages, on-time visits, explain-before-we-start
-- Real photography in /public/images: office-1.jpg, team-group.jpg, dr-buchwald.jpg, melisa.jpg, cathy.jpg, lee.jpg
+- Real photography in /public/images: office-1.jpg, dr-buchwald.jpg, lee.jpg (melisa.jpg, cathy.jpg, and team-group.jpg show former staff, do not use)
 
 ## Conversion plumbing
 - Booking: Weave (book2.getweave.com/359c4bec-.../request-appointment)

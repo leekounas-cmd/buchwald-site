@@ -20,13 +20,6 @@ const reviews: Review[] = [
     timeAgo: "2 months ago",
   },
   {
-    name: "Melissa T.",
-    location: "Plano",
-    text: "Exceptional team. Everyone was warm and welcoming, very friendly. Melissa was phenomenal, extremely communicative and answered all my questions before I even had a chance to ask them! Highly recommend.",
-    rating: 5,
-    timeAgo: "1 month ago",
-  },
-  {
     name: "David R.",
     location: "Richardson",
     text: "Been a patient for years and I've never had a bad experience. Doctor is the best! The Invisalign treatment was perfect!",
@@ -53,13 +46,6 @@ const reviews: Review[] = [
     text: "Went in for an emergency toothache and they got me in the same day. The whole team was so kind and professional. Pain was gone immediately. Can't recommend them enough.",
     rating: 5,
     timeAgo: "3 weeks ago",
-  },
-  {
-    name: "Rachel W.",
-    location: "Plano",
-    text: "The office is beautiful and spotless. I actually look forward to my cleanings now. Melisa is the best hygienist I've ever had. So thorough and gentle.",
-    rating: 5,
-    timeAgo: "1 month ago",
   },
   {
     name: "Mark P.",

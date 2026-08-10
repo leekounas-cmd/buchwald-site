@@ -885,7 +885,7 @@ function WhatIsDeepCleaning() {
     <>
       <div className="grid grid-cols-3 gap-3 mb-6">
         <Stat value="47%" label="of adults have gum disease" />
-        <Stat value="2,000+" label="cleanings by Melisa" />
+        <Stat value="45 min" label="typical regular cleaning" />
         <Stat value="2 visits" label="typical SRP timeline" />
       </div>
 
@@ -922,18 +922,18 @@ function WhatIsDeepCleaning() {
       <h2>What Happens During a Deep Cleaning</h2>
       <Checklist items={[
         "We numb the area if you want (totally optional for most patients)",
-        "Melisa uses fine instruments and ultrasonic tools to remove tartar below the gumline",
-        "She smooths the root surfaces so gums can reattach cleanly",
+        "Your hygienist uses fine instruments and ultrasonic tools to remove tartar below the gumline",
+        "They smooth the root surfaces so gums can reattach cleanly",
         "Usually done in two visits, one side of the mouth at a time",
         "You go home with instructions and often a follow-up in 3 months",
       ]} />
 
-      <h2>Why Melisa's Cleanings Feel Different</h2>
+      <h2>Why Our Cleanings Feel Different</h2>
       <Checklist items={[
         "Light hand, no digging or rushing",
-        "Explains every step before she does it",
-        "Adjusts pressure and technique to your comfort",
-        "2,000+ cleanings and counting at our Richardson office",
+        "Every step explained before it happens",
+        "Pressure and technique adjusted to your comfort",
+        "Thousands of cleanings and counting at our Richardson office",
       ]} />
 
       <Highlight>If your last cleaning was rough, tell us. We will slow down, numb more, or split the visit. You should never dread a cleaning.</Highlight>

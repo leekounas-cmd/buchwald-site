@@ -13,7 +13,7 @@ const PHONE_HREF = "tel:972-644-3280";
 const includedItems = [
   { title: "Comprehensive Exam & Consultation", desc: "Dr. Buchwald walks you through everything he sees. No pressure, no upselling." },
   { title: "Digital X-Rays", desc: "Full set of digital X-rays with 80% less radiation than traditional film." },
-  { title: "Professional Teeth Cleaning", desc: "Gentle cleaning with Melisa, our hygienist with 2,000+ cleanings under her belt." },
+  { title: "Professional Teeth Cleaning", desc: "A gentle, thorough cleaning. Nervous at the dentist? Tell us up front and we'll adjust to your comfort." },
   { title: "Insurance Verified Before You Come In", desc: "Lee verifies your benefits and tells you exactly what (if anything) you owe before your visit. No surprise bills." },
 ];
 
