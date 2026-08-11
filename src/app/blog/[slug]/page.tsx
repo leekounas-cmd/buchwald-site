@@ -242,7 +242,7 @@ function DentalImplantsCost() {
       <Checklist items={[
         "Many insurance plans cover 25-50% of implant treatment",
         "Flexible monthly financing through Cherry (0% APR available)",
-        "Our coordinator Lee checks your benefits before you commit",
+        "We check your benefits before you commit",
       ]} />
 
       <p>
@@ -433,7 +433,7 @@ function InsuranceCoverInvisalign() {
         ]}
       />
 
-      <Highlight>Don&apos;t assume your plan won&apos;t cover it. Our coordinator Lee checks your benefits for free — no commitment needed.</Highlight>
+      <Highlight>Don&apos;t assume your plan won&apos;t cover it. We check your benefits for free — no commitment needed.</Highlight>
 
       <h2>Other Ways to Pay</h2>
       <Checklist items={[
@@ -595,7 +595,7 @@ function DentalInsurance101() {
       ]} />
 
       <p>
-        Not sure what your plan covers? Our coordinator Lee will check for you.{" "}
+        Not sure what your plan covers? Our team will check for you.{" "}
         <Link href="/insurance" className="text-primary font-semibold underline">See our insurance info</Link> or{" "}
         <a href="https://book2.getweave.com/359c4bec-a0f0-4d62-9ea8-35a008305267/request-appointment?source=WEBSITE" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold underline">book an appointment</a>.
       </p>

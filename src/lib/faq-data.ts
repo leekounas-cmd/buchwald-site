@@ -21,7 +21,7 @@ export const invisalignFaqs = [
   },
   {
     q: "Is Invisalign covered by insurance?",
-    a: "Many dental insurance plans cover Invisalign the same way they cover traditional braces, typically up to $1,500. Our insurance coordinator Lee will check your specific benefits and maximize your coverage. We also offer 0% APR financing through Cherry starting at $115 per month.",
+    a: "Many dental insurance plans cover Invisalign the same way they cover traditional braces, typically up to $1,500. Our team will check your specific benefits and maximize your coverage. We also offer 0% APR financing through Cherry starting at $115 per month.",
   },
   {
     q: "Am I too old for Invisalign?",
@@ -67,6 +67,6 @@ export const generalFaqs = [
   },
   {
     q: "Does Buchwald Family Dentistry accept my insurance?",
-    a: "We accept most major dental insurance plans. Our insurance coordinator Lee handles all the details including verifying your benefits, filing claims, and making sure you get the most out of your coverage. Call (972) 644-3280 to verify your specific plan.",
+    a: "We accept most major dental insurance plans. Our team handles all the details including verifying your benefits, filing claims, and making sure you get the most out of your coverage. Call (972) 644-3280 to verify your specific plan.",
   },
 ];

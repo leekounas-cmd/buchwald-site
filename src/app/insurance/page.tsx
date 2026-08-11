@@ -20,8 +20,8 @@ const insurancePlans = [
 const howItWorks = [
   {
     n: "01",
-    title: "Lee runs your numbers",
-    body: "Send us your insurance card and Lee verifies your exact benefits before your first visit, free. You'll know what's covered before you ever sit in the chair.",
+    title: "We run your numbers",
+    body: "Send us your insurance card and we verify your exact benefits before your first visit, free. You'll know what's covered before you ever sit in the chair.",
   },
   {
     n: "02",
@@ -36,7 +36,7 @@ const howItWorks = [
 ];
 
 const faqs = [
-  { q: "Does Buchwald Family Dentistry accept my insurance?", a: "We accept most major PPO plans including Delta Dental, Cigna, MetLife, Aetna, and more. Our insurance coordinator Lee will verify your specific plan and benefits before your visit, at no cost to you." },
+  { q: "Does Buchwald Family Dentistry accept my insurance?", a: "We accept most major PPO plans including Delta Dental, Cigna, MetLife, Aetna, and more. Our team will verify your specific plan and benefits before your visit, at no cost to you." },
   { q: "What if my insurance doesn't cover a procedure?", a: "We'll always tell you what's covered and what's not before we start. For anything not covered, we offer flexible financing through Cherry with 0% APR options." },
   { q: "Do you accept Medicaid or HMO plans?", a: "We're primarily a PPO-based office. Medicaid and most HMO plans have restrictions that limit the care we can provide. If you're unsure, call us and we'll help figure out your options." },
   { q: "How does the Essential Care Plan work?", a: "It's our in-house membership for patients without insurance. For $400/year ($34/mo through Cherry), you get 2 cleanings, 2 exams, full X-rays, and 20% off all other treatments. No waiting periods, no deductibles, no maximums. Want more? The Signature Plan at $899/year adds InnerView imaging, fluoride, laser therapy, and jet whitening at every visit." },
@@ -54,7 +54,7 @@ export default function InsurancePage() {
             We handle the <span className="text-primary">insurance headache.</span>
           </>
         }
-        intro="Most major PPO plans accepted. Lee runs your benefits, files your claims, and puts your out-of-pocket cost in writing before anything is scheduled."
+        intro="Most major PPO plans accepted. We run your benefits, file your claims, and put your out-of-pocket cost in writing before anything is scheduled."
       >
         <div className="flex flex-col sm:flex-row gap-3">
           <a
@@ -165,7 +165,7 @@ export default function InsurancePage() {
 
       <InkCTA
         title="Not sure what your plan covers?"
-        intro="Call with your insurance card handy and Lee will run your exact benefits, free."
+        intro="Call with your insurance card handy and we'll run your exact benefits, free."
         primary={{ label: "Call (972) 644-3280", href: "tel:972-644-3280" }}
         secondary={{ label: "See Membership Plans", href: "/membership" }}
         footnote="300 N Coit Rd #245, Richardson, TX · Mon to Thu, 7am to 3pm"

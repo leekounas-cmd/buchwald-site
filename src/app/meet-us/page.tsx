@@ -14,12 +14,6 @@ const teamMembers = [
     image: "/images/dr-buchwald.jpg",
     bio: "Dr. Max Buchwald Jr. earned his dental degree from UT Health San Antonio and is a proud member of the American Dental Association. He has completed advanced training in Invisalign, endodontics, and implantology. Outside the office, Dr. Buchwald is a triathlete and volunteers at local shelters.",
   },
-  {
-    name: "Lee Kounas",
-    role: "Marketing & Insurance Coordinator",
-    image: "/images/lee.jpg",
-    bio: "Lee handles marketing and insurance coordination for the practice. He verifies benefits, files claims, breaks down out-of-pocket costs before treatment, and makes sure patients get the most from their coverage. Mountain biker and soccer dad.",
-  },
 ];
 
 const awards = [

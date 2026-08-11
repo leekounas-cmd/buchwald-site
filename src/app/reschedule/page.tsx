@@ -193,7 +193,7 @@ export default function ReschedulePage() {
             4.9 stars. 441 Google reviews. Still the office you remember.
           </p>
           <p className="text-slate-600">
-            Dr. Buchwald and Lee are still here. Same chairs, same easy
+            Dr. Buchwald and the team are still here. Same chairs, same easy
             energy.
           </p>
         </div>

@@ -25,7 +25,7 @@ const promises = [
   {
     n: "02",
     title: "The price before the chair",
-    body: "Your cost in writing before any treatment starts. Lee runs your insurance and walks you through every line.",
+    body: "Your cost in writing before any treatment starts. We run your insurance and walk you through every line.",
   },
   {
     n: "03",
@@ -78,7 +78,6 @@ const services = [
 
 const team = [
   { name: "Dr. Max Buchwald Jr.", role: "Dentist", image: "/images/dr-buchwald.jpg" },
-  { name: "Lee Kounas", role: "Marketing & Insurance", image: "/images/lee.jpg" },
 ];
 
 function Stars({ className = "h-3.5 w-3.5" }: { className?: string }) {
@@ -263,7 +262,7 @@ export default function PreviewV8() {
                 The money part, in plain English.
               </h2>
               <p className="text-gray-500 leading-relaxed mb-8 max-w-sm">
-                Lee runs your insurance, files the claims, and puts your out-of-pocket cost in writing before anything is scheduled.
+                We run your insurance, file the claims, and put your out-of-pocket cost in writing before anything is scheduled.
               </p>
               <a
                 href={PHONE_HREF}

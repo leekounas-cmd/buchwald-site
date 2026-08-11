@@ -26,7 +26,7 @@ const steps = [
     n: "02",
     title: "Upload Your Insurance",
     time: "about 2 min",
-    body: "Snap a photo of the front and back of your card. Lee verifies your benefits before you come in, so you know exactly what is covered before you sit down.",
+    body: "Snap a photo of the front and back of your card. We verify your benefits before you come in, so you know exactly what is covered before you sit down.",
     cta: "Upload My Insurance Card",
     href: WEAVE_INSURANCE_UPLOAD_URL,
     event: "insurance_upload_click",

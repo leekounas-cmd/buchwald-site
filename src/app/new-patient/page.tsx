@@ -46,7 +46,7 @@ const bringList = [
 ];
 
 const faqs = [
-  { q: "Is my cleaning covered by insurance?", a: "Almost always, yes. Most PPO dental plans cover preventive care (cleaning, exam, X-rays) at 100% with no copay. Our coordinator Lee will verify your benefits before your visit and tell you exactly what's covered and what (if anything) you owe." },
+  { q: "Is my cleaning covered by insurance?", a: "Almost always, yes. Most PPO dental plans cover preventive care (cleaning, exam, X-rays) at 100% with no copay. Our team will verify your benefits before your visit and tell you exactly what's covered and what (if anything) you owe." },
   { q: "What if I don't have insurance?", a: "No problem. Ask about our membership plans. Essential is $400/year (2 cleanings, 2 exams, X-rays, 20% off other treatments). Signature is $899/year and adds InnerView imaging, fluoride, laser therapy, and jet whitening at every visit. No waiting periods, no deductibles, no annual maximums." },
   { q: "How long is the first visit?", a: "Plan for about 60 to 90 minutes. We take our time with new patients to make sure we get a complete picture of your oral health." },
   { q: "Can I bring my kids?", a: "Absolutely. We're a family practice and love seeing patients of all ages. You can schedule appointments for the whole family on the same day." },

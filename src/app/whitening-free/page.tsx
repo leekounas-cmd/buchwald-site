@@ -13,7 +13,7 @@ const includedItems = [
   { title: "Comprehensive Exam & Consultation", desc: "Dr. Buchwald walks you through everything he sees. No pressure, no upselling." },
   { title: "Digital X-Rays", desc: "Full set of digital X-rays with 80% less radiation than traditional film." },
   { title: "Professional Cleaning", desc: "A gentle, thorough cleaning. Nervous at the dentist? Tell us up front and we'll adjust to your comfort." },
-  { title: "Insurance Verified Before You Come In", desc: "Lee verifies your benefits and tells you exactly what (if anything) you owe. No surprise bills." },
+  { title: "Insurance Verified Before You Come In", desc: "We verify your benefits and tell you exactly what (if anything) you owe. No surprise bills." },
 ];
 
 const dayOptions = ["Monday", "Tuesday", "Wednesday", "Thursday", "No Preference"];
@@ -235,7 +235,7 @@ export default function WhiteningFreePage() {
                 <div className="text-center mb-5">
                   <p className="text-primary text-xs font-bold uppercase tracking-wider mb-1">Get Started</p>
                   <h2 className="text-xl sm:text-2xl font-extrabold text-gray-900">Save your spot</h2>
-                  <p className="text-gray-500 text-sm mt-1">Lee will reach out within one business day.</p>
+                  <p className="text-gray-500 text-sm mt-1">Our team will reach out within one business day.</p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -333,13 +333,13 @@ export default function WhiteningFreePage() {
               {firstName ? `You're in, ${firstName}.` : "You're in."}
             </h1>
             <p className="text-gray-600 text-base leading-relaxed mb-6">
-              Lee will reach out within one business day to schedule your visit.
+              Our team will reach out within one business day to schedule your visit.
             </p>
             <div className="bg-primary/5 rounded-xl p-5 mb-6 text-left">
               <p className="text-xs font-bold uppercase tracking-wider text-primary mb-2">What happens next</p>
               <ol className="space-y-2 text-sm text-gray-700">
-                <li><span className="font-bold">1.</span> Lee reaches out to confirm a time</li>
-                <li><span className="font-bold">2.</span> If you have insurance, Lee verifies your benefits before the visit</li>
+                <li><span className="font-bold">1.</span> We reach out to confirm a time</li>
+                <li><span className="font-bold">2.</span> If you have insurance, we verify your benefits before the visit</li>
                 <li><span className="font-bold">3.</span> Show up, get your cleaning, meet the team</li>
               </ol>
             </div>

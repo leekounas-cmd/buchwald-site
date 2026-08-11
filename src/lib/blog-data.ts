@@ -20,7 +20,7 @@ export const blogPosts: BlogPost[] = [
       { q: "How is it different from a regular cleaning?", a: "A regular cleaning (prophylaxis) cleans above the gumline for healthy mouths. A deep cleaning goes beneath the gumline to remove hardened buildup and bacteria that cause gum disease. It's usually done in two visits, sometimes with local anesthetic for comfort." },
       { q: "Why would I need one?", a: "If you haven't seen a dentist in more than a year, you likely have tartar buildup below the gums that a regular cleaning can't reach. Signs include bleeding gums, bad breath, receding gums, and gum pockets deeper than 4mm. Dr. Buchwald will measure your gums and tell you exactly what's needed." },
       { q: "Does a deep cleaning hurt?", a: "Most patients feel minimal discomfort. We use local anesthetic if needed and take the cleaning at your pace. Patients consistently say it was more comfortable than they expected." },
-      { q: "Will my insurance cover a deep cleaning?", a: "Most PPO plans cover deep cleanings at 50-80%. Our coordinator Lee will verify your benefits before the appointment so you know exactly what's covered." },
+      { q: "Will my insurance cover a deep cleaning?", a: "Most PPO plans cover deep cleanings at 50-80%. Our team will verify your benefits before the appointment so you know exactly what's covered." },
       { q: "What happens if I skip it?", a: "Gum disease doesn't fix itself. Left alone, it progresses to bone loss, loose teeth, and eventually tooth loss. A deep cleaning now prevents thousands of dollars of restorative work later." },
     ],
   },
@@ -91,7 +91,7 @@ export const blogPosts: BlogPost[] = [
       { q: "What does dental insurance typically cover?", a: "Most plans cover preventive care (cleanings, exams, X-rays) at 100%, basic procedures (fillings, extractions) at 80%, and major procedures (crowns, root canals, implants) at 50%. Every plan is different though." },
       { q: "Does dental insurance cover cosmetic work?", a: "Generally no. Teeth whitening, veneers, and cosmetic bonding are usually not covered. However, some procedures that are both functional and cosmetic — like crowns on visible teeth — may get partial coverage." },
       { q: "What happens if I don't use my dental benefits?", a: "Most plans reset on January 1. Unused benefits don't roll over — you lose them. If you haven't used your two covered cleanings for the year, you're leaving money on the table." },
-      { q: "Does Buchwald Family Dentistry accept my insurance?", a: "We accept most major PPO plans. Our insurance coordinator Lee will verify your benefits before any treatment so you know exactly what's covered and what you'll owe." },
+      { q: "Does Buchwald Family Dentistry accept my insurance?", a: "We accept most major PPO plans. Our team will verify your benefits before any treatment so you know exactly what's covered and what you'll owe." },
     ],
   },
   {
@@ -147,7 +147,7 @@ export const blogPosts: BlogPost[] = [
       { q: "Does PPO dental insurance cover Invisalign?", a: "Many PPO plans include orthodontic benefits that apply to Invisalign — typically covering $1,000 to $2,000 of the total cost. Our team will check your specific plan before you commit to anything." },
       { q: "How much does Invisalign cost out of pocket?", a: "After insurance, most patients pay between $2,000 and $4,500 out of pocket. We offer monthly financing through Cherry so you can break that into manageable payments." },
       { q: "Can I use my HSA or FSA for Invisalign?", a: "Yes. Invisalign is considered a qualified medical expense, so you can use your HSA or FSA funds to cover part or all of your out-of-pocket cost." },
-      { q: "Does Buchwald Family Dentistry offer payment plans for Invisalign?", a: "We do. We offer flexible financing with Cherry, including 0% APR options. Our coordinator Lee will walk you through everything so there are no surprises." },
+      { q: "Does Buchwald Family Dentistry offer payment plans for Invisalign?", a: "We do. We offer flexible financing with Cherry, including 0% APR options. Our team will walk you through everything so there are no surprises." },
     ],
   },
   {
@@ -215,7 +215,7 @@ export const blogPosts: BlogPost[] = [
       "Dental implants are an investment in your smile and your health. Here's a real breakdown of what they cost in Texas, what affects the price, and how to make them affordable.",
     faqs: [
       { q: "How much does a single dental implant cost in Texas?", a: "A single dental implant typically costs between $3,000 and $5,000 in Texas. This includes the implant post, abutment, and crown. Costs can vary based on your specific needs." },
-      { q: "Does dental insurance cover implants?", a: "Some plans cover a portion of implant treatment — usually 25% to 50% of the cost. Our insurance coordinator Lee will check your benefits and let you know exactly what's covered before you commit to anything." },
+      { q: "Does dental insurance cover implants?", a: "Some plans cover a portion of implant treatment — usually 25% to 50% of the cost. Our team will check your benefits and let you know exactly what's covered before you commit to anything." },
       { q: "Are there payment plans for dental implants?", a: "Absolutely. We offer flexible financing options so you can break the cost into manageable monthly payments. We'll walk you through everything during your consultation." },
       { q: "Why are implants worth the investment?", a: "Implants can last 25+ years (often a lifetime) with proper care. Compare that to bridges (5-15 years) or dentures (5-10 years) and the long-term cost actually works in your favor — plus they protect your jawbone and look completely natural." },
     ],
